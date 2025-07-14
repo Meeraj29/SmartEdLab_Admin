@@ -29,7 +29,10 @@
     }
   },
   "files": {
-    "includes": ["src/**/*.{ts,tsx,js,jsx,json,css,html}"],
+    "includes": [
+      "src/**/*.{ts,tsx,js,jsx,json,css,html}",
+      "*.{js,jsx,ts,tsx,json,jsonc,css,scss,md,mdx}"
+    ],
     "ignoreUnknown": true
   },
   "formatter": {
