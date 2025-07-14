@@ -1,7 +1,7 @@
 "use client";
-import { ThemeSwitcher } from "@/components/theme/theme-switcher";
 
 import Image from "next/image";
+import { ThemeSwitcher } from "@/components/theme/theme-switcher";
 
 export default function Home() {
   return (
