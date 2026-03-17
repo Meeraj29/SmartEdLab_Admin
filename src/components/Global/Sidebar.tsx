@@ -1,27 +1,28 @@
 "use client";
 
-import React, { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { usePathname } from "next/navigation";
 import {
-  LayoutDashboard,
-  Users,
-  GraduationCap,
-  Building2,
+  BarChart3,
   BookOpen,
   BrainCircuit,
-  Video,
-  Receipt,
-  BarChart3,
-  ShieldCheck,
+  Building2,
+  GraduationCap,
+  LayoutDashboard,
   Lock,
-  Settings,
   PanelLeftClose,
   PanelLeftOpen,
+  Receipt,
+  Settings,
+  ShieldCheck,
+  Users,
+  Video,
 } from "lucide-react";
-import { cn } from "@/lib/utils";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import type React from "react";
+import { useState } from "react";
 import LogoSvg from "@/assets/logo.svg";
+import { cn } from "@/lib/utils";
 
 interface NavItem {
   label: string;
@@ -48,7 +49,11 @@ const navSections: NavSection[] = [
   {
     title: "Operations",
     items: [
-      { label: "AI Control Center", href: "/dashboard/ai-control", icon: BrainCircuit },
+      {
+        label: "AI Control Center",
+        href: "/dashboard/ai-control",
+        icon: BrainCircuit,
+      },
       { label: "Live Classes", href: "/dashboard/live-classes", icon: Video },
       { label: "Billing", href: "/dashboard/billing", icon: Receipt },
       { label: "Reports", href: "/dashboard/reports", icon: BarChart3 },
@@ -57,7 +62,11 @@ const navSections: NavSection[] = [
   {
     title: "System",
     items: [
-      { label: "Roles & Permissions", href: "/dashboard/roles", icon: ShieldCheck },
+      {
+        label: "Roles & Permissions",
+        href: "/dashboard/roles",
+        icon: ShieldCheck,
+      },
       { label: "Security & IP", href: "/dashboard/security", icon: Lock },
       { label: "System Settings", href: "/dashboard/settings", icon: Settings },
     ],

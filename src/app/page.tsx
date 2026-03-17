@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
+import Dashboard from "@/components/Dashboard/Dashboard";
 import Header from "@/components/Global/Header";
 import Sidebar from "@/components/Global/Sidebar";
-import Dashboard from "@/components/Dashboard/Dashboard";
 import { cn } from "@/lib/utils";
 
 const Page = () => {
@@ -16,7 +16,10 @@ const Page = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Sidebar */}
-      <Sidebar isCollapsed={isSidebarCollapsed} onToggle={handleToggleSidebar} />
+      <Sidebar
+        isCollapsed={isSidebarCollapsed}
+        onToggle={handleToggleSidebar}
+      />
 
       {/* Header */}
       <Header isSidebarCollapsed={isSidebarCollapsed} />
