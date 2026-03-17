@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import Dashboard from "@/components/Dashboard/Dashboard";
 import Header from "@/components/Global/Header";
 import Sidebar from "@/components/Global/Sidebar";

@@ -20,7 +20,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type React from "react";
-import { useState } from "react";
 import LogoSvg from "@/assets/logo.svg";
 import { cn } from "@/lib/utils";
 

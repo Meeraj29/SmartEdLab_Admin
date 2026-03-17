@@ -1,7 +1,6 @@
 "use client";
 
 import { Bell, ChevronDown, Search } from "lucide-react";
-import React from "react";
 import { cn } from "@/lib/utils";
 
 interface HeaderProps {
