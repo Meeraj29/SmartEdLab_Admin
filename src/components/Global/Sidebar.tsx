@@ -15,6 +15,7 @@ import {
   ShieldCheck,
   Users,
   Video,
+  X,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -75,102 +76,145 @@ const navSections: NavSection[] = [
 interface SidebarProps {
   isCollapsed: boolean;
   onToggle: () => void;
+  isMobileOpen?: boolean;
+  onMobileClose?: () => void;
 }
 
-const Sidebar = ({ isCollapsed, onToggle }: SidebarProps) => {
+const Sidebar = ({
+  isCollapsed,
+  onToggle,
+  isMobileOpen,
+  onMobileClose,
+}: SidebarProps) => {
   const pathname = usePathname();
 
   return (
-    <aside
-      className={cn(
-        "group/sidebar fixed left-0 top-0 z-40 flex h-screen flex-col border-r border-border transition-all duration-300 ease-in-out bg-[#f4f4f4]",
-        isCollapsed ? "w-[72px]" : "w-[260px]"
-      )}
-    >
-      {/* Logo Area */}
-      <div className="flex h-16 items-center justify-center border-b border-border px-3">
-        <div className="flex items-center gap-2.5">
-          {/* Logo Icon */}
-          <Image
-            src={LogoSvg}
-            alt="SmartEdLabs Logo"
-            width={36}
-            height={36}
-            className="shrink-0"
-          />
-          {!isCollapsed && (
-            <span
-              className="whitespace-nowrap text-lg tracking-tight text-foreground"
-              style={{ fontFamily: "var(--font-russo-one)" }}
-            >
-              SmartEdLabs
-            </span>
-          )}
-        </div>
-      </div>
-
-      {/* Navigation */}
-      <nav className="flex-1 overflow-x-hidden px-3 py-4 overflow-y-auto scrollbar-none group-hover/sidebar:[scrollbar-width:thin] group-hover/sidebar:[&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-border [&::-webkit-scrollbar-track]:bg-transparent">
-        {navSections.map((section) => (
-          <div key={section.title} className="mb-6">
-            {/* Section Title */}
-            {!isCollapsed && (
-              <p className="mb-2 px-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                {section.title}
-              </p>
-            )}
-            {isCollapsed && <div className="mb-2 border-b border-border" />}
-
-            {/* Nav Items */}
-            <ul className="space-y-1">
-              {section.items.map((item) => {
-                const isActive = pathname === item.href;
-                const Icon = item.icon;
-
-                return (
-                  <li key={item.href}>
-                    <Link
-                      href={item.href}
-                      className={cn(
-                        "group flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-200",
-                        isCollapsed && "justify-center px-2",
-                        isActive
-                          ? "bg-[#31564E] text-white shadow-sm"
-                          : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
-                      )}
-                      title={isCollapsed ? item.label : undefined}
-                    >
-                      <Icon
-                        className={cn(
-                          "h-5 w-5 shrink-0 transition-colors",
-                          isActive
-                            ? "text-white"
-                            : "text-muted-foreground group-hover:text-accent-foreground"
-                        )}
-                      />
-                      {!isCollapsed && <span>{item.label}</span>}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        ))}
-      </nav>
-
-      {/* Toggle Button */}
-      <button
-        onClick={onToggle}
-        className="absolute -right-4 top-[45px] z-50 flex h-7 w-7 items-center justify-center rounded-full border border-border bg-card text-muted-foreground shadow-sm transition-all hover:bg-accent hover:text-accent-foreground hover:shadow-md"
-        aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
-      >
-        {isCollapsed ? (
-          <PanelLeftOpen className="h-4 w-4" />
-        ) : (
-          <PanelLeftClose className="h-4 w-4" />
+    <>
+      {/* Backdrop for mobile */}
+      <div
+        className={cn(
+          "fixed inset-0 z-40 bg-black/50 backdrop-blur-sm lg:hidden transition-opacity duration-300",
+          isMobileOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
         )}
-      </button>
-    </aside>
+        onClick={onMobileClose}
+      />
+
+      <aside
+        className={cn(
+          "group/sidebar fixed left-0 top-0 z-50 flex h-screen flex-col border-r border-border transition-all duration-300 ease-in-out bg-[#f4f4f4]",
+          // Desktop behavior
+          isCollapsed ? "lg:w-[72px]" : "lg:w-[260px]",
+          // Mobile behavior
+          "w-[260px] transform lg:transform-none",
+          isMobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
+        )}
+      >
+        {/* Logo Area */}
+        <div className="flex h-20 items-center justify-between border-b border-border px-4">
+          <div className="flex items-center gap-2.5">
+            {/* Logo Icon */}
+            <Image
+              src={LogoSvg}
+              alt="SmartEdLabs Logo"
+              width={32}
+              height={32}
+              className="shrink-0"
+            />
+            {(!isCollapsed || isMobileOpen) && (
+              <span
+                className="text-lg font-bold  text-foreground"
+                style={{ fontFamily: "var(--font-russo-one)" }}
+              >
+                SmartEdLabs
+              </span>
+            )}
+          </div>
+
+          {/* Close button for mobile */}
+          <button
+            onClick={onMobileClose}
+            className="flex h-8 w-8 items-center justify-center rounded-lg lg:hidden hover:bg-accent transition-colors"
+          >
+            <X className="h-5 w-5 text-muted-foreground" />
+          </button>
+        </div>
+
+        {/* Navigation */}
+        <nav className="flex-1 overflow-x-hidden px-3 py-4 overflow-y-auto scrollbar-none group-hover/sidebar:[scrollbar-width:thin] group-hover/sidebar:[&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-border [&::-webkit-scrollbar-track]:bg-transparent">
+          {navSections.map((section) => (
+            <div key={section.title} className="mb-6">
+              {/* Section Title */}
+              {(!isCollapsed || isMobileOpen) && (
+                <p className="mb-2 px-3 text-xs font-semibold tracking-wider text-muted-foreground uppercase">
+                  {section.title}
+                </p>
+              )}
+              {isCollapsed && !isMobileOpen && (
+                <div className="mb-2 border-b border-border" />
+              )}
+
+              {/* Nav Items */}
+              <ul className="space-y-1">
+                {section.items.map((item) => {
+                  const isActive = pathname === item.href;
+                  const Icon = item.icon;
+
+                  return (
+                    <li key={item.href}>
+                      <Link
+                        href={item.href}
+                        onClick={() => {
+                          if (onMobileClose) onMobileClose();
+                        }}
+                        className={cn(
+                          "group flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200",
+                          isCollapsed &&
+                            !isMobileOpen &&
+                            "lg:justify-center lg:px-2",
+                          isActive
+                            ? "bg-[#31564E] text-white shadow-sm"
+                            : "text-black hover:bg-accent hover:text-accent-foreground"
+                        )}
+                        title={
+                          isCollapsed && !isMobileOpen ? item.label : undefined
+                        }
+                      >
+                        <Icon
+                          className={cn(
+                            "h-5 w-5 shrink-0 transition-colors",
+                            isActive
+                              ? "text-white"
+                              : "text-black group-hover:text-accent-foreground"
+                          )}
+                        />
+                        {(!isCollapsed || isMobileOpen) && (
+                          <span className="truncate">{item.label}</span>
+                        )}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          ))}
+        </nav>
+
+        {/* Toggle Button (Hidden on Mobile) */}
+        <button
+          onClick={onToggle}
+          className="absolute -right-3 top-16 z-50 hidden lg:flex h-7 w-7 items-center justify-center rounded-full border border-border bg-card text-muted-foreground shadow-sm transition-all hover:bg-accent hover:text-accent-foreground"
+          aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
+        >
+          {isCollapsed ? (
+            <PanelLeftOpen className="h-4.5 w-4.5" />
+          ) : (
+            <PanelLeftClose className="h-4.5 w-4.5" />
+          )}
+        </button>
+      </aside>
+    </>
   );
 };
 

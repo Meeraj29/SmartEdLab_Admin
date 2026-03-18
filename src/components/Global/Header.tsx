@@ -1,74 +1,133 @@
 "use client";
 
-import { Bell, ChevronDown, Search } from "lucide-react";
+import { BellRing, ChevronDown, Menu, Search, User } from "lucide-react";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 interface HeaderProps {
   isSidebarCollapsed: boolean;
+  isSidebarHidden?: boolean;
   pageTitle?: string;
   pageSubtitle?: string;
+  onMenuClick?: () => void;
 }
 
 const Header = ({
   isSidebarCollapsed,
+  isSidebarHidden = false,
   pageTitle = "Dashboard Overview",
   pageSubtitle = "Welcome back, super admin",
+  onMenuClick,
 }: HeaderProps) => {
+  const pathname = usePathname();
+  const isStudentsPage = pathname === "/dashboard/students";
+
   return (
     <header
       className={cn(
-        "fixed top-0 right-0 z-30 flex h-16 items-center justify-between border-b border-border bg-card/80 px-6 backdrop-blur-md transition-all duration-300 ease-in-out",
-        isSidebarCollapsed ? "left-[72px]" : "left-[260px]"
+        "fixed top-0 right-0 z-30 flex h-20 items-center gap-4 shadow bg-white px-4 md:px-6 transition-all duration-300 ease-in-out",
+        "left-0", // Default left for mobile
+        !isSidebarHidden &&
+          (isSidebarCollapsed ? "lg:left-[72px]" : "lg:left-[260px]") // Desktop offset
       )}
     >
-      {/* Left Section - Page Title */}
-      <div className="flex flex-col">
-        <h1 className="text-lg font-semibold leading-tight text-foreground">
-          {pageTitle}
-        </h1>
-        <p className="text-sm text-muted-foreground">{pageSubtitle}</p>
+      <div className="flex items-center gap-3 shrink-0">
+        {/* Company Logo and Name when Sidebar is Hidden */}
+        {isSidebarHidden && (
+          <div className="flex items-center gap-3 mr-4">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#31564E]/10">
+              <Image
+                src="/logo.svg"
+                alt="Logo"
+                width={24}
+                height={24}
+                className="h-6 w-6"
+              />
+            </div>
+            <span className="text-xl font-bold text-foreground">
+              SmartEdLabs
+            </span>
+          </div>
+        )}
+
+        {/* Menu Button for Mobile */}
+        <button
+          onClick={onMenuClick}
+          className={cn(
+            "flex h-10 w-10 items-center justify-center rounded-lg lg:hidden hover:bg-accent transition-colors",
+            isSidebarHidden && "hidden"
+          )}
+          aria-label="Open Menu"
+        >
+          <Menu className="h-6 w-6 text-foreground" />
+        </button>
+
+        {/* Left Section - Page Title (Hidden on Students Page or when Sidebar is Hidden) */}
+        {!isStudentsPage && !isSidebarHidden && (
+          <div className="flex flex-col">
+            <h1 className="text-lg md:text-2xl font-semibold text-foreground line-clamp-1">
+              {pageTitle}
+            </h1>
+            <p className="hidden md:block text-sm font-normal leading-normal text-muted-foreground">
+              {pageSubtitle}
+            </p>
+          </div>
+        )}
       </div>
 
-      {/* Center / Right Section */}
-      <div className="flex items-center gap-4">
-        {/* Search Bar */}
-        <div className="relative hidden md:block">
+      {/* Search Bar - Expands on Students page or when Sidebar is Hidden */}
+      <div
+        className={cn(
+          "hidden md:block transition-all duration-300",
+          isStudentsPage || isSidebarHidden
+            ? "flex-1"
+            : "ml-auto w-full max-w-[400px]"
+        )}
+      >
+        <div className="relative">
           <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
           <input
             type="text"
             placeholder="Search"
-            className="h-9 w-64 rounded-lg border border-border bg-background pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground outline-none transition-colors focus:border-ring focus:ring-2 focus:ring-ring/20"
+            className="h-11 w-full rounded-2xl border border-border bg-[#F1F1F1] pl-10 pr-4 text-sm font-light text-black placeholder:text-muted-foreground outline-none transition-all focus:border-primary/50 focus:ring-2 focus:ring-primary/10"
           />
         </div>
+      </div>
+
+      {/* Right Section */}
+      <div className="flex items-center gap-2 md:gap-3">
+        {/* Search Icon for mobile screens */}
+        <button className="flex h-10 w-10 items-center justify-center rounded-xl text-muted-foreground md:hidden hover:bg-accent transition-colors">
+          <Search className="h-5 w-5" />
+        </button>
 
         {/* Notification Bell */}
         <button
-          className="relative flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+          className="relative flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-white text-muted-foreground transition-all hover:bg-accent hover:text-accent-foreground shadow-sm"
           aria-label="Notifications"
         >
-          <Bell className="h-5 w-5" />
-          {/* Notification dot */}
-          <span className="absolute right-1.5 top-1.5 h-2 w-2 rounded-full bg-red-500" />
+          <BellRing className="h-5 w-5" />
+          <span className="absolute top-2.5 right-2.5 h-2 w-2 rounded-full bg-red-500 border-2 border-white" />
         </button>
 
-        {/* Divider */}
-        <div className="hidden h-8 w-px bg-border md:block" />
-
         {/* User Profile */}
-        <button className="flex items-center gap-3 rounded-lg px-2 py-1.5 transition-colors hover:bg-accent">
+        <button className="flex items-center gap-2 md:gap-3 rounded-lg p-1 md:px-2 md:py-1.5 transition-colors hover:bg-accent text-left">
           {/* Avatar */}
-          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-muted text-sm font-semibold text-muted-foreground">
-            SA
+          <div className="border border-border rounded-full p-[2px]">
+            <div className="flex h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-full bg-black text-white">
+              <User className="h-5 w-5 md:h-6 md:w-6" />
+            </div>
           </div>
-          <div className="hidden flex-col text-left md:flex">
-            <span className="text-sm font-medium leading-tight text-foreground">
+          <div className="hidden sm:flex flex-col text-left">
+            <span className="font-bold text-sm md:text-[15px] leading-tight text-foreground truncate max-w-[120px]">
               Super Admin
             </span>
-            <span className="text-xs text-muted-foreground">
+            <span className="hidden md:block text-[12px] text-muted-foreground font-normal truncate max-w-[150px]">
               superadmin@...
             </span>
           </div>
-          <ChevronDown className="hidden h-4 w-4 text-muted-foreground md:block" />
+          <ChevronDown className="hidden sm:block h-4 w-4 text-muted-foreground" />
         </button>
       </div>
     </header>
