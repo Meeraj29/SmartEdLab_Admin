@@ -22,6 +22,9 @@ const russoOne = Russo_One({
 export const metadata: Metadata = {
   title: "SmartEdLabs Admin",
   description: "SmartEdLabs Admin Dashboard",
+  icons: {
+    icon: "/logo.svg",
+  },
 };
 
 export default function RootLayout({
