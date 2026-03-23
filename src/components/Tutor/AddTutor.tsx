@@ -222,8 +222,8 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-6 gap-y-6">
             <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5">
               <div className="space-y-3">
-                <label 
-                  htmlFor="tutor-fullname" 
+                <label
+                  htmlFor="tutor-fullname"
                   className="text-sm font-bold text-slate-800 flex items-center gap-1"
                 >
                   Tutor Full Name{" "}
@@ -237,8 +237,8 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                 />
               </div>
               <div className="space-y-3">
-                <label 
-                  htmlFor="tutor-mobile" 
+                <label
+                  htmlFor="tutor-mobile"
                   className="text-sm font-bold text-slate-800 flex items-center gap-1"
                 >
                   Mobile no <span className="text-red-500 font-bold">*</span>
@@ -251,8 +251,8 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                 />
               </div>
               <div className="space-y-3">
-                <label 
-                  htmlFor="tutor-email" 
+                <label
+                  htmlFor="tutor-email"
                   className="text-sm font-bold text-slate-800 flex items-center gap-1"
                 >
                   Email id <span className="text-red-500 font-bold">*</span>
@@ -265,16 +265,16 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                 />
               </div>
               <div className="space-y-3">
-                <label 
-                  htmlFor="tutor-experience" 
+                <label
+                  htmlFor="tutor-experience"
                   className="text-sm font-bold text-slate-800 flex items-center gap-1"
                 >
                   Experience level{" "}
                   <span className="text-red-500 font-bold">*</span>
                 </label>
                 <div className="relative">
-                  <select 
-                    id="tutor-experience" 
+                  <select
+                    id="tutor-experience"
                     className="h-12 w-full appearance-none rounded-xl border-none bg-[#F5F5F5] px-5 text-[14px] font-medium text-slate-400 outline-none focus:ring-2 focus:ring-[#31564E]/10 transition-all cursor-pointer"
                   >
                     <option>Select Level</option>
@@ -338,8 +338,8 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
 
             <div className="lg:col-span-12 grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
               <div className="lg:col-span-8 space-y-3 flex flex-col">
-                <label 
-                  htmlFor="tutor-bio" 
+                <label
+                  htmlFor="tutor-bio"
                   className="text-sm font-bold text-slate-800"
                 >
                   Tutor Bio
@@ -826,15 +826,15 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
                   <div className="space-y-3">
-                    <label 
-                      htmlFor="platform" 
+                    <label
+                      htmlFor="platform"
                       className="text-[13px] font-bold text-slate-800"
                     >
                       Live Class Platform
                     </label>
                     <div className="relative">
-                      <select 
-                        id="platform" 
+                      <select
+                        id="platform"
                         className="h-14 w-full appearance-none rounded-xl border border-slate-100 bg-white px-5 text-[14px] font-medium text-slate-600 outline-none focus:ring-2 focus:ring-[#31564E]/10 transition-all cursor-pointer shadow-sm"
                       >
                         <option>Google Meet</option>
@@ -845,15 +845,15 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                     </div>
                   </div>
                   <div className="space-y-3">
-                    <label 
-                      htmlFor="duration" 
+                    <label
+                      htmlFor="duration"
                       className="text-[13px] font-bold text-slate-800"
                     >
                       Default Class Duration
                     </label>
                     <div className="relative">
-                      <select 
-                        id="duration" 
+                      <select
+                        id="duration"
                         className="h-14 w-full appearance-none rounded-xl border border-slate-100 bg-white px-5 text-[14px] font-medium text-slate-600 outline-none focus:ring-2 focus:ring-[#31564E]/10 transition-all cursor-pointer shadow-sm"
                       >
                         <option>1 Hour</option>
@@ -866,8 +866,8 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                     </div>
                   </div>
                   <div className="space-y-3">
-                    <label 
-                      htmlFor="platform-email" 
+                    <label
+                      htmlFor="platform-email"
                       className="text-[13px] font-bold text-slate-800 flex items-center gap-1"
                     >
                       Email id <span className="text-red-500 font-bold">*</span>
@@ -880,16 +880,16 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                     />
                   </div>
                   <div className="space-y-3">
-                    <label 
-                      htmlFor="platform-experience" 
+                    <label
+                      htmlFor="platform-experience"
                       className="text-[13px] font-bold text-slate-800 flex items-center gap-1"
                     >
                       Experience level{" "}
                       <span className="text-red-500 font-bold">*</span>
                     </label>
                     <div className="relative">
-                      <select 
-                        id="platform-experience" 
+                      <select
+                        id="platform-experience"
                         className="h-14 w-full appearance-none rounded-xl border border-slate-100 bg-white px-5 text-[14px] font-medium text-slate-400 outline-none focus:ring-2 focus:ring-[#31564E]/10 transition-all cursor-pointer shadow-sm"
                       >
                         <option>Select Level</option>
@@ -970,15 +970,15 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                   <div className="w-full lg:w-[320px] rounded-[24px] bg-white border border-[#F0F4F3] p-6 space-y-6 shadow-lg shadow-black/5">
                     <div className="space-y-4">
                       <div className="space-y-2">
-                        <label 
-                          htmlFor="slot-day" 
+                        <label
+                          htmlFor="slot-day"
                           className="text-[11px] font-bold text-slate-400 uppercase tracking-wider"
                         >
                           Day
                         </label>
                         <div className="relative">
-                          <select 
-                            id="slot-day" 
+                          <select
+                            id="slot-day"
                             className="h-12 w-full appearance-none rounded-xl border border-slate-100 bg-[#F5F5F5] px-4 text-[13px] font-bold text-slate-700 outline-none cursor-pointer"
                           >
                             <option>Tuesday</option>
@@ -987,16 +987,16 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                           <ChevronDown className="absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400 pointer-events-none" />
                         </div>
                       </div>
-                       <div className="space-y-2">
-                        <label 
-                          htmlFor="slot-status" 
+                      <div className="space-y-2">
+                        <label
+                          htmlFor="slot-status"
                           className="text-[11px] font-bold text-slate-400 uppercase tracking-wider"
                         >
                           Status
                         </label>
                         <div className="relative">
-                          <select 
-                            id="slot-status" 
+                          <select
+                            id="slot-status"
                             className="h-12 w-full appearance-none rounded-xl border border-slate-100 bg-[#F5F5F5] px-4 text-[13px] font-bold text-slate-700 outline-none cursor-pointer"
                           >
                             <option>Available</option>
