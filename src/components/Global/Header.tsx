@@ -22,6 +22,8 @@ const Header = ({
 }: HeaderProps) => {
   const pathname = usePathname();
   const isStudentsPage = pathname === "/dashboard/students";
+  const isTutorsPage = pathname === "/dashboard/tutors";
+  const isSpecialPage = isStudentsPage || isTutorsPage;
 
   return (
     <header
@@ -45,7 +47,7 @@ const Header = ({
                 className="h-6 w-6"
               />
             </div>
-            <span className="text-xl font-bold text-foreground">
+            <span className="text-xl font-bold text-foreground hidden md:block">
               SmartEdLabs
             </span>
           </div>
@@ -63,24 +65,21 @@ const Header = ({
           <Menu className="h-6 w-6 text-foreground" />
         </button>
 
-        {/* Left Section - Page Title (Hidden on Students Page or when Sidebar is Hidden) */}
-        {!isStudentsPage && !isSidebarHidden && (
-          <div className="flex flex-col">
-            <h1 className="text-lg md:text-2xl font-semibold text-foreground line-clamp-1">
+        {/* Left Section - Page Title (Desktop only) */}
+        {!isSpecialPage && !isSidebarHidden && (
+          <div className="hidden md:flex flex-col">
+            <h1 className="text-xl md:text-2xl font-bold text-foreground line-clamp-1 leading-tight">
               {pageTitle}
             </h1>
-            <p className="hidden md:block text-sm font-normal leading-normal text-muted-foreground">
-              {pageSubtitle}
-            </p>
+            <p className="text-sm font-medium text-slate-400">{pageSubtitle}</p>
           </div>
         )}
       </div>
 
-      {/* Search Bar - Expands on Students page or when Sidebar is Hidden */}
       <div
         className={cn(
           "hidden md:block transition-all duration-300",
-          isStudentsPage || isSidebarHidden
+          isSpecialPage || isSidebarHidden
             ? "flex-1"
             : "ml-auto w-full max-w-[400px]"
         )}
@@ -96,7 +95,7 @@ const Header = ({
       </div>
 
       {/* Right Section */}
-      <div className="flex items-center gap-2 md:gap-3">
+      <div className="flex items-center gap-2 md:gap-3 ml-auto md:ml-0">
         {/* Search Icon for mobile screens */}
         <button className="flex h-10 w-10 items-center justify-center rounded-xl text-muted-foreground md:hidden hover:bg-accent transition-colors">
           <Search className="h-5 w-5" />
