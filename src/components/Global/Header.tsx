@@ -23,7 +23,8 @@ const Header = ({
   const pathname = usePathname();
   const isStudentsPage = pathname === "/dashboard/students";
   const isTutorsPage = pathname === "/dashboard/tutors";
-  const isSpecialPage = isStudentsPage || isTutorsPage;
+  const isInstitutesPage = pathname === "/dashboard/institutes";
+  const isSpecialPage = isStudentsPage || isTutorsPage || isInstitutesPage;
 
   return (
     <header
@@ -122,8 +123,8 @@ const Header = ({
             <span className="font-bold text-sm md:text-[15px] leading-tight text-foreground truncate max-w-[120px]">
               Super Admin
             </span>
-            <span className="hidden md:block text-[12px] text-muted-foreground font-normal truncate max-w-[150px]">
-              superadmin@...
+            <span className="hidden md:block text-[12px] text-muted-foreground font-normal max-w-[150px]">
+              superadmin@smartedlabs.com
             </span>
           </div>
           <ChevronDown className="hidden sm:block h-4 w-4 text-muted-foreground" />
