@@ -3,16 +3,18 @@
 import { useState } from "react";
 import Header from "@/components/Global/Header";
 import Sidebar from "@/components/Global/Sidebar";
-import InstituteStatic from "./InstituteStatic";
-import InstituteTable from "./InstituteTable";
+import { cn } from "@/lib/utils";
 import AddInstitute from "./AddInstitute";
 import InstituteProfile from "./InstituteProfile";
-import { cn } from "@/lib/utils";
+import InstituteStatic from "./InstituteStatic";
+import InstituteTable from "./InstituteTable";
 
 const Institute = () => {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const [currentView, setCurrentView] = useState<"list" | "add" | "profile">("list");
+  const [currentView, setCurrentView] = useState<"list" | "add" | "profile">(
+    "list"
+  );
 
   return (
     <div className="min-h-screen bg-[#F7FFFA] relative overflow-x-hidden">
@@ -49,8 +51,8 @@ const Institute = () => {
             </>
           ) : currentView === "add" ? (
             <AddInstitute
-                onBack={() => setCurrentView("list")}
-                onSuccess={() => setCurrentView("list")}
+              onBack={() => setCurrentView("list")}
+              onSuccess={() => setCurrentView("list")}
             />
           ) : (
             <InstituteProfile onBack={() => setCurrentView("list")} />

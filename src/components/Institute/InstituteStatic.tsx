@@ -80,7 +80,8 @@ const InstituteStatic = ({ onAddClick }: InstituteStaticProps) => {
             Institute Management
           </h1>
           <p className="text-md font-normal text-slate-500 max-w-2xl mt-1">
-            Manage all partner institutes, monitor usage limits, security settings, and platform activity across the global infrastructure.
+            Manage all partner institutes, monitor usage limits, security
+            settings, and platform activity across the global infrastructure.
           </p>
         </div>
         <div className="flex items-center gap-3">
@@ -192,7 +193,7 @@ const InstituteStatic = ({ onAddClick }: InstituteStaticProps) => {
                     ? stat.isDark
                       ? "bg-[#32c99715] text-[#32C997]"
                       : "bg-[#D1FAE5] text-[#10B981]"
-                    : stat.isDark 
+                    : stat.isDark
                       ? "bg-red-500/10 text-red-400"
                       : "bg-[#FEE2E2] text-[#EF4444]"
                 )}

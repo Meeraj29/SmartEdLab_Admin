@@ -14,9 +14,9 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import * as React from "react";
-import containerImg from "../../assets/Container.png";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import containerImg from "../../assets/Container.png";
 
 interface AddTutorProps {
   onBack: () => void;
