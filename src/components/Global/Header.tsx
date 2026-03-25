@@ -24,7 +24,20 @@ const Header = ({
   const isStudentsPage = pathname === "/dashboard/students";
   const isTutorsPage = pathname === "/dashboard/tutors";
   const isInstitutesPage = pathname === "/dashboard/institutes";
-  const isSpecialPage = isStudentsPage || isTutorsPage || isInstitutesPage;
+  const isCoursesPage = pathname === "/dashboard/courses";
+  const isAIControlPage = pathname === "/dashboard/ai-control";
+  const isLiveClassesPage = pathname === "/dashboard/live-classes";
+  const isBillingPage = pathname === "/dashboard/billing";
+  const isReportsPage = pathname === "/dashboard/reports";
+  const isSpecialPage =
+    isStudentsPage ||
+    isTutorsPage ||
+    isInstitutesPage ||
+    isCoursesPage ||
+    isAIControlPage ||
+    isLiveClassesPage ||
+    isBillingPage ||
+    isReportsPage;
 
   return (
     <header
