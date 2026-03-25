@@ -1,29 +1,22 @@
 {
-  "name": "man-next-app",
-  "description": "Scaffold a modern Next.js 15 boilerplate with Tailwind, TypeScript, ShadCN, Biome, Ultracite, Husky, and multi-theme support.",
+  "name": "smartedlabs-admin",
+  "description": "SmartEdLabs Admin Dashboard - Data-driven governance for educational institutions, AI operations, and global billing ecosystems.",
   "keywords": [
-    "create-next-app",
-    "nextjs-template",
-    "nextjs",
+    "education-admin",
+    "ai-governance",
+    "nextjs-15",
+    "dashboard",
     "tailwindcss",
     "typescript",
-    "shadcn",
-    "eslint",
-    "biome",
-    "ultracite",
-    "husky",
-    "boilerplate",
-    "theme-provider",
-    "dark-mode",
-    "pnpm create"
+    "shadcn"
   ],
-  "version": "0.1.0",
-  "private": false,
-  "author": "Muhsin Abdul Nissar",
+  "version": "1.0.0",
+  "private": true,
+  "author": "SmartEdLabs Team",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Muhsin-42/man-next-app.git"
+    "url": "https://github.com/ahmed-zikrabyte/smartedlab_admin.git"
   },
   "scripts": {
     "dev": "next dev --turbopack",

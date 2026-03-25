@@ -1,0 +1,164 @@
+"use client";
+
+import { ChevronLeft, ChevronRight, Clock } from "lucide-react";
+
+import { cn } from "@/lib/utils";
+
+const sessionLogs = [
+  {
+    duration: "15m 20s",
+    tokens: "2,450",
+    score: 92,
+    date: "Oct 24, 2023",
+    time: "10:45 AM",
+  },
+  {
+    duration: "08m 45s",
+    tokens: "1,120",
+    score: 64,
+    date: "Oct 24, 2023",
+    time: "09:12 AM",
+  },
+  {
+    duration: "42m 10s",
+    tokens: "8,900",
+    score: 41,
+    date: "Oct 23, 2023",
+    time: "04:30 PM",
+  },
+  {
+    duration: "08m 45s",
+    tokens: "1,120",
+    score: 64,
+    date: "Oct 24, 2023",
+    time: "09:12 AM",
+  },
+];
+
+const AISessionLogs = () => {
+  return (
+    <div className="mt-10 space-y-4">
+      <div className="rounded-[32px] bg-white shadow-sm border border-slate-100 overflow-hidden">
+        {/* Header Section */}
+        <div className="p-8 border-b border-slate-50">
+          <h3 className="text-[20px] font-black text-slate-900 tracking-tight">
+            Recent Session Logs
+          </h3>
+        </div>
+
+        <div className="overflow-x-auto">
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="bg-slate-50/50 text-slate-400 border-b border-slate-100">
+                <th className="px-8 py-5 text-[12px] font-bold uppercase tracking-widest text-left">
+                  Session Date
+                </th>
+                <th className="px-8 py-5 text-[12px] font-bold uppercase tracking-widest text-left">
+                  Duration
+                </th>
+                <th className="px-8 py-5 text-[12px] font-bold uppercase tracking-widest text-left">
+                  Tokens Consumed
+                </th>
+                <th className="px-8 py-5 text-[12px] font-bold uppercase tracking-widest text-left">
+                  Performance Score
+                </th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-50">
+              {sessionLogs.map((log, index) => (
+                <tr
+                  key={index}
+                  className={cn(
+                    "hover:bg-slate-50/80 transition-all duration-300 group cursor-default",
+                    index % 2 === 1 && "bg-slate-50/30"
+                  )}
+                >
+                  <td className="px-8 py-6">
+                    <div className="flex flex-col gap-0.5">
+                      <span className="text-[14px] font-bold text-slate-700 whitespace-nowrap">
+                        {log.date}
+                      </span>
+                      <span className="text-[11px] font-bold text-slate-400 uppercase tracking-tight">
+                        {log.time}
+                      </span>
+                    </div>
+                  </td>
+                  <td className="px-8 py-6">
+                    <div className="flex items-center gap-2 text-slate-400">
+                      <Clock className="h-4 w-4" />
+                      <span className="text-[14px] font-bold">
+                        {log.duration}
+                      </span>
+                    </div>
+                  </td>
+                  <td className="px-8 py-6 min-w-[200px]">
+                    <div className="flex flex-col gap-2">
+                      <span className="text-[15px] font-black text-slate-900">
+                        {log.tokens}
+                      </span>
+                      <div className="h-1.5 w-[70%] bg-slate-100 rounded-full overflow-hidden">
+                        <div
+                          className="h-full bg-[#0052CC] rounded-full"
+                          style={{
+                            width: `${Math.min((parseInt(log.tokens.replace(/,/g, "")) / 10000) * 100, 100)}%`,
+                          }}
+                        />
+                      </div>
+                    </div>
+                  </td>
+                  <td className="px-8 py-6">
+                    <div className="flex items-center gap-2">
+                      <div
+                        className={cn(
+                          "h-2 w-2 rounded-full",
+                          log.score >= 90
+                            ? "bg-emerald-500"
+                            : log.score >= 60
+                              ? "bg-amber-500"
+                              : "bg-rose-500"
+                        )}
+                      />
+                      <span className="text-[15px] font-black text-slate-800">
+                        {log.score}%
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Pagination Section */}
+        <div className="p-8 flex flex-col items-center gap-6 bg-white">
+          <div className="flex items-center gap-4">
+            <button className="h-12 w-12 flex items-center justify-center rounded-full border border-slate-200 bg-white text-slate-400 hover:bg-slate-50 hover:text-slate-600 transition-all shadow-sm">
+              <ChevronLeft className="h-6 w-6" />
+            </button>
+            <div className="flex items-center gap-2">
+              <button className="h-12 w-12 flex items-center justify-center rounded-full bg-white text-slate-900 font-bold border-2 border-[#31564E] shadow-lg shadow-[#31564E]/10">
+                1
+              </button>
+              <button className="h-12 w-12 flex items-center justify-center rounded-full border border-slate-200 text-slate-500 font-bold hover:bg-slate-50 transition-all">
+                2
+              </button>
+              <span className="px-2 text-slate-300 font-black">...</span>
+              <button className="h-12 w-12 flex items-center justify-center rounded-full border border-slate-200 text-slate-500 font-bold hover:bg-slate-50 transition-all">
+                10
+              </button>
+            </div>
+            <button className="h-12 w-12 flex items-center justify-center rounded-full bg-black text-white hover:bg-black/90 transition-all shadow-xl shadow-black/20">
+              <ChevronRight className="h-6 w-6" />
+            </button>
+          </div>
+          <span className="text-[13px] font-bold text-slate-400 mb-2">
+            Showing <span className="text-slate-900">1-8</span> of{" "}
+            <span className="text-slate-900">1,540</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default AISessionLogs;
