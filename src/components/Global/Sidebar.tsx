@@ -160,6 +160,33 @@ const Sidebar = ({
                 {section.items.map((item) => {
                   const isActive = pathname === item.href;
                   const Icon = item.icon;
+                  const isSystemItem = section.title === "System";
+
+                  if (isSystemItem) {
+                    return (
+                      <li key={item.label}>
+                        <div
+                          className={cn(
+                            "group flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200 cursor-default",
+                            isCollapsed &&
+                              !isMobileOpen &&
+                              "lg:justify-center lg:px-2",
+                            "text-black"
+                          )}
+                          title={`${item.label}`}
+                        >
+                          <Icon
+                            className={cn(
+                              "h-5 w-5 shrink-0 transition-colors text-black"
+                            )}
+                          />
+                          {(!isCollapsed || isMobileOpen) && (
+                            <span className="truncate">{item.label}</span>
+                          )}
+                        </div>
+                      </li>
+                    );
+                  }
 
                   return (
                     <li key={item.href}>
