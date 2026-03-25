@@ -18,7 +18,9 @@ interface LiveClassTableProps {
   onViewProfile?: (id: number) => void;
 }
 
-const LiveClassTable = ({ onViewProfile: _onViewProfile }: LiveClassTableProps) => {
+const LiveClassTable = ({
+  onViewProfile: _onViewProfile,
+}: LiveClassTableProps) => {
   const [activeTab, setActiveTab] = React.useState<
     "all" | "completed" | "cancelled"
   >("all");

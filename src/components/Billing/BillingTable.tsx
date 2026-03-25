@@ -10,9 +10,9 @@ import {
   SlidersHorizontal,
   User,
 } from "lucide-react";
+import Image from "next/image";
 import * as React from "react";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 
 interface BillingTableProps {
   onViewProfile: (id: string) => void;
