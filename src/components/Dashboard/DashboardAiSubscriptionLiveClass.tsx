@@ -115,7 +115,9 @@ const DashboardAiSubscriptionLiveClass = () => {
                   New This Week
                 </span>
               </div>
-              <span className="text-xl font-semibold text-emerald-600">+184</span>
+              <span className="text-xl font-semibold text-emerald-600">
+                +184
+              </span>
             </div>
 
             <div className="flex items-center justify-between">

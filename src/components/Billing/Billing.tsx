@@ -17,15 +17,12 @@ const Billing = () => {
   const [currentView, setCurrentView] = useState<
     "list" | "create" | "manage-plans" | "edit-plan"
   >("list");
-  const [selectedInvoiceId, setSelectedInvoiceId] = useState<string | null>(
-    null
-  );
   const [selectedPlanName, setSelectedPlanName] = useState<string>("");
 
-//   const handleViewProfile = (id: string) => {
-//     setSelectedInvoiceId(id);
-//     setCurrentView("profile");
-//   };
+  //   const handleViewProfile = (id: string) => {
+  //     setSelectedInvoiceId(id);
+  //     setCurrentView("profile");
+  //   };
 
   const handleEditPlan = (name: string) => {
     setSelectedPlanName(name);

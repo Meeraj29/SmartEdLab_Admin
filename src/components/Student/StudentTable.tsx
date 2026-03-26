@@ -232,7 +232,9 @@ const StudentTable = ({ onViewProfile }: StudentTableProps) => {
                 <th className="px-6 py-4 text-sm font-medium uppercase tracking-wider text-left">
                   Status
                 </th>
-                <th className="px-6 py-4 text-sm font-medium uppercase tracking-wider text-right">Actions</th>
+                <th className="px-6 py-4 text-sm font-medium uppercase tracking-wider text-right">
+                  Actions
+                </th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border/50">

@@ -141,12 +141,16 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
               <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-6 gap-y-3 mt-3 sm:mt-1">
                 <div className="flex items-center gap-2 text-sm">
                   <CheckCircle2 className="h-4 w-4 text-blue-500" />
-                  <span className="text-slate-500 font-medium whitespace-nowrap">Status:</span>
+                  <span className="text-slate-500 font-medium whitespace-nowrap">
+                    Status:
+                  </span>
                   <span className="text-blue-600 font-bold">Active</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <Calendar className="h-4 w-4 text-slate-400" />
-                  <span className="text-slate-500 font-medium whitespace-nowrap">Joined:</span>
+                  <span className="text-slate-500 font-medium whitespace-nowrap">
+                    Joined:
+                  </span>
                   <span className="text-foreground font-bold whitespace-nowrap">
                     Dec 15, 2025
                   </span>
@@ -154,20 +158,25 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                 <div className="flex items-center gap-2 text-sm text-red-500">
                   <Calendar className="h-4 w-4" />
                   <span className="font-medium whitespace-nowrap">Expiry:</span>
-                  <span className="font-bold whitespace-nowrap">April 12, 2026</span>
+                  <span className="font-bold whitespace-nowrap">
+                    April 12, 2026
+                  </span>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-3 relative w-full lg:w-auto" ref={menuRef}>
+          <div
+            className="flex flex-col sm:flex-row items-center gap-3 relative w-full lg:w-auto"
+            ref={menuRef}
+          >
             <Button
               variant="outline"
               className="h-11 w-full sm:w-auto rounded-xl px-6 border-[#31564E] text-[#31564E] hover:bg-[#31564E] hover:text-white font-medium text-md transition-all"
             >
               Extend Subscription
             </Button>
-            
+
             <div className="flex items-center gap-3 w-full sm:w-auto">
               <Button className="h-11 flex-1 sm:w-auto sm:px-8 bg-black text-white font-medium text-md hover:bg-black/90 transition-all rounded-xl">
                 Upgrade Plan
@@ -631,7 +640,12 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                         </span>
                       </td>
                       <td className="px-6 md:px-8 py-5">
-                        <span className={cn("text-md font-medium font-inter text-[#248F5F]", row.resColor)}>
+                        <span
+                          className={cn(
+                            "text-md font-medium font-inter text-[#248F5F]",
+                            row.resColor
+                          )}
+                        >
                           {row.result}
                         </span>
                       </td>
@@ -708,7 +722,9 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                   <span className="text-2xl font-inter font-semibold text-foreground">
                     95%
                   </span>
-                  <p className="text-md font-inter font-medium text-black mt-2">Pass Rate</p>
+                  <p className="text-md font-inter font-medium text-black mt-2">
+                    Pass Rate
+                  </p>
                 </div>
                 <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-[#823DFA] to-[#4D2494] flex items-center justify-center text-white shadow-lg shadow-purple-500/20">
                   <Award className="h-6 w-6" />
@@ -1109,7 +1125,6 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
         </div>
       )}
 
-
       {/* AI Sessions History */}
       {activeTab === "AI Practice History" && (
         <div className="space-y-6">
@@ -1313,7 +1328,8 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                       tokens: "2,105",
                       score: "6.2",
                       scoreLabel: "Avg",
-                      scoreColor: "bg-[#FF3939]/30 text-[#FF3939] border-[#FF3939]/30",
+                      scoreColor:
+                        "bg-[#FF3939]/30 text-[#FF3939] border-[#FF3939]/30",
                       feedback: "Strong Subject-Verb Agreement, Pun...",
                     },
                     {
@@ -1402,41 +1418,41 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                 </tbody>
               </table>
             </div>
-{/* Pagination Section */}
-<div className="p-4 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-border/50">
+            {/* Pagination Section */}
+            <div className="p-4 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-border/50">
+              {/* Prev Button */}
+              <button className="h-10 w-10 md:h-12 md:w-12 flex items-center justify-center rounded-full border border-slate-200 bg-white text-slate-400 hover:bg-slate-50 transition-all shadow-sm">
+                <ArrowLeft className="h-4 w-4 md:h-5 md:w-5" />
+              </button>
 
-  {/* Prev Button */}
-  <button className="h-10 w-10 md:h-12 md:w-12 flex items-center justify-center rounded-full border border-slate-200 bg-white text-slate-400 hover:bg-slate-50 transition-all shadow-sm">
-    <ArrowLeft className="h-4 w-4 md:h-5 md:w-5" />
-  </button>
+              {/* Page Numbers */}
+              <div className="flex items-center gap-2 overflow-x-auto no-scrollbar">
+                <button className="h-9 w-9 md:h-10 md:w-10 flex items-center justify-center rounded-full border-2 border-[#31564E] bg-white text-[#31564E] font-bold text-sm">
+                  1
+                </button>
+                <button className="h-9 w-9 md:h-10 md:w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-bold text-sm">
+                  2
+                </button>
+                <span className="px-1 text-slate-300 font-bold text-sm">
+                  ...
+                </span>
+                <button className="h-9 w-9 md:h-10 md:w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-bold text-sm">
+                  10
+                </button>
+              </div>
 
-  {/* Page Numbers */}
-  <div className="flex items-center gap-2 overflow-x-auto no-scrollbar">
-    <button className="h-9 w-9 md:h-10 md:w-10 flex items-center justify-center rounded-full border-2 border-[#31564E] bg-white text-[#31564E] font-bold text-sm">
-      1
-    </button>
-    <button className="h-9 w-9 md:h-10 md:w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-bold text-sm">
-      2
-    </button>
-    <span className="px-1 text-slate-300 font-bold text-sm">...</span>
-    <button className="h-9 w-9 md:h-10 md:w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-bold text-sm">
-      10
-    </button>
-  </div>
+              {/* Right Section */}
+              <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-center md:text-left">
+                <span className="text-xs md:text-sm font-medium text-slate-400">
+                  Showing <span className="text-foreground font-bold">1-8</span>{" "}
+                  of <span className="text-foreground font-bold">1,540</span>
+                </span>
 
-  {/* Right Section */}
-  <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-center md:text-left">
-    <span className="text-xs md:text-sm font-medium text-slate-400">
-      Showing{" "}
-      <span className="text-foreground font-bold">1-8</span> of{" "}
-      <span className="text-foreground font-bold">1,540</span>
-    </span>
-
-    <button className="h-10 w-10 md:h-12 md:w-12 flex items-center justify-center rounded-full bg-black text-white shadow-lg hover:bg-black/90 transition-all group">
-      <ArrowRight className="h-5 w-5 md:h-6 md:w-6 group-hover:translate-x-0.5 transition-transform" />
-    </button>
-  </div>
-</div>
+                <button className="h-10 w-10 md:h-12 md:w-12 flex items-center justify-center rounded-full bg-black text-white shadow-lg hover:bg-black/90 transition-all group">
+                  <ArrowRight className="h-5 w-5 md:h-6 md:w-6 group-hover:translate-x-0.5 transition-transform" />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       )}
@@ -1709,42 +1725,40 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
             </div>
 
             {/* Pagination Section */}
-          <div className="p-4 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-border/50">
-  
-  {/* Prev Button */}
-  <button className="h-10 w-10 md:h-12 md:w-12 flex items-center justify-center rounded-full border border-slate-200 bg-white text-slate-400 hover:bg-slate-50 transition-all shadow-sm">
-    <ArrowLeft className="h-4 w-4 md:h-5 md:w-5" />
-  </button>
+            <div className="p-4 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-border/50">
+              {/* Prev Button */}
+              <button className="h-10 w-10 md:h-12 md:w-12 flex items-center justify-center rounded-full border border-slate-200 bg-white text-slate-400 hover:bg-slate-50 transition-all shadow-sm">
+                <ArrowLeft className="h-4 w-4 md:h-5 md:w-5" />
+              </button>
 
-  {/* Page Numbers */}
-  <div className="flex items-center gap-2 overflow-x-auto no-scrollbar">
-    <button className="h-9 w-9 md:h-10 md:w-10 flex items-center justify-center rounded-full border-2 border-[#31564E] bg-white text-[#31564E] font-bold text-sm shadow-sm">
-      1
-    </button>
-    <button className="h-9 w-9 md:h-10 md:w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-bold text-sm hover:bg-slate-50 transition-all">
-      2
-    </button>
-    <span className="px-1 text-slate-300 font-bold text-sm">...</span>
-    <button className="h-9 w-9 md:h-10 md:w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-bold text-sm hover:bg-slate-50 transition-all">
-      10
-    </button>
-  </div>
+              {/* Page Numbers */}
+              <div className="flex items-center gap-2 overflow-x-auto no-scrollbar">
+                <button className="h-9 w-9 md:h-10 md:w-10 flex items-center justify-center rounded-full border-2 border-[#31564E] bg-white text-[#31564E] font-bold text-sm shadow-sm">
+                  1
+                </button>
+                <button className="h-9 w-9 md:h-10 md:w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-bold text-sm hover:bg-slate-50 transition-all">
+                  2
+                </button>
+                <span className="px-1 text-slate-300 font-bold text-sm">
+                  ...
+                </span>
+                <button className="h-9 w-9 md:h-10 md:w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-bold text-sm hover:bg-slate-50 transition-all">
+                  10
+                </button>
+              </div>
 
-  {/* Right Section */}
-  <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-center md:text-left">
-    
-    <span className="text-xs md:text-sm font-medium text-slate-400">
-      Showing{" "}
-      <span className="text-foreground font-bold">1-8</span> of{" "}
-      <span className="text-foreground font-bold">1,540</span>
-    </span>
+              {/* Right Section */}
+              <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-center md:text-left">
+                <span className="text-xs md:text-sm font-medium text-slate-400">
+                  Showing <span className="text-foreground font-bold">1-8</span>{" "}
+                  of <span className="text-foreground font-bold">1,540</span>
+                </span>
 
-    <button className="h-10 w-10 md:h-12 md:w-12 flex items-center justify-center rounded-full bg-black text-white shadow-lg hover:bg-black/90 transition-all group">
-      <ArrowRight className="h-5 w-5 md:h-6 md:w-6 group-hover:translate-x-0.5 transition-transform" />
-    </button>
-
-  </div>
-</div>
+                <button className="h-10 w-10 md:h-12 md:w-12 flex items-center justify-center rounded-full bg-black text-white shadow-lg hover:bg-black/90 transition-all group">
+                  <ArrowRight className="h-5 w-5 md:h-6 md:w-6 group-hover:translate-x-0.5 transition-transform" />
+                </button>
+              </div>
+            </div>
           </div>
 
           {/* Footer Cards: Payment Method & Support */}
@@ -2548,17 +2562,23 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
               <div className="relative z-10 flex flex-col h-full">
                 <div className="flex items-center gap-2 mb-4">
                   <ShieldCheck className="h-5 w-5" />
-                  <h3 className="text-lg font-inter font-medium">Account Health</h3>
+                  <h3 className="text-lg font-inter font-medium">
+                    Account Health
+                  </h3>
                 </div>
                 <p className="text-md font-inter text-[#fff]/80 leading-relaxed mb-6">
-                  Sarah is among the top 15% active students this
-month. No reported issues or billing disputes.
+                  Sarah is among the top 15% active students this month. No
+                  reported issues or billing disputes.
                 </p>
 
                 <div className="space-y-3 mt-auto">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm font-inter text-white">Engagement Score</span>
-                    <span className="text-lg font-inter font-medium text-white">95%</span>
+                    <span className="text-sm font-inter text-white">
+                      Engagement Score
+                    </span>
+                    <span className="text-lg font-inter font-medium text-white">
+                      95%
+                    </span>
                   </div>
                   <div className="h-3 w-full bg-white rounded-full overflow-hidden">
                     <div className="h-full w-[95%] bg-[#248F5F]/40 rounded-full" />
@@ -2579,7 +2599,9 @@ month. No reported issues or billing disputes.
                   </h3>
                   <span className="text-md font-inter text-black/70">
                     Total Learning Time:{" "}
-                    <span className="text-foreground font-inter text-md">45 hrs</span>
+                    <span className="text-foreground font-inter text-md">
+                      45 hrs
+                    </span>
                   </span>
                 </div>
                 <div className="h-[1px] w-full bg-slate-100 mb-12" />
@@ -2628,7 +2650,8 @@ month. No reported issues or billing disputes.
                   <div className="h-full w-[60%] bg-[#43CA8D] rounded-full" />
                 </div>
                 <p className="text-sm text-white font-inter">
-                  Excellent progress in Advanced Reading. Needs more focus on Business Writing.
+                  Excellent progress in Advanced Reading. Needs more focus on
+                  Business Writing.
                 </p>
               </div>
             </div>

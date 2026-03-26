@@ -14,10 +14,6 @@ import Image from "next/image";
 import * as React from "react";
 import { cn } from "@/lib/utils";
 
-interface BillingTableProps {
-//   onViewProfile: (id: string) => void;
-}
-
 const b2cData = [
   {
     id: "1",
