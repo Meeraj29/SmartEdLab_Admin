@@ -47,7 +47,7 @@ const DashboardAiSubscriptionLiveClass = () => {
       <div className="flex flex-col rounded-[14px] border border-border/50 bg-white shadow-sm overflow-hidden">
         <div className="p-6">
           <div className="mb-6 flex items-center justify-between">
-            <h3 className="text-xl font-bold text-foreground">
+            <h3 className="text-xl font-semibold text-foreground">
               AI Usage Monitor
             </h3>
             <button className="text-sm font-medium text-emerald-600 hover:underline">
@@ -59,11 +59,11 @@ const DashboardAiSubscriptionLiveClass = () => {
             {aiUsageMonitorData.map((item, index) => (
               <div key={index} className="space-y-2">
                 <div className="flex items-center justify-between text-sm">
-                  <div className="flex items-center gap-2 font-medium text-slate-700">
+                  <div className="flex items-center gap-2 font-medium text-xs text-slate-700">
                     <Building2 className="h-4 w-4 opacity-50" />
                     {item.name}
                   </div>
-                  <span className="font-bold">{item.value}%</span>
+                  <span className="font-medium text-md">{item.value}%</span>
                 </div>
                 <div className="h-2 w-full rounded-full bg-slate-100">
                   <div
@@ -97,7 +97,7 @@ const DashboardAiSubscriptionLiveClass = () => {
       <div className="flex flex-col rounded-[14px] border border-border/50 bg-white shadow-sm overflow-hidden">
         <div className="p-6">
           <div className="mb-6 flex items-center justify-between">
-            <h3 className="text-xl font-bold text-foreground">
+            <h3 className="text-xl font-semibold text-foreground">
               Subscription Health
             </h3>
             <button className="text-sm font-medium text-emerald-600 hover:underline">
@@ -105,17 +105,17 @@ const DashboardAiSubscriptionLiveClass = () => {
             </button>
           </div>
 
-          <div className="space-y-5">
+          <div className="space-y-3">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600">
                   <Video className="h-5 w-5" />
                 </div>
-                <span className="text-sm font-medium text-slate-700">
+                <span className="text-md font-medium text-slate-700">
                   New This Week
                 </span>
               </div>
-              <span className="text-lg font-bold text-emerald-600">+184</span>
+              <span className="text-xl font-semibold text-emerald-600">+184</span>
             </div>
 
             <div className="flex items-center justify-between">
@@ -123,11 +123,11 @@ const DashboardAiSubscriptionLiveClass = () => {
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-600">
                   <RefreshCcw className="h-5 w-5" />
                 </div>
-                <span className="text-sm font-medium text-slate-700">
+                <span className="text-md font-medium text-slate-700">
                   Renewals
                 </span>
               </div>
-              <span className="text-lg font-bold">342</span>
+              <span className="text-xl font-semibold">342</span>
             </div>
 
             <div className="flex items-center justify-between">
@@ -135,11 +135,11 @@ const DashboardAiSubscriptionLiveClass = () => {
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-orange-50 text-orange-500">
                   <Clock className="h-5 w-5" />
                 </div>
-                <span className="text-sm font-medium text-slate-700">
+                <span className="text-md font-medium text-slate-700">
                   Expiring (7d)
                 </span>
               </div>
-              <span className="text-lg font-bold text-orange-500">62</span>
+              <span className="text-xl font-semibold text-orange-500">62</span>
             </div>
 
             <div className="flex items-center justify-between">
@@ -147,11 +147,11 @@ const DashboardAiSubscriptionLiveClass = () => {
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-red-50 text-red-500">
                   <XCircle className="h-5 w-5" />
                 </div>
-                <span className="text-sm font-medium text-slate-700">
+                <span className="text-md font-medium text-slate-700">
                   Churned
                 </span>
               </div>
-              <span className="text-lg font-bold text-red-500">38</span>
+              <span className="text-xl font-semibold text-red-500">38</span>
             </div>
 
             <div className="flex items-center justify-between">
@@ -159,11 +159,11 @@ const DashboardAiSubscriptionLiveClass = () => {
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100 text-slate-600">
                   <ArrowUpCircle className="h-5 w-5" />
                 </div>
-                <span className="text-sm font-medium text-slate-700">
+                <span className="text-md font-medium text-slate-700">
                   Plan Upgrades
                 </span>
               </div>
-              <span className="text-lg font-bold text-emerald-600">56</span>
+              <span className="text-xl font-semibold text-emerald-600">56</span>
             </div>
           </div>
         </div>
@@ -182,7 +182,7 @@ const DashboardAiSubscriptionLiveClass = () => {
       {/* Live Class Usage */}
       <div className="rounded-[14px] border border-border/50 bg-white p-6 shadow-sm">
         <div className="mb-4 flex items-center justify-between">
-          <h3 className="text-xl font-bold text-foreground">
+          <h3 className="text-xl font-semibold text-foreground">
             Live Class Usage
           </h3>
           <div className="flex items-center gap-2">
@@ -245,7 +245,7 @@ const DashboardAiSubscriptionLiveClass = () => {
                           className="h-3 w-3 rounded-full"
                           style={{ backgroundColor: entry.color }}
                         />
-                        <span className="text-xs font-medium text-muted-foreground">
+                        <span className="text-sm font-medium text-muted-foreground">
                           {entry.value}
                         </span>
                       </div>

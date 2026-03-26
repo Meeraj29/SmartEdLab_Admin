@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Russo_One } from "next/font/google";
+import { Geist, Geist_Mono, Russo_One, Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 
@@ -19,6 +19,11 @@ const russoOne = Russo_One({
   subsets: ["latin"],
 });
 
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: "SmartEdLabs Admin",
   description: "SmartEdLabs Admin Dashboard",
@@ -35,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${russoOne.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${russoOne.variable} ${inter.variable} antialiased`}
         suppressHydrationWarning
       >
         <ThemeProvider

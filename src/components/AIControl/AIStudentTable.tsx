@@ -123,6 +123,8 @@ const AIStudentTable = ({ onRowClick }: AIStudentTableProps) => {
                         <Image
                           src={student.avatar}
                           alt={student.name}
+                          width={44}
+                          height={44}
                           className="h-full w-full object-cover"
                         />
                       </div>

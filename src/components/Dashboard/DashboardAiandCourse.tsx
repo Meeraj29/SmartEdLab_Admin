@@ -91,7 +91,7 @@ const DashboardAiandCourse = () => {
       {/* AI Token Consumption */}
       <div className="rounded-[14px] border border-border/50 bg-white p-6 shadow-sm">
         <div className="mb-6 flex items-center justify-between">
-          <h3 className="text-xl font-bold text-foreground">
+          <h3 className="text-xl font-semibold text-foreground">
             AI Token Consumption
           </h3>
           <div className="flex items-center gap-2">
@@ -229,7 +229,7 @@ const DashboardAiandCourse = () => {
       {/* Course Popularity */}
       <div className="rounded-[14px] border border-border/50 bg-white p-6 shadow-sm">
         <div className="mb-6 flex items-center justify-between">
-          <h3 className="text-xl font-bold text-foreground">
+          <h3 className="text-xl font-semibold text-foreground">
             Course Popularity
           </h3>
           <div className="flex items-center gap-2">

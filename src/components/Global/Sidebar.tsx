@@ -20,7 +20,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import type React from "react";
+import React, { useEffect } from "react";
 import LogoSvg from "@/assets/logo.svg";
 import { cn } from "@/lib/utils";
 
@@ -87,6 +87,18 @@ const Sidebar = ({
   onMobileClose,
 }: SidebarProps) => {
   const pathname = usePathname();
+  
+  useEffect(() => {
+    if (isMobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMobileOpen]);
 
   return (
     <>
