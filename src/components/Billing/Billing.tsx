@@ -5,7 +5,7 @@ import BillingStatic from "@/components/Billing/BillingStatic";
 import BillingTable from "@/components/Billing/BillingTable";
 import EditPlan from "@/components/Billing/EditPlan";
 import GenerateInvoice from "@/components/Billing/GenerateInvoice";
-import InvoiceProfile from "@/components/Billing/InvoiceProfile";
+// import InvoiceProfile from "@/components/Billing/InvoiceProfile";
 import ManagePlans from "@/components/Billing/ManagePlans";
 import Header from "@/components/Global/Header";
 import Sidebar from "@/components/Global/Sidebar";
@@ -15,17 +15,14 @@ const Billing = () => {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [currentView, setCurrentView] = useState<
-    "list" | "create" | "profile" | "manage-plans" | "edit-plan"
+    "list" | "create" | "manage-plans" | "edit-plan"
   >("list");
-  const [selectedInvoiceId, setSelectedInvoiceId] = useState<string | null>(
-    null
-  );
   const [selectedPlanName, setSelectedPlanName] = useState<string>("");
 
-  const handleViewProfile = (id: string) => {
-    setSelectedInvoiceId(id);
-    setCurrentView("profile");
-  };
+  //   const handleViewProfile = (id: string) => {
+  //     setSelectedInvoiceId(id);
+  //     setCurrentView("profile");
+  //   };
 
   const handleEditPlan = (name: string) => {
     setSelectedPlanName(name);
@@ -68,7 +65,7 @@ const Billing = () => {
                 onGenerateClick={() => setCurrentView("create")}
                 onManagePlansClick={() => setCurrentView("manage-plans")}
               />
-              <BillingTable onViewProfile={handleViewProfile} />
+              <BillingTable />
             </>
           ) : currentView === "create" ? (
             <GenerateInvoice
@@ -86,10 +83,7 @@ const Billing = () => {
               onBack={() => setCurrentView("manage-plans")}
             />
           ) : (
-            <InvoiceProfile
-              id={selectedInvoiceId}
-              onBack={() => setCurrentView("list")}
-            />
+            <div />
           )}
         </div>
       </main>

@@ -1,6 +1,6 @@
 "use client";
 
-import { BellRing, ChevronDown, Menu, Search, User } from "lucide-react";
+import { BellRing, Menu, Search, User } from "lucide-react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
@@ -82,10 +82,10 @@ const Header = ({
         {/* Left Section - Page Title (Desktop only) */}
         {!isSpecialPage && !isSidebarHidden && (
           <div className="hidden md:flex flex-col">
-            <h1 className="text-xl md:text-2xl font-bold text-foreground line-clamp-1 leading-tight">
+            <h1 className="text-xl md:text-2xl font-semibold text-foreground line-clamp-1 leading-tight">
               {pageTitle}
             </h1>
-            <p className="text-sm font-medium text-slate-400">{pageSubtitle}</p>
+            <p className="text-md font-normal text-black">{pageSubtitle}</p>
           </div>
         )}
       </div>
@@ -127,20 +127,19 @@ const Header = ({
         {/* User Profile */}
         <button className="flex items-center gap-2 md:gap-3 rounded-lg p-1 md:px-2 md:py-1.5 transition-colors hover:bg-accent text-left">
           {/* Avatar */}
-          <div className="border border-border rounded-full p-[2px]">
+          <div className="border-4 border-border rounded-full p-[3px]">
             <div className="flex h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-full bg-black text-white">
               <User className="h-5 w-5 md:h-6 md:w-6" />
             </div>
           </div>
           <div className="hidden sm:flex flex-col text-left">
-            <span className="font-bold text-sm md:text-[15px] leading-tight text-foreground truncate max-w-[120px]">
+            <span className="font-semibold text-sm md:text-[18px] leading-tight text-foreground truncate max-w-[120px]">
               Super Admin
             </span>
-            <span className="hidden md:block text-[12px] text-muted-foreground font-normal max-w-[150px]">
+            <span className="hidden md:block text-[12px] md:text-[14px] truncate text-muted-foreground font-normal max-w-[150px]">
               superadmin@smartedlabs.com
             </span>
           </div>
-          <ChevronDown className="hidden sm:block h-4 w-4 text-muted-foreground" />
         </button>
       </div>
     </header>

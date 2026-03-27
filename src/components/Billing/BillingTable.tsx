@@ -14,10 +14,6 @@ import Image from "next/image";
 import * as React from "react";
 import { cn } from "@/lib/utils";
 
-interface BillingTableProps {
-  onViewProfile: (id: string) => void;
-}
-
 const b2cData = [
   {
     id: "1",
@@ -116,7 +112,7 @@ const b2bData = [
   },
 ];
 
-const BillingTable = ({ onViewProfile }: BillingTableProps) => {
+const BillingTable = () => {
   const [activeTab, setActiveTab] = React.useState<"b2c" | "b2b">("b2c");
 
   const getPlanStyle = (plan: string) => {
@@ -238,8 +234,7 @@ const BillingTable = ({ onViewProfile }: BillingTableProps) => {
               {currentDisplayData.map((item: any, idx) => (
                 <tr
                   key={`${activeTab}-${idx}`}
-                  className="hover:bg-slate-50/50 transition-colors group cursor-pointer animate-in fade-in duration-300"
-                  onClick={() => onViewProfile(item.id)}
+                  className="hover:bg-slate-50/50 transition-colors group animate-in fade-in duration-300"
                 >
                   <td className="px-8 py-4">
                     <div className="flex items-center gap-3">
@@ -249,6 +244,8 @@ const BillingTable = ({ onViewProfile }: BillingTableProps) => {
                             <Image
                               src={item.avatar}
                               alt={item.name}
+                              width={40}
+                              height={40}
                               className="h-full w-full object-cover"
                               onError={(e) => {
                                 e.currentTarget.style.display = "none";

@@ -175,7 +175,7 @@ const DashboardGraph = () => {
               <Bar
                 dataKey="b2c"
                 name="B2C"
-                fill="#4ADE80"
+                fill="#43CA8D"
                 radius={[4, 4, 0, 0]}
                 barSize={40}
                 stackId="a"
