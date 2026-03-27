@@ -137,10 +137,10 @@ const TutorTable = ({ onViewProfile }: TutorTableProps) => {
             <button
               onClick={() => setActiveTab("all")}
               className={cn(
-                "relative pb-4 text-xl font-semibold transition-all",
+                "relative pb-4 text-xl font-semibold font-inter transition-all",
                 activeTab === "all"
                   ? "text-foreground"
-                  : "text-slate-400 hover:text-foreground"
+                  : "text-black/60 hover:text-foreground"
               )}
             >
               All Tutors
@@ -193,7 +193,7 @@ const TutorTable = ({ onViewProfile }: TutorTableProps) => {
                 <Button
                   key={i}
                   variant="outline"
-                  className="h-11 rounded-xl px-4 gap-4 border-slate-200 bg-white text-xs font-bold text-slate-600 hover:bg-slate-50 shadow-sm"
+                  className="h-11 rounded-xl px-4 gap-4 border-slate-200 bg-white text-xs font-inter text-black hover:bg-slate-50 shadow-sm"
                 >
                   {filter}
                   <ChevronDown className="h-4 w-4 opacity-50" />
@@ -212,7 +212,7 @@ const TutorTable = ({ onViewProfile }: TutorTableProps) => {
       <div className="overflow-x-auto">
         <table className="w-full text-left">
           <thead>
-            <tr className="bg-slate-50/50 text-slate-500 font-bold text-[12px] border-b border-border/50">
+            <tr className="bg-slate-50/50 text-black/80 font-medium font-inter whitespace-nowrap text-[16px] border-b border-border/50">
               <th className="px-6 py-5 w-12 text-center">
                 <input
                   type="checkbox"
@@ -268,10 +268,10 @@ const TutorTable = ({ onViewProfile }: TutorTableProps) => {
                       />
                     </div>
                     <div className="flex flex-col">
-                      <span className="text-[13px] font-bold text-foreground leading-tight">
+                      <span className="text-[16px] font-semibold font-inter text-[#0F172A] leading-tight">
                         {item.name}
                       </span>
-                      <span className="text-[11px] text-slate-400 font-medium">
+                      <span className="text-[14px] text-[#64748B] font-inter">
                         {item.email}
                       </span>
                     </div>
@@ -285,23 +285,23 @@ const TutorTable = ({ onViewProfile }: TutorTableProps) => {
                         {item.courses?.map((course: string, i: number) => (
                           <span
                             key={i}
-                            className="px-2.5 py-1 rounded-lg bg-slate-50 border border-slate-100 text-[10px] font-bold text-slate-600"
+                            className="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-100 text-[14px] font-medium font-inter text-black"
                           >
                             {course}
                           </span>
                         ))}
                       </div>
                     </td>
-                    <td className="px-6 py-5 text-[13px] font-bold text-foreground">
+                    <td className="px-6 py-5 text-[16px] font-medium font-inter text-black">
                       {item.classes}
                     </td>
                     <td className="px-6 py-5 text-center">
                       <span
                         className={cn(
-                          "text-[13px] font-bold",
+                          "text-[16px] font-medium font-inter",
                           item.attendance >= 90
-                            ? "text-emerald-500"
-                            : "text-orange-400"
+                            ? "text-[#248F5F]"
+                            : "text-[#FF7F38]"
                         )}
                       >
                         {item.attendance}%
@@ -309,7 +309,7 @@ const TutorTable = ({ onViewProfile }: TutorTableProps) => {
                     </td>
                     <td className="px-6 py-5">
                       <div className="flex items-center gap-1.5">
-                        <span className="text-[13px] font-bold text-foreground">
+                        <span className="text-[16px] font-medium font-inter text-black/80">
                           {item.rating}
                         </span>
                         <Star className="h-3.5 w-3.5 text-emerald-500 fill-emerald-500" />
@@ -317,18 +317,18 @@ const TutorTable = ({ onViewProfile }: TutorTableProps) => {
                     </td>
                     <td className="px-6 py-5">
                       <div className="space-y-1.5 min-w-[140px]">
-                        <div className="flex items-center justify-between text-[10px] font-bold text-slate-400">
+                        <div className="flex items-center justify-between text-[12px] font-inter text-black/40">
                           <span>
                             {item.performance}/100 - {item.perfText}
                           </span>
                         </div>
-                        <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
+                        <div className="h-1.5 w-full bg-[#F1F5F9] rounded-full overflow-hidden">
                           <div
                             className={cn(
                               "h-full rounded-full transition-all",
                               item.performance >= 90
-                                ? "bg-blue-500"
-                                : "bg-orange-400"
+                                ? "bg-[#007FFF]"
+                                : "bg-[#FF7F38]"
                             )}
                             style={{ width: `${item.performance}%` }}
                           />
@@ -336,24 +336,24 @@ const TutorTable = ({ onViewProfile }: TutorTableProps) => {
                       </div>
                     </td>
                     <td className="px-6 py-5">
-                      <span className="px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-500 text-[10px] font-bold border border-emerald-100">
+                      <span className="px-3 py-1.5 rounded-full bg-[#248F5F]/40 text-[#248F5F] text-[12px] font-medium font-inter border border-emerald-100">
                         {item.status}
                       </span>
                     </td>
                   </>
                 ) : (
                   <>
-                    <td className="px-6 py-5 text-[13px] font-bold text-foreground">
+                    <td className="px-6 py-5 text-[16px] font-medium font-inter text-black/80">
                       {item.qualification}
                     </td>
-                    <td className="px-6 py-5 text-[13px] font-bold text-foreground text-center">
+                    <td className="px-6 py-5 text-[16px] font-medium font-inter text-black/80">
                       {item.experience}
                     </td>
-                    <td className="px-6 py-5 text-[13px] font-bold text-foreground">
+                    <td className="px-6 py-5 text-[16px] font-medium font-inter text-black/80">
                       {item.appliedDate}
                     </td>
                     <td className="px-6 py-5">
-                      <span className="px-3 py-1.5 rounded-full bg-orange-50 text-orange-400 text-[10px] font-bold border border-orange-100">
+                      <span className="px-3 py-1.5 rounded-full bg-[#FF7F38]/40 text-[#FF7F38] text-[16px] font-medium font-inter border border-orange-100">
                         {item.status}
                       </span>
                     </td>
