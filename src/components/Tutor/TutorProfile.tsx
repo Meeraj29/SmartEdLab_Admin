@@ -387,7 +387,10 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                   Complete Sessions
                 </p>
                 <p className="text-[14px] font-semibold text-white/80">
-                  Attendance: <span className="font-semibold text-[14px] text-white">92%</span>
+                  Attendance:{" "}
+                  <span className="font-semibold text-[14px] text-white">
+                    92%
+                  </span>
                 </p>
               </div>
               <div className="h-12 w-12 rounded-2xl bg-white flex items-center justify-center shadow-lg shadow-emerald-900/20 text-[#31564E] shrink-0">
@@ -1133,14 +1136,14 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
           {/* Feedback Analytics Row */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-2">
             {/* Rating Distribution */}
-              <div className="rounded-[14px] bg-white border border-slate-100 shadow-sm p-8 space-y-8">
-                <h3 className="text-[20px] font-smeibold font-inter text-black">
-                  Rating Distribution
-                </h3>
-                <div className="space-y-4 pt-1">
-                  {[
-                    {
-                      label: "5 Stars",
+            <div className="rounded-[14px] bg-white border border-slate-100 shadow-sm p-8 space-y-8">
+              <h3 className="text-[20px] font-smeibold font-inter text-black">
+                Rating Distribution
+              </h3>
+              <div className="space-y-4 pt-1">
+                {[
+                  {
+                    label: "5 Stars",
                     count: 162,
                     percent: 85,
                     color: "bg-[#5750DC]",
@@ -1553,9 +1556,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                   <p className="text-[14px] font-medium font-inter text-white">
                     AI-Assisted Sessions
                   </p>
-                  <p className="text-[12px] font-inter text-white/80">
-                    Stable
-                  </p>
+                  <p className="text-[12px] font-inter text-white/80">Stable</p>
                 </div>
               </div>
               <div className="flex flex-col items-end justify-between">
@@ -1580,7 +1581,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                 <div>
                   <p className="text-[14px] font-medium font-inter text-black">
                     AI Interaction Time
-                   </p>
+                  </p>
                   <p className="text-[12px] font-inter text-black/80">
                     Low Usage Time
                   </p>
@@ -1610,7 +1611,9 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
                   <div className="h-1.5 w-1.5 rounded-full bg-[#3b82f6]" />
-                  <h4 className="text-[16px] font-bold font-inter text-white">Productivity Surge</h4>
+                  <h4 className="text-[16px] font-bold font-inter text-white">
+                    Productivity Surge
+                  </h4>
                 </div>
                 <p className="text-[14px] font-inter text-white/80 leading-[1.6] pr-6">
                   AI feedback generation frequency increased by{" "}
@@ -1635,7 +1638,9 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
                   <div className="h-1.5 w-1.5 rounded-full bg-[#3b82f6]" />
-                  <h4 className="text-[16px] font-bold font-inter text-white">Usage Alert</h4>
+                  <h4 className="text-[16px] font-bold font-inter text-white">
+                    Usage Alert
+                  </h4>
                 </div>
                 <p className="text-[14px] font-inter text-white/80 leading-[1.6] pr-6">
                   Batch 'Advanced B2' has significantly lower AI interaction
@@ -2432,9 +2437,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                       <div key={course.name} className="space-y-3">
                         <div className="flex justify-between items-center text-[14px] font-medium font-inter">
                           <span className="text-black">{course.name}</span>
-                          <span className="text-black">
-                            {course.progress}%
-                          </span>
+                          <span className="text-black">{course.progress}%</span>
                         </div>
                         <div className="h-2 rounded-full bg-slate-100 overflow-hidden">
                           <div
