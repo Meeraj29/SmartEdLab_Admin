@@ -78,7 +78,7 @@ const TutorStatic = ({ onAddClick }: TutorStaticProps) => {
           <h1 className="text-2xl font-semibold text-foreground">
             Tutor Management
           </h1>
-          <p className="text-md font-normal text-slate-500 max-w-2xl mt-1">
+          <p className="text-md font-inter text-black/80 max-w-2xl mt-1">
             Manage tutors, monitor performance, and review tutor applications
             across all institutes.
           </p>
@@ -92,7 +92,7 @@ const TutorStatic = ({ onAddClick }: TutorStaticProps) => {
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="outline"
-                  className="h-12 rounded-[16px] px-6 border-slate-200 bg-white text-slate-600 font-bold hover:bg-slate-50 gap-2 shadow-sm"
+                  className="h-12 rounded-[16px] px-6 border-slate-200 bg-white text-[#31564E] font-medium hover:bg-slate-50 gap-2 shadow-sm"
                 >
                   Manage Tutors
                   <ChevronDown
@@ -127,7 +127,7 @@ const TutorStatic = ({ onAddClick }: TutorStaticProps) => {
 
           <Button
             onClick={onAddClick}
-            className="h-12 rounded-[16px] px-6 bg-black text-white font-bold shadow-lg shadow-black/10 hover:bg-black/95 gap-1.5"
+            className="h-12 rounded-[16px] px-6 bg-black text-white font-medium font-inter shadow-lg shadow-black/10 hover:bg-black/95"
           >
             <Plus className="h-5 w-5" />
             Add Tutor
@@ -141,7 +141,7 @@ const TutorStatic = ({ onAddClick }: TutorStaticProps) => {
           <div
             key={idx}
             className={cn(
-              "rounded-[20px] p-5 shadow-sm border border-border/50 relative overflow-hidden flex flex-col justify-between h-[160px]",
+              "rounded-[14px] p-5 shadow-sm border border-border/50 relative overflow-hidden flex flex-col justify-between h-[160px]",
               stat.cardBg
             )}
           >
@@ -149,7 +149,7 @@ const TutorStatic = ({ onAddClick }: TutorStaticProps) => {
               <div>
                 <span
                   className={cn(
-                    "text-2xl font-semibold tracking-tight",
+                    "text-2xl font-semibold font-inter tracking-tight",
                     stat.isDark ? "text-white" : "text-foreground"
                   )}
                 >
@@ -157,8 +157,8 @@ const TutorStatic = ({ onAddClick }: TutorStaticProps) => {
                 </span>
                 <p
                   className={cn(
-                    "text-md font-medium mt-1",
-                    stat.isDark ? "text-slate-300" : "text-slate-500"
+                    "text-md font-medium font-inter mt-1",
+                    stat.isDark ? "text-white" : "text-black"
                   )}
                 >
                   {stat.label}
@@ -179,8 +179,8 @@ const TutorStatic = ({ onAddClick }: TutorStaticProps) => {
             <div className="flex items-center justify-between">
               <p
                 className={cn(
-                  "text-[14px] font-medium pr-2",
-                  stat.isDark ? "text-slate-400" : "text-slate-500"
+                  "text-[16px] font-inter pr-2",
+                  stat.isDark ? "text-white" : "text-black/80"
                 )}
               >
                 {stat.subtext}

@@ -155,7 +155,7 @@ const StudentTable = ({ onViewProfile }: StudentTableProps) => {
   return (
     <div className="mt-8 space-y-6">
       {/* Search and Filters */}
-      <div className="flex flex-wrap items-center gap-3">
+      <div className="flex flex-wrap items-center gap-3 border p-4 rounded-xl bg-white shadow-sm">
         <div className="relative flex-1 min-w-[300px] max-w-md">
           <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
           <input
@@ -214,25 +214,27 @@ const StudentTable = ({ onViewProfile }: StudentTableProps) => {
                     className="h-4 w-4 rounded border-slate-300 accent-[#31564E] cursor-pointer"
                   />
                 </th>
-                <th className="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-left">
+                <th className="px-6 py-4 text-sm font-medium uppercase tracking-wider text-left">
                   Student
                 </th>
-                <th className="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-left">
+                <th className="px-6 py-4 text-sm font-medium uppercase tracking-wider text-left">
                   Plan
                 </th>
-                <th className="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-left">
+                <th className="px-6 py-4 text-sm font-medium uppercase tracking-wider text-left">
                   Progress
                 </th>
-                <th className="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-left">
+                <th className="px-6 py-4 text-sm font-medium uppercase tracking-wider text-left">
                   AI Usage
                 </th>
-                <th className="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-left">
+                <th className="px-6 py-4 text-sm font-medium uppercase tracking-wider text-left whitespace-nowrap">
                   Expiry Date
                 </th>
-                <th className="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-left">
+                <th className="px-6 py-4 text-sm font-medium uppercase tracking-wider text-left">
                   Status
                 </th>
-                <th className="px-6 py-4 text-right">Actions</th>
+                <th className="px-6 py-4 text-sm font-medium uppercase tracking-wider text-right">
+                  Actions
+                </th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border/50">
@@ -264,7 +266,7 @@ const StudentTable = ({ onViewProfile }: StudentTableProps) => {
                         />
                       </div>
                       <div className="flex flex-col">
-                        <span className="text-sm font-bold text-foreground leading-tight">
+                        <span className="text-md font-semibold text-foreground leading-tight">
                           {student.name}
                         </span>
                         <span className="text-xs text-muted-foreground">
@@ -275,7 +277,7 @@ const StudentTable = ({ onViewProfile }: StudentTableProps) => {
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex flex-col">
-                      <span className="text-sm font-medium text-foreground">
+                      <span className="text-sm font-medium text-foreground whitespace-nowrap">
                         {student.plan}
                       </span>
                       <span className="text-[10px] text-muted-foreground">
@@ -285,12 +287,12 @@ const StudentTable = ({ onViewProfile }: StudentTableProps) => {
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex flex-col gap-1.5 w-32">
-                      <div className="flex justify-between items-center text-[10px] font-bold text-blue-600">
+                      <div className="flex justify-between items-center text-[10px] font-bold text-black">
                         <span>{student.progress}%</span>
                       </div>
                       <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
                         <div
-                          className="h-full bg-blue-500 rounded-full transition-all"
+                          className="h-full bg-[#007FFF] rounded-full transition-all"
                           style={{ width: `${student.progress}%` }}
                         />
                       </div>
@@ -301,7 +303,7 @@ const StudentTable = ({ onViewProfile }: StudentTableProps) => {
                       <span className="text-sm font-bold">
                         {student.aiUsage}
                       </span>
-                      <span className="text-[10px] text-muted-foreground bg-slate-100 px-1 py-0.5 rounded">
+                      <span className="text-[10px] text-muted-foreground px-1 py-0.5 rounded">
                         (Tokens)
                       </span>
                     </div>
@@ -310,7 +312,7 @@ const StudentTable = ({ onViewProfile }: StudentTableProps) => {
                     {student.expiryDate}
                   </td>
                   <td className="px-6 py-4">
-                    <span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] font-bold bg-green-100 text-green-700">
+                    <span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] font-bold bg-[#248F5F]/40 text-[#248F5F]">
                       {student.status}
                     </span>
                   </td>

@@ -74,10 +74,10 @@ const StudentStatic = ({ onAddClick }: StudentStaticProps) => {
     <div className="space-y-6">
       <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div className="flex flex-col">
-          <h2 className="text-2xl font-semibold text-foreground">
+          <h2 className="text-xl md:text-2xl font-semibold text-foreground">
             Direct Students
           </h2>
-          <p className="text-md text-muted-foreground">
+          <p className="text-sm md:text-md text-muted-foreground">
             Manage all direct students who purchased subscriptions on the
             platform.
           </p>
@@ -91,7 +91,7 @@ const StudentStatic = ({ onAddClick }: StudentStaticProps) => {
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="outline"
-                  className="h-11 rounded-xl px-4 gap-2 border-[#31564E]/30 text-[#31564E] hover:bg-[#31564E]/5 text-sm font-normal"
+                  className="h-11 rounded-xl px-4 gap-2 border-[#31564E]/30 text-[#31564E] hover:bg-[#31564E]/5 text-sm md:text-md font-medium"
                 >
                   Manage Subscription
                   <ChevronDown
@@ -125,7 +125,7 @@ const StudentStatic = ({ onAddClick }: StudentStaticProps) => {
           </DropdownMenu>
           <Button
             onClick={onAddClick}
-            className="h-11 rounded-xl px-6 gap-2 bg-black hover:bg-black/90 text-white"
+            className="h-11 rounded-xl px-4 md:px-6 gap-1 bg-black hover:bg-black/90 text-white text-sm md:text-md font-medium text-center"
           >
             <Plus className="h-4 w-4" />
             Add Student
@@ -148,7 +148,7 @@ const StudentStatic = ({ onAddClick }: StudentStaticProps) => {
                 <span className="text-2xl font-semibold">{stat.value}</span>
                 <span
                   className={cn(
-                    "mt-4 text-md font-normal",
+                    "mt-4 text-md font-medium",
                     stat.cardStyle.includes("text-white")
                       ? "text-white/80"
                       : "text-foreground"

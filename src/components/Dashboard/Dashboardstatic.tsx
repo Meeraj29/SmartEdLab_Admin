@@ -35,8 +35,8 @@ const StatCard = ({
   return (
     <div
       className={cn(
-        "relative overflow-hidden rounded-[14px] p-5 transition-all hover:shadow-lg min-h-[100px] flex flex-col justify-between",
-        variant === "solid-orange" && "bg-[#FF7A45] text-white",
+        "relative overflow-hidden rounded-[14px] p-5 transition-all shadow-xl min-h-[100px] flex flex-col justify-between",
+        variant === "solid-orange" && "bg-[#FF7F38] text-white",
         variant === "solid-green" && "bg-[#31564E] text-white",
         variant === "default" && "bg-white border border-border shadow-sm"
       )}

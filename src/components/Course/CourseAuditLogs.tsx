@@ -322,6 +322,8 @@ const CourseAuditLogs = ({ onBack }: CourseAuditLogsProps) => {
                         <Image
                           src={log.avatar}
                           alt={log.performedBy}
+                          width={36}
+                          height={36}
                           className="h-full w-full object-cover"
                         />
                       </div>

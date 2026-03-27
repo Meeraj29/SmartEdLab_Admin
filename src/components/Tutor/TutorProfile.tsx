@@ -137,21 +137,23 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
       {/* Navigation Back Link */}
       <button
         onClick={onBack}
-        className="flex items-center gap-3 group transition-all"
+        className="flex items-center group transition-all"
       >
-        <div className="h-8 w-8 rounded-full border border-slate-200 bg-white flex items-center justify-center transition-all group-hover:bg-slate-50 shadow-sm">
+        <div className="h-8 w-8 flex items-center justify-center ">
           <ArrowLeft className="h-4 w-4 text-slate-600" />
         </div>
-        <span className="text-[15px] font-bold text-slate-800">Tutors</span>
+        <span className="text-[18px] font-medium text-black font-inter">
+          Tutors
+        </span>
       </button>
 
       {/* Main Profile Identity Card */}
-      <div className="rounded-[24px] bg-white border border-slate-100 shadow-sm p-6 md:p-8">
+      <div className="rounded-[14px] bg-white border border-slate-100 shadow-sm p-5 md:p-8">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
-          <div className="flex flex-col md:flex-row gap-8 lg:gap-10 items-center md:items-start">
+          <div className="flex flex-col md:flex-row gap-6 md:gap-8 lg:gap-10 items-center md:items-start">
             {/* Rounded-Square Avatar with Status Indicator */}
             <div className="relative shrink-0">
-              <div className="h-[120px] w-[120px] rounded-[20px] overflow-hidden border border-slate-100 shadow-sm bg-slate-50">
+              <div className="h-24 w-24 md:h-[120px] md:w-[120px] rounded-[20px] overflow-hidden border border-slate-100 shadow-sm bg-slate-50">
                 <Image
                   src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=300&auto=format&fit=crop"
                   alt="Sarah Jenkins"
@@ -160,21 +162,21 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                   className="h-full w-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-1 -right-1 h-5 w-5 rounded-full bg-emerald-500 border-4 border-white shadow-sm" />
+              <div className="absolute -bottom-1 -right-1 h-4 w-4 md:h-5 md:w-5 rounded-full bg-emerald-500 border-4 border-white shadow-sm" />
             </div>
 
             {/* Core Professional Details */}
-            <div className="space-y-4 py-1 text-center md:text-left">
-              <div className="flex items-center justify-center md:justify-start gap-4">
-                <h2 className="text-[24px] font-bold text-[#1E293B] tracking-tight">
+            <div className="space-y-4 py-1 flex-1 text-center md:text-left">
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
+                <h2 className="text-[20px] md:text-[24px] font-bold font-inter text-[#0F172A]">
                   Sarah Jenkins
                 </h2>
-                <span className="bg-[#E7F9F1] text-[#059669] px-3 py-0.5 rounded-full text-[10px] font-black tracking-widest uppercase border border-[#059669]/10">
+                <span className="bg-[#DCFCE7] text-[#16A34A] px-3 py-0.5 rounded-xl text-[10px] md:text-[12px] font-inter font-medium border border-[#059669]/10">
                   ACTIVE
                 </span>
               </div>
 
-              <p className="text-[15px] font-semibold text-slate-500 -mt-2">
+              <p className="text-[14px] md:text-[16px] font-medium text-black/80 font-inter -mt-2">
                 Ph.D In Pysics
               </p>
 
@@ -182,13 +184,13 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                 <div className="flex flex-col md:flex-row md:items-center gap-x-12 gap-y-3">
                   <div className="flex items-center justify-center md:justify-start gap-2.5 text-slate-500">
                     <Mail className="h-4 w-4 text-slate-400" />
-                    <span className="text-[13px] font-medium tracking-tight">
+                    <span className="text-[14px] md:text-[16px] font-medium font-inter text-black/70">
                       sarah.j@gmail.com
                     </span>
                   </div>
                   <div className="flex items-center justify-center md:justify-start gap-2.5 text-slate-500">
                     <PhoneCall className="h-4 w-4 text-slate-400" />
-                    <span className="text-[13px] font-medium tracking-tight">
+                    <span className="text-[14px] md:text-[16px] font-medium font-inter text-black/70">
                       +91087654321
                     </span>
                   </div>
@@ -196,13 +198,13 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                 <div className="flex flex-col md:flex-row md:items-center gap-x-12 gap-y-3">
                   <div className="flex items-center justify-center md:justify-start gap-2.5 text-slate-500">
                     <Building2 className="h-4 w-4 text-slate-400" />
-                    <span className="text-[13px] font-medium tracking-tight">
+                    <span className="text-[14px] md:text-[16px] font-medium font-inter text-black/70">
                       Global Language Academy
                     </span>
                   </div>
                   <div className="flex items-center justify-center md:justify-start gap-2.5 text-slate-500">
                     <Languages className="h-4 w-4 text-slate-400" />
-                    <span className="text-[13px] font-medium tracking-tight">
+                    <span className="text-[14px] md:text-[16px] font-medium font-inter text-black/70">
                       Spanish (N), English (C2)
                     </span>
                   </div>
@@ -210,10 +212,10 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
 
                 {/* Integrated Assigned Courses Section */}
                 <div className="flex flex-col md:flex-row md:items-center gap-x-6 gap-y-3 pt-2">
-                  <span className="text-[11px] font-black text-slate-300 uppercase tracking-[0.1em] whitespace-nowrap">
+                  <span className="text-[12px] font-inter font-semibold text-[#94A3B8] uppercase tracking-[0.1em] whitespace-nowrap">
                     ASSIGNED:
                   </span>
-                  <div className="flex flex-wrap gap-2.5">
+                  <div className="flex flex-wrap items-center justify-center md:justify-start gap-2.5">
                     {[
                       "Advanced Spanish",
                       "Business Communication",
@@ -221,7 +223,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                     ].map((course) => (
                       <div
                         key={course}
-                        className="px-3 py-1 rounded-lg bg-[#F1F3FE] text-[#4751BB] text-[11px] font-black tracking-tight border border-blue-100/50"
+                        className="px-3 py-1 rounded-lg bg-[#F1F3FE] text-[#5750DC] text-[12px] font-medium font-inter tracking-tight border border-blue-100/50"
                       >
                         {course}
                       </div>
@@ -233,19 +235,19 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
           </div>
 
           {/* Administrative Actions Suite */}
-          <div className="flex items-center gap-8 self-center lg:self-start pt-2">
-            <button className="text-[13px] font-semibold text-[#FF4D4D] hover:underline whitespace-nowrap">
+          <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center gap-4 md:gap-8 self-stretch lg:self-start pt-2">
+            <button className="text-[14px] font-inter text-[#FF3939] hover:underline whitespace-nowrap order-last sm:order-first lg:order-last xl:order-first">
               Suspend Account
             </button>
-            <div className="flex items-center gap-3">
+            <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
               <Button
                 variant="outline"
-                className="h-12 rounded-2xl px-6 border-[#31564E]/40 text-[#31564E] font-bold flex items-center justify-between gap-10 hover:bg-slate-50"
+                className="h-12 w-full sm:w-auto rounded-2xl px-6 border-[#31564E]/40 text-[#31564E] font-medium text-[16px] font-inter flex items-center justify-between gap-4 md:gap-10 hover:bg-slate-50"
               >
                 Manage Tutors
                 <ChevronDown className="h-4 w-4 opacity-50" />
               </Button>
-              <Button className="h-12 rounded-2xl px-6 bg-black hover:bg-black/90 text-white font-bold flex items-center gap-3 shadow-xl shadow-black/10">
+              <Button className="h-12 w-full sm:w-auto rounded-2xl px-6 bg-black hover:bg-black/90 text-white font-medium text-[16px] font-inter flex items-center justify-center sm:justify-start gap-3 shadow-xl shadow-black/10">
                 <Plus className="h-4 w-4" />
                 Add Tutor
               </Button>
@@ -268,10 +270,10 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
             key={tab}
             onClick={() => setActiveTab(tab)}
             className={cn(
-              "relative pb-4 text-[14px] font-bold transition-all whitespace-nowrap",
+              "relative pb-4 text-[20px] font-semibold transition-all whitespace-nowrap",
               activeTab === tab
-                ? "text-slate-900"
-                : "text-slate-400 hover:text-slate-600"
+                ? "text-black"
+                : "text-black/60 hover:text-black"
             )}
           >
             {tab}
@@ -294,7 +296,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
             <div
               key={i}
               className={cn(
-                "rounded-[24px] p-6 shadow-sm border flex items-center justify-between transition-hover hover:shadow-md",
+                "rounded-[14px] p-6 shadow-sm border flex items-center justify-between transition-hover hover:shadow-md",
                 stat.isHighlighted
                   ? "bg-[#31564E] border-[#31564E]/10 shadow-xl hover:shadow-2xl"
                   : "bg-white border-slate-50"
@@ -303,13 +305,13 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
               <div
                 className={cn("space-y-1", stat.textColor || "text-slate-800")}
               >
-                <h3 className="text-[32px] font-black tracking-tight">
+                <h3 className="text-[26px] font-inter font-semibold">
                   {stat.value}
                 </h3>
                 <p
                   className={cn(
-                    "text-[13px] font-bold",
-                    stat.isHighlighted ? "opacity-80" : "text-slate-400"
+                    "text-[16px] font-inter font-medium mt-4",
+                    stat.isHighlighted ? "opacity-80" : "text-black"
                   )}
                 >
                   {stat.label}
@@ -355,17 +357,19 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
           {/* Live Class Activity — 4 Stat Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
             {/* Upcoming Sessions */}
-            <div className="rounded-[24px] p-6 bg-white border border-slate-50 shadow-sm flex items-center justify-between hover:shadow-md transition-shadow">
+            <div className="rounded-[14px] p-6 bg-white border border-slate-50 shadow-sm flex items-center justify-between hover:shadow-md transition-shadow">
               <div className="space-y-1">
-                <h3 className="text-[32px] font-black tracking-tight text-slate-800">
+                <h3 className="text-[26px] font-bold font-inter tracking-tight text-black">
                   12
                 </h3>
-                <p className="text-[13px] font-bold text-slate-400">
+                <p className="text-[16px] font-medium font-inter text-black">
                   Upcoming Sessions
                 </p>
-                <p className="text-[12px] font-semibold text-slate-500">
+                <p className="text-[14px] font-inter text-black/80">
                   Next:{" "}
-                  <span className="font-black text-slate-700">2:00 PM</span>
+                  <span className="font-semibold font-inter text-black">
+                    2:00 PM
+                  </span>
                 </p>
               </div>
               <div className="h-12 w-12 rounded-2xl bg-[#FF8206] flex items-center justify-center shadow-lg shadow-orange-200 text-white shrink-0">
@@ -374,16 +378,19 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
             </div>
 
             {/* Complete Sessions — highlighted dark card */}
-            <div className="rounded-[24px] p-6 bg-[#31564E] border border-[#31564E]/10 shadow-xl flex items-center justify-between hover:shadow-2xl transition-shadow">
+            <div className="rounded-[14px] p-6 bg-[#31564E] border border-[#31564E]/10 shadow-xl flex items-center justify-between hover:shadow-2xl transition-shadow">
               <div className="space-y-1">
-                <h3 className="text-[32px] font-black tracking-tight text-white">
+                <h3 className="text-[26px] font-bold font-inter text-white">
                   148
                 </h3>
-                <p className="text-[13px] font-bold text-white/70">
+                <p className="text-[16px] font-medium font-inter text-white/70">
                   Complete Sessions
                 </p>
-                <p className="text-[12px] font-semibold text-white/60">
-                  Attendance: <span className="font-black text-white">92%</span>
+                <p className="text-[14px] font-semibold text-white/80">
+                  Attendance:{" "}
+                  <span className="font-semibold text-[14px] text-white">
+                    92%
+                  </span>
                 </p>
               </div>
               <div className="h-12 w-12 rounded-2xl bg-white flex items-center justify-center shadow-lg shadow-emerald-900/20 text-[#31564E] shrink-0">
@@ -392,17 +399,17 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
             </div>
 
             {/* Cancelled Sessions */}
-            <div className="rounded-[24px] p-6 bg-white border border-slate-50 shadow-sm flex items-center justify-between hover:shadow-md transition-shadow">
+            <div className="rounded-[14px] p-6 bg-white border border-slate-50 shadow-sm flex items-center justify-between hover:shadow-md transition-shadow">
               <div className="space-y-1">
-                <h3 className="text-[32px] font-black tracking-tight text-slate-800">
+                <h3 className="text-[26px] font-bold font-inter text-black">
                   05
                 </h3>
-                <p className="text-[13px] font-bold text-slate-400">
+                <p className="text-[16px] font-medium font-inter text-black/80">
                   Cancelled sessions
                 </p>
-                <p className="text-[12px] font-semibold text-slate-500">
+                <p className="text-[12px] font-semibold text-black/80">
                   Last:{" "}
-                  <span className="font-black text-slate-700">
+                  <span className="font-semibold text-[14px] text-black">
                     Oct 24, 2023
                   </span>
                 </p>
@@ -413,17 +420,17 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
             </div>
 
             {/* Late Start Session */}
-            <div className="rounded-[24px] p-6 bg-white border border-slate-50 shadow-sm flex items-center justify-between hover:shadow-md transition-shadow">
+            <div className="rounded-[14px] p-6 bg-white border border-slate-50 shadow-sm flex items-center justify-between hover:shadow-md transition-shadow">
               <div className="space-y-1">
-                <h3 className="text-[32px] font-black tracking-tight text-slate-800">
+                <h3 className="text-[26px] font-bold font-inter text-black">
                   03
                 </h3>
-                <p className="text-[13px] font-bold text-slate-400">
+                <p className="text-[16px] font-medium font-inter text-black/80">
                   Late start session
                 </p>
-                <p className="text-[12px] font-semibold text-slate-500">
+                <p className="text-[12px] font-semibold text-black/80">
                   Most Recent:{" "}
-                  <span className="font-black text-slate-700">
+                  <span className="font-semibold text-[14px] text-black">
                     Today, 10:40 AM
                   </span>
                 </p>
@@ -437,9 +444,9 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
           {/* Charts Row */}
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
             {/* Weekly Session Activity — Bar Chart (3/5 width) */}
-            <div className="lg:col-span-3 rounded-[24px] bg-white border border-slate-100 shadow-sm p-8 space-y-6">
+            <div className="lg:col-span-3 rounded-[14px] bg-white border border-slate-100 shadow-sm p-8 space-y-6">
               <div className="flex items-center justify-between">
-                <h3 className="text-[18px] font-black text-slate-800 tracking-tight">
+                <h3 className="text-[20px] font-bold font-inter text-[#1E293B]">
                   Weekly Session Activity
                 </h3>
                 {/* Functional filter dropdown */}
@@ -455,7 +462,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                           key={option}
                           onClick={() => setSessionFilter(option)}
                           className={cn(
-                            "px-4 py-2.5 rounded-xl text-[13px] font-bold cursor-pointer transition-all",
+                            "px-4 py-2.5 rounded-xl text-[14px] font-inter cursor-pointer transition-all",
                             sessionFilter === option
                               ? "bg-[#31564E]/10 text-[#31564E]"
                               : "text-slate-600 hover:bg-slate-50"
@@ -470,7 +477,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
               </div>
               <div className="flex items-center gap-2">
                 <div className="h-2 w-2 rounded-full bg-[#6366F1]" />
-                <span className="text-[11px] font-bold text-slate-400">
+                <span className="text-[12px] font-inter text-[#64748B]">
                   Total Sessions
                 </span>
               </div>
@@ -521,8 +528,8 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
             </div>
 
             {/* Session Status Distribution — Donut Chart (2/5 width) */}
-            <div className="lg:col-span-2 rounded-[24px] bg-white border border-slate-100 shadow-sm p-8 flex flex-col gap-6">
-              <h3 className="text-[18px] font-black text-slate-800 tracking-tight">
+            <div className="lg:col-span-2 rounded-[14px] bg-white border border-slate-100 shadow-sm p-8 flex flex-col gap-6">
+              <h3 className="text-[20px] font-bold font-inter text-[#1E293B]">
                 Session Status Distribution
               </h3>
               <div className="flex items-center justify-center gap-8 flex-1">
@@ -594,7 +601,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                         className="h-3 w-3 rounded-full shrink-0"
                         style={{ backgroundColor: color }}
                       />
-                      <span className="text-[13px] font-bold text-slate-600">
+                      <span className="text-[14px] font-inter text-[#475569]">
                         {label}
                       </span>
                     </div>
@@ -607,7 +614,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
           {/* Upcoming Session Table */}
           <div className="rounded-[24px] bg-white border border-slate-100 shadow-sm overflow-hidden">
             <div className="px-8 py-6 border-b border-slate-50">
-              <h3 className="text-[18px] font-black text-slate-800 tracking-tight">
+              <h3 className="text-[20px] font-bold font-inter text-[#1E293B]">
                 Upcoming Session
               </h3>
             </div>
@@ -625,7 +632,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                     ].map((col) => (
                       <th
                         key={col}
-                        className="px-8 py-4 text-[12px] font-bold text-slate-400"
+                        className="px-8 py-4 text-[16px] font-medium font-inter text-black/80"
                       >
                         {col}
                       </th>
@@ -685,31 +692,31 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                     >
                       {/* Session ID */}
                       <td className="px-8 py-5">
-                        <span className="text-[13px] font-bold text-slate-400">
+                        <span className="text-[16px] font-medium font-inter text-black/80">
                           {row.id}
                         </span>
                       </td>
                       {/* Course & Batch */}
                       <td className="px-8 py-5">
-                        <p className="text-[14px] font-black text-slate-800">
+                        <p className="text-[16px] font-semibold  font-inter text-black">
                           {row.course}
                         </p>
-                        <p className="text-[12px] font-medium text-slate-400 mt-0.5">
+                        <p className="text-[14px] font-inter text-black/70 mt-0.5">
                           {row.batch}
                         </p>
                       </td>
                       {/* Date & Time */}
                       <td className="px-8 py-5">
-                        <p className="text-[13px] font-bold text-slate-700">
+                        <p className="text-[16px] font-inter text-black/80">
                           {row.date}
                         </p>
-                        <p className="text-[12px] font-medium text-slate-400 mt-0.5">
+                        <p className="text-[14px] font-inter text-[#64748B] mt-0.5">
                           {row.time}
                         </p>
                       </td>
                       {/* Students */}
                       <td className="px-8 py-5">
-                        <span className="text-[13px] font-bold text-slate-600">
+                        <span className="text-[16px] font-inter font-medium text-black/80">
                           {row.students}
                         </span>
                       </td>
@@ -717,10 +724,10 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                       <td className="px-8 py-5">
                         <span
                           className={cn(
-                            "flex items-center gap-1.5 text-[13px] font-bold w-fit",
+                            "flex items-center gap-1.5 text-[12px] font-bold w-fit",
                             row.linkActive
-                              ? "text-[#6366F1] cursor-pointer hover:underline"
-                              : "text-slate-300 cursor-not-allowed"
+                              ? "text-[#5750DC] cursor-pointer hover:underline"
+                              : "text-[#94A3B8] cursor-not-allowed"
                           )}
                         >
                           <Link2 className="h-3.5 w-3.5" />
@@ -731,12 +738,12 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                       <td className="px-8 py-5">
                         <span
                           className={cn(
-                            "px-4 py-1.5 rounded-full text-[12px] font-black tracking-tight whitespace-nowrap",
+                            "px-4 py-1.5 rounded-lg text-[12px] font-black tracking-tight whitespace-nowrap",
                             row.status === "Starting Soon"
-                              ? "bg-[#FFF4E5] text-[#E67E22]"
+                              ? "bg-[#FEF3C7] text-[#B45309]/80"
                               : row.status === "Scheduled"
-                                ? "bg-[#EEF0FF] text-[#6366F1]"
-                                : "bg-[#FFF4E5] text-[#E67E22]"
+                                ? "bg-[#4172FD]/20 text-[#1D4ED8]"
+                                : "bg-[#FEF3C7] text-[#B45309]/80"
                           )}
                         >
                           {row.status}
@@ -752,7 +759,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
           {/* Completed Session Table */}
           <div className="rounded-[24px] bg-white border border-slate-100 shadow-sm overflow-hidden">
             <div className="px-8 py-6 border-b border-slate-50">
-              <h3 className="text-[18px] font-black text-slate-800 tracking-tight">
+              <h3 className="text-[20px] font-bold font-inter text-black">
                 Completed Session
               </h3>
             </div>
@@ -769,7 +776,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                     ].map((col) => (
                       <th
                         key={col}
-                        className="px-8 py-4 text-[12px] font-bold text-slate-400"
+                        className="px-8 py-4 text-[16px] font-medium font-inter text-black/80"
                       >
                         {col}
                       </th>
@@ -817,38 +824,38 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                     >
                       {/* Session ID */}
                       <td className="px-8 py-5">
-                        <span className="text-[13px] font-bold text-slate-400">
+                        <span className="text-[16px] font-medium font-inter text-black/80">
                           {row.id}
                         </span>
                       </td>
                       {/* Course & Batch */}
                       <td className="px-8 py-5">
-                        <p className="text-[14px] font-black text-slate-800">
+                        <p className="text-[16px] font-semibold font-inter text-black">
                           {row.course}
                         </p>
-                        <p className="text-[12px] font-medium text-slate-400 mt-0.5">
+                        <p className="text-[14px] font-inter text-black/70 mt-0.5">
                           {row.batch}
                         </p>
                       </td>
                       {/* Attendance */}
                       <td className="px-8 py-5">
-                        <p className="text-[14px] font-black text-slate-800">
+                        <p className="text-[16px] font-semibold font-inter text-black">
                           {row.attendance}
                         </p>
-                        <p className="text-[12px] font-medium text-slate-400 mt-0.5">
+                        <p className="text-[14px] font-inter text-black/70 mt-0.5">
                           {row.attended}
                         </p>
                       </td>
                       {/* Rating */}
                       <td className="px-8 py-5">
-                        <span className="flex items-center gap-1.5 text-[14px] font-black text-slate-800">
+                        <span className="flex items-center gap-1.5 text-[16px] font-medium font-inter text-black">
                           {row.rating}
                           <Star className="h-4 w-4 text-yellow-400 fill-yellow-400" />
                         </span>
                       </td>
                       {/* View Link */}
                       <td className="px-8 py-5">
-                        <span className="flex items-center gap-1.5 text-[13px] font-bold text-[#6366F1] cursor-pointer hover:underline w-fit">
+                        <span className="flex items-center gap-1.5 text-[16px] font-medium font-inter text-[#5750DC] cursor-pointer hover:underline w-fit">
                           <ExternalLink className="h-3.5 w-3.5" />
                           View Link
                         </span>
@@ -865,7 +872,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
             {/* Cancelled Session */}
             <div className="rounded-[22px] bg-white border border-slate-100 shadow-sm overflow-hidden">
               <div className="px-8 py-6 border-b border-slate-50">
-                <h3 className="text-[18px] font-black text-slate-800 tracking-tight">
+                <h3 className="text-[20px] font-semibold font-inter text-black">
                   Cancelled Session
                 </h3>
               </div>
@@ -877,7 +884,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                         (col) => (
                           <th
                             key={col}
-                            className="px-6 py-4 text-[12px] font-bold text-slate-400"
+                            className="px-6 py-4 text-[16px] font-medium font-inter text-black/80"
                           >
                             {col}
                           </th>
@@ -921,25 +928,25 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                         className="hover:bg-slate-50/40 transition-colors"
                       >
                         <td className="px-6 py-4">
-                          <span className="text-[13px] font-bold text-slate-400">
+                          <span className="text-[16px] font-medium font-inter text-black/80">
                             {row.id}
                           </span>
                         </td>
                         <td className="px-6 py-4">
-                          <p className="text-[14px] font-black text-slate-800">
+                          <p className="text-[16px] font-semibold font-inter text-black">
                             {row.course}
                           </p>
-                          <p className="text-[12px] font-medium text-slate-400 mt-0.5">
+                          <p className="text-[14px] font-inter text-black/70 mt-0.5">
                             {row.date}
                           </p>
                         </td>
                         <td className="px-6 py-4">
-                          <span className="text-[13px] font-bold text-slate-600">
+                          <span className="text-[16px] font-medium font-inter text-black/80">
                             {row.by}
                           </span>
                         </td>
                         <td className="px-6 py-4">
-                          <span className="text-[13px] font-bold text-[#6366F1] cursor-pointer hover:underline">
+                          <span className="text-[12px] font-bold font-inter text-[#5750DC] cursor-pointer hover:underline">
                             {row.reason}
                           </span>
                         </td>
@@ -953,7 +960,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
             {/* Late Start Logs */}
             <div className="rounded-[22px] bg-white border border-slate-100 shadow-sm overflow-hidden">
               <div className="px-8 py-6 border-b border-slate-50">
-                <h3 className="text-[18px] font-black text-slate-800 tracking-tight">
+                <h3 className="text-[20px] font-semibold font-inter text-black">
                   Late Start Logs
                 </h3>
               </div>
@@ -965,7 +972,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                         (col) => (
                           <th
                             key={col}
-                            className="px-6 py-4 text-[12px] font-bold text-slate-400"
+                            className="px-6 py-4 text-[16px] font-medium font-inter text-black/80"
                           >
                             {col}
                           </th>
@@ -980,7 +987,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                         scheduled: "10:00 AM",
                         actual: "10:04 AM",
                         delay: "4m 12s",
-                        delayColor: "bg-[#FFF4E5] text-[#E67E22]",
+                        delayColor: "bg-[#FEF3C7] text-[#B45309]",
                         waiting: 24,
                       },
                       {
@@ -988,7 +995,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                         scheduled: "10:00 AM",
                         actual: "10:04 AM",
                         delay: "8m 45s",
-                        delayColor: "bg-[#FEE2E2] text-[#EF4444]",
+                        delayColor: "bg-[#FFE4E6] text-[#BE123C]",
                         waiting: 18,
                       },
                       {
@@ -996,7 +1003,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                         scheduled: "10:00 AM",
                         actual: "10:04 AM",
                         delay: "4m 12s",
-                        delayColor: "bg-[#FFF4E5] text-[#E67E22]",
+                        delayColor: "bg-[#FEF3C7] text-[#B45309]",
                         waiting: 24,
                       },
                       {
@@ -1004,7 +1011,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                         scheduled: "10:00 AM",
                         actual: "10:04 AM",
                         delay: "8m 45s",
-                        delayColor: "bg-[#FEE2E2] text-[#EF4444]",
+                        delayColor: "bg-[#FFE4E6] text-[#BE123C]",
                         waiting: 18,
                       },
                     ].map((row, i) => (
@@ -1013,15 +1020,15 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                         className="hover:bg-slate-50/40 transition-colors"
                       >
                         <td className="px-6 py-4">
-                          <span className="text-[13px] font-bold text-slate-400">
+                          <span className="text-[16px] font-medium font-inter text-black/80">
                             {row.id}
                           </span>
                         </td>
                         <td className="px-6 py-4">
-                          <p className="text-[12px] font-medium text-slate-400">
+                          <p className="text-[14px] font-inter text-black/70">
                             {row.scheduled}
                           </p>
-                          <p className="text-[14px] font-black text-slate-800">
+                          <p className="text-[16px] font-semibold font-inter text-black">
                             {row.actual}
                           </p>
                         </td>
@@ -1036,7 +1043,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                           </span>
                         </td>
                         <td className="px-6 py-4">
-                          <span className="text-[14px] font-black text-[#6366F1]">
+                          <span className="text-[14px] font-black text-[#5750DC]">
                             {row.waiting}
                           </span>
                         </td>
@@ -1053,15 +1060,15 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
           {/* Student Feedback — 4 Stat Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
             {/* Average Rating */}
-            <div className="rounded-[24px] p-6 bg-white border border-slate-50 shadow-sm flex items-center justify-between hover:shadow-md transition-shadow">
+            <div className="rounded-[14px] p-6 bg-white border border-slate-50 shadow-sm flex items-center justify-between hover:shadow-md transition-shadow">
               <div className="space-y-1">
-                <h3 className="text-[32px] font-black tracking-tight text-slate-800">
+                <h3 className="text-[24px] font-bold font-inter text-black">
                   4.7/5
                 </h3>
-                <p className="text-[13px] font-bold text-slate-800">
+                <p className="text-[16px] font-medium font-inter text-black">
                   Average Rating
                 </p>
-                <p className="text-[12px] font-semibold text-slate-400/80">
+                <p className="text-[12px] font-medium text-[#94A3B8]">
                   (248 reviews)
                 </p>
               </div>
@@ -1071,15 +1078,15 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
             </div>
 
             {/* Feedback Comments — highlighted dark card */}
-            <div className="rounded-[24px] p-6 bg-[#31564E] border border-[#31564E]/10 shadow-xl flex items-center justify-between hover:shadow-2xl transition-shadow">
+            <div className="rounded-[14px] p-6 bg-[#31564E] border border-[#31564E]/10 shadow-xl flex items-center justify-between hover:shadow-2xl transition-shadow">
               <div className="space-y-1">
-                <h3 className="text-[32px] font-black tracking-tight text-white">
+                <h3 className="text-[26px] font-semibold font-inter text-white">
                   184
                 </h3>
-                <p className="text-[13px] font-bold text-white/90">
+                <p className="text-[16px] font-medium font-inter text-white">
                   Feedback Comments
                 </p>
-                <p className="text-[12px] font-bold text-white/80">92%</p>
+                <p className="text-[14px] font-semibold text-white">92%</p>
               </div>
               <div className="h-12 w-12 rounded-2xl bg-white flex items-center justify-center shadow-lg shadow-emerald-900/20 text-[#31564E] shrink-0">
                 <CheckCircle2 className="h-6 w-6" />
@@ -1087,17 +1094,17 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
             </div>
 
             {/* Complaints reported */}
-            <div className="rounded-[24px] p-6 bg-white border border-slate-50 shadow-sm flex items-center justify-between hover:shadow-md transition-shadow">
+            <div className="rounded-[14px] p-6 bg-white border border-slate-50 shadow-sm flex items-center justify-between hover:shadow-md transition-shadow">
               <div className="space-y-1">
-                <h3 className="text-[32px] font-black tracking-tight text-slate-800">
+                <h3 className="text-[26px] font-semibold font-inter text-black">
                   03
                 </h3>
-                <p className="text-[13px] font-bold text-slate-800">
+                <p className="text-[16px] font-medium font-inter text-black">
                   Complaints reported
                 </p>
-                <p className="text-[12px] font-semibold text-slate-500">
+                <p className="text-[14px] font-inter text-black/80">
                   Last:{" "}
-                  <span className="font-black text-slate-700">
+                  <span className="font-semibold text-black text-[14px] font-inter">
                     Oct 24, 2023
                   </span>
                 </p>
@@ -1108,15 +1115,15 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
             </div>
 
             {/* Positive Feedback */}
-            <div className="rounded-[24px] p-6 bg-white border border-slate-50 shadow-sm flex items-center justify-between hover:shadow-md transition-shadow">
+            <div className="rounded-[14px] p-6 bg-white border border-slate-50 shadow-sm flex items-center justify-between hover:shadow-md transition-shadow">
               <div className="space-y-1">
-                <h3 className="text-[32px] font-black tracking-tight text-slate-800">
+                <h3 className="text-[26px] font-semibold font-inter text-black">
                   94 %
                 </h3>
-                <p className="text-[13px] font-bold text-slate-800">
+                <p className="text-[16px] font-medium font-inter text-black">
                   Positive Feedback
                 </p>
-                <p className="text-[12px] font-semibold text-slate-400/80">
+                <p className="text-[14px] font-inter text-[#64748B]">
                   vs. previous month avg (89%)
                 </p>
               </div>
@@ -1129,8 +1136,8 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
           {/* Feedback Analytics Row */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-2">
             {/* Rating Distribution */}
-            <div className="rounded-[24px] bg-white border border-slate-100 shadow-sm p-8 space-y-8">
-              <h3 className="text-[18px] font-black text-slate-800 tracking-tight">
+            <div className="rounded-[14px] bg-white border border-slate-100 shadow-sm p-8 space-y-8">
+              <h3 className="text-[20px] font-smeibold font-inter text-black">
                 Rating Distribution
               </h3>
               <div className="space-y-4 pt-1">
@@ -1139,35 +1146,35 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                     label: "5 Stars",
                     count: 162,
                     percent: 85,
-                    color: "bg-[#6366F1]",
+                    color: "bg-[#5750DC]",
                   },
                   {
                     label: "4 Stars",
                     count: 58,
                     percent: 45,
-                    color: "bg-[#8B5CF6]/50",
+                    color: "bg-[#5750DC]/60",
                   },
                   {
                     label: "3 Stars",
                     count: 18,
                     percent: 25,
-                    color: "bg-[#8B5CF6]/30",
+                    color: "bg-[#5750DC]/40",
                   },
                   {
                     label: "2 Stars",
                     count: 7,
                     percent: 10,
-                    color: "bg-[#8B5CF6]/20",
+                    color: "bg-[#5750DC]/20",
                   },
                   {
                     label: "1 Star",
                     count: 3,
                     percent: 5,
-                    color: "bg-[#FDA4AF]",
+                    color: "bg-[#FECACA]",
                   },
                 ].map((item) => (
                   <div key={item.label} className="space-y-2">
-                    <div className="flex justify-between items-center text-[13px] font-bold">
+                    <div className="flex justify-between items-center text-[14px] font-medium font-inter">
                       <span className="text-slate-600">{item.label}</span>
                       <span className="text-slate-800">{item.count}</span>
                     </div>
@@ -1186,8 +1193,8 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
             </div>
 
             {/* 6-Month Rating Trend */}
-            <div className="rounded-[24px] bg-white border border-slate-100 shadow-sm p-8 flex flex-col">
-              <h3 className="text-[18px] font-black text-slate-800 tracking-tight mb-8">
+            <div className="rounded-[14px] bg-white border border-slate-100 shadow-sm p-8 flex flex-col">
+              <h3 className="text-[20px] font-semibold font-inter text-black mb-8">
                 6-Month Rating Trend
               </h3>
 
@@ -1238,8 +1245,8 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
             </div>
 
             {/* Course Performance */}
-            <div className="rounded-[24px] bg-white border border-slate-100 shadow-sm p-8 flex flex-col">
-              <h3 className="text-[18px] font-black text-slate-800 tracking-tight mb-8">
+            <div className="rounded-[14px] bg-white border border-slate-100 shadow-sm p-8 flex flex-col">
+              <h3 className="text-[20px] font-semibold font-inter text-black mb-8">
                 Course Performance
               </h3>
               <div className="space-y-8 flex-1 flex flex-col justify-center pb-8">
@@ -1254,26 +1261,26 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                     name: "Business English",
                     rating: 4.5,
                     percent: 88,
-                    color: "bg-[#A78BFA]",
+                    color: "bg-[#5750DC]/60",
                   },
                   {
                     name: "IELTS Prep",
                     rating: 4.7,
                     percent: 94,
-                    color: "bg-[#6366F1]",
+                    color: "bg-[#5750DC]",
                   },
                 ].map((course) => (
                   <div
                     key={course.name}
                     className="flex flex-col gap-3 relative"
                   >
-                    <div className="flex justify-between items-center text-[13px] font-bold">
+                    <div className="flex justify-between items-center text-[14px] font-medium font-inter">
                       <span className="text-slate-600">{course.name}</span>
-                      <span className="text-[14px] font-black text-slate-800">
+                      <span className="text-[14px] font-bold font-inter text-slate-800">
                         {course.rating}
                       </span>
                     </div>
-                    <div className="h-3.5 w-full bg-slate-50 rounded-full overflow-hidden">
+                    <div className="h-3.5 w-full bg-[#F1F5F9] rounded-full overflow-hidden">
                       <div
                         className={cn(
                           "h-full rounded-full transition-all",
@@ -1291,8 +1298,8 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
           {/* Feedback & Complaints Two-Column Row */}
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 pt-2">
             {/* Recent Student Feedback */}
-            <div className="rounded-[24px] bg-white border border-slate-100 shadow-sm p-8 flex flex-col gap-6">
-              <h3 className="text-[18px] font-black text-slate-800 tracking-tight border-b border-slate-50 pb-6 mb-2">
+            <div className="rounded-[14px] bg-white border border-slate-100 shadow-sm p-8 flex flex-col gap-6">
+              <h3 className="text-[20px] font-semibold font-inter text-black mb-8">
                 Recent Student Feedback
               </h3>
 
@@ -1305,10 +1312,10 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                         AJ
                       </div>
                       <div className="space-y-0.5">
-                        <h4 className="text-[14px] font-black text-slate-800">
+                        <h4 className="text-[16px] font-semibold font-inter text-black">
                           Alice Johnson
                         </h4>
-                        <p className="text-[12px] font-semibold text-slate-400">
+                        <p className="text-[14px] font-inter text-[#94A3B8]">
                           Course: IELTS Prep
                         </p>
                       </div>
@@ -1322,12 +1329,12 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                       ))}
                     </div>
                   </div>
-                  <p className="text-[13px] font-bold text-slate-500 leading-relaxed">
+                  <p className="text-[14px] font-inter text-[#475569] leading-relaxed">
                     "John's teaching style is incredibly clear and engaging. The
                     way he breaks down complex grammar for the IELTS speaking
                     part really helped me boost my confidence!"
                   </p>
-                  <p className="text-[11px] font-black text-slate-400 uppercase tracking-widest pt-2">
+                  <p className="text-[11px] font-inter text-[#94A3B8] font-bold pt-2">
                     JUNE 12, 2024
                   </p>
                 </div>
@@ -1340,10 +1347,10 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                         MS
                       </div>
                       <div className="space-y-0.5">
-                        <h4 className="text-[14px] font-black text-slate-800">
+                        <h4 className="text-[16px] font-semibold font-inter text-slate-800">
                           Mark Smith
                         </h4>
-                        <p className="text-[12px] font-semibold text-slate-400">
+                        <p className="text-[14px] font-inter text-[#94A3B8]">
                           Course: Business English
                         </p>
                       </div>
@@ -1359,12 +1366,12 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                       <Star className="h-3.5 w-3.5 text-slate-200 fill-slate-200" />
                     </div>
                   </div>
-                  <p className="text-[13px] font-bold text-slate-500 leading-relaxed">
+                  <p className="text-[14px] font-inter text-[#475569] leading-relaxed">
                     "Very professional and punctual. Sometimes the materials
                     provided are a bit basic, but the verbal feedback John gives
                     is top-notch."
                   </p>
-                  <p className="text-[11px] font-black text-slate-400 uppercase tracking-widest pt-2">
+                  <p className="text-[11px] font-inter text-[#94A3B8] font-bold pt-2">
                     JUNE 08, 2024
                   </p>
                 </div>
@@ -1374,8 +1381,8 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
             {/* Complaint Logs & Critical Note Column */}
             <div className="flex flex-col gap-6">
               {/* Complaint Logs Table */}
-              <div className="flex-1 rounded-[24px] bg-white border border-slate-100 shadow-sm p-8 flex flex-col gap-6">
-                <h3 className="text-[18px] font-black text-slate-800 tracking-tight border-b border-slate-50 pb-6 mb-2">
+              <div className="flex-1 rounded-[14px] bg-white border border-slate-100 shadow-sm p-8 flex flex-col gap-6">
+                <h3 className="text-[20px] font-semibold font-inter text-black mb-8">
                   Complaint Logs
                 </h3>
 
@@ -1387,7 +1394,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                           (col) => (
                             <th
                               key={col}
-                              className="px-4 py-3 text-[12px] font-bold text-slate-500"
+                              className="px-4 py-3 text-[16px] font-medium font-inter text-black/80"
                             >
                               {col}
                             </th>
@@ -1403,7 +1410,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                           issue: "Technical Issue",
                           date: "14 Jun 2024",
                           status: "PENDING",
-                          color: "bg-[#FFF4E5] text-[#E67E22]",
+                          color: "bg-[#FFEDD5] text-[#EA580C]",
                         },
                         {
                           id: "CMP-0028",
@@ -1411,7 +1418,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                           issue: "Punctuality",
                           date: "02 Jun 2024",
                           status: "RESOLVED",
-                          color: "bg-[#EBF9F1] text-[#059669]",
+                          color: "bg-[#D1FAE5] text-[#059669]",
                         },
                         {
                           id: "CMP-0032",
@@ -1419,7 +1426,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                           issue: "Course Content",
                           date: "20 May 2024",
                           status: "PENDING",
-                          color: "bg-[#FFF4E5] text-[#E67E22]",
+                          color: "bg-[#FFEDD5] text-[#EA580C]",
                         },
                       ].map((row, i) => (
                         <tr
@@ -1427,27 +1434,27 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                           className="hover:bg-slate-50/40 transition-colors"
                         >
                           <td className="px-4 py-4 space-y-0.5">
-                            <p className="text-[13px] font-black text-slate-800">
+                            <p className="text-[16px] font-semibold font-inter text-black">
                               {row.id}
                             </p>
-                            <p className="text-[12px] font-semibold text-slate-500">
+                            <p className="text-[14px] font-inter text-black/70">
                               {row.name}
                             </p>
                           </td>
                           <td className="px-4 py-4">
-                            <p className="text-[13px] font-bold text-slate-700">
+                            <p className="text-[16px] font-medium font-inter text-black/80">
                               {row.issue}
                             </p>
                           </td>
                           <td className="px-4 py-4">
-                            <p className="text-[12px] font-semibold text-slate-500">
+                            <p className="text-[14px] font-medium font-inter text-[#808080]">
                               {row.date}
                             </p>
                           </td>
                           <td className="px-4 py-4">
                             <span
                               className={cn(
-                                "px-2.5 py-1 rounded-full text-[10px] font-black tracking-widest",
+                                "px-2.5 py-1 rounded-full text-[12px] font-semibold font-inter",
                                 row.color
                               )}
                             >
@@ -1465,10 +1472,10 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
               <div className="rounded-[20px] border border-rose-200/60 bg-rose-50 p-6 flex gap-3 shadow-sm">
                 <Info className="h-5 w-5 text-rose-500 shrink-0 mt-0.5" />
                 <div className="space-y-1.5">
-                  <h4 className="text-[14px] font-black text-rose-700">
+                  <h4 className="text-[16px] font-bold font-inter text-[#991B1B]">
                     Critical Note
                   </h4>
-                  <p className="text-[13px] font-bold text-rose-600/90 leading-relaxed max-w-[90%]">
+                  <p className="text-[16px] font-inter text-[#B91C1C] leading-relaxed max-w-[90%]">
                     There is one pending technical complaint regarding lesson
                     CMP-0032. Please review the class recording from June 14th.
                   </p>
@@ -1482,18 +1489,18 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
           {/* AI Usage Monitoring — 4 Stat Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
             {/* AI Speaking Corrections */}
-            <div className="rounded-[24px] p-6 bg-white border border-slate-50 shadow-sm flex justify-between hover:shadow-md transition-shadow h-[140px]">
+            <div className="rounded-[14px] p-6 bg-white border border-slate-50 shadow-sm flex justify-between hover:shadow-md transition-shadow h-[140px]">
               <div className="flex flex-col justify-between">
                 <div>
-                  <h3 className="text-[32px] font-black tracking-tight text-slate-800">
+                  <h3 className="text-[26px] font-semibold font-inter text-black">
                     1,284
                   </h3>
                 </div>
                 <div>
-                  <p className="text-[13px] font-bold text-slate-800">
+                  <p className="text-[14px] font-medium font-inter text-black">
                     AI Speaking Corrections
                   </p>
-                  <p className="text-[12px] font-semibold text-slate-500">
+                  <p className="text-[12px] font-inter text-black/80">
                     High Adoption
                   </p>
                 </div>
@@ -1510,18 +1517,18 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
             </div>
 
             {/* AI Speaking Feedback */}
-            <div className="rounded-[24px] p-6 bg-white border border-slate-50 shadow-sm flex justify-between hover:shadow-md transition-shadow h-[140px]">
+            <div className="rounded-[14px] p-6 bg-white border border-slate-50 shadow-sm flex justify-between hover:shadow-md transition-shadow h-[140px]">
               <div className="flex flex-col justify-between">
                 <div>
-                  <h3 className="text-[32px] font-black tracking-tight text-slate-800">
+                  <h3 className="text-[26px] font-semibold font-inter text-black">
                     842
                   </h3>
                 </div>
                 <div>
-                  <p className="text-[13px] font-bold text-slate-800">
+                  <p className="text-[14px] font-medium font-inter text-black">
                     AI Speaking Feedback
                   </p>
-                  <p className="text-[12px] font-semibold text-slate-500">
+                  <p className="text-[12px] font-inter text-black/80">
                     Standard Compliance
                   </p>
                 </div>
@@ -1538,18 +1545,18 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
             </div>
 
             {/* AI-Assisted Sessions (Dark) */}
-            <div className="rounded-[24px] p-6 bg-[#31564E] border border-[#31564E]/10 shadow-xl flex justify-between hover:shadow-2xl transition-shadow h-[140px]">
+            <div className="rounded-[14px] p-6 bg-[#31564E] border border-[#31564E]/10 shadow-xl flex justify-between hover:shadow-2xl transition-shadow h-[140px]">
               <div className="flex flex-col justify-between">
                 <div>
-                  <h3 className="text-[32px] font-black tracking-tight text-white">
+                  <h3 className="text-[26px] font-semibold font-inter text-white">
                     92%
                   </h3>
                 </div>
                 <div>
-                  <p className="text-[13px] font-bold text-white/90">
+                  <p className="text-[14px] font-medium font-inter text-white">
                     AI-Assisted Sessions
                   </p>
-                  <p className="text-[12px] font-bold text-white/80">Stable</p>
+                  <p className="text-[12px] font-inter text-white/80">Stable</p>
                 </div>
               </div>
               <div className="flex flex-col items-end justify-between">
@@ -1564,18 +1571,18 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
             </div>
 
             {/* AI Interaction Time */}
-            <div className="rounded-[24px] p-6 bg-white border border-slate-50 shadow-sm flex justify-between hover:shadow-md transition-shadow h-[140px]">
+            <div className="rounded-[14px] p-6 bg-white border border-slate-50 shadow-sm flex justify-between hover:shadow-md transition-shadow h-[140px]">
               <div className="flex flex-col justify-between">
                 <div>
-                  <h3 className="text-[32px] font-black tracking-tight text-slate-800">
+                  <h3 className="text-[26px] font-semibold font-inter text-black">
                     12.4 hrs
                   </h3>
                 </div>
                 <div>
-                  <p className="text-[13px] font-bold text-slate-800">
+                  <p className="text-[14px] font-medium font-inter text-black">
                     AI Interaction Time
                   </p>
-                  <p className="text-[12px] font-semibold text-slate-500">
+                  <p className="text-[12px] font-inter text-black/80">
                     Low Usage Time
                   </p>
                 </div>
@@ -1593,10 +1600,10 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
           </div>
 
           {/* AI Assistant Insights Banner */}
-          <div className="rounded-[24px] bg-[#31564E] text-white p-7 shadow-xl space-y-6 mt-6 border border-[#31564E]/20">
+          <div className="rounded-[14px] bg-[#31564E] text-white p-7 shadow-xl space-y-6 mt-6 border border-[#31564E]/20">
             <div className="flex items-center gap-2.5">
               <Lightbulb className="h-4 w-4 text-[#3b82f6]" strokeWidth={3} />
-              <h3 className="text-[15px] font-black tracking-tight">
+              <h3 className="text-[20px] font-bold font-inter text-white">
                 AI Assistant Insights
               </h3>
             </div>
@@ -1604,11 +1611,13 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
                   <div className="h-1.5 w-1.5 rounded-full bg-[#3b82f6]" />
-                  <h4 className="text-[13px] font-bold">Productivity Surge</h4>
+                  <h4 className="text-[16px] font-bold font-inter text-white">
+                    Productivity Surge
+                  </h4>
                 </div>
-                <p className="text-[12px] font-medium text-[#E2E8F0] leading-[1.6] pr-6">
+                <p className="text-[14px] font-inter text-white/80 leading-[1.6] pr-6">
                   AI feedback generation frequency increased by{" "}
-                  <span className="text-[#34D399]">12%</span> compared to last
+                  <span className="text-[#059669]">12%</span> compared to last
                   month.
                 </p>
               </div>
@@ -1616,12 +1625,12 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
                   <div className="h-1.5 w-1.5 rounded-full bg-[#3b82f6]" />
-                  <h4 className="text-[13px] font-bold">
+                  <h4 className="text-[16px] font-bold font-inter text-white">
                     Correction Precision
                   </h4>
                 </div>
-                <p className="text-[12px] font-medium text-[#E2E8F0] leading-[1.6] pr-4">
-                  Tutor matches <span className="text-[#3b82f6]">89%</span> of
+                <p className="text-[14px] font-inter text-white/80 leading-[1.6] pr-4">
+                  Tutor matches <span className="text-[#059669]">89%</span> of
                   AI-suggested grammar corrections during live sessions.
                 </p>
               </div>
@@ -1629,9 +1638,11 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
                   <div className="h-1.5 w-1.5 rounded-full bg-[#3b82f6]" />
-                  <h4 className="text-[13px] font-bold">Usage Alert</h4>
+                  <h4 className="text-[16px] font-bold font-inter text-white">
+                    Usage Alert
+                  </h4>
                 </div>
-                <p className="text-[12px] font-medium text-[#E2E8F0] leading-[1.6] pr-6">
+                <p className="text-[14px] font-inter text-white/80 leading-[1.6] pr-6">
                   Batch 'Advanced B2' has significantly lower AI interaction
                   time (2.4h/week).
                 </p>
@@ -1640,11 +1651,11 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
                   <div className="h-1.5 w-1.5 rounded-full bg-[#3b82f6]" />
-                  <h4 className="text-[13px] font-bold">
+                  <h4 className="text-[16px] font-bold font-inter text-white">
                     New Pattern Detected
                   </h4>
                 </div>
-                <p className="text-[12px] font-medium text-[#E2E8F0] leading-[1.6] pr-6">
+                <p className="text-[14px] font-inter text-white/80 leading-[1.6] pr-6">
                   Frequent use of 'Synonym Suggestions' tool during evening
                   sessions.
                 </p>
@@ -1655,10 +1666,10 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
           {/* AI Session Integration Logs Table */}
           <div className="rounded-[24px] bg-white border border-slate-100 shadow-sm overflow-hidden mt-6">
             <div className="px-8 py-6 border-b border-slate-50 flex items-center justify-between">
-              <h3 className="text-[18px] font-black text-slate-800 tracking-tight">
+              <h3 className="text-[20px] font-semibold font-inter text-black">
                 AI Session Integration Logs
               </h3>
-              <div className="px-4 py-2 bg-[#F8FAFC] rounded-lg text-[13px] font-bold text-slate-500 cursor-pointer hover:bg-slate-100 transition-colors">
+              <div className="px-4 py-2 bg-[#F1F5F9] rounded-md text-[14px] font-semibold text-[#64748B] cursor-pointer hover:bg-slate-100 transition-colors">
                 Live Updates Enabled
               </div>
             </div>
@@ -1678,7 +1689,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                     ].map((col) => (
                       <th
                         key={col}
-                        className="px-8 py-5 text-[12px] font-bold text-slate-500"
+                        className="px-8 py-5 text-[16px] font-medium font-inter text-black/80"
                       >
                         {col}
                       </th>
@@ -1693,9 +1704,9 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                       batch: "BE-AUG-23",
                       corrections: "18m 45s",
                       feature: "Speaking Mic",
-                      featureColor: "text-[#8B5CF6]",
+                      featureColor: "text-[#5750DC]",
                       status: "AI Active",
-                      statusColor: "text-[#10B981]",
+                      statusColor: "text-[#059669]",
                       dotColor: "bg-[#10B981]",
                       time: ["Today", "10:00 AM"],
                     },
@@ -1705,9 +1716,9 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                       batch: "BE-AUG-23",
                       corrections: "05m 12s",
                       feature: "Wait for Time",
-                      featureColor: "text-[#8B5CF6]",
+                      featureColor: "text-[#9333EA]",
                       status: "AI Assisted",
-                      statusColor: "text-[#F59E0B]",
+                      statusColor: "text-[#D97706]",
                       dotColor: "bg-[#F59E0B]",
                       time: ["Today", "10:00 AM"],
                     },
@@ -1717,9 +1728,9 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                       batch: "BE-AUG-23",
                       corrections: "20m 00s",
                       feature: "None",
-                      featureColor: "text-slate-400",
+                      featureColor: "text-[#94A3B8]",
                       status: "AI Active",
-                      statusColor: "text-[#10B981]",
+                      statusColor: "text-[#059669]",
                       dotColor: "bg-[#10B981]",
                       time: ["Today", "10:00 AM"],
                     },
@@ -1729,10 +1740,10 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                       batch: "BE-AUG-23",
                       corrections: "22m 10s",
                       feature: "Speaking Mic",
-                      featureColor: "text-[#8B5CF6]",
+                      featureColor: "text-[#5750DC]",
                       status: "AI Not Used",
-                      statusColor: "text-slate-500",
-                      dotColor: "bg-slate-400",
+                      statusColor: "text-[#64748B]",
+                      dotColor: "bg-[#64748B]",
                       time: ["Today", "10:00 AM"],
                     },
                   ].map((row, i) => (
@@ -1741,22 +1752,22 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                       className="hover:bg-slate-50/40 transition-colors"
                     >
                       <td className="px-8 py-6">
-                        <span className="text-[13px] font-bold text-slate-500">
+                        <span className="text-[16px] font-medium font-inter text-black/80">
                           {row.session}
                         </span>
                       </td>
                       <td className="px-8 py-6">
-                        <span className="text-[14px] font-black text-slate-800">
+                        <span className="text-[16px] font-medium font-inter text-black">
                           {row.course}
                         </span>
                       </td>
                       <td className="px-8 py-6">
-                        <span className="text-[13px] font-semibold text-slate-600">
+                        <span className="text-[16px] font-medium font-inter text-black/80">
                           {row.batch}
                         </span>
                       </td>
                       <td className="px-8 py-6">
-                        <span className="text-[13px] font-bold text-slate-800">
+                        <span className="text-[16px] font-medium font-inter text-black/80">
                           {row.corrections}
                         </span>
                       </td>
@@ -1780,7 +1791,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                           />
                           <span
                             className={cn(
-                              "text-[12px] font-black leading-tight",
+                              "text-[14px] font-bold font-inter",
                               row.statusColor
                             )}
                           >
@@ -1789,10 +1800,10 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                         </div>
                       </td>
                       <td className="px-8 py-6 space-y-0.5">
-                        <p className="text-[13px] font-bold text-slate-700">
+                        <p className="text-[16px] font-inter text-black">
                           {row.time[0]}
                         </p>
-                        <p className="text-[12px] font-medium text-slate-400">
+                        <p className="text-[14px] font-inter text-[#64748B]">
                           {row.time[1]}
                         </p>
                       </td>
@@ -1808,13 +1819,15 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
           {/* Login & Activity Logs — 4 Stat Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
             {/* Attempts */}
-            <div className="rounded-[24px] p-6 bg-white border border-slate-50 shadow-sm flex items-center justify-between hover:shadow-md transition-shadow">
+            <div className="rounded-[14px] p-6 bg-white border border-slate-50 shadow-sm flex items-center justify-between hover:shadow-md transition-shadow">
               <div className="space-y-1">
-                <h3 className="text-[32px] font-black tracking-tight text-slate-800">
+                <h3 className="text-[26px] font-semibold font-inter text-black">
                   12
                 </h3>
-                <p className="text-[13px] font-bold text-slate-800">Attempts</p>
-                <p className="text-[12px] font-medium text-slate-500">
+                <p className="text-[16px] font-medium font-inter text-black">
+                  Attempts
+                </p>
+                <p className="text-[14px] font-inter text-black/80">
                   38 Success
                 </p>
               </div>
@@ -1824,15 +1837,15 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
             </div>
 
             {/* Last Login */}
-            <div className="rounded-[24px] p-6 bg-white border border-slate-50 shadow-sm flex items-center justify-between hover:shadow-md transition-shadow">
+            <div className="rounded-[14px] p-6 bg-white border border-slate-50 shadow-sm flex items-center justify-between hover:shadow-md transition-shadow">
               <div className="space-y-1">
-                <h3 className="text-[32px] font-black tracking-tight text-slate-800">
+                <h3 className="text-[26px] font-semibold font-inter text-black">
                   05
                 </h3>
-                <p className="text-[13px] font-bold text-slate-800">
+                <p className="text-[16px] font-medium font-inter text-black">
                   Last Login
                 </p>
-                <p className="text-[12px] font-medium text-slate-500">
+                <p className="text-[14px] font-inter text-black/80">
                   MacBook Pro • Bangalore, India
                 </p>
               </div>
@@ -1842,15 +1855,15 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
             </div>
 
             {/* Active Sessions */}
-            <div className="rounded-[24px] p-6 bg-white border border-slate-50 shadow-sm flex items-center justify-between hover:shadow-md transition-shadow">
+            <div className="rounded-[14px] p-6 bg-white border border-slate-50 shadow-sm flex items-center justify-between hover:shadow-md transition-shadow">
               <div className="space-y-1">
-                <h3 className="text-[32px] font-black tracking-tight text-slate-800">
+                <h3 className="text-[26px] font-semibold font-inter text-black">
                   02
                 </h3>
-                <p className="text-[13px] font-bold text-slate-800">
+                <p className="text-[16px] font-medium font-inter text-black">
                   Active Sessions
                 </p>
-                <p className="text-[12px] font-medium text-slate-500">
+                <p className="text-[14px] font-inter text-black/80">
                   Chrome/Laptop, Safari/iPhone
                 </p>
               </div>
@@ -1860,15 +1873,15 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
             </div>
 
             {/* Security Status (Dark) */}
-            <div className="rounded-[24px] p-6 bg-[#31564E] border border-[#31564E]/10 shadow-xl flex items-center justify-between hover:shadow-2xl transition-shadow">
+            <div className="rounded-[14px] p-6 bg-[#31564E] border border-[#31564E]/10 shadow-xl flex items-center justify-between hover:shadow-2xl transition-shadow">
               <div className="space-y-1">
-                <h3 className="text-[32px] font-black tracking-tight text-white">
+                <h3 className="text-[26px] font-semibold font-inter text-white">
                   0 Flag
                 </h3>
-                <p className="text-[13px] font-bold text-white/90">
+                <p className="text-[16px] font-medium font-inter text-white">
                   Security Status
                 </p>
-                <p className="text-[12px] font-medium text-white/80">
+                <p className="text-[14px] font-inter text-white/80">
                   No suspicious activity detected
                 </p>
               </div>
@@ -1880,9 +1893,9 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
 
           <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 pt-2 mt-6">
             {/* Login Logs Table */}
-            <div className="xl:col-span-2 rounded-[24px] bg-white border border-slate-100 shadow-sm overflow-hidden flex flex-col">
+            <div className="xl:col-span-2 rounded-[14px] bg-white border border-slate-100 shadow-sm overflow-hidden flex flex-col">
               <div className="px-8 py-6 border-b border-slate-50">
-                <h3 className="text-[18px] font-black text-slate-800 tracking-tight">
+                <h3 className="text-[20px] font-semibold font-inter text-black">
                   AI Session Integration Logs
                 </h3>
               </div>
@@ -1900,7 +1913,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                       ].map((col) => (
                         <th
                           key={col}
-                          className="px-8 py-5 text-[12px] font-bold text-slate-500"
+                          className="px-8 py-5 text-[16px] font-medium font-inter text-black whitespace-nowrap"
                         >
                           {col}
                         </th>
@@ -1913,7 +1926,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                         id: "#LS-9021",
                         date: "Feb 12, 10:15 AM",
                         status: "SUCCESS",
-                        statusColor: "bg-[#EBF9F1] text-[#10B981]",
+                        statusColor: "bg-[#DCFCE7] text-[#15803D]",
                         ip: "157.34.122.9",
                         loc: "Bangalore, IN",
                         bg: "bg-[#FAFCFF]",
@@ -1922,7 +1935,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                         id: "#LS-9021",
                         date: "Feb 12, 10:15 AM",
                         status: "FAILED",
-                        statusColor: "bg-rose-100/50 text-rose-500",
+                        statusColor: "bg-[#FEE2E2] text-[#B91C1C]",
                         ip: "157.34.122.9",
                         loc: "Mumbai, IN",
                         bg: "bg-[#F8FAFC]",
@@ -1931,7 +1944,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                         id: "#LS-9021",
                         date: "Feb 12, 10:15 AM",
                         status: "SUCCESS",
-                        statusColor: "bg-[#EBF9F1] text-[#10B981]",
+                        statusColor: "bg-[#DCFCE7] text-[#15803D]",
                         ip: "157.34.122.9",
                         loc: "Bangalore, IN",
                         bg: "bg-[#FAFCFF]",
@@ -1940,7 +1953,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                         id: "#LS-9021",
                         date: "Feb 12, 10:15 AM",
                         status: "FAILED",
-                        statusColor: "bg-rose-100/50 text-rose-500",
+                        statusColor: "bg-[#FEE2E2] text-[#B91C1C]",
                         ip: "157.34.122.9",
                         loc: "Mumbai, IN",
                         bg: "bg-[#F8FAFC]",
@@ -1948,19 +1961,19 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                     ].map((row, i) => (
                       <tr key={i} className={cn("transition-colors", row.bg)}>
                         <td className="px-8 py-6">
-                          <span className="text-[13px] font-bold text-slate-600">
+                          <span className="text-[16px] font-medium font-inter text-black/80">
                             {row.id}
                           </span>
                         </td>
                         <td className="px-8 py-6">
-                          <span className="text-[13px] font-bold text-slate-800">
+                          <span className="text-[14px] font-medium font-inter text-black whitespace-nowrap">
                             {row.date}
                           </span>
                         </td>
                         <td className="px-8 py-6">
                           <span
                             className={cn(
-                              "px-3 py-1.5 rounded-full text-[10px] font-black tracking-widest",
+                              "px-3 py-1.5 rounded-full text-[12px] font-bold",
                               row.statusColor
                             )}
                           >
@@ -1968,12 +1981,12 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                           </span>
                         </td>
                         <td className="px-8 py-6">
-                          <span className="text-[13px] font-bold text-slate-700">
+                          <span className="text-[14px] font-medium font-inter text-black">
                             {row.ip}
                           </span>
                         </td>
                         <td className="px-8 py-6">
-                          <span className="text-[13px] font-bold text-slate-600">
+                          <span className="text-[16px] font-medium font-inter text-black/80">
                             {row.loc}
                           </span>
                         </td>
@@ -1986,7 +1999,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
 
             {/* Activity Timeline */}
             <div className="rounded-[24px] bg-white border border-slate-100 shadow-sm p-8 flex flex-col">
-              <h3 className="text-[18px] font-black text-slate-800 tracking-tight border-b border-slate-50 pb-6 mb-8">
+              <h3 className="text-[20px] font-semibold font-inter text-black border-b border-slate-50 pb-6 mb-8">
                 Activity Timeline
               </h3>
 
@@ -1995,10 +2008,10 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                 <div className="relative pl-8">
                   <div className="absolute -left-[7.5px] top-1.5 h-3.5 w-3.5 rounded-full bg-[#10B981] ring-[5px] ring-white" />
                   <div className="space-y-1">
-                    <h4 className="text-[14px] font-black text-slate-800">
+                    <h4 className="text-[16px] font-semibold font-inter text-black">
                       Class Started: Physics Advanced
                     </h4>
-                    <p className="text-[12px] font-medium text-slate-400">
+                    <p className="text-[14px] font-inter text-[#64748B]">
                       Today, 11:30 AM
                     </p>
                   </div>
@@ -2008,10 +2021,10 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                 <div className="relative pl-8">
                   <div className="absolute -left-[7.5px] top-1.5 h-3.5 w-3.5 rounded-full bg-[#3b82f6] ring-[5px] ring-white" />
                   <div className="space-y-1">
-                    <h4 className="text-[14px] font-black text-slate-800">
+                    <h4 className="text-[16px] font-semibold font-inter text-black">
                       Logged In Successfully
                     </h4>
-                    <p className="text-[12px] font-medium text-slate-400">
+                    <p className="text-[14px] font-inter text-[#64748B]">
                       Today, 10:15 AM &bull; IP: 157.34.122.9
                     </p>
                   </div>
@@ -2021,10 +2034,10 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                 <div className="relative pl-8">
                   <div className="absolute -left-[7.5px] top-1.5 h-3.5 w-3.5 rounded-full bg-[#F59E0B] ring-[5px] ring-white" />
                   <div className="space-y-1">
-                    <h4 className="text-[14px] font-black text-slate-800">
+                    <h4 className="text-[16px] font-semibold font-inter text-black">
                       Course Content Assigned
                     </h4>
-                    <p className="text-[12px] font-medium text-slate-400">
+                    <p className="text-[14px] font-inter text-[#64748B]">
                       Yesterday, 06:12 PM
                     </p>
                   </div>
@@ -2034,10 +2047,10 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                 <div className="relative pl-8">
                   <div className="absolute -left-[7.5px] top-1.5 h-3.5 w-3.5 rounded-full bg-slate-200 ring-[5px] ring-white" />
                   <div className="space-y-1">
-                    <h4 className="text-[14px] font-black text-slate-800">
+                    <h4 className="text-[16px] font-semibold font-inter text-black">
                       Class Ended: Basic Math
                     </h4>
-                    <p className="text-[12px] font-medium text-slate-400">
+                    <p className="text-[14px] font-inter text-[#64748B]">
                       Feb 11, 05:30 PM
                     </p>
                   </div>
@@ -2049,7 +2062,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
           {/* Session Activity Logs Table */}
           <div className="rounded-[24px] bg-white border border-slate-100 shadow-sm overflow-hidden mt-6">
             <div className="px-8 py-6 border-b border-slate-50">
-              <h3 className="text-[18px] font-black text-slate-800 tracking-tight">
+              <h3 className="text-[20px] font-semibold font-inter text-black">
                 Session Activity Logs
               </h3>
             </div>
@@ -2067,7 +2080,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                     ].map((col) => (
                       <th
                         key={col}
-                        className="px-8 py-5 text-[12px] font-bold text-slate-500"
+                        className="px-8 py-5 text-[16px] font-medium font-inter text-black/80"
                       >
                         {col}
                       </th>
@@ -2115,29 +2128,29 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                   ].map((row, i) => (
                     <tr key={i} className={cn("transition-colors", row.bg)}>
                       <td className="px-8 py-6">
-                        <span className="text-[13px] font-bold text-slate-600">
+                        <span className="text-[16px] font-medium font-inter text-black/80">
                           {row.id}
                         </span>
                       </td>
                       <td className="px-8 py-6">
-                        <span className="text-[13px] font-bold text-slate-800">
+                        <span className="text-[16px] font-medium font-inter text-black">
                           {row.start}
                         </span>
                       </td>
                       <td className="px-8 py-6">
-                        <span className="text-[13px] font-bold text-slate-600">
+                        <span className="text-[16px] font-medium font-inter text-black/80">
                           {row.dur}
                         </span>
                       </td>
                       <td className="px-8 py-6">
-                        <span className="text-[13px] font-bold text-slate-700">
+                        <span className="text-[16px] font-medium font-inter text-black">
                           {row.device}
                         </span>
                       </td>
                       <td className="px-8 py-6">
                         <span
                           className={cn(
-                            "text-[13px] font-bold",
+                            "text-[16px] font-medium font-inter text-[#64748B]",
                             row.activityColor
                           )}
                         >
@@ -2154,7 +2167,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
           {/* Admin Actions on Tutor Table */}
           <div className="rounded-[24px] bg-white border border-slate-100 shadow-sm overflow-hidden mt-6">
             <div className="px-8 py-6 border-b border-slate-50">
-              <h3 className="text-[18px] font-black text-slate-800 tracking-tight">
+              <h3 className="text-[20px] font-semibold font-inter text-black">
                 Admin Actions on Tutor
               </h3>
             </div>
@@ -2172,7 +2185,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                     ].map((col) => (
                       <th
                         key={col}
-                        className="px-8 py-5 text-[12px] font-bold text-slate-500"
+                        className="px-8 py-5 text-[16px] font-medium font-inter text-black/80"
                       >
                         {col}
                       </th>
@@ -2187,7 +2200,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                       initials: "SC",
                       avatarBg: "bg-blue-100 text-blue-600",
                       type: "PERMISSION_CHANGE",
-                      typeBg: "bg-blue-50 text-blue-600",
+                      typeBg: "bg-[#137FEC]/10 text-[#137FEC]",
                       desc: "Upgraded tutor tier to 'Premium Tutors'",
                       time: "Feb 10, 02:30 PM",
                       bg: "bg-[#FAFCFF]",
@@ -2198,7 +2211,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                       initials: "JW",
                       avatarBg: "bg-slate-200 text-slate-700",
                       type: "PROFILE_AUDIT",
-                      typeBg: "bg-orange-50 text-orange-600",
+                      typeBg: "bg-[#FEF3C7] text-[#B45309]",
                       desc: "Manual verification of certification documents",
                       time: "Profile Update",
                       bg: "bg-[#F8FAFC]",
@@ -2209,7 +2222,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                       initials: "SC",
                       avatarBg: "bg-blue-100 text-blue-600",
                       type: "PERMISSION_CHANGE",
-                      typeBg: "bg-blue-50 text-blue-600",
+                      typeBg: "bg-[#137FEC]/10 text-[#137FEC]",
                       desc: "Upgraded tutor tier to 'Premium Tutors'",
                       time: "Feb 10, 02:30 PM",
                       bg: "bg-[#FAFCFF]",
@@ -2220,7 +2233,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                       initials: "JW",
                       avatarBg: "bg-slate-200 text-slate-700",
                       type: "PROFILE_AUDIT",
-                      typeBg: "bg-orange-50 text-orange-600",
+                      typeBg: "bg-[#FEF3C7] text-[#B45309]",
                       desc: "Manual verification of certification documents",
                       time: "Profile Update",
                       bg: "bg-[#F8FAFC]",
@@ -2228,7 +2241,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                   ].map((row, i) => (
                     <tr key={i} className={cn("transition-colors", row.bg)}>
                       <td className="px-8 py-6">
-                        <span className="text-[13px] font-bold text-slate-600">
+                        <span className="text-[16px] font-medium font-inter text-black/80">
                           {row.id}
                         </span>
                       </td>
@@ -2242,7 +2255,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                           >
                             {row.initials}
                           </div>
-                          <span className="text-[14px] font-bold text-slate-800">
+                          <span className="text-[16px] font-medium font-inter text-black">
                             {row.admin}
                           </span>
                         </div>
@@ -2250,7 +2263,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                       <td className="px-8 py-6">
                         <span
                           className={cn(
-                            "px-2.5 py-1.5 rounded-full text-[10px] font-black tracking-wider uppercase",
+                            "px-2.5 py-1.5 rounded-full text-[12px] font-semibold font-inter",
                             row.typeBg
                           )}
                         >
@@ -2258,12 +2271,12 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                         </span>
                       </td>
                       <td className="px-8 py-6">
-                        <span className="text-[13px] font-medium text-slate-500">
+                        <span className="text-[16px] font-medium font-inter text-[#475569]">
                           {row.desc}
                         </span>
                       </td>
                       <td className="px-8 py-6">
-                        <span className="text-[13px] font-semibold text-slate-500">
+                        <span className="text-[16px] font-medium font-inter text-[#64748B]">
                           {row.time}
                         </span>
                       </td>
@@ -2282,11 +2295,11 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
               {/* Attendance & AI Usage Trend Card */}
               <div className="rounded-[24px] bg-white p-8 shadow-sm border border-slate-50 space-y-8">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-[18px] font-black text-slate-800 tracking-tight">
+                  <h3 className="text-[20px] font-bold font-inter text-[#0F172A] tracking-tight">
                     Attendance & AI Usage Trend
                   </h3>
                   <div className="relative group">
-                    <div className="flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-100 bg-slate-50/50 text-[13px] font-bold text-slate-600 cursor-pointer hover:bg-slate-100 transition-all">
+                    <div className="flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-100 bg-slate-50/50 text-[14px] font-inter text-black cursor-pointer hover:bg-slate-100 transition-all">
                       Last 6 Months
                       <ChevronDown className="h-4 w-4 opacity-50" />
                     </div>
@@ -2365,8 +2378,8 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
               {/* Secondary Analytics Row */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Student Feedback Trend */}
-                <div className="rounded-[24px] bg-white p-8 shadow-sm border border-slate-50 space-y-8 flex flex-col justify-between">
-                  <h3 className="text-[18px] font-black text-slate-800 tracking-tight">
+                <div className="rounded-[14px] bg-white p-8 shadow-sm border border-slate-50 space-y-8 flex flex-col justify-between">
+                  <h3 className="text-[20px] font-bold font-inter text-black tracking-tight">
                     Student Feedback Trend
                   </h3>
 
@@ -2398,8 +2411,8 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                 </div>
 
                 {/* Course Completion Progress */}
-                <div className="rounded-[24px] bg-white p-8 shadow-sm border border-slate-50 space-y-8">
-                  <h3 className="text-[18px] font-black text-slate-800 tracking-tight">
+                <div className="rounded-[14px] bg-white p-8 shadow-sm border border-slate-50 space-y-8">
+                  <h3 className="text-[20px] font-bold font-inter text-black tracking-tight">
                     Course Completion Progress
                   </h3>
 
@@ -2408,25 +2421,23 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                       {
                         name: "English Beginner",
                         progress: 95,
-                        color: "bg-[#3AC0A0]",
+                        color: "bg-[#22C55E]",
                       },
                       {
                         name: "Business English",
                         progress: 72,
-                        color: "bg-[#8B5CF6]",
+                        color: "bg-[#5750DC]",
                       },
                       {
                         name: "IELTS Prep Course",
                         progress: 45,
-                        color: "bg-[#FF8206]",
+                        color: "bg-[#F59E0B]",
                       },
                     ].map((course) => (
                       <div key={course.name} className="space-y-3">
-                        <div className="flex justify-between items-center text-[13px] font-bold">
-                          <span className="text-slate-800">{course.name}</span>
-                          <span className="text-slate-400">
-                            {course.progress}%
-                          </span>
+                        <div className="flex justify-between items-center text-[14px] font-medium font-inter">
+                          <span className="text-black">{course.name}</span>
+                          <span className="text-black">{course.progress}%</span>
                         </div>
                         <div className="h-2 rounded-full bg-slate-100 overflow-hidden">
                           <div
@@ -2445,12 +2456,12 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
             </div>
 
             {/* Performance Insights Sidebar (Emerald Card) */}
-            <div className="rounded-[32px] bg-[#31564E] px-8 py-7 shadow-2xl flex flex-col space-y-6 text-white h-fit lg:sticky lg:top-24">
+            <div className="rounded-[14px] bg-[#31564E] px-8 py-7 shadow-2xl flex flex-col space-y-6 text-white h-fit lg:sticky lg:top-24">
               <div className="flex items-center gap-3">
                 <span className="h-10 w-10 rounded-2xl bg-white/10 flex items-center justify-center">
                   <Lightbulb className="h-5 w-5 text-[#3AC0A0]" />
                 </span>
-                <h3 className="text-[19px] font-black tracking-tight">
+                <h3 className="text-[20px] font-bold font-inter text-white tracking-tight">
                   Performance Insights
                 </h3>
               </div>
@@ -2492,10 +2503,10 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                       )}
                     />
                     <div className="space-y-1.5">
-                      <h4 className="text-[14px] font-black tracking-tight uppercase opacity-90">
+                      <h4 className="text-[16px] font-semibold font-inter text-white opacity-90">
                         {insight.title}
                       </h4>
-                      <p className="text-[12px] font-medium leading-relaxed opacity-60">
+                      <p className="text-[14px] font-inter leading-relaxed opacity-60">
                         {insight.desc}
                       </p>
                     </div>
@@ -2505,7 +2516,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
 
               <Button
                 variant="outline"
-                className="w-full h-14 rounded-2xl border-white/20 bg-white/5 hover:bg-white/10 text-white font-black text-[14px]"
+                className="w-full h-14 rounded-2xl border-white/20 bg-white/5 hover:bg-white/10 text-white font-bold font-inter text-[14px]"
               >
                 Generate Report
               </Button>
@@ -2513,7 +2524,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
               {/* Nested AI Support Usage Card */}
               <div className="rounded-[24px] bg-black/20 border border-white/5 p-6 space-y-6">
                 <div className="flex items-center justify-between">
-                  <h4 className="text-[14px] font-black uppercase tracking-widest text-[#D1FAE5]">
+                  <h4 className="text-[14px] font-bold font-inter text-white  tracking-widest">
                     AI Support Usage
                   </h4>
                   <Sparkles className="h-4 w-4 text-[#3AC0A0]" />
@@ -2529,7 +2540,7 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                   ))}
                 </div>
 
-                <p className="text-[11px] font-medium leading-relaxed opacity-60">
+                <p className="text-[12px] font-inter text-white/80 leading-relaxed">
                   Dr. Rodriguez utilizes AI tools in 92% of her curriculum
                   delivery.
                 </p>
@@ -2540,10 +2551,10 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
           {/* Course-wise Performance Detailed Breakdown Table */}
           <div className="rounded-[24px] bg-white border border-slate-100 shadow-sm overflow-hidden mb-12">
             <div className="p-8 flex items-center justify-between border-b border-slate-50">
-              <h3 className="text-[20px] font-black text-slate-800 tracking-tight">
+              <h3 className="text-[20px] font-semibold font-inter text-black tracking-tight">
                 Course-wise Performance Detailed Breakdown
               </h3>
-              <Button className="h-11 rounded-2xl px-6 bg-black hover:bg-black/90 text-white font-bold flex items-center gap-3 shadow-xl shadow-black/10">
+              <Button className="h-11 rounded-2xl px-6 bg-black hover:bg-black/90 text-white font-inter font-medium text-[16px] flex items-center gap-3 shadow-xl shadow-black/10">
                 <Download className="h-4 w-4" />
                 Export data
               </Button>
@@ -2552,29 +2563,29 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
             <div className="overflow-x-auto">
               <table className="w-full text-left">
                 <thead>
-                  <tr className="bg-slate-50/50">
-                    <th className="px-8 py-6 text-[12px] font-black text-slate-400 uppercase tracking-widest">
+                  <tr className="bg-slate-50/50 whitespace-nowrap">
+                    <th className="px-8 py-6 text-[16px] font-medium font-inter text-black/80">
                       Course Name
                     </th>
-                    <th className="px-8 py-6 text-[12px] font-black text-slate-400 uppercase tracking-widest text-center">
+                    <th className="px-8 py-6 text-[16px] font-medium font-inter text-black/80">
                       Session
                     </th>
-                    <th className="px-8 py-6 text-[12px] font-black text-slate-400 uppercase tracking-widest text-center">
+                    <th className="px-8 py-6 text-[16px] font-medium font-inter text-black/80">
                       Attendance
                     </th>
-                    <th className="px-8 py-6 text-[12px] font-black text-slate-400 uppercase tracking-widest text-center">
+                    <th className="px-8 py-6 text-[16px] font-medium font-inter text-black/80">
                       Completion
                     </th>
-                    <th className="px-8 py-6 text-[12px] font-black text-slate-400 uppercase tracking-widest text-center">
+                    <th className="px-8 py-6 text-[16px] font-medium font-inter text-black/80">
                       Student Rating
                     </th>
-                    <th className="px-8 py-6 text-[12px] font-black text-slate-400 uppercase tracking-widest text-center">
+                    <th className="px-8 py-6 text-[16px] font-medium font-inter text-black/80">
                       AI Corrections
                     </th>
-                    <th className="px-8 py-6 text-[12px] font-black text-slate-400 uppercase tracking-widest text-center">
+                    <th className="px-8 py-6 text-[16px] font-medium font-inter text-black/80">
                       Cancelled
                     </th>
-                    <th className="px-8 py-6 text-[12px] font-black text-slate-400 uppercase tracking-widest">
+                    <th className="px-8 py-6 text-[16px] font-medium font-inter text-black/80">
                       Status
                     </th>
                   </tr>
@@ -2627,50 +2638,50 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                       className="hover:bg-slate-50/30 transition-colors group"
                     >
                       <td className="px-8 py-6">
-                        <span className="text-[14px] font-black text-slate-800">
+                        <span className="text-[16px] font-semibold font-inter text-black whitespace-nowrap">
                           {row.name}
                         </span>
                       </td>
                       <td className="px-8 py-6 text-center">
-                        <span className="text-[13px] font-bold text-slate-500">
+                        <span className="text-[16px] font-medium font-inter text-black/80">
                           {row.sessions}
                         </span>
                       </td>
                       <td className="px-8 py-6 text-center">
-                        <span className="text-[13px] font-bold text-slate-500">
+                        <span className="text-[16px] font-medium font-inter text-black/80">
                           {row.attendance}
                         </span>
                       </td>
                       <td className="px-8 py-6 text-center">
-                        <span className="text-[13px] font-bold text-slate-500">
+                        <span className="text-[16px] font-medium font-inter text-black/80">
                           {row.completion}
                         </span>
                       </td>
                       <td className="px-8 py-6 text-center text-nowrap">
-                        <span className="text-[13px] font-bold text-slate-500">
+                        <span className="text-[16px] font-medium font-inter text-black/80">
                           {row.rating}
                         </span>
                         <Star className="h-3 w-3 text-yellow-400 inline-block ml-1 fill-yellow-400" />
                       </td>
                       <td className="px-8 py-6 text-center">
-                        <span className="text-[13px] font-bold text-slate-500">
+                        <span className="text-[16px] font-medium font-inter text-black/80">
                           {row.ai}
                         </span>
                       </td>
                       <td className="px-8 py-6 text-center">
-                        <span className="text-[13px] font-bold text-slate-500">
+                        <span className="text-[16px] font-medium font-inter text-black/80">
                           {row.cancelled}
                         </span>
                       </td>
                       <td className="px-8 py-6">
                         <span
                           className={cn(
-                            "px-5 py-2.5 rounded-full text-[11px] font-black tracking-tight whitespace-nowrap inline-flex items-center justify-center",
+                            "px-5 py-2.5 rounded-lg text-[11px] font-black tracking-tight whitespace-nowrap inline-flex items-center justify-center",
                             row.status === "Excellent"
-                              ? "bg-[#EBF9F1] text-[#059669]"
+                              ? "bg-[#D1FAE5] text-[#047857]/80"
                               : row.status === "Good"
-                                ? "bg-[#F0F2FF] text-[#4751BB]"
-                                : "bg-[#FFF4E5] text-[#E67E22]"
+                                ? "bg-[#1D4ED8]/20 text-[#1D4ED8]"
+                                : "bg-[#FEF3C7] text-[#B45309]/80"
                           )}
                         >
                           {row.status}
@@ -2724,46 +2735,48 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
           {/* Secondary Dashboard Tier: Charts & Profiles */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 pb-10">
             {/* Basic Information Card */}
-            <div className="rounded-[24px] bg-white p-6 md:p-8 shadow-sm border border-slate-50 space-y-7">
-              <h3 className="text-[18px] font-black text-slate-800 tracking-tight">
+            <div className="rounded-[14px] bg-white p-6 md:p-8 shadow-sm border border-slate-50 space-y-7">
+              <h3 className="text-[20px] font-inter font-semibold text-[#0F172A]">
                 Basic Information
               </h3>
 
+              <hr className="border-[#E5E7EB]" />
+
               <div className="space-y-5">
                 <div className="space-y-1.5">
-                  <p className="text-[12px] font-black text-slate-300 uppercase tracking-widest">
+                  <p className="text-[16px] font-inter font-medium text-[#808080]">
                     Qualification
                   </p>
-                  <p className="text-[14px] font-bold text-slate-800">
+                  <p className="text-[16px] font-inter font-medium text-black">
                     Ph.D. in Linguistics, Stanford
                   </p>
                 </div>
                 <div className="space-y-1.5">
-                  <p className="text-[12px] font-black text-slate-300 uppercase tracking-widest">
+                  <p className="text-[16px] font-inter font-medium text-[#808080]">
                     Experience
                   </p>
-                  <p className="text-[14px] font-bold text-slate-800">
+                  <p className="text-[16px] font-inter font-medium text-black">
                     12+ Years Professional Teaching
                   </p>
                 </div>
                 <div className="space-y-1.5">
-                  <p className="text-[12px] font-black text-slate-300 uppercase tracking-widest">
+                  <p className="text-[16px] font-inter font-medium text-[#808080]">
                     Languages
                   </p>
                   <div className="flex flex-wrap gap-2 pt-1">
-                    <span className="px-3 py-1.5 rounded-full bg-[#FAEEE9] text-[#E67E22] text-[11px] font-black tracking-tight border border-[#E67E22]/5">
+                    <span className="px-4 py-1.5 rounded-full bg-[#EC5B13]/20 text-black text-[14px] font-inter font-medium tracking-tight border border-[#E67E22]/5">
                       English (Native)
                     </span>
-                    <span className="px-3 py-1.5 rounded-full bg-[#FAEEE9] text-[#E67E22] text-[11px] font-black tracking-tight border border-[#E67E22]/5">
+                    <span className="px-4 py-1.5 rounded-full bg-[#EC5B13]/20 text-black text-[14px] font-inter font-medium tracking-tight border border-[#E67E22]/5">
                       Spanish (C2)
                     </span>
                   </div>
                 </div>
                 <div className="space-y-1.5">
-                  <p className="text-[12px] font-black text-slate-300 uppercase tracking-widest">
+                  <p className="text-[16px] font-inter font-medium text-[#808080]">
                     Join Date
                   </p>
-                  <p className="text-[14px] font-bold text-slate-800">
+                  <p className="text-[16px] font-inter font-medium text-black">
                     October 14, 2022
                   </p>
                 </div>
@@ -2771,19 +2784,19 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
             </div>
 
             {/* Avg Class Duration Card */}
-            <div className="rounded-[24px] bg-white p-6 md:p-8 shadow-sm border border-slate-50 space-y-6">
+            <div className="rounded-[14px] bg-white p-6 md:p-8 shadow-sm border border-slate-50 space-y-6">
               <div className="flex items-center justify-between">
-                <h3 className="text-[18px] font-black text-slate-800 tracking-tight">
+                <h3 className="text-[20px] font-inter font-semibold text-[#0F172A]">
                   Avg Class Duration
                 </h3>
                 <Clock className="h-5 w-5 text-[#31564E] opacity-70" />
               </div>
 
               <div className="flex items-baseline gap-2">
-                <span className="text-[28px] font-black text-slate-800">
+                <span className="text-[30px] font-inter font-medium text-[#0F172A]">
                   52m
                 </span>
-                <span className="text-[13px] font-bold text-[#059669]">
+                <span className="text-[13px] font-medium text-[#22C55E]">
                   +4m
                 </span>
               </div>
@@ -2804,15 +2817,15 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
             </div>
 
             {/* Course Completion % Card */}
-            <div className="rounded-[24px] bg-white p-6 md:p-8 shadow-sm border border-slate-50 space-y-6">
+            <div className="rounded-[14px] bg-white p-6 md:p-8 shadow-sm border border-slate-50 space-y-6">
               <div className="flex items-center justify-between">
-                <h3 className="text-[18px] font-black text-slate-800 tracking-tight">
+                <h3 className="text-[20px] font-inter font-semibold text-[#0F172A]">
                   Course Completion %
                 </h3>
                 <CheckSquare className="h-5 w-5 text-[#31564E] opacity-70" />
               </div>
 
-              <h3 className="text-[28px] font-black text-slate-800 tracking-tight">
+              <h3 className="text-[30px] font-inter font-medium text-[#0F172A]">
                 94.2%
               </h3>
 
@@ -2829,12 +2842,12 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
           </div>
 
           {/* Assigned Courses Management Table */}
-          <div className="rounded-[24px] bg-white border border-slate-100 shadow-sm overflow-hidden mb-10">
+          <div className="rounded-[14px] bg-white border border-slate-100 shadow-sm overflow-hidden mb-10">
             <div className="p-8 flex items-center justify-between border-b border-slate-50">
-              <h3 className="text-[20px] font-black text-slate-800 tracking-tight">
+              <h3 className="text-[20px] font-inter font-semibold text-[#0F172A]">
                 Assigned Courses
               </h3>
-              <Button className="h-11 rounded-2xl px-6 bg-black hover:bg-black/90 text-white font-bold flex items-center gap-3 shadow-xl shadow-black/10">
+              <Button className="h-11 rounded-2xl px-6 bg-black hover:bg-black/90 text-white font-inter text-[16px] font-medium flex items-center gap-3 shadow-xl shadow-black/10">
                 Assign New Course
               </Button>
             </div>
@@ -2843,25 +2856,25 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
               <table className="w-full text-left">
                 <thead>
                   <tr className="bg-slate-50/50">
-                    <th className="px-8 py-5 text-[12px] font-black text-slate-400 uppercase tracking-widest">
+                    <th className="px-8 py-5 text-[16px] font-inter font-medium text-black/80">
                       Course Name
                     </th>
-                    <th className="px-8 py-5 text-[12px] font-black text-slate-400 uppercase tracking-widest">
+                    <th className="px-8 py-5 text-[16px] font-inter font-medium text-black/80">
                       Level
                     </th>
-                    <th className="px-8 py-5 text-[12px] font-black text-slate-400 uppercase tracking-widest">
+                    <th className="px-8 py-5 text-[16px] font-inter font-medium text-black/80">
                       Batch
                     </th>
-                    <th className="px-8 py-5 text-[12px] font-black text-slate-400 uppercase tracking-widest">
+                    <th className="px-8 py-5 text-[16px] font-inter font-medium text-black/80">
                       Student
                     </th>
-                    <th className="px-8 py-5 text-[12px] font-black text-slate-400 uppercase tracking-widest">
+                    <th className="px-8 py-5 text-[16px] font-inter font-medium text-black/80">
                       Progress
                     </th>
-                    <th className="px-8 py-5 text-[12px] font-black text-slate-400 uppercase tracking-widest">
+                    <th className="px-8 py-5 text-[16px] font-inter font-medium text-black/80">
                       Status
                     </th>
-                    <th className="px-8 py-5 text-[12px] font-black text-slate-400 uppercase tracking-widest text-right">
+                    <th className="px-8 py-5 text-[16px] font-inter font-medium text-black/80">
                       Actions
                     </th>
                   </tr>
@@ -2922,22 +2935,22 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                       className="hover:bg-slate-50/30 transition-colors group"
                     >
                       <td className="px-8 py-6">
-                        <span className="text-[14px] font-bold text-slate-800">
+                        <span className="text-[16px] font-semibold font-inter text-black">
                           {course.name}
                         </span>
                       </td>
                       <td className="px-8 py-6">
-                        <span className="text-[13px] font-bold text-slate-500">
+                        <span className="text-[16px] font-medium font-inter text-black">
                           {course.level}
                         </span>
                       </td>
                       <td className="px-8 py-6">
-                        <span className="text-[13px] font-bold text-slate-500">
+                        <span className="text-[16px] font-medium font-inter text-black">
                           {course.batch}
                         </span>
                       </td>
                       <td className="px-8 py-6">
-                        <span className="text-[13px] font-bold text-slate-500">
+                        <span className="text-[16px] font-medium font-inter text-black">
                           {course.students}
                         </span>
                       </td>
@@ -2947,8 +2960,8 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                             className={cn(
                               "h-full rounded-full transition-all",
                               course.status === "Completed"
-                                ? "bg-[#3AC0A0]"
-                                : "bg-[#E67E22]"
+                                ? "bg-[#22C55E]"
+                                : "bg-[#EC5B13]"
                             )}
                             style={{ width: `${course.progress}%` }}
                           />
@@ -2959,8 +2972,8 @@ const TutorProfile = ({ onBack }: TutorProfileProps) => {
                           className={cn(
                             "px-4 py-1.5 rounded-full text-[11px] font-black tracking-tight",
                             course.status === "Completed"
-                              ? "bg-[#EBF9F1] text-[#059669]"
-                              : "bg-[#FFF4E5] text-[#E67E22]"
+                              ? "bg-[#D1FAE5] text-[#047857]/80"
+                              : "bg-[#FEF3C7] text-[#B45309]/80"
                           )}
                         >
                           {course.status}
