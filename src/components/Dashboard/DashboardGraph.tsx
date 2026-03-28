@@ -80,6 +80,11 @@ const formatYAxis = (value: number) => {
 const DashboardGraph = () => {
   const [revenueRange, setRevenueRange] = React.useState("Last 6 Months");
   const [growthRange, setGrowthRange] = React.useState("Last 6 Months");
+  const [isMounted, setIsMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   return (
     <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
@@ -118,78 +123,82 @@ const DashboardGraph = () => {
         </div>
 
         <div className="h-[300px] w-full">
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart
-              data={revenueDataByRange[revenueRange]}
-              margin={{ top: 10, right: 10, left: 10, bottom: 0 }}
-              barGap={0}
-            >
-              <CartesianGrid
-                strokeDasharray="3 3"
-                vertical={false}
-                stroke="#E2E8F0"
-              />
-              <XAxis
-                dataKey="month"
-                axisLine={false}
-                tickLine={false}
-                tick={{ fill: "#64748B", fontSize: 12 }}
-                dy={10}
-              />
-              <YAxis
-                axisLine={false}
-                tickLine={false}
-                tick={{ fill: "#64748B", fontSize: 12 }}
-                tickFormatter={formatYAxis}
-                ticks={[0, 10000, 50000, 100000, 500000, 1000000]}
-                domain={[0, 1000000]}
-              />
-              <Tooltip
-                cursor={{ fill: "#F1F5F9" }}
-                contentStyle={{
-                  borderRadius: "12px",
-                  border: "none",
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-                }}
-              />
-              <Legend
-                content={({ payload }) => (
-                  <div className="flex items-center justify-center gap-6 mt-6">
-                    {payload?.map((entry: any, index: number) => (
-                      <div
-                        key={`item-${index}`}
-                        className="flex items-center gap-2"
-                      >
+          {isMounted ? (
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart
+                data={revenueDataByRange[revenueRange]}
+                margin={{ top: 10, right: 10, left: 10, bottom: 0 }}
+                barGap={0}
+              >
+                <CartesianGrid
+                  strokeDasharray="3 3"
+                  vertical={false}
+                  stroke="#E2E8F0"
+                />
+                <XAxis
+                  dataKey="month"
+                  axisLine={false}
+                  tickLine={false}
+                  tick={{ fill: "#64748B", fontSize: 12 }}
+                  dy={10}
+                />
+                <YAxis
+                  axisLine={false}
+                  tickLine={false}
+                  tick={{ fill: "#64748B", fontSize: 12 }}
+                  tickFormatter={formatYAxis}
+                  ticks={[0, 10000, 50000, 100000, 500000, 1000000]}
+                  domain={[0, 1000000]}
+                />
+                <Tooltip
+                  cursor={{ fill: "#F1F5F9" }}
+                  contentStyle={{
+                    borderRadius: "12px",
+                    border: "none",
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                  }}
+                />
+                <Legend
+                  content={({ payload }) => (
+                    <div className="flex items-center justify-center gap-6 mt-6">
+                      {payload?.map((entry: any, index: number) => (
                         <div
-                          className="h-3 w-3 rounded-full"
-                          style={{ backgroundColor: entry.color }}
-                        />
-                        <span className="text-sm font-medium text-muted-foreground">
-                          {entry.value}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              />
-              <Bar
-                dataKey="b2c"
-                name="B2C"
-                fill="#43CA8D"
-                radius={[4, 4, 0, 0]}
-                barSize={40}
-                stackId="a"
-              />
-              <Bar
-                dataKey="b2b"
-                name="B2B"
-                fill="#31564E"
-                radius={[4, 4, 0, 0]}
-                barSize={40}
-                stackId="a"
-              />
-            </BarChart>
-          </ResponsiveContainer>
+                          key={`item-${index}`}
+                          className="flex items-center gap-2"
+                        >
+                          <div
+                            className="h-3 w-3 rounded-full"
+                            style={{ backgroundColor: entry.color }}
+                          />
+                          <span className="text-sm font-medium text-muted-foreground">
+                            {entry.value}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                />
+                <Bar
+                  dataKey="b2c"
+                  name="B2C"
+                  fill="#43CA8D"
+                  radius={[4, 4, 0, 0]}
+                  barSize={40}
+                  stackId="a"
+                />
+                <Bar
+                  dataKey="b2b"
+                  name="B2B"
+                  fill="#31564E"
+                  radius={[4, 4, 0, 0]}
+                  barSize={40}
+                  stackId="a"
+                />
+              </BarChart>
+            </ResponsiveContainer>
+          ) : (
+            <div className="h-full w-full" />
+          )}
         </div>
       </div>
 
@@ -228,88 +237,92 @@ const DashboardGraph = () => {
         </div>
 
         <div className="h-[300px] w-full">
-          <ResponsiveContainer width="100%" height="100%">
-            <AreaChart
-              data={growthDataByRange[growthRange]}
-              margin={{ top: 10, right: 20, left: 10, bottom: 0 }}
-            >
-              <defs>
-                <linearGradient id="colorDirect" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#4ADE80" stopOpacity={0.3} />
-                  <stop offset="95%" stopColor="#4ADE80" stopOpacity={0} />
-                </linearGradient>
-                <linearGradient id="colorInstitute" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#31564E" stopOpacity={0.1} />
-                  <stop offset="95%" stopColor="#31564E" stopOpacity={0} />
-                </linearGradient>
-              </defs>
-              <CartesianGrid
-                strokeDasharray="3 3"
-                vertical={false}
-                stroke="#E2E8F0"
-              />
-              <XAxis
-                dataKey="month"
-                axisLine={false}
-                tickLine={false}
-                tick={{ fill: "#64748B", fontSize: 12 }}
-                dy={10}
-              />
-              <YAxis
-                axisLine={false}
-                tickLine={false}
-                tick={{ fill: "#64748B", fontSize: 12 }}
-                tickFormatter={formatYAxis}
-                ticks={[0, 10000, 50000, 100000, 500000, 1000000]}
-                domain={[0, 1000000]}
-              />
-              <Tooltip
-                contentStyle={{
-                  borderRadius: "12px",
-                  border: "none",
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-                }}
-              />
-              <Legend
-                content={({ payload }) => (
-                  <div className="flex items-center justify-center gap-6 mt-6">
-                    {payload?.map((entry: any, index: number) => (
-                      <div
-                        key={`item-${index}`}
-                        className="flex items-center gap-2"
-                      >
+          {isMounted ? (
+            <ResponsiveContainer width="100%" height="100%">
+              <AreaChart
+                data={growthDataByRange[growthRange]}
+                margin={{ top: 10, right: 20, left: 10, bottom: 0 }}
+              >
+                <defs>
+                  <linearGradient id="colorDirect" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#4ADE80" stopOpacity={0.3} />
+                    <stop offset="95%" stopColor="#4ADE80" stopOpacity={0} />
+                  </linearGradient>
+                  <linearGradient id="colorInstitute" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#31564E" stopOpacity={0.1} />
+                    <stop offset="95%" stopColor="#31564E" stopOpacity={0} />
+                  </linearGradient>
+                </defs>
+                <CartesianGrid
+                  strokeDasharray="3 3"
+                  vertical={false}
+                  stroke="#E2E8F0"
+                />
+                <XAxis
+                  dataKey="month"
+                  axisLine={false}
+                  tickLine={false}
+                  tick={{ fill: "#64748B", fontSize: 12 }}
+                  dy={10}
+                />
+                <YAxis
+                  axisLine={false}
+                  tickLine={false}
+                  tick={{ fill: "#64748B", fontSize: 12 }}
+                  tickFormatter={formatYAxis}
+                  ticks={[0, 10000, 50000, 100000, 500000, 1000000]}
+                  domain={[0, 1000000]}
+                />
+                <Tooltip
+                  contentStyle={{
+                    borderRadius: "12px",
+                    border: "none",
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                  }}
+                />
+                <Legend
+                  content={({ payload }) => (
+                    <div className="flex items-center justify-center gap-6 mt-6">
+                      {payload?.map((entry: any, index: number) => (
                         <div
-                          className="h-3 w-3 rounded-full"
-                          style={{ backgroundColor: entry.color }}
-                        />
-                        <span className="text-sm font-medium text-muted-foreground">
-                          {entry.value}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              />
-              <Area
-                type="monotone"
-                dataKey="direct"
-                name="Direct"
-                stroke="#4ADE80"
-                strokeWidth={2}
-                fillOpacity={1}
-                fill="url(#colorDirect)"
-              />
-              <Area
-                type="monotone"
-                dataKey="institute"
-                name="Institute"
-                stroke="#31564E"
-                strokeWidth={2}
-                fillOpacity={1}
-                fill="url(#colorInstitute)"
-              />
-            </AreaChart>
-          </ResponsiveContainer>
+                          key={`item-${index}`}
+                          className="flex items-center gap-2"
+                        >
+                          <div
+                            className="h-3 w-3 rounded-full"
+                            style={{ backgroundColor: entry.color }}
+                          />
+                          <span className="text-sm font-medium text-muted-foreground">
+                            {entry.value}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                />
+                <Area
+                  type="monotone"
+                  dataKey="direct"
+                  name="Direct"
+                  stroke="#4ADE80"
+                  strokeWidth={2}
+                  fillOpacity={1}
+                  fill="url(#colorDirect)"
+                />
+                <Area
+                  type="monotone"
+                  dataKey="institute"
+                  name="Institute"
+                  stroke="#31564E"
+                  strokeWidth={2}
+                  fillOpacity={1}
+                  fill="url(#colorInstitute)"
+                />
+              </AreaChart>
+            </ResponsiveContainer>
+          ) : (
+            <div className="h-full w-full" />
+          )}
         </div>
       </div>
     </div>

@@ -162,7 +162,7 @@ const ReportsCharts = () => {
         {/* Card 1: Platform Activity Trend (Bar) */}
         <ChartCard title="Platform Activity Trend" legendType="activity">
           <div className="bg-slate-50/50 rounded-[24px] p-6 h-full flex items-center justify-center">
-            <ResponsiveContainer width="100%" height="100%">
+            <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}>
               <BarChart data={barData} barGap={4}>
                 <Bar dataKey="activity" fill="#A5B4FC" radius={[4, 4, 0, 0]} />
                 <Bar dataKey="live" fill="#6366F1" radius={[4, 4, 0, 0]} />
@@ -192,7 +192,7 @@ const ReportsCharts = () => {
               </p>
             </div>
           </div>
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}>
             <PieChart>
               <Pie
                 data={pieData}
@@ -272,7 +272,7 @@ const ReportsCharts = () => {
             </div>
           }
         >
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}>
             <AreaChart data={areaData}>
               <defs>
                 <linearGradient id="colorWave" x1="0" y1="0" x2="0" y2="1">
