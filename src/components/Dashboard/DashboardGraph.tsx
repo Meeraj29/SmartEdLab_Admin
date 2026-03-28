@@ -124,7 +124,12 @@ const DashboardGraph = () => {
 
         <div className="h-[300px] w-full">
           {isMounted ? (
-            <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}>
+            <ResponsiveContainer
+              width="100%"
+              height="100%"
+              minWidth={0}
+              minHeight={0}
+            >
               <BarChart
                 data={revenueDataByRange[revenueRange]}
                 margin={{ top: 10, right: 10, left: 10, bottom: 0 }}
@@ -238,7 +243,12 @@ const DashboardGraph = () => {
 
         <div className="h-[300px] w-full">
           {isMounted ? (
-            <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}>
+            <ResponsiveContainer
+              width="100%"
+              height="100%"
+              minWidth={0}
+              minHeight={0}
+            >
               <AreaChart
                 data={growthDataByRange[growthRange]}
                 margin={{ top: 10, right: 20, left: 10, bottom: 0 }}
