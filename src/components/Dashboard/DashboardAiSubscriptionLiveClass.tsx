@@ -11,6 +11,7 @@ import {
   Video,
   XCircle,
 } from "lucide-react";
+import * as React from "react";
 import {
   Cell,
   Legend,
@@ -41,6 +42,12 @@ const aiUsageMonitorData = [
 ];
 
 const DashboardAiSubscriptionLiveClass = () => {
+  const [isMounted, setIsMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
     <div className="grid grid-cols-1 gap-6 xl:grid-cols-3">
       {/* AI Usage Monitor */}
@@ -210,58 +217,62 @@ const DashboardAiSubscriptionLiveClass = () => {
         </div>
 
         <div className="h-[320px] w-full">
-          <ResponsiveContainer
-            width="100%"
-            height="100%"
-            minWidth={0}
-            minHeight={0}
-          >
-            <PieChart>
-              <Pie
-                data={liveClassData}
-                cx="50%"
-                cy="50%"
-                innerRadius={80}
-                outerRadius={110}
-                paddingAngle={5}
-                dataKey="value"
-                stroke="none"
-              >
-                {liveClassData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={entry.color} />
-                ))}
-              </Pie>
-              <Tooltip
-                contentStyle={{
-                  borderRadius: "12px",
-                  border: "none",
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-                }}
-              />
-              <Legend
-                verticalAlign="bottom"
-                iconType="circle"
-                content={({ payload }) => (
-                  <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-4">
-                    {payload?.map((entry: any, index: number) => (
-                      <div
-                        key={`item-${index}`}
-                        className="flex items-center gap-2"
-                      >
+          {isMounted ? (
+            <ResponsiveContainer
+              width="100%"
+              height="100%"
+              minWidth={0}
+              minHeight={0}
+            >
+              <PieChart>
+                <Pie
+                  data={liveClassData}
+                  cx="50%"
+                  cy="50%"
+                  innerRadius={80}
+                  outerRadius={110}
+                  paddingAngle={5}
+                  dataKey="value"
+                  stroke="none"
+                >
+                  {liveClassData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={entry.color} />
+                  ))}
+                </Pie>
+                <Tooltip
+                  contentStyle={{
+                    borderRadius: "12px",
+                    border: "none",
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                  }}
+                />
+                <Legend
+                  verticalAlign="bottom"
+                  iconType="circle"
+                  content={({ payload }) => (
+                    <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-4">
+                      {payload?.map((entry: any, index: number) => (
                         <div
-                          className="h-3 w-3 rounded-full"
-                          style={{ backgroundColor: entry.color }}
-                        />
-                        <span className="text-sm font-medium text-muted-foreground">
-                          {entry.value}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              />
-            </PieChart>
-          </ResponsiveContainer>
+                          key={`item-${index}`}
+                          className="flex items-center gap-2"
+                        >
+                          <div
+                            className="h-3 w-3 rounded-full"
+                            style={{ backgroundColor: entry.color }}
+                          />
+                          <span className="text-sm font-medium text-muted-foreground">
+                            {entry.value}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                />
+              </PieChart>
+            </ResponsiveContainer>
+          ) : (
+            <div className="h-full w-full" />
+          )}
         </div>
       </div>
     </div>

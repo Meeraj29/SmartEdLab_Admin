@@ -58,6 +58,11 @@ interface InstituteProfileProps {
 
 const InstituteProfile = ({ onBack }: InstituteProfileProps) => {
   const [activeTab, setActiveTab] = React.useState("Overview");
+  const [isMounted, setIsMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const overviewStats = [
     {
@@ -1589,65 +1594,73 @@ const InstituteProfile = ({ onBack }: InstituteProfileProps) => {
                   (Aggregated)
                 </h3>
                 <div className="h-[220px] w-full">
-                  <ResponsiveContainer
-                    width="100%"
-                    height="100%"
-                    minWidth={0}
-                    minHeight={0}
-                  >
-                    <AreaChart
-                      data={[
-                        { name: "JAN", value: 30 },
-                        { name: "FEB", value: 45 },
-                        { name: "MAR", value: 70 },
-                        { name: "APR", value: 55 },
-                        { name: "MAY", value: 50 },
-                        { name: "JUN", value: 65 },
-                        { name: "JUL", value: 85 },
-                        { name: "AUG", value: 75 },
-                        { name: "SEP", value: 80 },
-                        { name: "OCT", value: 95 },
-                        { name: "NOV", value: 110 },
-                        { name: "DEC", value: 100 },
-                      ]}
+                  {isMounted ? (
+                    <ResponsiveContainer
+                      width="100%"
+                      height="100%"
+                      minWidth={0}
+                      minHeight={0}
                     >
-                      <defs>
-                        <linearGradient
-                          id="colorUsage"
-                          x1="0"
-                          y1="0"
-                          x2="0"
-                          y2="1"
-                        >
-                          <stop
-                            offset="5%"
-                            stopColor="#3B82F6"
-                            stopOpacity={0.3}
-                          />
-                          <stop
-                            offset="95%"
-                            stopColor="#3B82F6"
-                            stopOpacity={0}
-                          />
-                        </linearGradient>
-                      </defs>
-                      <XAxis
-                        dataKey="name"
-                        axisLine={false}
-                        tickLine={false}
-                        tick={{ fontSize: 9, fontWeight: 700, fill: "#94A3B8" }}
-                        interval={1}
-                      />
-                      <Area
-                        type="monotone"
-                        dataKey="value"
-                        stroke="#3B82F6"
-                        strokeWidth={3}
-                        fillOpacity={1}
-                        fill="url(#colorUsage)"
-                      />
-                    </AreaChart>
-                  </ResponsiveContainer>
+                      <AreaChart
+                        data={[
+                          { name: "JAN", value: 30 },
+                          { name: "FEB", value: 45 },
+                          { name: "MAR", value: 70 },
+                          { name: "APR", value: 55 },
+                          { name: "MAY", value: 50 },
+                          { name: "JUN", value: 65 },
+                          { name: "JUL", value: 85 },
+                          { name: "AUG", value: 75 },
+                          { name: "SEP", value: 80 },
+                          { name: "OCT", value: 95 },
+                          { name: "NOV", value: 110 },
+                          { name: "DEC", value: 100 },
+                        ]}
+                      >
+                        <defs>
+                          <linearGradient
+                            id="colorUsage"
+                            x1="0"
+                            y1="0"
+                            x2="0"
+                            y2="1"
+                          >
+                            <stop
+                              offset="5%"
+                              stopColor="#3B82F6"
+                              stopOpacity={0.3}
+                            />
+                            <stop
+                              offset="95%"
+                              stopColor="#3B82F6"
+                              stopOpacity={0}
+                            />
+                          </linearGradient>
+                        </defs>
+                        <XAxis
+                          dataKey="name"
+                          axisLine={false}
+                          tickLine={false}
+                          tick={{
+                            fontSize: 9,
+                            fontWeight: 700,
+                            fill: "#94A3B8",
+                          }}
+                          interval={1}
+                        />
+                        <Area
+                          type="monotone"
+                          dataKey="value"
+                          stroke="#3B82F6"
+                          strokeWidth={3}
+                          fillOpacity={1}
+                          fill="url(#colorUsage)"
+                        />
+                      </AreaChart>
+                    </ResponsiveContainer>
+                  ) : (
+                    <div className="h-full w-full" />
+                  )}
                 </div>
               </div>
 
@@ -1657,39 +1670,43 @@ const InstituteProfile = ({ onBack }: InstituteProfileProps) => {
                   Feature Breakdown
                 </h3>
                 <div className="h-[180px] w-full relative mt-10">
-                  <ResponsiveContainer
-                    width="100%"
-                    height="100%"
-                    minWidth={0}
-                    minHeight={0}
-                  >
-                    <PieChart>
-                      <Pie
-                        data={[
-                          { name: "AI Tutor", value: 40, color: "#1A73E8" },
-                          { name: "Speaking", value: 25, color: "#FBBC04" },
-                          { name: "Writing", value: 20, color: "#9333EA" },
-                          { name: "Pronun.", value: 15, color: "#32D583" },
-                        ]}
-                        cx="50%"
-                        cy="50%"
-                        innerRadius={60}
-                        outerRadius={85}
-                        paddingAngle={0}
-                        dataKey="value"
-                        stroke="none"
-                      >
-                        {[
-                          { color: "#1A73E8" },
-                          { color: "#FBBC04" },
-                          { color: "#9333EA" },
-                          { color: "#32D583" },
-                        ].map((entry, index) => (
-                          <Cell key={`cell-${index}`} fill={entry.color} />
-                        ))}
-                      </Pie>
-                    </PieChart>
-                  </ResponsiveContainer>
+                  {isMounted ? (
+                    <ResponsiveContainer
+                      width="100%"
+                      height="100%"
+                      minWidth={0}
+                      minHeight={0}
+                    >
+                      <PieChart>
+                        <Pie
+                          data={[
+                            { name: "AI Tutor", value: 40, color: "#1A73E8" },
+                            { name: "Speaking", value: 25, color: "#FBBC04" },
+                            { name: "Writing", value: 20, color: "#9333EA" },
+                            { name: "Pronun.", value: 15, color: "#32D583" },
+                          ]}
+                          cx="50%"
+                          cy="50%"
+                          innerRadius={60}
+                          outerRadius={85}
+                          paddingAngle={0}
+                          dataKey="value"
+                          stroke="none"
+                        >
+                          {[
+                            { color: "#1A73E8" },
+                            { color: "#FBBC04" },
+                            { color: "#9333EA" },
+                            { color: "#32D583" },
+                          ].map((entry, index) => (
+                            <Cell key={`cell-${index}`} fill={entry.color} />
+                          ))}
+                        </Pie>
+                      </PieChart>
+                    </ResponsiveContainer>
+                  ) : (
+                    <div className="h-full w-full" />
+                  )}
                   <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
                     <span className="text-[24px] font-black text-slate-900 leading-none">
                       100%
@@ -2017,63 +2034,67 @@ const InstituteProfile = ({ onBack }: InstituteProfileProps) => {
                   Monthly Revenue Growth
                 </h3>
                 <div className="h-[300px] w-full">
-                  <ResponsiveContainer
-                    width="100%"
-                    height="100%"
-                    minWidth={0}
-                    minHeight={0}
-                  >
-                    <AreaChart
-                      data={[
-                        { name: "May", value: 10 },
-                        { name: "Jun", value: 15 },
-                        { name: "Jul", value: 45 },
-                        { name: "Aug", value: 20 },
-                        { name: "Sep", value: 75 },
-                        { name: "Oct", value: 60 },
-                      ]}
+                  {isMounted ? (
+                    <ResponsiveContainer
+                      width="100%"
+                      height="100%"
+                      minWidth={0}
+                      minHeight={0}
                     >
-                      <defs>
-                        <linearGradient
-                          id="colorRevenue"
-                          x1="0"
-                          y1="0"
-                          x2="0"
-                          y2="1"
-                        >
-                          <stop
-                            offset="5%"
-                            stopColor="#3B82F6"
-                            stopOpacity={0.1}
-                          />
-                          <stop
-                            offset="95%"
-                            stopColor="#3B82F6"
-                            stopOpacity={0}
-                          />
-                        </linearGradient>
-                      </defs>
-                      <XAxis
-                        dataKey="name"
-                        axisLine={false}
-                        tickLine={false}
-                        tick={{
-                          fontSize: 12,
-                          fontWeight: 600,
-                          fill: "#94A3B8",
-                        }}
-                        dy={15}
-                      />
-                      <Area
-                        type="monotone"
-                        dataKey="value"
-                        stroke="#2563EB"
-                        strokeWidth={6}
-                        fillOpacity={1}
-                        fill="url(#colorRevenue)"
-                      />
-                    </AreaChart>
-                  </ResponsiveContainer>
+                      <AreaChart
+                        data={[
+                          { name: "May", value: 10 },
+                          { name: "Jun", value: 15 },
+                          { name: "Jul", value: 45 },
+                          { name: "Aug", value: 20 },
+                          { name: "Sep", value: 75 },
+                          { name: "Oct", value: 60 },
+                        ]}
+                      >
+                        <defs>
+                          <linearGradient
+                            id="colorRevenue"
+                            x1="0"
+                            y1="0"
+                            x2="0"
+                            y2="1"
+                          >
+                            <stop
+                              offset="5%"
+                              stopColor="#3B82F6"
+                              stopOpacity={0.1}
+                            />
+                            <stop
+                              offset="95%"
+                              stopColor="#3B82F6"
+                              stopOpacity={0}
+                            />
+                          </linearGradient>
+                        </defs>
+                        <XAxis
+                          dataKey="name"
+                          axisLine={false}
+                          tickLine={false}
+                          tick={{
+                            fontSize: 12,
+                            fontWeight: 600,
+                            fill: "#94A3B8",
+                          }}
+                          dy={15}
+                        />
+                        <Area
+                          type="monotone"
+                          dataKey="value"
+                          stroke="#2563EB"
+                          strokeWidth={6}
+                          fillOpacity={1}
+                          fill="url(#colorRevenue)"
+                        />
+                      </AreaChart>
+                    </ResponsiveContainer>
+                  ) : (
+                    <div className="h-full w-full" />
+                  )}
                 </div>
               </div>
 
@@ -2099,49 +2120,53 @@ const InstituteProfile = ({ onBack }: InstituteProfileProps) => {
                   </div>
                 </div>
                 <div className="h-[300px] w-full">
-                  <ResponsiveContainer
-                    width="100%"
-                    height="100%"
-                    minWidth={0}
-                    minHeight={0}
-                  >
-                    <AreaChart
-                      data={[
-                        { name: "MAY", enterprise: 30, pro: 20 },
-                        { name: "JUN", enterprise: 40, pro: 25 },
-                        { name: "JUL", enterprise: 55, pro: 20 },
-                        { name: "AUG", enterprise: 60, pro: 15 },
-                        { name: "SEP", enterprise: 65, pro: 25 },
-                        { name: "OCT", enterprise: 75, pro: 0 },
-                      ]}
+                  {isMounted ? (
+                    <ResponsiveContainer
+                      width="100%"
+                      height="100%"
+                      minWidth={0}
+                      minHeight={0}
                     >
-                      <XAxis
-                        dataKey="name"
-                        axisLine={false}
-                        tickLine={false}
-                        tick={{
-                          fontSize: 12,
-                          fontWeight: 700,
-                          fill: "#94A3B8",
-                        }}
-                        dy={15}
-                      />
-                      <Area
-                        type="stepAfter"
-                        dataKey="enterprise"
-                        stackId="1"
-                        stroke="none"
-                        fill="#2563EB"
-                      />
-                      <Area
-                        type="stepAfter"
-                        dataKey="pro"
-                        stackId="1"
-                        stroke="none"
-                        fill="#E2E8F0"
-                      />
-                    </AreaChart>
-                  </ResponsiveContainer>
+                      <AreaChart
+                        data={[
+                          { name: "MAY", enterprise: 30, pro: 20 },
+                          { name: "JUN", enterprise: 40, pro: 25 },
+                          { name: "JUL", enterprise: 55, pro: 20 },
+                          { name: "AUG", enterprise: 60, pro: 15 },
+                          { name: "SEP", enterprise: 65, pro: 25 },
+                          { name: "OCT", enterprise: 75, pro: 0 },
+                        ]}
+                      >
+                        <XAxis
+                          dataKey="name"
+                          axisLine={false}
+                          tickLine={false}
+                          tick={{
+                            fontSize: 12,
+                            fontWeight: 700,
+                            fill: "#94A3B8",
+                          }}
+                          dy={15}
+                        />
+                        <Area
+                          type="stepAfter"
+                          dataKey="enterprise"
+                          stackId="1"
+                          stroke="none"
+                          fill="#2563EB"
+                        />
+                        <Area
+                          type="stepAfter"
+                          dataKey="pro"
+                          stackId="1"
+                          stroke="none"
+                          fill="#E2E8F0"
+                        />
+                      </AreaChart>
+                    </ResponsiveContainer>
+                  ) : (
+                    <div className="h-full w-full" />
+                  )}
                 </div>
               </div>
             </div>

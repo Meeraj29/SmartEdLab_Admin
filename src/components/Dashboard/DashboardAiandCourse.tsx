@@ -85,6 +85,11 @@ const formatTokenYAxis = (value: number) => {
 const DashboardAiandCourse = () => {
   const [tokenRange, setTokenRange] = React.useState("This Week");
   const [courseRange, setCourseRange] = React.useState("This Month");
+  const [isMounted, setIsMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   return (
     <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
@@ -123,111 +128,115 @@ const DashboardAiandCourse = () => {
         </div>
 
         <div className="h-[300px] w-full">
-          <ResponsiveContainer
-            width="100%"
-            height="100%"
-            minWidth={0}
-            minHeight={0}
-          >
-            <AreaChart
-              data={tokenDataByRange[tokenRange]}
-              margin={{ top: 10, right: 10, left: 10, bottom: 0 }}
+          {isMounted ? (
+            <ResponsiveContainer
+              width="100%"
+              height="100%"
+              minWidth={0}
+              minHeight={0}
             >
-              <defs>
-                <linearGradient
-                  id="colorDirectToken"
-                  x1="0"
-                  y1="0"
-                  x2="0"
-                  y2="1"
-                >
-                  <stop offset="5%" stopColor="#8B5CF6" stopOpacity={0.6} />
-                  <stop offset="95%" stopColor="#8B5CF6" stopOpacity={0.1} />
-                </linearGradient>
-                <linearGradient
-                  id="colorInstituteToken"
-                  x1="0"
-                  y1="0"
-                  x2="0"
-                  y2="1"
-                >
-                  <stop offset="5%" stopColor="#F97316" stopOpacity={0.4} />
-                  <stop offset="95%" stopColor="#F97316" stopOpacity={0.05} />
-                </linearGradient>
-              </defs>
-              <CartesianGrid
-                strokeDasharray="3 3"
-                vertical={false}
-                stroke="#E2E8F0"
-              />
-              <XAxis
-                dataKey="day"
-                axisLine={false}
-                tickLine={false}
-                tick={{ fill: "#64748B", fontSize: 12 }}
-                dy={10}
-              />
-              <YAxis
-                axisLine={false}
-                tickLine={false}
-                tick={{ fill: "#64748B", fontSize: 12 }}
-                tickFormatter={formatTokenYAxis}
-                ticks={[0, 500000, 1000000, 2000000, 3000000, 5000000]}
-                domain={[0, "auto"]}
-              />
-              <Tooltip
-                contentStyle={{
-                  borderRadius: "12px",
-                  border: "none",
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-                }}
-              />
-              <Legend
-                verticalAlign="bottom"
-                height={36}
-                content={({ payload }) => (
-                  <div className="flex items-center justify-center gap-6 mt-6">
-                    {payload?.map((entry: any, index: number) => (
-                      <div
-                        key={`item-${index}`}
-                        className="flex items-center gap-2"
-                      >
+              <AreaChart
+                data={tokenDataByRange[tokenRange]}
+                margin={{ top: 10, right: 10, left: 10, bottom: 0 }}
+              >
+                <defs>
+                  <linearGradient
+                    id="colorDirectToken"
+                    x1="0"
+                    y1="0"
+                    x2="0"
+                    y2="1"
+                  >
+                    <stop offset="5%" stopColor="#8B5CF6" stopOpacity={0.6} />
+                    <stop offset="95%" stopColor="#8B5CF6" stopOpacity={0.1} />
+                  </linearGradient>
+                  <linearGradient
+                    id="colorInstituteToken"
+                    x1="0"
+                    y1="0"
+                    x2="0"
+                    y2="1"
+                  >
+                    <stop offset="5%" stopColor="#F97316" stopOpacity={0.4} />
+                    <stop offset="95%" stopColor="#F97316" stopOpacity={0.05} />
+                  </linearGradient>
+                </defs>
+                <CartesianGrid
+                  strokeDasharray="3 3"
+                  vertical={false}
+                  stroke="#E2E8F0"
+                />
+                <XAxis
+                  dataKey="day"
+                  axisLine={false}
+                  tickLine={false}
+                  tick={{ fill: "#64748B", fontSize: 12 }}
+                  dy={10}
+                />
+                <YAxis
+                  axisLine={false}
+                  tickLine={false}
+                  tick={{ fill: "#64748B", fontSize: 12 }}
+                  tickFormatter={formatTokenYAxis}
+                  ticks={[0, 500000, 1000000, 2000000, 3000000, 5000000]}
+                  domain={[0, "auto"]}
+                />
+                <Tooltip
+                  contentStyle={{
+                    borderRadius: "12px",
+                    border: "none",
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                  }}
+                />
+                <Legend
+                  verticalAlign="bottom"
+                  height={36}
+                  content={({ payload }) => (
+                    <div className="flex items-center justify-center gap-6 mt-6">
+                      {payload?.map((entry: any, index: number) => (
                         <div
-                          className="h-3 w-3 rounded-full"
-                          style={{ backgroundColor: entry.color }}
-                        />
-                        <span className="text-sm font-medium text-muted-foreground">
-                          {entry.value}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              />
-              <Area
-                type="monotone"
-                dataKey="direct"
-                name="Direct"
-                stroke="#8B5CF6"
-                strokeWidth={2}
-                fillOpacity={1}
-                fill="url(#colorDirectToken)"
-                stackId="1"
-                dot={{ fill: "#8B5CF6", r: 4, strokeWidth: 2, stroke: "#fff" }}
-              />
-              <Area
-                type="monotone"
-                dataKey="institute"
-                name="Institute"
-                stroke="#F97316"
-                strokeWidth={2}
-                fillOpacity={1}
-                fill="url(#colorInstituteToken)"
-                stackId="1"
-                dot={{ fill: "#F97316", r: 4, strokeWidth: 2, stroke: "#fff" }}
-              />
-            </AreaChart>
-          </ResponsiveContainer>
+                          key={`item-${index}`}
+                          className="flex items-center gap-2"
+                        >
+                          <div
+                            className="h-3 w-3 rounded-full"
+                            style={{ backgroundColor: entry.color }}
+                          />
+                          <span className="text-sm font-medium text-muted-foreground">
+                            {entry.value}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                />
+                <Area
+                  type="monotone"
+                  dataKey="direct"
+                  name="Direct"
+                  stroke="#8B5CF6"
+                  strokeWidth={2}
+                  fillOpacity={1}
+                  fill="url(#colorDirectToken)"
+                  stackId="1"
+                  dot={{ fill: "#8B5CF6", r: 4, strokeWidth: 2, stroke: "#fff" }}
+                />
+                <Area
+                  type="monotone"
+                  dataKey="institute"
+                  name="Institute"
+                  stroke="#F97316"
+                  strokeWidth={2}
+                  fillOpacity={1}
+                  fill="url(#colorInstituteToken)"
+                  stackId="1"
+                  dot={{ fill: "#F97316", r: 4, strokeWidth: 2, stroke: "#fff" }}
+                />
+              </AreaChart>
+            </ResponsiveContainer>
+          ) : (
+            <div className="h-full w-full" />
+          )}
         </div>
       </div>
 
@@ -266,56 +275,60 @@ const DashboardAiandCourse = () => {
         </div>
 
         <div className="h-[300px] w-full">
-          <ResponsiveContainer
-            width="100%"
-            height="100%"
-            minWidth={0}
-            minHeight={0}
-          >
-            <BarChart
-              data={courseDataByRange[courseRange]}
-              layout="vertical"
-              margin={{ top: 0, right: 30, left: 40, bottom: 0 }}
-              barSize={20}
+          {isMounted ? (
+            <ResponsiveContainer
+              width="100%"
+              height="100%"
+              minWidth={0}
+              minHeight={0}
             >
-              <CartesianGrid
-                strokeDasharray="3 3"
-                horizontal={false}
-                stroke="#E2E8F0"
-              />
-              <XAxis
-                type="number"
-                axisLine={false}
-                tickLine={false}
-                tick={{ fill: "#64748B", fontSize: 12 }}
-                tickFormatter={(value) => `${value}%`}
-                ticks={[0, 20, 40, 60, 80, 100]}
-                domain={[0, 100]}
-              />
-              <YAxis
-                dataKey="name"
-                type="category"
-                axisLine={false}
-                tickLine={false}
-                tick={{ fill: "#64748B", fontSize: 12 }}
-                width={100}
-              />
-              <Tooltip
-                cursor={{ fill: "transparent" }}
-                contentStyle={{
-                  borderRadius: "12px",
-                  border: "none",
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-                }}
-                formatter={(value: any, name: any) => [`${value}%`, name]}
-              />
-              <Bar dataKey="value" radius={[0, 10, 10, 0]}>
-                {courseDataByRange[courseRange].map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={entry.color} />
-                ))}
-              </Bar>
-            </BarChart>
-          </ResponsiveContainer>
+              <BarChart
+                data={courseDataByRange[courseRange]}
+                layout="vertical"
+                margin={{ top: 0, right: 30, left: 40, bottom: 0 }}
+                barSize={20}
+              >
+                <CartesianGrid
+                  strokeDasharray="3 3"
+                  horizontal={false}
+                  stroke="#E2E8F0"
+                />
+                <XAxis
+                  type="number"
+                  axisLine={false}
+                  tickLine={false}
+                  tick={{ fill: "#64748B", fontSize: 12 }}
+                  tickFormatter={(value) => `${value}%`}
+                  ticks={[0, 20, 40, 60, 80, 100]}
+                  domain={[0, 100]}
+                />
+                <YAxis
+                  dataKey="name"
+                  type="category"
+                  axisLine={false}
+                  tickLine={false}
+                  tick={{ fill: "#64748B", fontSize: 12 }}
+                  width={100}
+                />
+                <Tooltip
+                  cursor={{ fill: "transparent" }}
+                  contentStyle={{
+                    borderRadius: "12px",
+                    border: "none",
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                  }}
+                  formatter={(value: any, name: any) => [`${value}%`, name]}
+                />
+                <Bar dataKey="value" radius={[0, 10, 10, 0]}>
+                  {courseDataByRange[courseRange].map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={entry.color} />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          ) : (
+            <div className="h-full w-full" />
+          )}
         </div>
       </div>
     </div>
