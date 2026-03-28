@@ -123,7 +123,12 @@ const DashboardAiandCourse = () => {
         </div>
 
         <div className="h-[300px] w-full">
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer
+            width="100%"
+            height="100%"
+            minWidth={0}
+            minHeight={0}
+          >
             <AreaChart
               data={tokenDataByRange[tokenRange]}
               margin={{ top: 10, right: 10, left: 10, bottom: 0 }}
@@ -261,7 +266,12 @@ const DashboardAiandCourse = () => {
         </div>
 
         <div className="h-[300px] w-full">
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer
+            width="100%"
+            height="100%"
+            minWidth={0}
+            minHeight={0}
+          >
             <BarChart
               data={courseDataByRange[courseRange]}
               layout="vertical"
