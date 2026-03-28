@@ -219,7 +219,12 @@ const DashboardAiandCourse = () => {
                   fillOpacity={1}
                   fill="url(#colorDirectToken)"
                   stackId="1"
-                  dot={{ fill: "#8B5CF6", r: 4, strokeWidth: 2, stroke: "#fff" }}
+                  dot={{
+                    fill: "#8B5CF6",
+                    r: 4,
+                    strokeWidth: 2,
+                    stroke: "#fff",
+                  }}
                 />
                 <Area
                   type="monotone"
@@ -230,7 +235,12 @@ const DashboardAiandCourse = () => {
                   fillOpacity={1}
                   fill="url(#colorInstituteToken)"
                   stackId="1"
-                  dot={{ fill: "#F97316", r: 4, strokeWidth: 2, stroke: "#fff" }}
+                  dot={{
+                    fill: "#F97316",
+                    r: 4,
+                    strokeWidth: 2,
+                    stroke: "#fff",
+                  }}
                 />
               </AreaChart>
             </ResponsiveContainer>

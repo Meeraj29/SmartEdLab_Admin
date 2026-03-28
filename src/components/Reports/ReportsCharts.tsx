@@ -13,7 +13,6 @@ import {
   Bar,
   BarChart,
   Cell,
-  Legend,
   Pie,
   PieChart,
   ResponsiveContainer,
@@ -178,7 +177,11 @@ const ReportsCharts = () => {
                 minHeight={0}
               >
                 <BarChart data={barData} barGap={4}>
-                  <Bar dataKey="activity" fill="#A5B4FC" radius={[4, 4, 0, 0]} />
+                  <Bar
+                    dataKey="activity"
+                    fill="#A5B4FC"
+                    radius={[4, 4, 0, 0]}
+                  />
                   <Bar dataKey="live" fill="#6366F1" radius={[4, 4, 0, 0]} />
                   <Bar dataKey="ai" fill="#312E81" radius={[4, 4, 0, 0]} />
                   <Tooltip
