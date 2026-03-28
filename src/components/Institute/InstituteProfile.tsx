@@ -1589,7 +1589,12 @@ const InstituteProfile = ({ onBack }: InstituteProfileProps) => {
                   (Aggregated)
                 </h3>
                 <div className="h-[220px] w-full">
-                  <ResponsiveContainer width="100%" height="100%">
+                  <ResponsiveContainer
+                    width="100%"
+                    height="100%"
+                    minWidth={0}
+                    minHeight={0}
+                  >
                     <AreaChart
                       data={[
                         { name: "JAN", value: 30 },
@@ -1652,7 +1657,12 @@ const InstituteProfile = ({ onBack }: InstituteProfileProps) => {
                   Feature Breakdown
                 </h3>
                 <div className="h-[180px] w-full relative mt-10">
-                  <ResponsiveContainer width="100%" height="100%">
+                  <ResponsiveContainer
+                    width="100%"
+                    height="100%"
+                    minWidth={0}
+                    minHeight={0}
+                  >
                     <PieChart>
                       <Pie
                         data={[
@@ -2007,7 +2017,12 @@ const InstituteProfile = ({ onBack }: InstituteProfileProps) => {
                   Monthly Revenue Growth
                 </h3>
                 <div className="h-[300px] w-full">
-                  <ResponsiveContainer width="100%" height="100%">
+                  <ResponsiveContainer
+                    width="100%"
+                    height="100%"
+                    minWidth={0}
+                    minHeight={0}
+                  >
                     <AreaChart
                       data={[
                         { name: "May", value: 10 },
@@ -2084,7 +2099,12 @@ const InstituteProfile = ({ onBack }: InstituteProfileProps) => {
                   </div>
                 </div>
                 <div className="h-[300px] w-full">
-                  <ResponsiveContainer width="100%" height="100%">
+                  <ResponsiveContainer
+                    width="100%"
+                    height="100%"
+                    minWidth={0}
+                    minHeight={0}
+                  >
                     <AreaChart
                       data={[
                         { name: "MAY", enterprise: 30, pro: 20 },

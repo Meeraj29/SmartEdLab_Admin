@@ -85,7 +85,12 @@ const AIControlCharts = () => {
             </div>
           </div>
           <div className="flex-1 mt-4">
-            <ResponsiveContainer width="100%" height="100%">
+            <ResponsiveContainer
+              width="100%"
+              height="100%"
+              minWidth={0}
+              minHeight={0}
+            >
               <BarChart
                 data={usageData}
                 margin={{ top: 0, right: 0, left: -20, bottom: 0 }}
@@ -183,7 +188,12 @@ const AIControlCharts = () => {
             <span className="text-[15px] font-black text-[#0052CC]">$4.2k</span>
           </div>
           <div className="flex-1 mt-4">
-            <ResponsiveContainer width="100%" height="100%">
+            <ResponsiveContainer
+              width="100%"
+              height="100%"
+              minWidth={0}
+              minHeight={0}
+            >
               <AreaChart
                 data={costTrendData}
                 margin={{ top: 10, right: 0, left: -20, bottom: 0 }}
@@ -214,7 +224,12 @@ const AIControlCharts = () => {
           </h3>
           <div className="flex-1 flex flex-col items-center justify-between">
             <div className="relative w-full h-[240px]">
-              <ResponsiveContainer width="100%" height="100%">
+              <ResponsiveContainer
+                width="100%"
+                height="100%"
+                minWidth={0}
+                minHeight={0}
+              >
                 <PieChart>
                   <Pie
                     data={studentUsageData}
