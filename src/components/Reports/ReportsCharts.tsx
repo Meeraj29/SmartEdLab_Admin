@@ -6,6 +6,7 @@ import {
   MoreVertical,
   SlidersHorizontal,
 } from "lucide-react";
+import * as React from "react";
 import {
   Area,
   AreaChart,
@@ -26,6 +27,12 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 const ReportsCharts = () => {
+  const [isMounted, setIsMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const barData = [
     { name: "P1", ai: 400, live: 6400, activity: 2400 },
     { name: "P2", ai: 3000, live: 1398, activity: 2210 },
@@ -162,26 +169,34 @@ const ReportsCharts = () => {
         {/* Card 1: Platform Activity Trend (Bar) */}
         <ChartCard title="Platform Activity Trend" legendType="activity">
           <div className="bg-slate-50/50 rounded-[24px] p-6 h-full flex items-center justify-center">
-            <ResponsiveContainer
-              width="100%"
-              height="100%"
-              minWidth={0}
-              minHeight={0}
-            >
-              <BarChart data={barData} barGap={4}>
-                <Bar dataKey="activity" fill="#A5B4FC" radius={[4, 4, 0, 0]} />
-                <Bar dataKey="live" fill="#6366F1" radius={[4, 4, 0, 0]} />
-                <Bar dataKey="ai" fill="#312E81" radius={[4, 4, 0, 0]} />
-                <Tooltip
-                  cursor={{ fill: "transparent" }}
-                  contentStyle={{
-                    borderRadius: "12px",
-                    border: "none",
-                    boxShadow: "0 10px 15px -3px rgb(0 0 0 / 0.1)",
-                  }}
-                />
-              </BarChart>
-            </ResponsiveContainer>
+            {isMounted ? (
+              <ResponsiveContainer
+                width="100%"
+                height="100%"
+                minWidth={0}
+                minHeight={0}
+              >
+                <BarChart data={barData} barGap={4}>
+                  <Bar
+                    dataKey="activity"
+                    fill="#A5B4FC"
+                    radius={[4, 4, 0, 0]}
+                  />
+                  <Bar dataKey="live" fill="#6366F1" radius={[4, 4, 0, 0]} />
+                  <Bar dataKey="ai" fill="#312E81" radius={[4, 4, 0, 0]} />
+                  <Tooltip
+                    cursor={{ fill: "transparent" }}
+                    contentStyle={{
+                      borderRadius: "12px",
+                      border: "none",
+                      boxShadow: "0 10px 15px -3px rgb(0 0 0 / 0.1)",
+                    }}
+                  />
+                </BarChart>
+              </ResponsiveContainer>
+            ) : (
+              <div className="h-full w-full" />
+            )}
           </div>
         </ChartCard>
 
@@ -197,29 +212,33 @@ const ReportsCharts = () => {
               </p>
             </div>
           </div>
-          <ResponsiveContainer
-            width="100%"
-            height="100%"
-            minWidth={0}
-            minHeight={0}
-          >
-            <PieChart>
-              <Pie
-                data={pieData}
-                cx="50%"
-                cy="50%"
-                innerRadius={70}
-                outerRadius={100}
-                paddingAngle={5}
-                dataKey="value"
-              >
-                {pieData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={entry.color} />
-                ))}
-              </Pie>
-              <Tooltip />
-            </PieChart>
-          </ResponsiveContainer>
+          {isMounted ? (
+            <ResponsiveContainer
+              width="100%"
+              height="100%"
+              minWidth={0}
+              minHeight={0}
+            >
+              <PieChart>
+                <Pie
+                  data={pieData}
+                  cx="50%"
+                  cy="50%"
+                  innerRadius={70}
+                  outerRadius={100}
+                  paddingAngle={5}
+                  dataKey="value"
+                >
+                  {pieData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={entry.color} />
+                  ))}
+                </Pie>
+                <Tooltip />
+              </PieChart>
+            </ResponsiveContainer>
+          ) : (
+            <div className="h-full w-full" />
+          )}
           {/* Legend overlay for Pie */}
           <div className="absolute right-0 top-1/2 -translate-y-1/2 space-y-3">
             {pieData.map((item, idx) => (
@@ -282,30 +301,34 @@ const ReportsCharts = () => {
             </div>
           }
         >
-          <ResponsiveContainer
-            width="100%"
-            height="100%"
-            minWidth={0}
-            minHeight={0}
-          >
-            <AreaChart data={areaData}>
-              <defs>
-                <linearGradient id="colorWave" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#2D4A43" stopOpacity={0.4} />
-                  <stop offset="95%" stopColor="#2D4A43" stopOpacity={0} />
-                </linearGradient>
-              </defs>
-              <Tooltip />
-              <Area
-                type="monotone"
-                dataKey="value"
-                stroke="#2D4A43"
-                strokeWidth={0}
-                fillOpacity={1}
-                fill="url(#colorWave)"
-              />
-            </AreaChart>
-          </ResponsiveContainer>
+          {isMounted ? (
+            <ResponsiveContainer
+              width="100%"
+              height="100%"
+              minWidth={0}
+              minHeight={0}
+            >
+              <AreaChart data={areaData}>
+                <defs>
+                  <linearGradient id="colorWave" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#2D4A43" stopOpacity={0.4} />
+                    <stop offset="95%" stopColor="#2D4A43" stopOpacity={0} />
+                  </linearGradient>
+                </defs>
+                <Tooltip />
+                <Area
+                  type="monotone"
+                  dataKey="value"
+                  stroke="#2D4A43"
+                  strokeWidth={0}
+                  fillOpacity={1}
+                  fill="url(#colorWave)"
+                />
+              </AreaChart>
+            </ResponsiveContainer>
+          ) : (
+            <div className="h-full w-full" />
+          )}
         </ChartCard>
       </div>
     </div>

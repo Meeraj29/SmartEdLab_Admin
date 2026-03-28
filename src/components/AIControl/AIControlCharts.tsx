@@ -1,6 +1,7 @@
 "use client";
 
 import { AlertTriangle, TrendingUp } from "lucide-react";
+import * as React from "react";
 import {
   Area,
   AreaChart,
@@ -54,6 +55,12 @@ const studentUsageData = [
 const colors = ["#0052CC", "#3578E5", "#8E33FF", "#CCE0FF"];
 
 const AIControlCharts = () => {
+  const [isMounted, setIsMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
     <div className="space-y-6">
       {/* First Row Section */}
@@ -85,47 +92,51 @@ const AIControlCharts = () => {
             </div>
           </div>
           <div className="flex-1 mt-4">
-            <ResponsiveContainer
-              width="100%"
-              height="100%"
-              minWidth={0}
-              minHeight={0}
-            >
-              <BarChart
-                data={usageData}
-                margin={{ top: 0, right: 0, left: -20, bottom: 0 }}
+            {isMounted ? (
+              <ResponsiveContainer
+                width="100%"
+                height="100%"
+                minWidth={0}
+                minHeight={0}
               >
-                <XAxis
-                  dataKey="time"
-                  axisLine={false}
-                  tickLine={false}
-                  tick={{ fontSize: 11, fontWeight: 700, fill: "#94A3B8" }}
-                  dy={10}
-                />
-                <Tooltip
-                  cursor={{ fill: "#F8FAFC" }}
-                  contentStyle={{
-                    borderRadius: "14px",
-                    border: "none",
-                    boxShadow: "0 10px 15px -3px rgb(0 0 0 / 0.1)",
-                  }}
-                />
-                <Bar dataKey="value" radius={[6, 6, 0, 0]}>
-                  {usageData.map((_entry, index) => (
-                    <Cell
-                      key={`cell-${index}`}
-                      fill={
-                        index === usageData.length - 1
-                          ? "#0052CC"
-                          : index > 5
-                            ? "#3578E5"
-                            : "#D9EAFF"
-                      }
-                    />
-                  ))}
-                </Bar>
-              </BarChart>
-            </ResponsiveContainer>
+                <BarChart
+                  data={usageData}
+                  margin={{ top: 0, right: 0, left: -20, bottom: 0 }}
+                >
+                  <XAxis
+                    dataKey="time"
+                    axisLine={false}
+                    tickLine={false}
+                    tick={{ fontSize: 11, fontWeight: 700, fill: "#94A3B8" }}
+                    dy={10}
+                  />
+                  <Tooltip
+                    cursor={{ fill: "#F8FAFC" }}
+                    contentStyle={{
+                      borderRadius: "14px",
+                      border: "none",
+                      boxShadow: "0 10px 15px -3px rgb(0 0 0 / 0.1)",
+                    }}
+                  />
+                  <Bar dataKey="value" radius={[6, 6, 0, 0]}>
+                    {usageData.map((_entry, index) => (
+                      <Cell
+                        key={`cell-${index}`}
+                        fill={
+                          index === usageData.length - 1
+                            ? "#0052CC"
+                            : index > 5
+                              ? "#3578E5"
+                              : "#D9EAFF"
+                        }
+                      />
+                    ))}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
+            ) : (
+              <div className="h-full w-full" />
+            )}
           </div>
         </div>
 
@@ -188,32 +199,40 @@ const AIControlCharts = () => {
             <span className="text-[15px] font-black text-[#0052CC]">$4.2k</span>
           </div>
           <div className="flex-1 mt-4">
-            <ResponsiveContainer
-              width="100%"
-              height="100%"
-              minWidth={0}
-              minHeight={0}
-            >
-              <AreaChart
-                data={costTrendData}
-                margin={{ top: 10, right: 0, left: -20, bottom: 0 }}
+            {isMounted ? (
+              <ResponsiveContainer
+                width="100%"
+                height="100%"
+                minWidth={0}
+                minHeight={0}
               >
-                <defs>
-                  <linearGradient id="colorCost" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#0052CC" stopOpacity={0.08} />
-                    <stop offset="95%" stopColor="#0052CC" stopOpacity={0} />
-                  </linearGradient>
-                </defs>
-                <Area
-                  type="monotone"
-                  dataKey="cost"
-                  stroke="#0052CC"
-                  strokeWidth={3}
-                  fillOpacity={1}
-                  fill="url(#colorCost)"
-                />
-              </AreaChart>
-            </ResponsiveContainer>
+                <AreaChart
+                  data={costTrendData}
+                  margin={{ top: 10, right: 0, left: -20, bottom: 0 }}
+                >
+                  <defs>
+                    <linearGradient id="colorCost" x1="0" y1="0" x2="0" y2="1">
+                      <stop
+                        offset="5%"
+                        stopColor="#0052CC"
+                        stopOpacity={0.08}
+                      />
+                      <stop offset="95%" stopColor="#0052CC" stopOpacity={0} />
+                    </linearGradient>
+                  </defs>
+                  <Area
+                    type="monotone"
+                    dataKey="cost"
+                    stroke="#0052CC"
+                    strokeWidth={3}
+                    fillOpacity={1}
+                    fill="url(#colorCost)"
+                  />
+                </AreaChart>
+              </ResponsiveContainer>
+            ) : (
+              <div className="h-full w-full" />
+            )}
           </div>
         </div>
 
@@ -224,29 +243,33 @@ const AIControlCharts = () => {
           </h3>
           <div className="flex-1 flex flex-col items-center justify-between">
             <div className="relative w-full h-[240px]">
-              <ResponsiveContainer
-                width="100%"
-                height="100%"
-                minWidth={0}
-                minHeight={0}
-              >
-                <PieChart>
-                  <Pie
-                    data={studentUsageData}
-                    cx="50%"
-                    cy="50%"
-                    innerRadius={70}
-                    outerRadius={95}
-                    paddingAngle={0}
-                    dataKey="value"
-                    stroke="none"
-                  >
-                    {studentUsageData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={entry.color} />
-                    ))}
-                  </Pie>
-                </PieChart>
-              </ResponsiveContainer>
+              {isMounted ? (
+                <ResponsiveContainer
+                  width="100%"
+                  height="100%"
+                  minWidth={0}
+                  minHeight={0}
+                >
+                  <PieChart>
+                    <Pie
+                      data={studentUsageData}
+                      cx="50%"
+                      cy="50%"
+                      innerRadius={70}
+                      outerRadius={95}
+                      paddingAngle={0}
+                      dataKey="value"
+                      stroke="none"
+                    >
+                      {studentUsageData.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={entry.color} />
+                      ))}
+                    </Pie>
+                  </PieChart>
+                </ResponsiveContainer>
+              ) : (
+                <div className="h-full w-full" />
+              )}
               <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
                 <span className="text-[28px] font-black text-slate-900 leading-none">
                   2.4M
