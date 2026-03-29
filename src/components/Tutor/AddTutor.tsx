@@ -102,10 +102,10 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                 <CheckCircle2 className="h-8 w-8" />
               </div>
               <div className="space-y-1.5">
-                <h2 className="text-[28px] font-black text-[#1E293B] tracking-tight">
+                <h2 className="text-[24px] font-inter font-bold text-[#111827] tracking-tight">
                   Tutor Created Successfully
                 </h2>
-                <p className="text-[14px] font-medium text-slate-400">
+                <p className="text-[16px] font-inter font-regular text-[#6B7280]">
                   The tutor's account has been finalized and configured.
                 </p>
               </div>
@@ -121,7 +121,7 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                   <div className="h-5 w-5 rounded-full bg-[#31564E] flex items-center justify-center text-white shrink-0">
                     <CheckCircle2 className="h-3 w-3" />
                   </div>
-                  <span className="text-[14px] font-black text-[#334155] tracking-tight">
+                  <span className="text-[16px] font-inter font-medium text-[#334155] tracking-tight">
                     {item}
                   </span>
                 </div>
@@ -131,7 +131,7 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
             <div className="pt-2">
               <Button
                 onClick={onSuccess}
-                className="w-full h-14 bg-black hover:bg-black/90 text-white rounded-[16px] text-[15px] font-black uppercase tracking-widest shadow-xl shadow-black/10 transition-all transform hover:scale-[1.01] active:scale-[0.99]"
+                className="w-full h-14 bg-black hover:bg-black/90 text-white rounded-[16px] text-[16px] font-semibold font-inter shadow-xl shadow-black/10 transition-all transform hover:scale-[1.01] active:scale-[0.99]"
               >
                 Done
               </Button>
@@ -152,10 +152,10 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                 <ArrowLeft className="h-5 w-5" />
               </button>
               <div className="flex flex-col">
-                <h2 className="text-2xl font-bold text-foreground">
+                <h2 className="text-[20px] font-semibold text-foreground">
                   Add New Tutor
                 </h2>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-[14px] font-inter text-muted-foreground">
                   {step === 1
                     ? "Create and configure a tutor profile for the platform."
                     : step === 2
@@ -170,7 +170,7 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
               <Button
                 variant="outline"
                 onClick={handlePrev}
-                className="h-11 rounded-xl px-6 border-border/50 text-foreground bg-white hover:bg-slate-50 transition-all font-medium flex items-center gap-2"
+                className="h-11 rounded-xl px-6 text-[16px] font-inter border-border/50 text-[#31564E] bg-white hover:bg-slate-50 transition-all font-medium flex items-center gap-2"
               >
                 <ArrowLeft className="h-4 w-4" />
                 {step === 1
@@ -184,7 +184,7 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
               <Button
                 onClick={handleNext}
                 className={cn(
-                  "h-11 rounded-xl px-8 font-medium shadow-md transition-all",
+                  "h-11 rounded-xl px-8 font-medium shadow-md transition-all text-[16px]",
                   step === 4
                     ? "bg-[#31564E] hover:bg-[#1E3A34] text-white"
                     : "bg-black hover:bg-black/90 text-white shadow-black/10"
@@ -210,10 +210,10 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
         <div className="rounded-[20px] bg-white shadow-sm border border-border/50 p-6 md:p-10">
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center gap-3">
-              <span className="text-[15px] font-bold text-slate-400">
+              <span className="text-[18px] font-semibold text-[#31564E]">
                 Step: 1
               </span>
-              <h3 className="text-[19px] font-black text-[#31564E]">
+              <h3 className="text-[20px] font-semibold text-[#31564E]">
                 Basic Details
               </h3>
             </div>
@@ -224,7 +224,7 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
               <div className="space-y-3">
                 <label
                   htmlFor="tutor-fullname"
-                  className="text-sm font-bold text-slate-800 flex items-center gap-1"
+                  className="text-[16px] font-inter text-slate-800 flex items-center gap-1"
                 >
                   Tutor Full Name{" "}
                   <span className="text-red-500 font-bold">*</span>
@@ -232,14 +232,14 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                 <input
                   id="tutor-fullname"
                   type="text"
-                  placeholder="Enter full name"
-                  className="h-12 w-full rounded-xl border-none bg-[#F5F5F5] px-5 text-[14px] font-medium text-slate-600 outline-none focus:ring-2 focus:ring-[#31564E]/10 transition-all placeholder:text-slate-400"
+                  placeholder="Enter course name"
+                  className="h-12 w-full rounded-xl border-none bg-[#F5F5F5] px-5 text-[14px] font-inter text-slate-600 outline-none focus:ring-2 focus:ring-[#31564E]/10 transition-all placeholder:text-slate-400"
                 />
               </div>
               <div className="space-y-3">
                 <label
                   htmlFor="tutor-mobile"
-                  className="text-sm font-bold text-slate-800 flex items-center gap-1"
+                  className="text-[16px] font-inter text-slate-800 flex items-center gap-1"
                 >
                   Mobile no <span className="text-red-500 font-bold">*</span>
                 </label>
@@ -247,13 +247,13 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                   id="tutor-mobile"
                   type="text"
                   placeholder="Enter mobile number"
-                  className="h-12 w-full rounded-xl border-none bg-[#F5F5F5] px-5 text-[14px] font-medium text-slate-600 outline-none focus:ring-2 focus:ring-[#31564E]/10 transition-all placeholder:text-slate-400"
+                  className="h-12 w-full rounded-xl border-none bg-[#F5F5F5] px-5 text-[14px] font-inter text-slate-600 outline-none focus:ring-2 focus:ring-[#31564E]/10 transition-all placeholder:text-slate-400"
                 />
               </div>
               <div className="space-y-3">
                 <label
                   htmlFor="tutor-email"
-                  className="text-sm font-bold text-slate-800 flex items-center gap-1"
+                  className="text-[16px] font-inter text-slate-800 flex items-center gap-1"
                 >
                   Email id <span className="text-red-500 font-bold">*</span>
                 </label>
@@ -261,13 +261,13 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                   id="tutor-email"
                   type="email"
                   placeholder="Enter email id"
-                  className="h-12 w-full rounded-xl border-none bg-[#F5F5F5] px-5 text-[14px] font-medium text-slate-600 outline-none focus:ring-2 focus:ring-[#31564E]/10 transition-all placeholder:text-slate-400"
+                  className="h-12 w-full rounded-xl border-none bg-[#F5F5F5] px-5 text-[14px] font-inter text-slate-600 outline-none focus:ring-2 focus:ring-[#31564E]/10 transition-all placeholder:text-slate-400"
                 />
               </div>
               <div className="space-y-3">
                 <label
                   htmlFor="tutor-experience"
-                  className="text-sm font-bold text-slate-800 flex items-center gap-1"
+                  className="text-[16px] font-inter text-slate-800 flex items-center gap-1"
                 >
                   Experience level{" "}
                   <span className="text-red-500 font-bold">*</span>
@@ -275,7 +275,7 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                 <div className="relative">
                   <select
                     id="tutor-experience"
-                    className="h-12 w-full appearance-none rounded-xl border-none bg-[#F5F5F5] px-5 text-[14px] font-medium text-slate-400 outline-none focus:ring-2 focus:ring-[#31564E]/10 transition-all cursor-pointer"
+                    className="h-12 w-full appearance-none rounded-xl border-none bg-[#F5F5F5] px-5 text-[14px] font-inter text-slate-600 outline-none focus:ring-2 focus:ring-[#31564E]/10 transition-all cursor-pointer"
                   >
                     <option>Select Level</option>
                     <option>Beginner (1-2 years)</option>
@@ -287,7 +287,7 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
               </div>
 
               <div className="md:col-span-2 space-y-3 mt-1">
-                <span className="text-sm font-bold text-slate-800">
+                <span className="text-[16px] font-inter text-slate-800">
                   Language Specialization
                 </span>
                 <div className="p-5 rounded-[20px] bg-[#F5F5F5] min-h-[120px] flex items-center justify-between gap-6 transition-all hover:bg-[#F0F0F0]">
@@ -295,7 +295,7 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                     {languages.map((lang, idx) => (
                       <div
                         key={idx}
-                        className="flex items-center gap-2 bg-[#31564E] text-white pl-4 pr-2 py-1.5 rounded-full text-[12px] font-bold shadow-sm transition-transform hover:scale-105"
+                        className="flex items-center gap-2 bg-[#31564E] text-white pl-4 pr-2 py-1.5 rounded-full text-[12px] font-semibold shadow-sm transition-transform hover:scale-105"
                       >
                         {lang}
                         <div
@@ -309,7 +309,7 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                       </div>
                     ))}
                   </div>
-                  <button className="h-9 px-4 rounded-full bg-black text-white text-[11px] font-bold flex items-center gap-2 hover:bg-black/90 transition-all whitespace-nowrap shadow-md">
+                  <button className="h-9 px-4 rounded-full bg-black text-white text-[14px] font-semibold font-inter flex items-center gap-2 hover:bg-black/90 transition-all whitespace-nowrap shadow-md">
                     <Plus className="h-3.5 w-3.5" />
                     Add Language
                   </button>
@@ -318,7 +318,7 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
             </div>
 
             <div className="lg:col-span-4 space-y-3">
-              <span className="text-sm font-bold text-slate-800">
+              <span className="text-[16px] font-inter text-slate-800">
                 Profile Photo
               </span>
               <div className="w-full h-[220px] md:h-full max-h-[325px] rounded-[20px] bg-[#F5F5F5] flex flex-col items-center justify-center gap-3 cursor-pointer hover:bg-[#EFEFEF] transition-all group relative border-2 border-transparent hover:border-[#31564E]/10">
@@ -326,10 +326,10 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                   <Camera className="h-6 w-6" />
                 </div>
                 <div className="text-center">
-                  <p className="text-[13px] font-bold text-slate-800">
+                  <p className="text-[14px] font-semibold text-slate-800">
                     Drag photo here
                   </p>
-                  <p className="text-[10px] text-slate-400 font-bold mt-0.5 uppercase tracking-tighter">
+                  <p className="text-[10px] text-slate-400 font-inter mt-0.5 uppercase tracking-tighter">
                     PNG, JPG up to 5MB
                   </p>
                 </div>
@@ -340,14 +340,14 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
               <div className="lg:col-span-8 space-y-3 flex flex-col">
                 <label
                   htmlFor="tutor-bio"
-                  className="text-sm font-bold text-slate-800"
+                  className="text-[16px] font-inter text-slate-800"
                 >
                   Tutor Bio
                 </label>
                 <textarea
                   id="tutor-bio"
                   placeholder="Briefly describe the tutor's background and teaching philosophy..."
-                  className="w-full flex-1 min-h-[180px] rounded-[20px] border-none bg-[#F5F5F5] p-6 text-[14px] font-medium text-slate-600 outline-none focus:ring-2 focus:ring-[#31564E]/10 transition-all resize-none placeholder:text-slate-400 shadow-inner"
+                  className="w-full flex-1 min-h-[180px] rounded-[20px] border-none bg-[#F5F5F5] p-6 text-[14px] font-inter text-slate-600 outline-none focus:ring-2 focus:ring-[#31564E]/10 transition-all resize-none placeholder:text-slate-400 shadow-inner"
                 />
               </div>
 
@@ -360,11 +360,11 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                     <div className="h-8 w-8 rounded-lg bg-emerald-400/20 flex items-center justify-center">
                       <Sparkles className="h-4 w-4 text-emerald-400" />
                     </div>
-                    <h3 className="text-[13px] font-bold tracking-wide">
+                    <h3 className="text-[16px] font-semibold  font-inter tracking-wide">
                       AI ENHANCEMENT
                     </h3>
                   </div>
-                  <p className="text-[13px] font-medium opacity-80 leading-relaxed">
+                  <p className="text-[14px] font-inter opacity-80 leading-relaxed">
                     Enable automatic background removal and lighting correction
                     for this tutor.
                   </p>
@@ -383,7 +383,7 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                         )}
                       />
                     </div>
-                    <span className="text-[13px] font-bold">
+                    <span className="text-[14px] font-semibold font-inter">
                       {isAiEnabled ? "Enabled" : "Disabled"}
                     </span>
                   </div>
@@ -397,10 +397,10 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
         <div className="rounded-[20px] bg-white shadow-sm border border-border/50 p-6 md:p-10 relative transition-all duration-500 animate-in fade-in slide-in-from-right-4">
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center gap-3">
-              <span className="text-[15px] font-bold text-slate-400">
+              <span className="text-[18px] font-semibold text-[#31564E] font-inter">
                 Step: 2
               </span>
-              <h3 className="text-[19px] font-black text-[#31564E]">
+              <h3 className="text-[20px] font-semibold text-[#31564E] font-inter">
                 Assign Course
               </h3>
             </div>
@@ -415,7 +415,7 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                 <input
                   type="text"
                   placeholder="Search courses by name or level..."
-                  className="h-14 w-full rounded-2xl border border-slate-100 bg-[#F5F5F5] pl-14 pr-6 text-[15px] font-medium text-slate-600 outline-none focus:ring-2 focus:ring-[#31564E]/10 transition-all placeholder:text-slate-400"
+                  className="h-14 w-full rounded-2xl border border-slate-100 bg-[#F5F5F5] pl-14 pr-6 text-[14px] font-inter text-slate-800 outline-none focus:ring-2 focus:ring-[#31564E]/10 transition-all placeholder:text-slate-600"
                 />
               </div>
 
@@ -423,7 +423,7 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
               <div className="overflow-x-auto">
                 <table className="w-full text-left">
                   <thead>
-                    <tr className="text-[13px] font-bold text-slate-400 border-b border-slate-50">
+                    <tr className="text-[14px] font-inter font-semibold text-slate-800 border-b border-slate-50">
                       <th className="pb-6 px-4">Course Name</th>
                       <th className="pb-6 px-4">Level</th>
                       <th className="pb-6 px-4">Students Enrolled</th>
@@ -442,17 +442,17 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                           )}
                         >
                           <td className="py-6 px-4">
-                            <span className="text-[15px] font-bold text-slate-700">
+                            <span className="text-[14px] font-semibold font-inter text-slate-700">
                               {course.name}
                             </span>
                           </td>
                           <td className="py-6 px-4">
-                            <span className="text-[14px] font-medium text-slate-400">
+                            <span className="text-[14px] font-inter text-[#424754]">
                               {course.level}
                             </span>
                           </td>
                           <td className="py-6 px-4">
-                            <span className="text-[14px] font-bold text-slate-500">
+                            <span className="text-[14px] font-inter text-[#424754]">
                               {course.students}
                             </span>
                           </td>
@@ -460,7 +460,7 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                             <div
                               className={cn(
                                 "ml-auto h-6 w-11 rounded-full relative transition-all duration-300 cursor-pointer shadow-inner",
-                                isAssigned ? "bg-[#31564E]" : "bg-slate-200"
+                                isAssigned ? "bg-[#0058BE]" : "bg-slate-200"
                               )}
                               onClick={() => {
                                 if (isAssigned)
@@ -494,12 +494,12 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
 
             {/* Right Column: Assigned Summary Card */}
             <div className="lg:col-span-4 self-start">
-              <div className="rounded-[32px] bg-[#1E3A34] overflow-hidden shadow-2xl shadow-[#1E3A34]/20">
+              <div className="rounded-[16px] bg-[#31564E] overflow-hidden shadow-2xl shadow-[#1E3A34]/20">
                 <div className="p-8 border-b border-white/5 flex items-center gap-3">
                   <div className="h-8 w-8 rounded-xl bg-white/10 flex items-center justify-center">
                     <BookOpen className="h-4 w-4 text-emerald-400" />
                   </div>
-                  <h4 className="text-[16px] font-bold text-white">
+                  <h4 className="text-[16px] font-semibold font-inter text-white">
                     Assigned Courses
                   </h4>
                 </div>
@@ -507,18 +507,18 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                 <div className="p-8 space-y-8">
                   {/* Selection Summary Box */}
                   <div className="p-6 rounded-[24px] bg-white/5 border border-white/5 space-y-2">
-                    <p className="text-[11px] font-black text-slate-400 uppercase tracking-widest">
+                    <p className="text-[12px] font-semibold font-inter text-white uppercase tracking-widest">
                       Selection Summary
                     </p>
                     <div className="flex items-center justify-between">
-                      <h3 className="text-2xl font-black text-white">
+                      <h3 className="text-[24px] font-inter font-semibold text-black">
                         {assignedCourses.length} Courses
                       </h3>
-                      <span className="text-xs font-medium text-slate-500 decoration-slate-500 underline underline-offset-4 cursor-pointer hover:text-white">
+                      <span className="text-[14px] font-inter font-medium text-white decoration-white underline underline-offset-4 cursor-pointer hover:text-white">
                         Clear All
                       </span>
                     </div>
-                    <p className="text-[13px] font-medium text-slate-500">
+                    <p className="text-[14px] font-inter font-medium text-white">
                       Selected for this tutor
                     </p>
                   </div>
@@ -531,8 +531,8 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                         className="flex items-center justify-between p-4 rounded-2xl bg-white transition-all transform hover:scale-[1.02] shadow-lg shadow-black/5"
                       >
                         <div className="flex items-center gap-3">
-                          <div className="h-2 w-2 rounded-full bg-blue-500" />
-                          <span className="text-[14px] font-bold text-slate-800">
+                          <div className="h-2 w-2 rounded-full bg-[#0058BE]" />
+                          <span className="text-[14px] font-inter font-semibold text-slate-800">
                             {c}
                           </span>
                         </div>
@@ -554,14 +554,14 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                   <div className="p-6 rounded-[24px] bg-emerald-500/10 border border-emerald-500/20">
                     <div className="flex items-center gap-2 mb-3">
                       <Sparkles className="h-4 w-4 text-emerald-400" />
-                      <span className="text-[11px] font-bold text-emerald-400 uppercase tracking-widest">
+                      <span className="text-[14px] font-inter font-semibold text-[#8127CF] uppercase tracking-widest">
                         AI Insight
                       </span>
                     </div>
-                    <p className="text-[13px] font-medium text-white/80 leading-relaxed">
+                    <p className="text-[11px] font-inter text-white/80 leading-relaxed">
                       Based on experience, this tutor is also highly suitable
                       for{" "}
-                      <span className="text-emerald-400 font-bold">
+                      <span className="text-white/80 font-inter ">
                         Business English
                       </span>
                       .
@@ -577,10 +577,10 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
         <div className="rounded-[20px] bg-white shadow-sm border border-border/50 p-6 md:p-10 relative transition-all duration-500 animate-in fade-in slide-in-from-right-4">
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center gap-3">
-              <span className="text-[15px] font-bold text-slate-400">
+              <span className="text-[18px] font-semibold font-inter text-[#31564E]">
                 Step: 3
               </span>
-              <h3 className="text-[19px] font-black text-[#31564E]">
+              <h3 className="text-[20px] font-semibold font-inter text-[#31564E]">
                 Permission Level
               </h3>
             </div>
@@ -593,7 +593,7 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                 <div className="h-10 w-10 flex items-center justify-center rounded-xl bg-blue-500 text-white shadow-lg shadow-blue-500/20">
                   <BookOpen className="h-5 w-5" />
                 </div>
-                <h4 className="text-[16px] font-bold text-slate-800">
+                <h4 className="text-[18px] font-bold fonnt-inter text-slate-800">
                   Course Access
                 </h4>
               </div>
@@ -612,7 +612,7 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                     key={item.key}
                     className="flex items-center justify-between group"
                   >
-                    <span className="text-[14px] font-medium text-slate-600 transition-colors group-hover:text-slate-900">
+                    <span className="text-[16px] font-inter text-slate-800 transition-colors group-hover:text-slate-900">
                       {item.label}
                     </span>
                     <div
@@ -646,7 +646,7 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                 <div className="h-10 w-10 flex items-center justify-center rounded-xl bg-blue-500 text-white shadow-lg shadow-blue-500/20">
                   <Users className="h-5 w-5" />
                 </div>
-                <h4 className="text-[16px] font-bold text-slate-800">
+                <h4 className="text-[18px] font-inter font-bold text-slate-800">
                   Student Interaction
                 </h4>
               </div>
@@ -665,7 +665,7 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                     key={item.key}
                     className="flex items-center justify-between group"
                   >
-                    <span className="text-[14px] font-medium text-slate-600 transition-colors group-hover:text-slate-900">
+                    <span className="text-[16px] font-inter text-slate-800 transition-colors group-hover:text-slate-900">
                       {item.label}
                     </span>
                     <div
@@ -699,7 +699,7 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                 <div className="h-10 w-10 flex items-center justify-center rounded-xl bg-blue-500 text-white shadow-lg shadow-blue-500/20">
                   <CheckCircle2 className="h-5 w-5" />
                 </div>
-                <h4 className="text-[16px] font-bold text-slate-800">
+                <h4 className="text-[18px] font-inter font-bold text-slate-800">
                   Class Management
                 </h4>
               </div>
@@ -719,7 +719,7 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                     key={item.key}
                     className="flex items-center justify-between group"
                   >
-                    <span className="text-[14px] font-medium text-slate-600 transition-colors group-hover:text-slate-900">
+                    <span className="text-[16px] font-inter text-slate-800 transition-colors group-hover:text-slate-900">
                       {item.label}
                     </span>
                     <div
@@ -753,7 +753,7 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                 <div className="h-10 w-10 flex items-center justify-center rounded-xl bg-white text-[#31564E] shadow-lg shadow-black/20">
                   <Sparkles className="h-5 w-5" />
                 </div>
-                <h4 className="text-[16px] font-bold">AI Tools Access</h4>
+                <h4 className="text-[18px] font-bold font-inter">AI Tools Access</h4>
               </div>
               <div className="space-y-6">
                 {[
@@ -770,7 +770,7 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                     key={item.key}
                     className="flex items-center justify-between group"
                   >
-                    <span className="text-[14px] font-medium opacity-90 transition-opacity group-hover:opacity-100">
+                    <span className="text-[16px] font-inter  opacity-90 transition-opacity group-hover:opacity-100">
                       {item.label}
                     </span>
                     <div
@@ -804,10 +804,10 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
         <div className="rounded-[20px] bg-white shadow-sm border border-border/50 p-6 md:p-10 relative transition-all duration-500 animate-in fade-in slide-in-from-right-4">
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center gap-3">
-              <span className="text-[15px] font-bold text-slate-400">
+              <span className="text-[18px] font-semibold font-inter text-[#31564E]">
                 Step: 4
               </span>
-              <h3 className="text-[19px] font-black text-[#31564E]">
+              <h3 className="text-[20px] font-semibold font-inter text-[#31564E]">
                 Live Class Access
               </h3>
             </div>
@@ -819,7 +819,7 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
               {/* Live Class Configuration Card */}
               <div className="rounded-[24px] bg-[#F9FBFA] border border-[#F0F4F3] p-8 space-y-8">
                 <div className="flex items-center justify-between border-b border-slate-200/50 pb-5">
-                  <h4 className="text-[16px] font-black text-slate-800">
+                  <h4 className="text-[18px] font-bold font-inter text-[#0B1C30]">
                     Live Class Configuration
                   </h4>
                 </div>
@@ -828,14 +828,14 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                   <div className="space-y-3">
                     <label
                       htmlFor="platform"
-                      className="text-[13px] font-bold text-slate-800"
+                      className="text-[16px] font-medium font-inter text-black"
                     >
                       Live Class Platform
                     </label>
                     <div className="relative">
                       <select
                         id="platform"
-                        className="h-14 w-full appearance-none rounded-xl border border-slate-100 bg-white px-5 text-[14px] font-medium text-slate-600 outline-none focus:ring-2 focus:ring-[#31564E]/10 transition-all cursor-pointer shadow-sm"
+                        className="h-14 w-full appearance-none rounded-xl border border-slate-100 bg-white px-5 text-[14px] font-inter text-slate-600 outline-none focus:ring-2 focus:ring-[#31564E]/10 transition-all cursor-pointer shadow-sm"
                       >
                         <option>Google Meet</option>
                         <option>Zoom</option>
@@ -847,14 +847,14 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                   <div className="space-y-3">
                     <label
                       htmlFor="duration"
-                      className="text-[13px] font-bold text-slate-800"
+                      className="text-[16px] font-medium font-inter text-black"
                     >
                       Default Class Duration
                     </label>
                     <div className="relative">
                       <select
                         id="duration"
-                        className="h-14 w-full appearance-none rounded-xl border border-slate-100 bg-white px-5 text-[14px] font-medium text-slate-600 outline-none focus:ring-2 focus:ring-[#31564E]/10 transition-all cursor-pointer shadow-sm"
+                        className="h-14 w-full appearance-none rounded-xl border border-slate-100 bg-white px-5 text-[14px] font-inter text-slate-600 outline-none focus:ring-2 focus:ring-[#31564E]/10 transition-all cursor-pointer shadow-sm"
                       >
                         <option>1 Hour</option>
                         <option>30 Minutes</option>
@@ -868,7 +868,7 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                   <div className="space-y-3">
                     <label
                       htmlFor="platform-email"
-                      className="text-[13px] font-bold text-slate-800 flex items-center gap-1"
+                      className="text-[16px] font-medium font-inter text-black"
                     >
                       Email id <span className="text-red-500 font-bold">*</span>
                     </label>
@@ -876,13 +876,13 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                       id="platform-email"
                       type="email"
                       placeholder="Enter your email id"
-                      className="h-14 w-full rounded-xl border border-slate-100 bg-white px-5 text-[14px] font-medium text-slate-600 outline-none focus:ring-2 focus:ring-[#31564E]/10 transition-all placeholder:text-slate-400 shadow-sm"
+                      className="h-14 w-full rounded-xl border border-slate-100 bg-white px-5 text-[14px] font-inter text-slate-600 outline-none focus:ring-2 focus:ring-[#31564E]/10 transition-all placeholder:text-slate-400 shadow-sm"
                     />
                   </div>
                   <div className="space-y-3">
                     <label
                       htmlFor="platform-experience"
-                      className="text-[13px] font-bold text-slate-800 flex items-center gap-1"
+                      className="text-[16px] font-medium font-inter text-black"
                     >
                       Experience level{" "}
                       <span className="text-red-500 font-bold">*</span>
@@ -890,7 +890,7 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                     <div className="relative">
                       <select
                         id="platform-experience"
-                        className="h-14 w-full appearance-none rounded-xl border border-slate-100 bg-white px-5 text-[14px] font-medium text-slate-400 outline-none focus:ring-2 focus:ring-[#31564E]/10 transition-all cursor-pointer shadow-sm"
+                        className="h-14 w-full appearance-none rounded-xl border border-slate-100 bg-white px-5 text-[14px] font-inter text-slate-600 outline-none focus:ring-2 focus:ring-[#31564E]/10 transition-all cursor-pointer shadow-sm"
                       >
                         <option>Select Level</option>
                         <option>Entry Level</option>
@@ -906,7 +906,7 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
               {/* Availability Schedule Card */}
               <div className="rounded-[24px] bg-[#F9FBFA] border border-[#F0F4F3] p-8 space-y-8">
                 <div className="flex items-center justify-between border-b border-slate-200/50 pb-5">
-                  <h4 className="text-[16px] font-black text-slate-800">
+                  <h4 className="text-[18px] font-bold font-inter text-[#0B1C30]">
                     Availability Schedule
                   </h4>
                 </div>
@@ -939,8 +939,8 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                       >
                         <span
                           className={cn(
-                            "text-[14px] font-bold w-24",
-                            item.available ? "text-slate-800" : "text-slate-300"
+                            "text-[16px] font-semibold w-24",
+                            item.available ? "text-[#0B1C30]" : "text-slate-400"
                           )}
                         >
                           {item.day}
@@ -950,14 +950,14 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                             item.slots.map((slot) => (
                               <div
                                 key={slot}
-                                className="flex items-center gap-2 bg-white text-[#31564E] px-4 py-2 rounded-full text-[12px] font-bold border border-[#D4DFDB] shadow-sm"
+                                className="flex items-center gap-2 bg-[#31564E33] text-[#31564E] px-4 py-2 rounded-full text-[14px] font-medium font-inter border border-[#31564E] shadow-sm"
                               >
                                 {slot}
                                 <X className="h-3 w-3 cursor-pointer opacity-50 hover:opacity-100" />
                               </div>
                             ))
                           ) : (
-                            <span className="text-[13px] font-medium text-slate-400 italic">
+                            <span className="text-[14px] font-medium text-slate-400 ">
                               Not available
                             </span>
                           )}
@@ -972,14 +972,14 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                       <div className="space-y-2">
                         <label
                           htmlFor="slot-day"
-                          className="text-[11px] font-bold text-slate-400 uppercase tracking-wider"
+                          className="text-[16px] font-medium font-inter text-black"
                         >
                           Day
                         </label>
                         <div className="relative">
                           <select
                             id="slot-day"
-                            className="h-12 w-full appearance-none rounded-xl border border-slate-100 bg-[#F5F5F5] px-4 text-[13px] font-bold text-slate-700 outline-none cursor-pointer"
+                            className="h-12 w-full appearance-none rounded-xl border border-slate-100 bg-[#F5F5F5] px-4 text-[14px] font-regular font-inter text-slate-700 outline-none cursor-pointer"
                           >
                             <option>Tuesday</option>
                             <option>Wednesday</option>
@@ -990,14 +990,14 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                       <div className="space-y-2">
                         <label
                           htmlFor="slot-status"
-                          className="text-[11px] font-bold text-slate-400 uppercase tracking-wider"
+                          className="text-[16px] font-medium font-inter text-black"
                         >
                           Status
                         </label>
                         <div className="relative">
                           <select
                             id="slot-status"
-                            className="h-12 w-full appearance-none rounded-xl border border-slate-100 bg-[#F5F5F5] px-4 text-[13px] font-bold text-slate-700 outline-none cursor-pointer"
+                            className="h-12 w-full appearance-none rounded-xl border border-slate-100 bg-[#F5F5F5] px-4 text-[14px] font-regular font-inter text-slate-700 outline-none cursor-pointer"
                           >
                             <option>Available</option>
                             <option>Away</option>
@@ -1008,8 +1008,8 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
 
                       <div className="pt-2">
                         <div className="bg-[#F9FBFA] rounded-2xl p-4 flex flex-col gap-3 border border-[#F0F4F3]">
-                          <div className="flex items-center justify-between p-3 rounded-xl bg-white border border-slate-100 shadow-sm">
-                            <span className="text-[12px] font-bold text-slate-600">
+                          <div className="flex items-center justify-between p-3 rounded-xl bg-[#31564E33] border border-slate-100 shadow-sm">
+                            <span className="text-[14px] font-medium font-inter text-[#31564E]">
                               10:00 - 13:00
                             </span>
                             <X className="h-3 w-3 text-slate-300" />
@@ -1023,7 +1023,7 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                         </div>
                       </div>
 
-                      <Button className="w-full h-12 bg-black hover:bg-black/90 text-white rounded-xl text-[13px] font-black uppercase tracking-widest shadow-lg shadow-black/10">
+                      <Button className="w-full h-12 bg-black hover:bg-black/90 text-white rounded-xl text-[16px] font-medium font-inter shadow-lg shadow-black/10">
                         Save
                       </Button>
                     </div>
@@ -1043,46 +1043,46 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                   <div className="h-8 w-8 rounded-lg bg-emerald-400/20 flex items-center justify-center">
                     <Sparkles className="h-4 w-4 text-emerald-400" />
                   </div>
-                  <h4 className="text-[16px] font-black tracking-tight">
+                  <h4 className="text-[18px] font-bold  font-inter ">
                     AI Assistant
                   </h4>
                 </div>
-                <p className="text-[13px] font-medium opacity-80 leading-relaxed max-w-[90%]">
+                <p className="text-[14px] font-inter font-medium text-[#FFFFFFCC] leading-relaxed max-w-[90%]">
                   Based on previous tutor profiles, we recommend setting a max
                   capacity of 10 students for high-engagement language classes.
                 </p>
-                <button className="w-full h-14 bg-black text-white rounded-2xl text-[14px] font-bold hover:bg-black/80 transition-all shadow-xl shadow-black/20">
+                <button className="w-full h-14 bg-black text-white rounded-2xl text-[16px] font-semibold font-inter hover:bg-black/80 transition-all shadow-xl shadow-black/20">
                   Apply Recommendations
                 </button>
               </div>
 
               {/* Summary Card */}
               <div className="rounded-[32px] bg-[#EAF2FF] p-8 space-y-6 border border-blue-100 shadow-sm">
-                <h4 className="text-[16px] font-black text-slate-800">
+                <h4 className="text-[18px] font-bold font-inter text-slate-800">
                   Summary
                 </h4>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between pb-3 border-b border-blue-200/50">
-                    <span className="text-[13px] font-bold text-slate-500">
+                    <span className="text-[16px] font-medium font-inter text-[#424754]">
                       Platform:
                     </span>
-                    <span className="text-[14px] font-black text-blue-900">
+                    <span className="text-[16px] font-semibold font-inter text-[#0B1C30]">
                       Google Meet
                     </span>
                   </div>
                   <div className="flex items-center justify-between pb-3 border-b border-blue-200/50">
-                    <span className="text-[13px] font-bold text-slate-500">
+                    <span className="text-[16px] font-medium font-inter text-[#424754]">
                       Hours/Week:
                     </span>
-                    <span className="text-[14px] font-black text-blue-900">
+                    <span className="text-[16px] font-semibold font-inter text-[#0B1C30]">
                       14 Hours
                     </span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-[13px] font-bold text-slate-500">
+                    <span className="text-[16px] font-medium font-inter text-[#424754]">
                       Capacity:
                     </span>
-                    <span className="text-[14px] font-black text-blue-900">
+                    <span className="text-[16px] font-semibold font-inter text-[#0B1C30]">
                       12 Students
                     </span>
                   </div>
@@ -1102,7 +1102,7 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
 
                 {/* Branded Messaging */}
                 <div className="absolute bottom-0 left-0 p-8">
-                  <p className="text-white text-[19px] font-bold leading-tight max-w-[280px] drop-shadow-md">
+                  <p className="text-white text-[18px] font-bold font-inter leading-tight max-w-[280px] drop-shadow-md">
                     Live class quality depends on consistent scheduling.
                   </p>
                 </div>

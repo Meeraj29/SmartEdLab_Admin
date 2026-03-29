@@ -48,10 +48,10 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
                       <ArrowLeft className="h-5 w-5" />
                     </button>
                     <div className="flex flex-col">
-                      <h2 className="text-2xl font-bold text-foreground">
+                      <h2 className="text-[20px] font-inter font-semibold text-foreground">
                         Add New Student
                       </h2>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-[14px] font-inter text-muted-foreground">
                         Create a new direct student account manually.
                       </p>
                     </div>
@@ -60,13 +60,13 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
                     <Button
                       variant="outline"
                       onClick={handleBack}
-                      className="h-11 rounded-xl px-6 border-border/50 text-foreground bg-white hover:bg-slate-50 transition-all font-medium"
+                      className="text-[16px] h-11 rounded-xl px-6 border-border/50  text-[#31564E] font-inter bg-white hover:bg-slate-50 transition-all font-medium"
                     >
                       Go Back
                     </Button>
                     <Button
                       onClick={handleNext}
-                      className="h-11 rounded-xl px-8 bg-black hover:bg-black/90 text-white font-medium shadow-md shadow-black/10 transition-all"
+                      className="text-[16px] font-inter h-11 rounded-xl px-8 bg-black hover:bg-black/90 text-white font-medium shadow-md shadow-black/10 transition-all"
                     >
                       {step === 1
                         ? "Next: Select Plan"
@@ -80,9 +80,9 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
                 </div>
 
                 <div className="flex items-center">
-                  <h3 className="text-xl font-bold text-[#31564E]">
+                  <h3 className="text-[18px] font-inter font-semibold text-[#31564E]">
                     Step: {step}
-                    <span className="font-semibold text-foreground ml-2">
+                    <span className="font-semibold  ml-2 text-[20px] text-[#31564E]">
                       {step === 1 && "Basic Details - Student Details"}
                       {step === 2 && "Select Subscription Plan"}
                       {step === 3 && "AI Usage Configuration"}
@@ -104,7 +104,7 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
             <div className="flex flex-col gap-2 md:col-span-2">
               <label
                 htmlFor="studentName"
-                className="text-sm font-semibold text-foreground"
+                className="text-[16px] font-inter font-medium text-foreground"
               >
                 Student Full Name <span className="text-red-500">*</span>
               </label>
@@ -112,14 +112,14 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
                 id="studentName"
                 type="text"
                 placeholder="e.g. John Doe"
-                className="h-12 w-full rounded-xl bg-[#F1F1F1] px-4 text-sm outline-none transition-all focus:bg-white focus:ring-2 focus:ring-primary/10"
+                className="h-12 w-full rounded-xl bg-[#F1F1F1] px-4 text-[14px] outline-none transition-all focus:bg-white focus:ring-2 focus:ring-primary/10"
               />
             </div>
 
             <div className="flex flex-col gap-2">
               <label
                 htmlFor="emailAddress"
-                className="text-sm font-semibold text-foreground"
+                className="text-[16px] font-inter font-medium text-foreground"
               >
                 Email Address <span className="text-red-500">*</span>
               </label>
@@ -127,14 +127,14 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
                 id="emailAddress"
                 type="email"
                 placeholder="e.g. john.doe@example.com"
-                className="h-12 w-full rounded-xl bg-[#F1F1F1] px-4 text-sm outline-none transition-all focus:bg-white focus:ring-2 focus:ring-primary/10"
+                className="h-12 w-full rounded-xl bg-[#F1F1F1] px-4 text-[14px] outline-none transition-all focus:bg-white focus:ring-2 focus:ring-primary/10"
               />
             </div>
 
             <div className="flex flex-col gap-2">
               <label
                 htmlFor="phoneNumber"
-                className="text-sm font-semibold text-foreground"
+                className="text-[16px] font-inter font-medium text-foreground"
               >
                 Phone Number <span className="text-red-500">*</span>
               </label>
@@ -142,42 +142,42 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
                 id="phoneNumber"
                 type="text"
                 placeholder="e.g. (555) 000-0000"
-                className="h-12 w-full rounded-xl bg-[#F1F1F1] px-4 text-sm outline-none transition-all focus:bg-white focus:ring-2 focus:ring-primary/10"
+                className="h-12 w-full rounded-xl bg-[#F1F1F1] px-4 text-[14px] outline-none transition-all focus:bg-white focus:ring-2 focus:ring-primary/10"
               />
             </div>
 
             <div className="flex flex-col gap-2">
               <label
                 htmlFor="country"
-                className="text-sm font-semibold text-foreground"
+                className="text-[16px] font-inter font-medium text-foreground"
               >
                 Country <span className="text-red-500">*</span>
               </label>
               <div className="relative group">
                 <select
                   id="country"
-                  className="h-12 w-full appearance-none rounded-xl bg-[#F1F1F1] px-4 text-sm outline-none transition-all cursor-pointer focus:bg-white focus:ring-2 focus:ring-primary/10 text-muted-foreground focus:text-foreground"
+                  className="h-12 w-full appearance-none rounded-xl bg-[#F1F1F1] px-4 text-[14px] outline-none transition-all cursor-pointer focus:bg-white focus:ring-2 focus:ring-primary/10 text-muted-foreground focus:text-foreground"
                 >
                   <option value="">Select a country</option>
                   <option value="in">India</option>
                   <option value="us">United States</option>
                   <option value="uk">United Kingdom</option>
                 </select>
-                <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground pointer-events-none" />
+                <ChevronDown className=" absolute right-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground pointer-events-none" />
               </div>
             </div>
 
             <div className="flex flex-col gap-2">
               <label
                 htmlFor="preferredLanguage"
-                className="text-sm font-semibold text-foreground"
+                className="text-[16px] font-inter font-medium text-foreground"
               >
                 Preferred Language <span className="text-red-500">*</span>
               </label>
               <div className="relative group">
                 <select
                   id="preferredLanguage"
-                  className="h-12 w-full appearance-none rounded-xl bg-[#F1F1F1] px-4 text-sm outline-none transition-all cursor-pointer focus:bg-white focus:ring-2 focus:ring-primary/10 text-foreground"
+                  className="h-12 w-full appearance-none rounded-xl bg-[#F1F1F1] px-4 text-[14px] outline-none transition-all cursor-pointer focus:bg-white focus:ring-2 focus:ring-primary/10 text-foreground"
                 >
                   <option value="en">English (US)</option>
                   <option value="es">Spanish</option>
@@ -247,7 +247,7 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
             <div>
               <div className="mt-12 space-y-8">
                 <div className="flex items-center justify-between border-b border-border/10 pb-4">
-                  <h4 className="text-xl font-bold text-foreground">
+                  <h4 className="text-[20px] font-semibold font-inter text-foreground">
                     Plan Validity
                   </h4>
                 </div>
@@ -256,7 +256,7 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
                   <div className="flex flex-col gap-2">
                     <label
                       htmlFor="startDate"
-                      className="text-sm font-semibold text-foreground"
+                      className="text-[16px] font-medium font-inter text-foreground"
                     >
                       Start Date <span className="text-red-500">*</span>
                     </label>
@@ -265,7 +265,7 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
                         id="startDate"
                         type="text"
                         defaultValue="14/03/2026"
-                        className="h-12 w-full rounded-xl bg-[#F1F1F1] px-4 text-sm outline-none transition-all focus:bg-white focus:ring-2 focus:ring-primary/10"
+                        className="h-12 w-full rounded-xl bg-[#F1F1F1] px-4 text-[14px] font-inter outline-none transition-all focus:bg-white focus:ring-2 focus:ring-primary/10"
                       />
                       <div className="absolute right-4 top-1/2 -translate-y-1/2">
                         <svg
@@ -288,7 +288,7 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
                   <div className="flex flex-col gap-2">
                     <label
                       htmlFor="expiryDate"
-                      className="text-sm font-semibold text-foreground"
+                      className="text-[16px] font-medium font-inter text-foreground"
                     >
                       Expiry Date <span className="text-red-500">*</span>
                     </label>
@@ -297,7 +297,7 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
                         id="expiryDate"
                         type="text"
                         defaultValue="14/06/2026"
-                        className="h-12 w-full rounded-xl bg-[#F1F1F1] px-4 text-sm outline-none transition-all focus:bg-white focus:ring-2 focus:ring-primary/10"
+                        className="h-12 w-full rounded-xl bg-[#F1F1F1] px-4 text-[14px] font-inter outline-none transition-all focus:bg-white focus:ring-2 focus:ring-primary/10"
                       />
                       <div className="absolute right-4 top-1/2 -translate-y-1/2">
                         <svg
@@ -320,7 +320,7 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
                   <div className="flex flex-col gap-2">
                     <label
                       htmlFor="durationMonths"
-                      className="text-sm font-semibold text-foreground"
+                      className="text-[16px] font-medium font-inter text-foreground"
                     >
                       Duration (Months) <span className="text-red-500">*</span>
                     </label>
@@ -329,7 +329,7 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
                         id="durationMonths"
                         type="text"
                         defaultValue="03 Months"
-                        className="h-12 w-full rounded-xl bg-[#F1F1F1] px-4 text-sm outline-none transition-all focus:bg-white focus:ring-2 focus:ring-primary/10"
+                        className="h-12 w-full rounded-xl bg-[#F1F1F1] px-4 text-[14px] font-inter outline-none transition-all focus:bg-white focus:ring-2 focus:ring-primary/10"
                       />
                       <div className="absolute right-4 top-1/2 -translate-y-1/2">
                         <svg
@@ -351,7 +351,7 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
                 </div>
 
                 <div className="rounded-xl bg-[#31564E]/30 border border-slate-200 p-4 flex items-center gap-3 text-sm text-black">
-                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#31564E] text-white font-bold text-[10px]">
+                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#31564E] text-white font-bold text-[16px] font-inter">
                     i
                   </div>
                   The student will have active access for exactly 365 days based
@@ -370,7 +370,7 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
             <div className="lg:col-span-2 space-y-6">
               <div className="rounded-[20px] bg-white shadow-sm border border-border/50 p-6 md:p-10">
                 <div className="mb-8">
-                  <h4 className="text-lg font-bold text-foreground">
+                  <h4 className="text-[20px] font-semibold font-inter text-foreground">
                     Configuration
                   </h4>
                 </div>
@@ -383,10 +383,10 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
                         <div className="h-1.5 w-1.5 rounded-full bg-[#BEF264]" />
                       </div>
                       <div className="flex flex-col gap-1">
-                        <span className="font-bold text-foreground">
+                        <span className="font-semibold text-[18px] font-inter text-foreground">
                           Default AI Limit
                         </span>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-[14px] font-inter text-muted-foreground leading-relaxed">
                           Uses the default token limit associated with the
                           selected subscription plan (e.g., 500,000
                           tokens/month).
@@ -400,10 +400,10 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
                     <div className="flex items-start gap-4">
                       <div className="h-5 w-5 rounded-full border-2 border-slate-300 mt-1" />
                       <div className="flex flex-col gap-1">
-                        <span className="font-bold text-foreground">
+                        <span className="font-semibold text-[18px] font-inter text-foreground">
                           Custom AI Limit
                         </span>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-[14px] font-inter text-muted-foreground leading-relaxed">
                           Manually override the plan default for this specific
                           student.
                         </p>
@@ -421,17 +421,17 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
                   <div className="flex h-5 w-5 items-center justify-center rounded-full border border-slate-400 text-slate-500 font-bold text-[10px]">
                     i
                   </div>
-                  <h4 className="text-md font-bold text-foreground">
+                  <h4 className="text-[20px] font-semibold font-inter text-foreground">
                     Understanding Limits
                   </h4>
                 </div>
                 <div className="space-y-4">
-                  <p className="text-sm text-slate-600 leading-relaxed">
+                  <p className="text-[16px] font-inter text-muted-foreground leading-relaxed">
                     AI tokens control how much AI practice (speaking
                     corrections, writing feedback) the student can consume each
                     month.
                   </p>
-                  <p className="text-sm text-slate-600 leading-relaxed">
+                  <p className="text-[16px] font-inter text-black leading-relaxed">
                     Setting a limit helps manage platform resources and prevents
                     abnormal usage from single accounts.
                   </p>
@@ -444,11 +444,11 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
                 </div>
                 <div className="flex items-center gap-2 mb-4">
                   <Lightbulb className="h-5 w-5 text-[#31564E]" />
-                  <h4 className="text-md font-bold text-[#31564E]">
+                  <h4 className="text-[20px] font-semibold font-inter text-[#0F172A]">
                     Token Usage Tip
                   </h4>
                 </div>
-                <p className="text-sm text-[#31564E] font-medium leading-relaxed">
+                <p className="text-[16px] font-inter  font-medium leading-relaxed">
                   "An average student uses approximately 120,000 tokens per
                   month for daily speaking practice. We recommend a 150,000 -
                   200,000 buffer for active learners."
@@ -481,24 +481,24 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
                       />
                     </svg>
                   </div>
-                  <h4 className="font-bold text-foreground">Student Info</h4>
+                  <h4 className="font-semibold text-[20px] text-foreground">Student Info</h4>
                 </div>
                 <button
                   onClick={() => setStep(1)}
-                  className="text-xs font-bold text-[#31564E] border-b border-[#31564E]/30 hover:border-[#31564E] transition-all"
+                  className="text-[16px] font-medium text-[#31564E] border-b border-[#31564E]/30 hover:border-[#31564E] transition-all"
                 >
                   Edit Info
                 </button>
               </div>
               <div className="space-y-4">
                 <div className="flex flex-col gap-1">
-                  <span className="text-lg font-bold text-foreground">
+                  <span className="text-[18px] font-semibold text-foreground">
                     Alex Johnson
                   </span>
-                  <span className="text-sm text-slate-500">
+                  <span className="text-[14px] text-slate-500">
                     alex.j@example.com
                   </span>
-                  <span className="text-sm text-slate-500">+1 555-0123</span>
+                  <span className="text-[14px] text-slate-500">+1 555-0123</span>
                 </div>
               </div>
             </div>
@@ -522,24 +522,24 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
                       />
                     </svg>
                   </div>
-                  <h4 className="font-bold text-foreground">Subscription</h4>
+                  <h4 className="font-semibold text-[20px] text-foreground">Subscription</h4>
                 </div>
                 <button
                   onClick={() => setStep(2)}
-                  className="text-xs font-bold text-[#31564E] border-b border-[#31564E]/30 hover:border-[#31564E] transition-all"
+                  className="text-[16px] font-medium text-[#31564E] border-b border-[#31564E]/30 hover:border-[#31564E] transition-all"
                 >
                   Edit Info
                 </button>
               </div>
               <div className="space-y-4">
                 <div className="flex flex-col gap-1">
-                  <span className="text-lg font-bold text-foreground">
+                  <span className="text-[18px] font-semibold text-foreground">
                     Pro Learning
                   </span>
-                  <span className="text-sm text-slate-500">
+                  <span className="text-[14px] text-slate-500">
                     Valid until Oct 27, 2024
                   </span>
-                  <span className="text-sm text-slate-500">
+                  <span className="text-[14px] text-slate-500">
                     Quaterly Billing Cycle
                   </span>
                 </div>
@@ -553,26 +553,26 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
                   <div className="h-10 w-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-500">
                     <Lightbulb className="h-5 w-5" />
                   </div>
-                  <h4 className="font-bold text-foreground">
+                  <h4 className="font-semibold text-[20px] text-foreground">
                     AI Configuration
                   </h4>
                 </div>
                 <button
                   onClick={() => setStep(3)}
-                  className="text-xs font-bold text-[#31564E] border-b border-[#31564E]/30 hover:border-[#31564E] transition-all"
+                  className="text-[16px] font-medium text-[#31564E] border-b border-[#31564E]/30 hover:border-[#31564E] transition-all"
                 >
                   Edit Info
                 </button>
               </div>
               <div className="space-y-4">
                 <div className="flex flex-col gap-1">
-                  <span className="text-lg font-bold text-foreground">
+                  <span className="text-[18px] font-semibold text-foreground">
                     750k Tokens
                   </span>
-                  <span className="text-sm text-slate-500">
+                  <span className="text-[14px] text-slate-500">
                     85% Usage Alert Threshold
                   </span>
-                  <span className="text-sm text-slate-500">
+                  <span className="text-[14px] text-slate-500">
                     GPT-4 Access Enabled
                   </span>
                 </div>
@@ -600,18 +600,18 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
                       />
                     </svg>
                   </div>
-                  <h4 className="text-lg font-bold text-foreground">
+                  <h4 className="text-[18px] font-semibold text-foreground">
                     Credential Generation
                   </h4>
                 </div>
-                <p className="text-sm text-slate-700 font-medium">
+                <p className="text-[14px] text-black">
                   System will automatically create a secure student ID and
                   temporary password for the initial login.
                 </p>
               </div>
 
               <div className="flex items-center gap-4 bg-[#C2CDCA] p-3 rounded-2xl border border-border/30 px-6">
-                <span className="text-sm font-bold text-foreground whitespace-nowrap">
+                <span className="text-[18px] font-inter font-semibold text-foreground whitespace-nowrap">
                   Automatic Generation
                 </span>
                 <div
@@ -632,9 +632,9 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
             </div>
 
             <div className="rounded-[20px] bg-[#31564E]/20 p-5 flex items-center gap-3 text-sm text-slate-800 font-medium">
-              <div className="text-lg opacity-60">@</div>
+              <div className="text-[16px] opacity-60">@</div>
               Credentials will be{" "}
-              <span className="font-bold underline mx-1">
+              <span className="font-semibold text-[16px] underline mx-1">
                 automatically emailed
               </span>{" "}
               to Alex Johnson (alex.j@example.com) immediately after account
@@ -662,22 +662,22 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
             </svg>
           </div>
 
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+          <h2 className="text-3xl md:text-[24px] font-semibold text-foreground mb-6">
             Student Account Created Successfully
           </h2>
 
           <div className="space-y-4 mb-12">
-            <p className="text-lg text-slate-600 leading-relaxed">
+            <p className="text-[16px] leading-relaxed">
               The account for{" "}
-              <span className="font-bold text-foreground">Alex Johnson</span>
+              <span className="font-regular text-foreground">Alex Johnson</span>
             </p>
-            <p className="text-[#31564E] font-medium text-lg">
+            <p className="text-[#0D7FF2] font-medium text-[16px]">
               (alex.j@example.com){" "}
-              <span className="text-slate-600 font-normal">
+              <span className="text-slate-600 font-normal text-[16px]">
                 has been finalized. Login
               </span>
             </p>
-            <p className="text-slate-600 text-lg leading-relaxed">
+            <p className="text-slate-600 text-[16px] leading-relaxed">
               credentials have been automatically generated and sent to the
               student's email.
             </p>
@@ -687,13 +687,13 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
             <Button
               variant="outline"
               onClick={onBack}
-              className="h-14 rounded-2xl px-10 border-slate-300 text-slate-700 font-bold text-lg hover:bg-slate-50 transition-all min-w-[240px]"
+              className="h-14 rounded-2xl px-10 border-slate-300 text-[#31564E]  text-[16px] hover:bg-slate-50 transition-all min-w-[240px]"
             >
               Go to Student List
             </Button>
             <Button
               onClick={onSuccess || onBack}
-              className="h-14 rounded-2xl px-10 bg-black text-white font-bold text-lg hover:bg-black/90 shadow-xl shadow-black/20 transition-all min-w-[240px]"
+              className="h-14 rounded-2xl px-10 bg-black text-white  text-[16px] hover:bg-black/90 shadow-xl shadow-black/20 transition-all min-w-[240px]"
             >
               View Student Profile
             </Button>
@@ -738,7 +738,7 @@ const PlanCard = ({
       {recommended && (
         <div className="bg-[#BEF264] py-1.5 flex items-center justify-center gap-1.5 px-4">
           <span className="text-[14px]">★</span>
-          <span className="text-[12px] font-bold text-black uppercase tracking-wider">
+          <span className="text-[14px] font-medium font-inter text-black">
             Recommended
           </span>
           <span className="text-[14px]">★</span>
@@ -748,12 +748,12 @@ const PlanCard = ({
       <div className="p-6 flex flex-col gap-6">
         <div className="flex justify-between items-start">
           <div className="flex flex-col gap-2">
-            <h4 className="text-lg font-bold text-foreground">{title}</h4>
+            <h4 className="text-[20px] font-medium font-inter text-foreground">{title}</h4>
             <div className="flex items-baseline gap-1">
-              <span className="text-3xl font-bold text-foreground">
+              <span className="text-[32px] font-semibold font-inter text-foreground">
                 {price}
               </span>
-              <span className="text-sm text-slate-500 font-medium">
+              <span className="text-[14px] font-regular font-inter text-black">
                 {period}
               </span>
             </div>
@@ -778,7 +778,7 @@ const PlanCard = ({
           {features.map((feature, i) => (
             <li
               key={i}
-              className="flex items-center gap-3 text-sm text-slate-700 font-medium leading-relaxed"
+              className="flex items-center gap-3 text-[16px] font-regular font-inter text-slate-700 leading-relaxed"
             >
               <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-slate-300">
                 <svg
