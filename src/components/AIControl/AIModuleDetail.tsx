@@ -1,6 +1,7 @@
 "use client";
 
 import { Activity, ArrowLeft, Shield, Sparkles, Zap } from "lucide-react";
+import * as React from "react";
 import { useState } from "react";
 
 import { Area, AreaChart, ResponsiveContainer, Tooltip, XAxis } from "recharts";
@@ -27,6 +28,11 @@ const AIModuleDetail = ({
   onBack,
 }: AIModuleDetailProps) => {
   const [activeTab, setActiveTab] = useState("Performance");
+  const [isMounted, setIsMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   return (
     <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
@@ -184,57 +190,70 @@ const AIModuleDetail = ({
               </div>
 
               <div className="h-[300px] w-full mt-4">
-                <ResponsiveContainer width="100%" height="100%">
-                  <AreaChart data={data}>
-                    <defs>
-                      <linearGradient
-                        id="colorTokens"
-                        x1="0"
-                        y1="0"
-                        x2="0"
-                        y2="1"
-                      >
-                        <stop
-                          offset="5%"
-                          stopColor="#31564E"
-                          stopOpacity={0.1}
-                        />
-                        <stop
-                          offset="95%"
-                          stopColor="#31564E"
-                          stopOpacity={0}
-                        />
-                      </linearGradient>
-                    </defs>
-                    <XAxis
-                      dataKey="name"
-                      axisLine={false}
-                      tickLine={false}
-                      tick={{ fontSize: 12, fontWeight: 700, fill: "#94A3B8" }}
-                      dy={10}
-                    />
-                    <Tooltip
-                      contentStyle={{
-                        borderRadius: "16px",
-                        border: "none",
-                        boxShadow: "0 10px 15px -3px rgb(0 0 0 / 0.1)",
-                      }}
-                      cursor={{
-                        stroke: "#31564E",
-                        strokeWidth: 2,
-                        strokeDasharray: "5 5",
-                      }}
-                    />
-                    <Area
-                      type="monotone"
-                      dataKey="tokens"
-                      stroke="#31564E"
-                      strokeWidth={3}
-                      fillOpacity={1}
-                      fill="url(#colorTokens)"
-                    />
-                  </AreaChart>
-                </ResponsiveContainer>
+                {isMounted ? (
+                  <ResponsiveContainer
+                    width="100%"
+                    height="100%"
+                    minWidth={0}
+                    minHeight={0}
+                  >
+                    <AreaChart data={data}>
+                      <defs>
+                        <linearGradient
+                          id="colorTokens"
+                          x1="0"
+                          y1="0"
+                          x2="0"
+                          y2="1"
+                        >
+                          <stop
+                            offset="5%"
+                            stopColor="#31564E"
+                            stopOpacity={0.1}
+                          />
+                          <stop
+                            offset="95%"
+                            stopColor="#31564E"
+                            stopOpacity={0}
+                          />
+                        </linearGradient>
+                      </defs>
+                      <XAxis
+                        dataKey="name"
+                        axisLine={false}
+                        tickLine={false}
+                        tick={{
+                          fontSize: 12,
+                          fontWeight: 700,
+                          fill: "#94A3B8",
+                        }}
+                        dy={10}
+                      />
+                      <Tooltip
+                        contentStyle={{
+                          borderRadius: "16px",
+                          border: "none",
+                          boxShadow: "0 10px 15px -3px rgb(0 0 0 / 0.1)",
+                        }}
+                        cursor={{
+                          stroke: "#31564E",
+                          strokeWidth: 2,
+                          strokeDasharray: "5 5",
+                        }}
+                      />
+                      <Area
+                        type="monotone"
+                        dataKey="tokens"
+                        stroke="#31564E"
+                        strokeWidth={3}
+                        fillOpacity={1}
+                        fill="url(#colorTokens)"
+                      />
+                    </AreaChart>
+                  </ResponsiveContainer>
+                ) : (
+                  <div className="h-full w-full" />
+                )}
               </div>
             </div>
 

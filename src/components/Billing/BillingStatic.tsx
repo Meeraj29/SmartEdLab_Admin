@@ -66,6 +66,11 @@ const BillingStatic = ({
   const [timeFrame, setTimeFrame] = React.useState<
     "Monthly" | "Last 6 Months" | "Yearly"
   >("Last 6 Months");
+  const [isMounted, setIsMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const currentData = React.useMemo(() => {
     switch (timeFrame) {
@@ -281,62 +286,71 @@ const BillingStatic = ({
           </div>
 
           <div className="h-[300px] w-full">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={currentData} barGap={0}>
-                <CartesianGrid
-                  vertical={false}
-                  stroke="#E2E8F0"
-                  strokeDasharray="3 3"
-                />
-                <XAxis
-                  dataKey="name"
-                  axisLine={false}
-                  tickLine={false}
-                  tick={{ fontSize: 12, fontWeight: 700, fill: "#64748b" }}
-                  dy={10}
-                />
-                <YAxis
-                  axisLine={false}
-                  tickLine={false}
-                  tick={{ fontSize: 12, fontWeight: 700, fill: "#64748b" }}
-                  tickFormatter={(val) =>
-                    `₹${val < 1000 ? val : `${(val / 1000).toFixed(1)}M`}${val < 1000 ? "k" : ""}`
-                  }
-                  width={60}
-                />
-                <Tooltip
-                  cursor={{ fill: "#F1F5F9" }}
-                  contentStyle={{
-                    borderRadius: "12px",
-                    border: "none",
-                    boxShadow: "0 10px 15px -3px rgb(0 0 0 / 0.1)",
-                  }}
-                  labelStyle={{
-                    fontWeight: 800,
-                    color: "#1E293B",
-                    marginBottom: "8px",
-                  }}
-                />
-                <Bar
-                  dataKey="total"
-                  radius={[8, 8, 0, 0]}
-                  barSize={timeFrame === "Monthly" ? 80 : 60}
-                >
-                  {currentData.map((_entry, index) => (
-                    <Cell
-                      key={`cell-${index}`}
-                      fill={
-                        index < currentData.length - 2
-                          ? "#E2E8F0"
-                          : index === currentData.length - 2
-                            ? "#94A3B8"
-                            : "#2D4A43"
-                      }
-                    />
-                  ))}
-                </Bar>
-              </BarChart>
-            </ResponsiveContainer>
+            {isMounted ? (
+              <ResponsiveContainer
+                width="100%"
+                height="100%"
+                minWidth={0}
+                minHeight={0}
+              >
+                <BarChart data={currentData} barGap={0}>
+                  <CartesianGrid
+                    vertical={false}
+                    stroke="#E2E8F0"
+                    strokeDasharray="3 3"
+                  />
+                  <XAxis
+                    dataKey="name"
+                    axisLine={false}
+                    tickLine={false}
+                    tick={{ fontSize: 12, fontWeight: 700, fill: "#64748b" }}
+                    dy={10}
+                  />
+                  <YAxis
+                    axisLine={false}
+                    tickLine={false}
+                    tick={{ fontSize: 12, fontWeight: 700, fill: "#64748b" }}
+                    tickFormatter={(val) =>
+                      `₹${val < 1000 ? val : `${(val / 1000).toFixed(1)}M`}${val < 1000 ? "k" : ""}`
+                    }
+                    width={60}
+                  />
+                  <Tooltip
+                    cursor={{ fill: "#F1F5F9" }}
+                    contentStyle={{
+                      borderRadius: "12px",
+                      border: "none",
+                      boxShadow: "0 10px 15px -3px rgb(0 0 0 / 0.1)",
+                    }}
+                    labelStyle={{
+                      fontWeight: 800,
+                      color: "#1E293B",
+                      marginBottom: "8px",
+                    }}
+                  />
+                  <Bar
+                    dataKey="total"
+                    radius={[8, 8, 0, 0]}
+                    barSize={timeFrame === "Monthly" ? 80 : 60}
+                  >
+                    {currentData.map((_entry, index) => (
+                      <Cell
+                        key={`cell-${index}`}
+                        fill={
+                          index < currentData.length - 2
+                            ? "#E2E8F0"
+                            : index === currentData.length - 2
+                              ? "#94A3B8"
+                              : "#2D4A43"
+                        }
+                      />
+                    ))}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
+            ) : (
+              <div className="h-full w-full" />
+            )}
           </div>
 
           {/* Legend */}
