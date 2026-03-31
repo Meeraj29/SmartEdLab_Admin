@@ -76,10 +76,10 @@ const InstituteStatic = ({ onAddClick }: InstituteStaticProps) => {
       {/* Header Section */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-semibold text-foreground">
+          <h1 className="text-[24px] font-semibold font-inter text-foreground">
             Institute Management
           </h1>
-          <p className="text-md font-normal text-slate-500 max-w-2xl mt-1">
+          <p className="text-[16px] font-regular font-inter text-slate-500 max-w-2xl mt-1">
             Manage all partner institutes, monitor usage limits, security
             settings, and platform activity across the global infrastructure.
           </p>
@@ -93,7 +93,7 @@ const InstituteStatic = ({ onAddClick }: InstituteStaticProps) => {
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="outline"
-                  className="h-12 rounded-[16px] px-6 border-slate-200 bg-white text-slate-600 font-bold hover:bg-slate-50 gap-2 shadow-sm"
+                  className="h-12 rounded-[16px] px-6 border-slate-200 bg-white text-slate-600 font-medium text-[16px] font-inter hover:bg-slate-50 gap-2 shadow-sm"
                 >
                   Manage Institutes
                   <ChevronDown
@@ -128,7 +128,7 @@ const InstituteStatic = ({ onAddClick }: InstituteStaticProps) => {
 
           <Button
             onClick={onAddClick}
-            className="h-12 rounded-[16px] px-6 bg-black text-white font-bold shadow-lg shadow-black/10 hover:bg-black/95 gap-1.5"
+            className="h-12 rounded-[16px] px-6 bg-black text-white font-medium font-inter text-[16px] shadow-lg shadow-black/10 hover:bg-black/95 gap-1.5"
           >
             <Plus className="h-5 w-5" />
             Add Institute
@@ -150,7 +150,7 @@ const InstituteStatic = ({ onAddClick }: InstituteStaticProps) => {
               <div>
                 <span
                   className={cn(
-                    "text-2xl font-semibold tracking-tight",
+                    "text-[26px] font-inter font-semibold tracking-tight",
                     stat.isDark ? "text-white" : "text-foreground"
                   )}
                 >
@@ -158,7 +158,7 @@ const InstituteStatic = ({ onAddClick }: InstituteStaticProps) => {
                 </span>
                 <p
                   className={cn(
-                    "text-md font-medium mt-1",
+                    "text-[16px] font-inter font-medium mt-1",
                     stat.isDark ? "text-slate-300" : "text-slate-500"
                   )}
                 >
@@ -180,7 +180,7 @@ const InstituteStatic = ({ onAddClick }: InstituteStaticProps) => {
             <div className="flex items-center justify-between">
               <p
                 className={cn(
-                  "text-[14px] font-medium pr-2",
+                  "text-[14px] font-medium font-inter pr-2",
                   stat.isDark ? "text-slate-400" : "text-slate-500"
                 )}
               >
@@ -203,7 +203,7 @@ const InstituteStatic = ({ onAddClick }: InstituteStaticProps) => {
                 ) : (
                   <TrendingDown className="h-3 w-3" />
                 )}
-                <span className="text-[11px] font-black tracking-tight">
+                <span className="text-[14px] font-medium font-inter tracking-tight">
                   {stat.isTrendUp ? "+" : "-"}
                   {stat.trend}
                 </span>

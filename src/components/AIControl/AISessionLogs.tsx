@@ -41,7 +41,7 @@ const AISessionLogs = () => {
       <div className="rounded-[32px] bg-white shadow-sm border border-slate-100 overflow-hidden">
         {/* Header Section */}
         <div className="p-8 border-b border-slate-50">
-          <h3 className="text-[20px] font-black text-slate-900 tracking-tight">
+          <h3 className="text-[20px] font-semibold font-inter text-black tracking-tight">
             Recent Session Logs
           </h3>
         </div>
@@ -50,16 +50,16 @@ const AISessionLogs = () => {
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-slate-50/50 text-slate-400 border-b border-slate-100">
-                <th className="px-8 py-5 text-[12px] font-bold uppercase tracking-widest text-left">
+                <th className="px-8 py-5 text-[16px] font-medium font-inter text-black/80 text-left">
                   Session Date
                 </th>
-                <th className="px-8 py-5 text-[12px] font-bold uppercase tracking-widest text-left">
+                <th className="px-8 py-5 text-[16px] font-medium font-inter text-black/80 text-left">
                   Duration
                 </th>
-                <th className="px-8 py-5 text-[12px] font-bold uppercase tracking-widest text-left">
+                <th className="px-8 py-5 text-[16px] font-medium font-inter text-black/80 text-left">
                   Tokens Consumed
                 </th>
-                <th className="px-8 py-5 text-[12px] font-bold uppercase tracking-widest text-left">
+                <th className="px-8 py-5 text-[16px] font-medium font-inter text-black/80 text-left">
                   Performance Score
                 </th>
               </tr>
@@ -75,10 +75,10 @@ const AISessionLogs = () => {
                 >
                   <td className="px-8 py-6">
                     <div className="flex flex-col gap-0.5">
-                      <span className="text-[14px] font-bold text-slate-700 whitespace-nowrap">
+                      <span className="text-[14px] font-medium fonnt-inter text-[#424754] whitespace-nowrap">
                         {log.date}
                       </span>
-                      <span className="text-[11px] font-bold text-slate-400 uppercase tracking-tight">
+                      <span className="text-[12px] font-regular font-inter text-[#424754] uppercase tracking-tight">
                         {log.time}
                       </span>
                     </div>
@@ -86,14 +86,14 @@ const AISessionLogs = () => {
                   <td className="px-8 py-6">
                     <div className="flex items-center gap-2 text-slate-400">
                       <Clock className="h-4 w-4" />
-                      <span className="text-[14px] font-bold">
+                      <span className="text-[14px] font-semibold font-inter text-[#424754]">
                         {log.duration}
                       </span>
                     </div>
                   </td>
                   <td className="px-8 py-6 min-w-[200px]">
                     <div className="flex flex-col gap-2">
-                      <span className="text-[15px] font-black text-slate-900">
+                      <span className="text-[14px] font-semibold font-inter text-[#0B1C30]">
                         {log.tokens}
                       </span>
                       <div className="h-1.5 w-[70%] bg-slate-100 rounded-full overflow-hidden">
@@ -114,11 +114,11 @@ const AISessionLogs = () => {
                           log.score >= 90
                             ? "bg-emerald-500"
                             : log.score >= 60
-                              ? "bg-amber-500"
+                              ? "bg-[#0058BE]"
                               : "bg-rose-500"
                         )}
                       />
-                      <span className="text-[15px] font-black text-slate-800">
+                      <span className="text-[14px] font-semibold font-inter text-[#0B1C30]">
                         {log.score}%
                       </span>
                     </div>
@@ -136,14 +136,14 @@ const AISessionLogs = () => {
               <ChevronLeft className="h-6 w-6" />
             </button>
             <div className="flex items-center gap-2">
-              <button className="h-12 w-12 flex items-center justify-center rounded-full bg-white text-slate-900 font-bold border-2 border-[#31564E] shadow-lg shadow-[#31564E]/10">
+              <button className="h-12 w-12 flex items-center justify-center rounded-full bg-white text-slate-900 font-regular font-inter text-[16px] border-3 border-[#31564E] shadow-lg shadow-[#31564E]/10">
                 1
               </button>
-              <button className="h-12 w-12 flex items-center justify-center rounded-full border border-slate-200 text-slate-500 font-bold hover:bg-slate-50 transition-all">
+              <button className="h-12 w-12 flex items-center justify-center rounded-full border border-slate-200 text-slate-500 font-regular font-inter text-[16px] hover:bg-slate-50 transition-all">
                 2
               </button>
               <span className="px-2 text-slate-300 font-black">...</span>
-              <button className="h-12 w-12 flex items-center justify-center rounded-full border border-slate-200 text-slate-500 font-bold hover:bg-slate-50 transition-all">
+              <button className="h-12 w-12 flex items-center justify-center rounded-full border border-slate-200 text-slate-500 font-regular font-inter text-[16px] hover:bg-slate-50 transition-all">
                 10
               </button>
             </div>
@@ -151,9 +151,15 @@ const AISessionLogs = () => {
               <ChevronRight className="h-6 w-6" />
             </button>
           </div>
-          <span className="text-[13px] font-bold text-slate-400 mb-2">
-            Showing <span className="text-slate-900">1-8</span> of{" "}
-            <span className="text-slate-900">1,540</span>
+          <span className="text-[14px] font-regular font-inter text-[#64748B] mb-2">
+            Showing{" "}
+            <span className="text-[#0F172A] text-[14px] font-semibold font-inter">
+              1-8
+            </span>{" "}
+            of{" "}
+            <span className="text-[#0F172A] text-[14px] font-semibold font-inter">
+              1,540
+            </span>
           </span>
         </div>
       </div>

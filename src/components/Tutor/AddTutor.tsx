@@ -753,7 +753,9 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                 <div className="h-10 w-10 flex items-center justify-center rounded-xl bg-white text-[#31564E] shadow-lg shadow-black/20">
                   <Sparkles className="h-5 w-5" />
                 </div>
-                <h4 className="text-[18px] font-bold font-inter">AI Tools Access</h4>
+                <h4 className="text-[18px] font-bold font-inter">
+                  AI Tools Access
+                </h4>
               </div>
               <div className="space-y-6">
                 {[

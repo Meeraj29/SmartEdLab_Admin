@@ -68,10 +68,10 @@ const AIStudentTable = ({ onRowClick }: AIStudentTableProps) => {
       <div className="rounded-[32px] bg-white shadow-sm border border-slate-100 overflow-hidden">
         {/* Header Section */}
         <div className="p-8 flex items-center justify-between border-b border-slate-50">
-          <h3 className="text-[20px] font-black text-slate-900 tracking-tight">
+          <h3 className="text-[24px] font-semibold fonnt-inter text-black/80 tracking-tight">
             Direct students Usage
           </h3>
-          <Button className="h-12 rounded-xl bg-black hover:bg-black/90 text-white flex items-center gap-2.5 px-6 font-bold text-[14px] shadow-lg shadow-black/10 transition-all active:scale-95">
+          <Button className="h-12 rounded-xl bg-black hover:bg-black/90 text-white flex items-center gap-2.5 px-6 font-medium font-inter text-[16px] shadow-lg shadow-black/10 transition-all active:scale-95">
             <Download className="h-4.5 w-4.5" />
             Export data
           </Button>
@@ -80,29 +80,29 @@ const AIStudentTable = ({ onRowClick }: AIStudentTableProps) => {
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="bg-slate-50/50 text-slate-400 border-b border-slate-100">
-                <th className="px-8 py-5 text-[12px] font-bold uppercase tracking-widest">
+              <tr className="bg-slate-50/50 text-slate-400 border-b border-slate-100 whitespace-nowrap">
+                <th className="px-8 py-5 text-[16px] font-medium fonnt-inter text-black/80">
                   Student Name
                 </th>
-                <th className="px-8 py-5 text-[12px] font-bold uppercase tracking-widest text-left">
+                <th className="px-8 py-5 text-[16px] font-medium fonnt-inter text-black/80">
                   Tokens Used
                 </th>
-                <th className="px-8 py-5 text-[12px] font-bold uppercase tracking-widest text-left">
+                <th className="px-8 py-5 text-[16px] font-medium fonnt-inter text-black/80">
                   Active Students
                 </th>
-                <th className="px-8 py-5 text-[12px] font-bold uppercase tracking-widest text-left">
+                <th className="px-8 py-5 text-[16px] font-medium fonnt-inter text-black/80">
                   Session
                 </th>
-                <th className="px-8 py-5 text-[12px] font-bold uppercase tracking-widest text-left">
+                <th className="px-8 py-5 text-[16px] font-medium fonnt-inter text-black/80">
                   Monthly Limits
                 </th>
-                <th className="px-8 py-5 text-[12px] font-bold uppercase tracking-widest text-left">
+                <th className="px-8 py-5 text-[16px] font-medium fonnt-inter text-black/80">
                   Usage
                 </th>
-                <th className="px-8 py-5 text-[12px] font-bold uppercase tracking-widest text-left">
+                <th className="px-8 py-5 text-[16px] font-medium fonnt-inter text-black/80">
                   Status
                 </th>
-                <th className="px-8 py-5 text-[12px] font-bold uppercase tracking-widest text-right">
+                <th className="px-8 py-5 text-[16px] font-medium fonnt-inter text-black/80">
                   Actions
                 </th>
               </tr>
@@ -129,43 +129,43 @@ const AIStudentTable = ({ onRowClick }: AIStudentTableProps) => {
                         />
                       </div>
                       <div className="flex flex-col">
-                        <span className="text-[15px] font-black text-slate-900 whitespace-nowrap">
+                        <span className="text-[16px] font-semibold font-inter text-[#0F172A] whitespace-nowrap">
                           {student.name}
                         </span>
-                        <span className="text-[12px] font-bold text-slate-400">
+                        <span className="text-[14px] font-regular font-inter text-[#64748B]">
                           {student.email}
                         </span>
                       </div>
                     </div>
                   </td>
                   <td className="px-8 py-6">
-                    <span className="text-[15px] font-black text-slate-900">
+                    <span className="text-[16px] font-medium font-inter text-black">
                       {student.tokens}
                     </span>
                   </td>
                   <td className="px-8 py-6">
-                    <span className="text-[14px] font-bold text-slate-600">
+                    <span className="text-[16px] font-medium font-inter text-black/80">
                       {student.active}
                     </span>
                   </td>
                   <td className="px-8 py-6">
-                    <span className="text-[14px] font-bold text-slate-600">
+                    <span className="text-[16px] font-medium font-inter text-black">
                       {student.sessions}
                     </span>
                   </td>
                   <td className="px-8 py-6">
-                    <span className="text-[14px] font-bold text-slate-600">
+                    <span className="text-[16px] font-medium font-inter text-black">
                       {student.limit}
                     </span>
                   </td>
                   <td className="px-8 py-6 min-w-[140px]">
-                    <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+                    <div className="h-2 w-full bg-[#F1F5F9] rounded-full overflow-hidden">
                       <div
                         className={cn(
                           "h-full rounded-full transition-all duration-1000",
                           student.status === "Near Limit"
-                            ? "bg-[#FF7A00]"
-                            : "bg-[#2EE898]"
+                            ? "bg-[#4ADE80]"
+                            : "bg-[#F97316]"
                         )}
                         style={{ width: `${student.usage}%` }}
                       />
@@ -174,17 +174,17 @@ const AIStudentTable = ({ onRowClick }: AIStudentTableProps) => {
                   <td className="px-8 py-6">
                     <span
                       className={cn(
-                        "inline-flex items-center rounded-full px-4 py-1.5 text-[12px] font-black uppercase tracking-widest",
+                        "inline-flex items-center rounded-full px-4 py-1.5 text-[16px] font-medium font-inter whitespace-nowrap",
                         student.status === "Normal"
-                          ? "bg-emerald-50 text-emerald-600 border border-emerald-100"
-                          : "bg-orange-50 text-orange-600 border border-orange-100"
+                          ? "bg-[#D1FAE5] text-[#047857]/80 border border-[#D1FAE5]"
+                          : "bg-[#F97316]/20 text-[#FB923C]/80 border border-[#F97316]/20"
                       )}
                     >
                       {student.status}
                     </span>
                   </td>
                   <td className="px-8 py-6 text-right">
-                    <button className="h-10 w-10 flex items-center justify-center rounded-xl bg-transparent hover:bg-slate-100 transition-all text-slate-400 hover:text-slate-900 group">
+                    <button className="h-10 w-10 flex items-center justify-center rounded-xl bg-transparent hover:bg-slate-100 transition-all text-black hover:text-slate-900 group">
                       <MoreVertical className="h-5 w-5" />
                     </button>
                   </td>
@@ -201,14 +201,14 @@ const AIStudentTable = ({ onRowClick }: AIStudentTableProps) => {
               <ChevronLeft className="h-6 w-6" />
             </button>
             <div className="flex items-center gap-2">
-              <button className="h-12 w-12 flex items-center justify-center rounded-full bg-white text-slate-900 font-bold border-2 border-[#1E293B] shadow-lg shadow-black/5">
+              <button className="h-12 w-12 flex items-center justify-center rounded-full bg-white text-slate-900 font-regular font-inter text-[16px] border-3 border-[#31564E] shadow-lg shadow-black/5">
                 1
               </button>
-              <button className="h-12 w-12 flex items-center justify-center rounded-full border border-slate-200 text-slate-500 font-bold hover:bg-slate-50 transition-all">
+              <button className="h-12 w-12 flex items-center justify-center rounded-full border border-slate-200 text-slate-500 font-regular font-inter text-[16px] hover:bg-slate-50 transition-all">
                 2
               </button>
               <span className="px-2 text-slate-300 font-black">...</span>
-              <button className="h-12 w-12 flex items-center justify-center rounded-full border border-slate-200 text-slate-500 font-bold hover:bg-slate-50 transition-all">
+              <button className="h-12 w-12 flex items-center justify-center rounded-full border border-slate-200 text-slate-500 font-regular font-inter text-[16px] hover:bg-slate-50 transition-all">
                 10
               </button>
             </div>
@@ -216,9 +216,15 @@ const AIStudentTable = ({ onRowClick }: AIStudentTableProps) => {
               <ChevronRight className="h-6 w-6" />
             </button>
           </div>
-          <span className="text-[13px] font-bold text-slate-400">
-            Showing <span className="text-slate-900">1-8</span> of{" "}
-            <span className="text-slate-900">1,540</span>
+          <span className="text-[14px] font-regular font-inter text-[#64748B]">
+            Showing{" "}
+            <span className="text-[#0F172A] text-[14px] font-semibold font-inter">
+              1-8
+            </span>{" "}
+            of{" "}
+            <span className="text-[#0F172A] text-[14px] font-semibold font-inter">
+              1,540
+            </span>
           </span>
         </div>
       </div>

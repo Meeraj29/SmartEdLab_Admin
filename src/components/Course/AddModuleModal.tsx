@@ -44,7 +44,7 @@ const AddModuleModal = ({ isOpen, onClose, onAdd }: AddModuleModalProps) => {
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div className="flex-1 text-center">
-            <h2 className="text-[26px] font-black text-slate-900 tracking-tight">
+            <h2 className="text-[32px] font-semibold font-inter text-black tracking-tight">
               Add New Module
             </h2>
           </div>
@@ -61,7 +61,7 @@ const AddModuleModal = ({ isOpen, onClose, onAdd }: AddModuleModalProps) => {
           <div className="flex flex-col gap-2">
             <label
               htmlFor="moduleName"
-              className="text-[14px] font-bold text-slate-800"
+              className="text-[16px] font-medium font-inter text-black"
             >
               Module Name <span className="text-rose-500 font-bold">*</span>
             </label>
@@ -73,14 +73,14 @@ const AddModuleModal = ({ isOpen, onClose, onAdd }: AddModuleModalProps) => {
                 setFormData({ ...formData, title: e.target.value })
               }
               placeholder="e.g. Advanced Routing Techniques"
-              className="h-13 w-full rounded-[12px] bg-[#F4F4F4] px-5 text-[14px] outline-none transition-all focus:bg-white focus:ring-2 focus:ring-[#2D4A43]/10 border border-transparent focus:border-slate-200 font-medium"
+              className="h-13 w-full rounded-[12px] bg-[#F4F4F4] px-5 text-[14px] outline-none transition-all focus:bg-white focus:ring-2 focus:ring-[#2D4A43]/10 border border-transparent focus:border-slate-200 font-regular font-inter text-[14px]"
             />
           </div>
 
           <div className="flex flex-col gap-2">
             <label
               htmlFor="moduleDescription"
-              className="text-[14px] font-bold text-slate-800"
+              className="text-[16px] font-medium font-inter text-black"
             >
               Module Description{" "}
               <span className="text-rose-500 font-bold">*</span>
@@ -92,14 +92,14 @@ const AddModuleModal = ({ isOpen, onClose, onAdd }: AddModuleModalProps) => {
                 setFormData({ ...formData, description: e.target.value })
               }
               placeholder="Briefly describe what students will learn in this module..."
-              className="h-28 w-full rounded-[12px] bg-[#F4F4F4] p-5 text-[14px] outline-none transition-all focus:bg-white focus:ring-2 focus:ring-[#2D4A43]/10 border border-transparent focus:border-slate-200 resize-none font-medium leading-relaxed"
+              className="h-28 w-full rounded-[12px] bg-[#F4F4F4] p-5 text-[14px] outline-none transition-all focus:bg-white focus:ring-2 focus:ring-[#2D4A43]/10 border border-transparent focus:border-slate-200 resize-none font-regular font-inter text-[14px] leading-relaxed"
             />
           </div>
 
           <div className="flex flex-col gap-2">
             <label
               htmlFor="moduleDuration"
-              className="text-[14px] font-bold text-slate-800"
+              className="text-[16px] font-medium font-inter text-black"
             >
               Estimated Duration{" "}
               <span className="text-rose-500 font-bold">*</span>
@@ -113,9 +113,9 @@ const AddModuleModal = ({ isOpen, onClose, onAdd }: AddModuleModalProps) => {
                   setFormData({ ...formData, duration: e.target.value })
                 }
                 placeholder="45"
-                className="h-13 w-full rounded-[12px] bg-[#F4F4F4] px-5 pr-16 text-[14px] font-medium outline-none transition-all focus:bg-white focus:ring-2 focus:ring-[#2D4A43]/10 border border-transparent focus:border-slate-200"
+                className="h-13 w-full rounded-[12px] bg-[#F4F4F4] px-5 pr-16 text-[14px] font-medium outline-none transition-all focus:bg-white focus:ring-2 focus:ring-[#2D4A43]/10 border border-transparent focus:border-slate-200 font-regular font-inter text-[14px]"
               />
-              <span className="absolute right-5 top-1/2 -translate-y-1/2 text-[#465E7D] font-medium text-[14px]">
+              <span className="absolute right-5 top-1/2 -translate-y-1/2 text-[#64748B] font-medium text-[14px] font-inter">
                 mins
               </span>
             </div>
@@ -126,7 +126,7 @@ const AddModuleModal = ({ isOpen, onClose, onAdd }: AddModuleModalProps) => {
         <div className="flex justify-end">
           <Button
             onClick={() => onAdd(formData)}
-            className="h-13 bg-black hover:bg-black/90 text-white px-10 rounded-[14px] font-black text-[14px] shadow-xl shadow-black/10 transition-all active:scale-95"
+            className="h-13 bg-black hover:bg-black/90 text-white px-10 rounded-[14px] font-medium font-inter text-[16px] shadow-xl shadow-black/10 transition-all active:scale-95"
           >
             Add Module
           </Button>

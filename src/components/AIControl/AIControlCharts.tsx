@@ -68,10 +68,10 @@ const AIControlCharts = () => {
         <div className="bg-white rounded-[32px] p-8 border border-slate-100 shadow-sm flex flex-col h-[450px]">
           <div className="flex items-start justify-between mb-8">
             <div>
-              <h3 className="text-[20px] font-black text-slate-900 tracking-tight">
+              <h3 className="text-[20px] font-bold font-manrope text-[#0B1C30] tracking-tight">
                 Total Token Usage
               </h3>
-              <p className="text-[13px] font-medium text-slate-400 mt-1">
+              <p className="text-[14px] font-regular font-inter text-[#424754] mt-1">
                 Real-time throughput across all AI models
               </p>
             </div>
@@ -80,9 +80,9 @@ const AIControlCharts = () => {
                 <button
                   key={tab}
                   className={cn(
-                    "px-4 py-1.5 text-[12px] font-bold rounded-lg transition-all",
+                    "px-4 py-1.5 text-[12px] font-semibold font-inter rounded-lg transition-all",
                     tab === "Day"
-                      ? "bg-[#0052CC]/10 text-[#0052CC] shadow-sm"
+                      ? "bg-[#E5EEFF] text-[#0058BE] shadow-sm"
                       : "text-slate-400 hover:text-slate-600"
                   )}
                 >
@@ -141,17 +141,17 @@ const AIControlCharts = () => {
         </div>
 
         <div className="bg-white rounded-[32px] p-8 border border-slate-100 shadow-sm flex flex-col h-[450px]">
-          <h3 className="text-[20px] font-black text-slate-900 tracking-tight mb-1">
+          <h3 className="text-[20px] font-bold font-manrope text-[#0B1C30] tracking-tight mb-1">
             Institute Token Load
           </h3>
           <div className="space-y-8 mt-10">
             {instituteData.map((inst, i) => (
               <div key={i} className="space-y-3">
                 <div className="flex justify-between items-center px-1">
-                  <span className="text-[14px] font-bold text-slate-700">
+                  <span className="text-[14px] font-medium font-inter text-black/80">
                     {inst.name}
                   </span>
-                  <span className="text-[13px] font-black text-slate-400 uppercase tracking-widest">
+                  <span className="text-[12px] font-medium font-inter text-[#808080] ">
                     {inst.tokens} Tokens
                   </span>
                 </div>
@@ -167,7 +167,7 @@ const AIControlCharts = () => {
               </div>
             ))}
           </div>
-          <div className="mt-auto pt-8 flex items-center flex-wrap gap-x-8 gap-y-3">
+          <div className="mt-auto pt-8 flex items-center flex-wrap gap-x-8 gap-y-3 ">
             {[
               { label: "AI Tutor", color: colors[0] },
               { label: "Speaking", color: colors[1] },
@@ -179,7 +179,7 @@ const AIControlCharts = () => {
                   className="h-2 w-2 rounded-full"
                   style={{ backgroundColor: item.color }}
                 />
-                <span className="text-[12px] font-bold text-slate-600">
+                <span className="text-[14px] font-semibold font-inter text-black/80">
                   {item.label}
                 </span>
               </div>
@@ -193,10 +193,12 @@ const AIControlCharts = () => {
         {/* Cost Trend (USD) */}
         <div className="bg-white rounded-[32px] p-8 border border-slate-100 shadow-sm flex flex-col h-[480px]">
           <div className="flex items-center justify-between mb-8">
-            <h3 className="text-[20px] font-black text-slate-900 leading-tight">
+            <h3 className="text-[20px] font-bold font-inter text-[#0B1C30] leading-tight">
               Cost Trend (USD)
             </h3>
-            <span className="text-[15px] font-black text-[#0052CC]">$4.2k</span>
+            <span className="text-[12px] font-semibold font-inter text-[#0058BE]">
+              $4.2k
+            </span>
           </div>
           <div className="flex-1 mt-4">
             {isMounted ? (
@@ -238,7 +240,7 @@ const AIControlCharts = () => {
 
         {/* Direct Student Usage Donut */}
         <div className="bg-white rounded-[32px] p-8 border border-slate-100 shadow-sm flex flex-col h-[480px]">
-          <h3 className="text-[20px] font-black text-slate-900 tracking-tight leading-tight mb-8">
+          <h3 className="text-[20px] font-bold font-manrope text-[#0B1C30] tracking-tight leading-tight mb-8">
             Direct Student Usage
           </h3>
           <div className="flex-1 flex flex-col items-center justify-between">
@@ -271,10 +273,10 @@ const AIControlCharts = () => {
                 <div className="h-full w-full" />
               )}
               <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                <span className="text-[28px] font-black text-slate-900 leading-none">
+                <span className="text-[30px] font-extrabold fonnt-manrope text-[#0B1C30] leading-none">
                   2.4M
                 </span>
-                <span className="text-[11px] font-black text-slate-400 uppercase tracking-widest mt-1">
+                <span className="text-[10px] font-semibold font-inter text-[#424754] uppercase tracking-widest mt-1">
                   Tokens
                 </span>
               </div>
@@ -283,10 +285,10 @@ const AIControlCharts = () => {
             <div className="grid grid-cols-2 gap-x-8 gap-y-4 w-full mt-6 px-4">
               {studentUsageData.map((item, i) => (
                 <div key={i} className="flex flex-col gap-0.5">
-                  <span className="text-[13px] font-bold text-slate-500">
+                  <span className="text-[14px] font-medium font-inter text-[#0B1C30]">
                     {item.name}
                   </span>
-                  <span className="text-[15px] font-black text-slate-900">
+                  <span className="text-[12px] font-semibold font-inter text-[#0B1C30]">
                     {item.value}%
                   </span>
                 </div>
@@ -298,7 +300,7 @@ const AIControlCharts = () => {
         {/* AI Usage Alerts */}
         <div className="bg-white rounded-[32px] p-8 border border-slate-100 shadow-sm flex flex-col h-[480px]">
           <div className="flex items-center justify-between mb-8">
-            <h3 className="text-[20px] font-black text-slate-900 leading-tight">
+            <h3 className="text-[20px] font-bold font-manrope text-[#0B1C30] leading-tight">
               AI Usage Alerts
             </h3>
             <AlertTriangle className="h-5 w-5 text-rose-500" />
@@ -336,16 +338,16 @@ const AIControlCharts = () => {
                         )}
                       />
                     </div>
-                    <span className="text-[15px] font-bold text-slate-800">
+                    <span className="text-[14px] font-semibold font-inter text-[#0B1C30]">
                       {alert.name}
                     </span>
                   </div>
                   <span
                     className={cn(
-                      "text-[15px] font-black",
+                      "text-[12px] font-semibold font-inter",
                       alert.status === "danger"
-                        ? "text-rose-600"
-                        : "text-[#0052CC]"
+                        ? "text-[#BA1A1A]"
+                        : "text-[#0058BE]"
                     )}
                   >
                     {alert.usage}%
@@ -355,7 +357,9 @@ const AIControlCharts = () => {
                   <div
                     className={cn(
                       "h-full rounded-full",
-                      alert.status === "danger" ? "bg-rose-500" : "bg-[#0052CC]"
+                      alert.status === "danger"
+                        ? "bg-[#BA1A1A]"
+                        : "bg-[#0058BE]"
                     )}
                     style={{ width: `${alert.usage}%` }}
                   />
@@ -366,7 +370,7 @@ const AIControlCharts = () => {
           <div className="mt-auto pt-6">
             <Button
               variant="outline"
-              className="w-full h-14 rounded-2xl border-slate-100 text-slate-900 font-bold hover:bg-slate-50 transition-all text-[15px] shadow-sm"
+              className="w-full h-14 rounded-2xl border-slate-100 text-[#0058BE] font-semibold font-inter hover:bg-slate-50 transition-all text-[12px] shadow-sm"
             >
               Manage Limits
             </Button>

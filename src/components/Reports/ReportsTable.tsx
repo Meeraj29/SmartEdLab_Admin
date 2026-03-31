@@ -60,10 +60,10 @@ const ReportsTable = () => {
     <div className="bg-white rounded-[32px] border border-slate-100 shadow-xl shadow-black/[0.02] p-8 space-y-10 animate-in slide-in-from-bottom-6 duration-700">
       {/* Header Section */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-        <h3 className="text-[22px] font-black text-slate-800 tracking-tight">
+        <h3 className="text-[20px] font-semibold font-inter text-black tracking-tight">
           Institute Performance
         </h3>
-        <Button className="h-12 rounded-[16px] px-8 bg-black text-white font-bold shadow-xl shadow-black/10 hover:bg-black/95 gap-2 transition-all active:scale-[0.98]">
+        <Button className="h-12 rounded-[16px] px-8 bg-black text-white font-medium font-inter text-[16px] shadow-xl shadow-black/10 hover:bg-black/95 gap-2 transition-all active:scale-[0.98]">
           <Download className="h-5 w-5" />
           Export Excel format
         </Button>
@@ -76,7 +76,7 @@ const ReportsTable = () => {
             key={tab}
             onClick={() => setActiveTab(tab)}
             className={cn(
-              "px-6 py-2.5 rounded-[16px] text-sm font-black transition-all",
+              "px-6 py-2.5 rounded-[16px] text-[14px] font-regular font-inter transition-all text-[#0F172A]",
               activeTab === tab
                 ? "bg-white text-slate-800 shadow-sm"
                 : "text-slate-400 hover:text-slate-600"
@@ -91,7 +91,7 @@ const ReportsTable = () => {
       <div className="rounded-[24px] border border-slate-50 overflow-hidden">
         <table className="w-full text-left border-collapse">
           <thead>
-            <tr className="bg-[#F8FAFC]/50 text-slate-400 font-bold text-[14px]">
+            <tr className="bg-[#F8FAFC]/50 text-black/80 font-medium font-inter text-[16px]">
               <th className="px-8 py-6">Student Name</th>
               <th className="px-8 py-6">Type</th>
               <th className="px-8 py-6">Institute</th>
@@ -110,44 +110,44 @@ const ReportsTable = () => {
                   <div className="flex items-center gap-4">
                     <div
                       className={cn(
-                        "h-10 w-10 rounded-full flex items-center justify-center text-[12px] font-black",
+                        "h-10 w-10 rounded-full flex items-center justify-center text-[12px] font-bold font-publicsans",
                         row.avatarBg
                       )}
                     >
                       {row.initials}
                     </div>
-                    <span className="text-[15px] font-black text-slate-700">
+                    <span className="text-[14px] font-medium font-inter text-[#0F172A]">
                       {row.name}
                     </span>
                   </div>
                 </td>
 
                 <td className="px-8 py-5">
-                  <span className="px-3 py-1 rounded-full bg-blue-50 text-blue-500 text-[11px] font-black border border-blue-100">
+                  <span className="px-3 py-1 rounded-full bg-[#EFF6FF] text-[#2563EB] text-[12px] font-bold font-inter border border-[#DBEAFE]">
                     {row.type}
                   </span>
                 </td>
 
                 <td className="px-8 py-5">
-                  <span className="text-[14px] font-bold text-slate-700">
+                  <span className="text-[14px] font-medium font-inter text-[#0F172A]">
                     {row.institute}
                   </span>
                 </td>
 
                 <td className="px-8 py-5">
-                  <span className="text-[15px] font-black text-slate-900">
+                  <span className="text-[16px] font-medium font-inter text-black">
                     {row.aiSessions}
                   </span>
                 </td>
 
                 <td className="px-8 py-5">
-                  <span className="text-[15px] font-black text-slate-900">
+                  <span className="text-[16px] font-medium font-inter text-black">
                     {row.classes}
                   </span>
                 </td>
 
                 <td className="px-8 py-5">
-                  <span className="text-[14px] font-bold text-slate-400">
+                  <span className="text-[14px] font-regular font-inter text-[#64748B]">
                     {row.lastActivity}
                   </span>
                 </td>

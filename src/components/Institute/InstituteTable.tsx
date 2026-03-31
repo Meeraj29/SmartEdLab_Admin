@@ -80,7 +80,7 @@ const InstituteTable = ({ onViewProfile }: InstituteTableProps) => {
           >
             <ArrowLeft className="h-5 w-5 text-slate-400 group-hover:text-slate-600 transition-colors" />
           </button>
-          <h2 className="text-2xl font-black text-foreground tracking-tight">
+          <h2 className="text-[20px] font-semibold font-inter text-foreground tracking-tight">
             Institutes
           </h2>
         </div>
@@ -89,7 +89,7 @@ const InstituteTable = ({ onViewProfile }: InstituteTableProps) => {
           <input
             type="text"
             placeholder="Search by Tutor, email id..."
-            className="h-12 w-full rounded-2xl border border-slate-100 bg-slate-50/50 pl-11 pr-4 text-sm placeholder:text-slate-400 outline-none focus:ring-2 focus:ring-[#31564E]/10 transition-all font-medium"
+            className="h-12 w-full rounded-2xl border border-slate-100 bg-slate-50/50 pl-11 pr-4 text-[16px] font-inter font-regular placeholder:text-slate-400 outline-none focus:ring-2 focus:ring-[#31564E]/10 transition-all font-medium"
           />
         </div>
       </div>
@@ -108,17 +108,17 @@ const InstituteTable = ({ onViewProfile }: InstituteTableProps) => {
               key={i}
               className="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-50 border border-slate-100 cursor-pointer hover:bg-slate-100 transition-colors"
             >
-              <span className="text-xs font-medium text-slate-500">
+              <span className="text-[16px] font-regular font-inter text-black/70">
                 {filter.label}:
               </span>
-              <span className="text-xs font-bold text-slate-800">
+              <span className="text-[16px] font-regular font-inter text-black">
                 {filter.value}
               </span>
               <ChevronDown className="h-3.5 w-3.5 text-slate-400" />
             </div>
           ))}
         </div>
-        <button className="flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-foreground transition-colors mr-2">
+        <button className="flex items-center gap-2 text-[16px] font-regular font-inter text-[#31564E] hover:text-foreground transition-colors mr-2">
           <SlidersHorizontal className="h-4 w-4" />
           Reset Filters
         </button>
@@ -129,7 +129,7 @@ const InstituteTable = ({ onViewProfile }: InstituteTableProps) => {
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="text-slate-500 font-bold text-[12px] border-b border-slate-50 uppercase tracking-wider">
+              <tr className="text-black/80 font-medium font-inter text-[16px] border-b border-slate-50  whitespace-nowrap">
                 <th className="px-6 py-6">Institute Name</th>
                 <th className="px-6 py-6">Admin Email</th>
                 <th className="px-6 py-6">Plan</th>
@@ -160,29 +160,29 @@ const InstituteTable = ({ onViewProfile }: InstituteTableProps) => {
                           <Building2 className="h-5 w-5" />
                         </div>
                         <div className="flex flex-col">
-                          <span className="text-[14px] font-bold text-foreground leading-tight">
+                          <span className="text-[16px] font-semibold font-inter text-foreground whitespace-nowrap">
                             {item.name}
                           </span>
-                          <span className="text-[11px] text-slate-400 font-medium">
+                          <span className="text-[14px] text-black/70 font-regular font-inter">
                             {item.website}
                           </span>
                         </div>
                       </div>
                     </td>
                     <td className="px-6 py-6">
-                      <span className="text-[13px] font-bold text-slate-800 tracking-tight">
+                      <span className="text-[16px] font-medium font-inter text-black tracking-tight">
                         {item.adminEmail}
                       </span>
                     </td>
                     <td className="px-6 py-6">
                       <span
                         className={cn(
-                          "px-3 py-1.5 rounded-lg text-[9px] font-black uppercase tracking-widest border",
+                          "px-3 py-1.5 rounded-lg text-[16px] font-medium font-inter  border",
                           item.plan === "ENTERPRISE"
-                            ? "bg-orange-50 text-orange-500 border-orange-100"
+                            ? "bg-[#FF7F38]/30 text-black border-[#FF7F38]"
                             : item.plan === "Business"
-                              ? "bg-blue-50 text-blue-500 border-blue-100"
-                              : "bg-slate-100 text-slate-500 border-slate-200"
+                              ? "bg-[#007FFF]/30 text-black border-[#007FFF]"
+                              : "bg-[#999999]/30 text-black border-[#999999]"
                         )}
                       >
                         {item.plan}
@@ -191,19 +191,21 @@ const InstituteTable = ({ onViewProfile }: InstituteTableProps) => {
                     <td className="px-6 py-6">
                       <div className="w-[120px] space-y-2">
                         <div className="flex items-center justify-between text-[11px] font-bold">
-                          <span className="text-blue-600 font-black">
+                          <span className="text-[#0F172A] font-medium text-[12px] font-inter">
                             {item.studentsUsage.current}/
                             {item.studentsUsage.total}
                           </span>
-                          <span className="text-slate-400">
+                          <span className="text-[#0F172A] text-[10px] font-bold font-inter">
                             {Math.round(usagePercent)}%
                           </span>
                         </div>
-                        <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
+                        <div className="h-1.5 w-full bg-[#F1F5F9] rounded-full overflow-hidden">
                           <div
                             className={cn(
                               "h-full rounded-full transition-all duration-500",
-                              usagePercent > 90 ? "bg-red-500" : "bg-blue-500"
+                              usagePercent > 90
+                                ? "bg-[#FF3939]"
+                                : "bg-[#007FFF]"
                             )}
                             style={{ width: `${usagePercent}%` }}
                           />
@@ -211,22 +213,22 @@ const InstituteTable = ({ onViewProfile }: InstituteTableProps) => {
                       </div>
                     </td>
                     <td className="px-6 py-6">
-                      <span className="text-[14px] font-black text-slate-800">
+                      <span className="text-[16px] font-medium font-inter text-black">
                         {item.tutors.current}/{item.tutors.total}
                       </span>
                     </td>
                     <td className="px-6 py-6 text-center">
-                      <span className="text-[13px] font-bold text-slate-600">
+                      <span className="text-[16px] font-medium font-inter text-black/80">
                         {item.tokens.current}/{item.tokens.total}
                       </span>
                     </td>
                     <td className="px-6 py-6 text-center">
                       <span
                         className={cn(
-                          "px-4 py-1.5 rounded-full text-[11px] font-bold",
+                          "px-4 py-1.5 rounded-full text-[16px] font-medium font-inter",
                           item.mode === "Lab"
-                            ? "bg-purple-100 text-purple-600"
-                            : "bg-slate-100 text-slate-600"
+                            ? "bg-[#8A38F5]/30 text-black/80 border border-[#8A38F5]"
+                            : "bg-[#E6E6E6]/30 text-black/80 border border-[#E6E6E6]"
                         )}
                       >
                         {item.mode}
@@ -235,7 +237,7 @@ const InstituteTable = ({ onViewProfile }: InstituteTableProps) => {
                     <td className="px-6 py-6">
                       <div className="flex items-center justify-center gap-2">
                         <div className="h-2 w-2 rounded-full bg-emerald-500" />
-                        <span className="text-[13px] font-bold text-emerald-600 uppercase tracking-tight">
+                        <span className="text-[16px] font-medium font-inter text-[#248F5F]">
                           {item.status}
                         </span>
                       </div>
@@ -244,7 +246,7 @@ const InstituteTable = ({ onViewProfile }: InstituteTableProps) => {
                       className="px-6 py-6 text-center"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      <button className="h-8 w-8 flex items-center justify-center rounded-lg hover:bg-slate-100 text-slate-400 mx-auto">
+                      <button className="h-8 w-8 flex items-center justify-center rounded-lg hover:bg-slate-100 text-black mx-auto">
                         <MoreVertical className="h-5 w-5" />
                       </button>
                     </td>
@@ -269,11 +271,13 @@ const InstituteTable = ({ onViewProfile }: InstituteTableProps) => {
                 className={cn(
                   "h-12 w-12 flex items-center justify-center rounded-full border transition-all shadow-sm",
                   page === 1
-                    ? "border-[#2563EB] border-2 text-[#2563EB] bg-white"
+                    ? "border-[#31564E] border-3 text-black bg-white"
                     : "border-slate-100 text-slate-400 bg-white hover:bg-slate-50"
                 )}
               >
-                <span className="text-[15px] font-bold">{page}</span>
+                <span className="text-[16px] font-regular font-inter">
+                  {page}
+                </span>
               </button>
             ))}
           </div>
@@ -281,11 +285,15 @@ const InstituteTable = ({ onViewProfile }: InstituteTableProps) => {
             <ArrowRight className="h-6 w-6" />
           </button>
         </div>
-        <span className="text-[14px] font-medium text-slate-400">
+        <span className="text-[14px] font-regular font-inter text-slate-400">
           Showing{" "}
-          <span className="text-slate-900 font-bold tracking-tight">1-8</span>{" "}
+          <span className="text-[14px] font-inter text-black font-semibold tracking-tight">
+            1-8
+          </span>{" "}
           of{" "}
-          <span className="text-slate-900 font-bold tracking-tight">1,540</span>
+          <span className="text-[14px] font-inter text-black font-semibold tracking-tight">
+            1,540
+          </span>
         </span>
       </div>
     </div>

@@ -74,10 +74,10 @@ const StudentStatic = ({ onAddClick }: StudentStaticProps) => {
     <div className="space-y-6">
       <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div className="flex flex-col">
-          <h2 className="text-xl md:text-2xl font-semibold text-foreground">
+          <h2 className="text-xl md:text-[24px] font-inter font-semibold text-foreground">
             Direct Students
           </h2>
-          <p className="text-sm md:text-md text-muted-foreground">
+          <p className="text-sm md:text-[16px] font-regular font-inter text-black/80">
             Manage all direct students who purchased subscriptions on the
             platform.
           </p>
@@ -91,7 +91,7 @@ const StudentStatic = ({ onAddClick }: StudentStaticProps) => {
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="outline"
-                  className="h-11 rounded-xl px-4 gap-2 border-[#31564E]/30 text-[#31564E] hover:bg-[#31564E]/5 text-sm md:text-md font-medium"
+                  className="h-11 rounded-xl px-4 gap-2 border-[#31564E]/30 text-[#31564E] hover:bg-[#31564E]/5 text-sm md:text-[16px] font-medium font-inter"
                 >
                   Manage Subscription
                   <ChevronDown
@@ -125,7 +125,7 @@ const StudentStatic = ({ onAddClick }: StudentStaticProps) => {
           </DropdownMenu>
           <Button
             onClick={onAddClick}
-            className="h-11 rounded-xl px-4 md:px-6 gap-1 bg-black hover:bg-black/90 text-white text-sm md:text-md font-medium text-center"
+            className="h-11 rounded-xl px-4 md:px-6 gap-1 bg-black hover:bg-black/90 text-white text-sm md:text-[16px] font-medium font-inter text-center"
           >
             <Plus className="h-4 w-4" />
             Add Student
@@ -145,13 +145,15 @@ const StudentStatic = ({ onAddClick }: StudentStaticProps) => {
           >
             <div className="flex justify-between items-start">
               <div className="flex flex-col">
-                <span className="text-2xl font-semibold">{stat.value}</span>
+                <span className="text-[26px] font-inter font-semibold">
+                  {stat.value}
+                </span>
                 <span
                   className={cn(
-                    "mt-4 text-md font-medium",
+                    "mt-4 text-[16px] font-inter font-medium",
                     stat.cardStyle.includes("text-white")
                       ? "text-white/80"
-                      : "text-foreground"
+                      : "text-black"
                   )}
                 >
                   {stat.title}
@@ -171,22 +173,22 @@ const StudentStatic = ({ onAddClick }: StudentStaticProps) => {
             <div className="flex items-center justify-between">
               <span
                 className={cn(
-                  "text-sm",
+                  "text-[14px] font-regular font-inter",
                   stat.cardStyle.includes("text-white")
                     ? "text-white/60"
-                    : "text-muted-foreground"
+                    : "text-black/80"
                 )}
               >
                 {stat.subtitle}
               </span>
               <div
                 className={cn(
-                  "flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold border",
+                  "flex items-center gap-1 rounded-full px-2 py-0.5 text-[14px] font-medium font-inter ",
                   stat.trendUp
-                    ? "bg-emerald-50 text-emerald-600 border-emerald-100"
-                    : "bg-red-50 text-red-600 border-red-100",
+                    ? "bg-[#248F5F]/20 text-[#248F5F] border-emerald-100"
+                    : "bg-[#FF3939]/20 text-[#FF3939] border-red-100",
                   stat.cardStyle.includes("text-white") &&
-                    "bg-white/10 border-white/20 text-white"
+                    "bg-[#248F5F]/20 border-white/20 text-white"
                 )}
               >
                 {stat.trendUp ? (

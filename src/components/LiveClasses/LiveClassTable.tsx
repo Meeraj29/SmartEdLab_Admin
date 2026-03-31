@@ -101,7 +101,7 @@ const LiveClassTable = ({
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
               className={cn(
-                "px-6 py-3 text-sm font-bold transition-all relative",
+                "px-6 py-3 text-[20px] font-semibold font-inter transition-all relative",
                 activeTab === tab.id
                   ? "text-[#31564E]"
                   : "text-slate-400 hover:text-slate-600"
@@ -120,7 +120,7 @@ const LiveClassTable = ({
           <input
             type="text"
             placeholder="Search by Tutor, class, email id..."
-            className="h-12 w-full rounded-[14px] border border-slate-200 bg-[#F1F5F9]/30 pl-11 pr-4 text-sm placeholder:text-slate-400 outline-none focus:ring-2 focus:ring-[#31564E]/10 transition-all font-medium"
+            className="h-12 w-full rounded-[14px] border border-slate-200 bg-[#F1F5F9]/30 pl-11 pr-4 text-[16px] font-regular font-inter placeholder:text-slate-400 outline-none focus:ring-2 focus:ring-[#31564E]/10 transition-all font-medium"
           />
         </div>
       </div>
@@ -142,18 +142,18 @@ const LiveClassTable = ({
             {filter.label === "Today" ? (
               <Calendar className="h-4 w-4 text-slate-400" />
             ) : (
-              <span className="text-xs font-medium text-slate-500">
+              <span className="text-[16px] font-regular font-inter text-black/70">
                 {filter.label}:
               </span>
             )}
-            <span className="text-xs font-bold text-slate-800">
+            <span className="text-[16px] font-regular font-inter text-black">
               {filter.value || filter.label}
             </span>
             <ChevronDown className="h-3.5 w-3.5 text-slate-400" />
           </div>
         ))}
 
-        <button className="flex items-center gap-2 text-xs font-bold text-slate-400 hover:text-foreground transition-colors ml-auto mr-2">
+        <button className="flex items-center gap-2 text-[16px] font-regular font-inter text-[#31564E] hover:text-foreground transition-colors ml-auto mr-2">
           <SlidersHorizontal className="h-4 w-4" />
           Reset Filters
         </button>
@@ -169,19 +169,19 @@ const LiveClassTable = ({
             {/* Header */}
             <div className="flex items-start justify-between">
               <div className="space-y-1">
-                <h3 className="text-[17px] font-black text-slate-800 tracking-tight leading-tight">
+                <h3 className="text-[17px] font-semibold font-inter text-[#31564E] tracking-tight leading-tight whitespace-nowrap">
                   {item.title}
                 </h3>
-                <p className="text-[14px] font-bold text-[#1E293B]">
+                <p className="text-[14px] font-regular font-inter text-black">
                   {item.tutor}
                 </p>
-                <p className="text-[11px] font-medium text-slate-400">
+                <p className="text-[12px] font-regular font-inter text-[#64748B]">
                   {item.batch}
                 </p>
               </div>
               <span
                 className={cn(
-                  "px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-tight flex items-center gap-1.5",
+                  "px-3 py-1 rounded-full text-[14px] font-regular font-inter flex items-center gap-1.5",
                   getBadgeStyle(item.statusDisplay)
                 )}
               >
@@ -203,25 +203,25 @@ const LiveClassTable = ({
             <div className="bg-[#F8FAFC] rounded-2xl p-4 grid grid-cols-2 gap-y-3">
               <div className="flex items-center gap-2">
                 <Calendar className="h-3.5 w-3.5 text-slate-400" />
-                <span className="text-[11px] font-bold text-slate-600">
+                <span className="text-[16px] font-regular font-inter text-black">
                   {item.date}
                 </span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="h-3.5 w-3.5 text-slate-400" />
-                <span className="text-[11px] font-bold text-slate-600">
+                <span className="text-[16px] font-regular font-inter text-black">
                   {item.time}
                 </span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="h-3.5 w-3.5 text-slate-400" />
-                <span className="text-[11px] font-bold text-slate-600">
+                <span className="text-[16px] font-regular font-inter text-black">
                   {item.duration}
                 </span>
               </div>
               <div className="flex items-center gap-2">
                 <Users className="h-3.5 w-3.5 text-slate-400" />
-                <span className="text-[11px] font-bold text-slate-600">
+                <span className="text-[16px] font-regular font-inter text-black">
                   {item.students}
                 </span>
               </div>
@@ -233,11 +233,11 @@ const LiveClassTable = ({
                 <>
                   <Button
                     variant="outline"
-                    className="h-11 rounded-xl border-[#31564E] text-[#31564E] font-bold hover:bg-[#31564E]/5 transition-all text-sm w-full"
+                    className="h-11 rounded-xl border-[#31564E] text-[#31564E] font-medium font-inter hover:bg-[#31564E]/5 transition-all text-[16px] w-full"
                   >
                     View Logs
                   </Button>
-                  <p className="text-[12px] font-bold text-slate-400 text-center">
+                  <p className="text-[16px] font-medium font-inter text-white text-center">
                     Reason: Tutor Emergency
                   </p>
                 </>
@@ -245,11 +245,11 @@ const LiveClassTable = ({
                 <div className="flex items-center gap-3">
                   <Button
                     variant="outline"
-                    className="flex-1 h-11 rounded-xl border-[#31564E]/30 text-[#31564E] font-bold hover:bg-[#31564E]/5 transition-all text-xs"
+                    className="flex-1 h-11 rounded-xl border-[#31564E]/30 text-[#31564E] font-medium font-inter hover:bg-[#31564E]/5 transition-all text-[16px]"
                   >
                     View Attendance
                   </Button>
-                  <Button className="flex-1 h-11 rounded-xl bg-black text-white font-bold hover:bg-black/90 transition-all text-xs shadow-lg shadow-black/10">
+                  <Button className="flex-1 h-11 rounded-xl bg-black text-white font-medium font-inter hover:bg-black/90 transition-all text-[16px] shadow-lg shadow-black/10">
                     {activeTab === "completed"
                       ? "View Recording"
                       : "Join as Observer"}
@@ -271,9 +271,9 @@ const LiveClassTable = ({
             <button
               key={i}
               className={cn(
-                "h-10 w-10 flex items-center justify-center rounded-full text-sm font-bold transition-all",
+                "h-10 w-10 flex items-center justify-center rounded-full text-[16px] font-regular font-inter transition-all",
                 page === 1
-                  ? "border-2 border-[#31564E] text-[#31564E]"
+                  ? "border-3 border-[#31564E] text-[#31564E]"
                   : "text-slate-400 hover:text-slate-600"
               )}
             >

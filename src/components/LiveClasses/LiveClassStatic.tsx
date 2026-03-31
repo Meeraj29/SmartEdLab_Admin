@@ -76,10 +76,10 @@ const LiveClassStatic = ({ onAddClick }: LiveClassStaticProps) => {
       {/* Header Section */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="space-y-1">
-          <h1 className="text-2xl font-black text-foreground tracking-tight">
+          <h1 className="text-[24px] font-semibold font-inter text-black tracking-tight">
             Live Classes
           </h1>
-          <p className="text-sm font-medium text-slate-500 max-w-2xl">
+          <p className="text-[16px] font-regular font-inter text-black/80 max-w-2xl">
             Monitor and manage all live classes across your platform in
             real-time.
           </p>
@@ -93,7 +93,7 @@ const LiveClassStatic = ({ onAddClick }: LiveClassStaticProps) => {
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="outline"
-                  className="h-12 rounded-[14px] px-6 border-[#31564E] bg-white text-[#31564E] font-bold hover:bg-slate-50 gap-2 shadow-sm transition-all"
+                  className="h-12 rounded-[14px] px-6 border-[#31564E] bg-white text-[#31564E] font-medium font-inter text-[16px] hover:bg-slate-50 gap-2 shadow-sm transition-all"
                 >
                   Manage Live Classes
                   <ChevronDown
@@ -125,7 +125,7 @@ const LiveClassStatic = ({ onAddClick }: LiveClassStaticProps) => {
 
           <Button
             onClick={onAddClick}
-            className="h-12 rounded-[14px] px-6 bg-black text-white font-bold shadow-lg shadow-black/10 hover:bg-black/95 gap-1.5 transition-all"
+            className="h-12 rounded-[14px] px-6 bg-black text-white font-medium font-inter text-[16px] shadow-lg shadow-black/10 hover:bg-black/95 gap-1.5 transition-all"
           >
             <Plus className="h-5 w-5" />
             Schedule A Class
@@ -147,7 +147,7 @@ const LiveClassStatic = ({ onAddClick }: LiveClassStaticProps) => {
               <div className="space-y-1">
                 <span
                   className={cn(
-                    "text-3xl font-black tracking-tighter",
+                    "text-[26px] font-semibold font-inter ",
                     stat.isDark ? "text-white" : "text-[#1E293B]"
                   )}
                 >
@@ -155,7 +155,7 @@ const LiveClassStatic = ({ onAddClick }: LiveClassStaticProps) => {
                 </span>
                 <p
                   className={cn(
-                    "text-[15px] font-bold mt-1",
+                    "text-[16px] font-medium font-inter mt-1",
                     stat.isDark ? "text-slate-200" : "text-[#1E293B]"
                   )}
                 >
@@ -177,7 +177,7 @@ const LiveClassStatic = ({ onAddClick }: LiveClassStaticProps) => {
             <div className="flex items-center justify-between pt-2">
               <p
                 className={cn(
-                  "text-[13px] font-medium opacity-60",
+                  "text-[14px] font-regular font-inter opacity-60",
                   stat.isDark ? "text-slate-300" : "text-slate-500"
                 )}
               >
@@ -200,7 +200,7 @@ const LiveClassStatic = ({ onAddClick }: LiveClassStaticProps) => {
                 ) : (
                   <TrendingDown className="h-3 w-3" />
                 )}
-                <span className="text-[11px] font-black tracking-tight">
+                <span className="text-[14px] font-medium font-inter ">
                   {stat.isTrendUp ? "+" : "-"}
                   {stat.trend}
                 </span>

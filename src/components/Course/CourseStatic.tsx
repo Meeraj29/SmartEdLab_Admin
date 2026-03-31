@@ -86,10 +86,10 @@ const CourseStatic = ({ onAddClick, onAuditClick }: CourseStaticProps) => {
       />
       <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div className="flex flex-col">
-          <h2 className="text-2xl font-semibold text-foreground">
+          <h2 className="text-[24px] font-inter font-semibold text-foreground">
             Courses & CMS
           </h2>
-          <p className="text-md text-muted-foreground flex items-center gap-2 max-w-2xl">
+          <p className="text-[16px] font-regular font-inter text-black/80 flex items-center gap-2 max-w-2xl">
             Manage global courses, control content visibility, and publish
             learning modules across institutes.
           </p>
@@ -98,13 +98,13 @@ const CourseStatic = ({ onAddClick, onAuditClick }: CourseStaticProps) => {
           <Button
             variant="outline"
             onClick={onAuditClick}
-            className="h-11 rounded-xl px-4 gap-2 border-[#31564E]/30 text-[#31564E] hover:bg-[#31564E]/5 text-sm font-normal"
+            className="h-11 rounded-xl px-4 gap-2 border-[#31564E]/30 text-[#31564E] hover:bg-[#31564E]/5 text-[16px] font-medium font-inter"
           >
             Audit & Logging
           </Button>
           <Button
             onClick={() => setShowCreateModal(true)}
-            className="h-11 rounded-xl px-6 gap-2 bg-black hover:bg-black/90 text-white"
+            className="h-11 rounded-xl px-6 gap-2 bg-black hover:bg-black/90 text-white text-[16px] font-medium font-inter"
           >
             Create Course
           </Button>
@@ -121,7 +121,7 @@ const CourseStatic = ({ onAddClick, onAuditClick }: CourseStaticProps) => {
             )}
           >
             <div className="flex justify-between items-start w-full">
-              <span className="text-3xl font-bold tracking-tight">
+              <span className="text-[26px] font-inter font-semibold tracking-tight">
                 {stat.value}
               </span>
               <div
@@ -139,7 +139,7 @@ const CourseStatic = ({ onAddClick, onAuditClick }: CourseStaticProps) => {
               <div className="flex flex-col gap-1">
                 <span
                   className={cn(
-                    "text-[15px] font-semibold leading-tight",
+                    "text-[13px] font-inter font-medium leading-tight",
                     stat.cardStyle.includes("text-white")
                       ? "text-white"
                       : "text-foreground"
@@ -149,7 +149,7 @@ const CourseStatic = ({ onAddClick, onAuditClick }: CourseStaticProps) => {
                 </span>
                 <span
                   className={cn(
-                    "text-[13px] font-medium",
+                    "text-[13px] font-inter font-regular",
                     stat.cardStyle.includes("text-white")
                       ? "text-white/70"
                       : "text-muted-foreground"
@@ -160,7 +160,7 @@ const CourseStatic = ({ onAddClick, onAuditClick }: CourseStaticProps) => {
               </div>
               <div
                 className={cn(
-                  "flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-bold border",
+                  "flex items-center gap-1 rounded-full px-2.5 py-1 text-[14px] font-medium font-inter border",
                   stat.trendUp
                     ? stat.cardStyle.includes("text-white")
                       ? "bg-white/10 border-transparent text-[#32D583]"

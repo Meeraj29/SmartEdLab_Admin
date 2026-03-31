@@ -174,15 +174,15 @@ const CourseAuditLogs = ({ onBack }: CourseAuditLogsProps) => {
             >
               <ArrowLeft className="h-6 w-6 text-slate-900" />
             </button>
-            <h1 className="text-2xl font-bold text-foreground tracking-tight">
+            <h1 className="text-[20px] font-semibold font-inter text-foreground tracking-tight">
               Courses & CMS - Audit & Activity Logs
             </h1>
           </div>
-          <p className="text-[15px] font-medium text-slate-500 pl-10">
+          <p className="text-[16px] font-regular font-inter text-black/80 pl-10">
             Track all actions performed within the Courses & CMS system
           </p>
         </div>
-        <Button className="h-12 bg-black hover:bg-black/90 text-white px-8 rounded-2xl font-black text-[15px] shadow-xl shadow-black/10 transition-all active:scale-95">
+        <Button className="h-12 bg-black hover:bg-black/90 text-white px-8 rounded-2xl font-medium font-inter text-[16px] shadow-xl shadow-black/10 transition-all active:scale-95">
           Export Logs
         </Button>
       </div>
@@ -202,7 +202,7 @@ const CourseAuditLogs = ({ onBack }: CourseAuditLogsProps) => {
               <div className="space-y-2">
                 <h3
                   className={cn(
-                    "text-[28px] font-bold tracking-tight",
+                    "text-[26px] font-semibold font-inter",
                     idx === 0 ? "text-white" : "text-slate-900"
                   )}
                 >
@@ -211,7 +211,7 @@ const CourseAuditLogs = ({ onBack }: CourseAuditLogsProps) => {
               </div>
               <p
                 className={cn(
-                  "text-[16px] font-bold tracking-tight",
+                  "text-[16px] font-medium font-inter",
                   idx === 0 ? "text-white/90" : "text-slate-800"
                 )}
               >
@@ -232,9 +232,9 @@ const CourseAuditLogs = ({ onBack }: CourseAuditLogsProps) => {
 
               <div
                 className={cn(
-                  "flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[12px] font-black tracking-tight",
+                  "flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[14px] font-medium font-inter",
                   idx === 0
-                    ? "bg-white/10 text-[#32D583]"
+                    ? "bg-white/10 text-white"
                     : "bg-emerald-50 text-emerald-600"
                 )}
               >
@@ -253,7 +253,7 @@ const CourseAuditLogs = ({ onBack }: CourseAuditLogsProps) => {
       {/* Logs Table Section */}
       <div className="bg-white rounded-[32px] border border-slate-100 shadow-sm overflow-hidden p-6 md:p-8 space-y-6">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <h2 className="text-xl font-bold text-slate-900">
+          <h2 className="text-[20px] font-semibold font-inter text-black">
             All Activity & Logs
           </h2>
           <div className="relative w-full max-w-sm">
@@ -261,7 +261,7 @@ const CourseAuditLogs = ({ onBack }: CourseAuditLogsProps) => {
             <input
               type="text"
               placeholder="Search course, user, or action..."
-              className="h-11 w-full rounded-[14px] border border-slate-100 bg-[#F1F1F1]/50 pl-10 pr-4 text-[13px] outline-none transition-all focus:bg-white focus:ring-2 focus:ring-[#2D4A43]/10"
+              className="h-11 w-full rounded-[14px] border border-slate-100 bg-[#F1F1F1]/50 pl-10 pr-4 text-[16px] font-regular font-inter outline-none transition-all focus:bg-white focus:ring-2 focus:ring-[#2D4A43]/10"
             />
           </div>
         </div>
@@ -269,20 +269,20 @@ const CourseAuditLogs = ({ onBack }: CourseAuditLogsProps) => {
         {/* Filters Row */}
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="flex flex-wrap items-center gap-3">
-            <div className="flex items-center gap-2 bg-white border border-slate-100 px-4 py-2 rounded-xl text-[13px] font-medium text-slate-600 cursor-pointer hover:bg-slate-50">
+            <div className="flex items-center gap-2 bg-white border border-slate-100 px-4 py-2 rounded-xl text-[16px] font-regular font-inter text-black cursor-pointer hover:bg-slate-50">
               Course Name <ChevronDown className="h-4 w-4 opacity-50" />
             </div>
-            <div className="flex items-center gap-2 bg-white border border-slate-100 px-4 py-2 rounded-xl text-[13px] font-medium text-slate-600 cursor-pointer hover:bg-slate-50">
+            <div className="flex items-center gap-2 bg-white border border-slate-100 px-4 py-2 rounded-xl text-[16px] font-regular font-inter text-black cursor-pointer hover:bg-slate-50">
               Action Type <ChevronDown className="h-4 w-4 opacity-50" />
             </div>
-            <div className="flex items-center gap-2 bg-white border border-slate-100 px-4 py-2 rounded-xl text-[13px] font-medium text-slate-600 cursor-pointer hover:bg-slate-50">
+            <div className="flex items-center gap-2 bg-white border border-slate-100 px-4 py-2 rounded-xl text-[16px] font-regular font-inter text-black cursor-pointer hover:bg-slate-50">
               User Role <ChevronDown className="h-4 w-4 opacity-50" />
             </div>
-            <div className="flex items-center gap-2 bg-white border border-slate-100 px-4 py-2 rounded-xl text-[13px] font-medium text-slate-600 cursor-pointer hover:bg-slate-50">
+            <div className="flex items-center gap-2 bg-white border border-slate-100 px-4 py-2 rounded-xl text-[16px] font-regular font-inter text-black cursor-pointer hover:bg-slate-50">
               Date Range <Calendar className="h-4 w-4 opacity-50" />
             </div>
           </div>
-          <button className="flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-slate-900 transition-colors">
+          <button className="flex items-center gap-2 text-[16px] font-regular font-inter text-[#31564E] cursor-pointer hover:text-slate-900 transition-colors">
             <ListFilter className="h-4 w-4" />
             Reset Filters
           </button>
@@ -291,7 +291,7 @@ const CourseAuditLogs = ({ onBack }: CourseAuditLogsProps) => {
         <div className="overflow-x-auto -mx-6 px-6">
           <table className="w-full text-left">
             <thead>
-              <tr className="bg-[#ECFDF5]/50 text-slate-500 text-[13px] font-medium">
+              <tr className="bg-[#ECFDF5]/50 text-black/80 text-[16px] font-medium font-inter">
                 <th className="px-6 py-4">Timestamp</th>
                 <th className="px-6 py-4">Course Name</th>
                 <th className="px-6 py-4">Action Type</th>
@@ -305,15 +305,15 @@ const CourseAuditLogs = ({ onBack }: CourseAuditLogsProps) => {
               {logs.map((log) => (
                 <tr
                   key={log.id}
-                  className="hover:bg-slate-50/50 transition-colors group cursor-default"
+                  className="hover:bg-slate-50/50 transition-colors group cursor-default whitespace-nowrap"
                 >
-                  <td className="px-6 py-5 text-[13px] text-slate-400 font-normal">
+                  <td className="px-6 py-5 text-[16px] font-regular font-inter text-black/80">
                     {log.timestamp}
                   </td>
-                  <td className="px-6 py-5 text-[14px] font-bold text-slate-900">
+                  <td className="px-6 py-5 text-[16px] font-medium font-inter text-black whitespace-nowrap">
                     {log.courseName}
                   </td>
-                  <td className="px-6 py-5 text-[14px] font-bold text-slate-900">
+                  <td className="px-6 py-5 text-[16px] font-medium font-inter text-black whitespace-nowrap">
                     {log.actionType}
                   </td>
                   <td className="px-8 py-5">
@@ -327,30 +327,30 @@ const CourseAuditLogs = ({ onBack }: CourseAuditLogsProps) => {
                           className="h-full w-full object-cover"
                         />
                       </div>
-                      <span className="text-[14px] font-bold text-slate-900">
+                      <span className="text-[16px] font-semibold font-inter text-[#0F172A] whitespace-nowrap">
                         {log.performedBy}
                       </span>
                     </div>
                   </td>
-                  <td className="px-6 py-5 text-[14px] text-slate-500 font-medium">
+                  <td className="px-6 py-5 text-[16px] font-medium font-inter text-black">
                     {log.role}
                   </td>
                   <td className="px-6 py-5">
                     <span
                       className={cn(
-                        "px-6 py-1.5 rounded-full text-[12px] font-bold border",
+                        "px-6 py-1.5 rounded-full text-[16px] font-medium font-inter border",
                         log.status === "Success"
-                          ? "bg-[#D1FAE5] text-[#10B981] border-emerald-100"
+                          ? "bg-[#D1FAE5] text-[#047857]/80 border-emerald-100"
                           : log.status === "Failed"
-                            ? "bg-[#FEE2E2] text-[#EF4444] border-rose-100"
-                            : "bg-[#FFEDD5] text-[#F97316] border-orange-100"
+                            ? "bg-[#F43F5E]/30 text-[#F43F5E] border-rose-100"
+                            : "bg-[#FF7F38]/30 text-[#F97316] border-orange-100"
                       )}
                     >
                       {log.status}
                     </span>
                   </td>
                   <td className="px-6 py-5">
-                    <button className="text-[13px] font-bold text-slate-400 hover:text-slate-900 transition-colors underline-offset-4 hover:underline">
+                    <button className="text-[16px] font-medium font-inter text-[#31564E] whitespace-nowrap hover:text-slate-900 transition-colors underline-offset-4 hover:underline">
                       {log.details}
                     </button>
                   </td>
@@ -371,16 +371,16 @@ const CourseAuditLogs = ({ onBack }: CourseAuditLogsProps) => {
             </button>
 
             <div className="flex items-center gap-2">
-              <button className="h-10 w-10 flex items-center justify-center rounded-full border-2 border-[#31564E] bg-white text-[#31564E] font-bold shadow-sm">
+              <button className="h-10 w-10 flex items-center justify-center rounded-full border-3 border-[#31564E] bg-white text-[#31564E] font-regular font-inter text-[16px] shadow-sm">
                 1
               </button>
-              <button className="h-10 w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-medium hover:bg-slate-50 transition-all">
+              <button className="h-10 w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-black font-regular font-inter text-[16px] hover:bg-slate-50 transition-all">
                 2
               </button>
               <span className="px-2 text-muted-foreground font-medium">
                 ...
               </span>
-              <button className="h-10 w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-medium hover:bg-slate-50 transition-all">
+              <button className="h-10 w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-black font-regular font-inter text-[16px] hover:bg-slate-50 transition-all">
                 10
               </button>
             </div>
@@ -389,9 +389,15 @@ const CourseAuditLogs = ({ onBack }: CourseAuditLogsProps) => {
               <ChevronRight className="h-5 w-5" />
             </button>
           </div>
-          <span className="text-[13px] font-medium text-slate-400">
-            Showing <span className="font-bold text-foreground">1-8</span> of{" "}
-            <span className="font-bold text-foreground">1,540</span>
+          <span className="text-[14px] font-regular font-inter text-[#64748B]">
+            Showing{" "}
+            <span className="font-semibold text-[14px] font-inter text-[#0F172A]">
+              1-8
+            </span>{" "}
+            of{" "}
+            <span className="font-semibold text-[14px] font-inter text-[#0F172A]">
+              1,540
+            </span>
           </span>
         </div>
       </div>

@@ -69,10 +69,10 @@ const AIControlStatic = ({
     <div className="space-y-8">
       <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
         <div className="flex flex-col gap-1">
-          <h2 className="text-[22px] font-bold text-slate-900 leading-tight">
+          <h2 className="text-[24px] font-semibold font-inter text-black leading-tight">
             AI Control Center
           </h2>
-          <p className="text-[14px] text-muted-foreground max-w-lg">
+          <p className="text-[16px] font-regular font-inter text-black/80 max-w-lg">
             Platform-wide AI usage and operational insights across all
             institutes and modules.
           </p>
@@ -81,11 +81,11 @@ const AIControlStatic = ({
           <Button
             onClick={onSessionLogsClick}
             variant="outline"
-            className="h-12 rounded-xl px-6 border-slate-400 text-slate-800 hover:bg-slate-50 text-[15px] font-medium"
+            className="h-12 rounded-xl px-6 border-slate-400 text-[#31564E] hover:bg-slate-50 text-[16px] font-medium font-inter"
           >
             Session logs
           </Button>
-          <Button className="h-12 rounded-xl px-6 bg-black hover:bg-black/90 text-white flex items-center gap-2.5 text-[15px] font-medium shadow-lg shadow-black/10">
+          <Button className="h-12 rounded-xl px-6 bg-black  hover:bg-black/90 text-white flex items-center gap-2.5 text-[16px] font-medium font-inter shadow-lg shadow-black/10">
             <Download className="h-4.5 w-4.5" />
             Export data
           </Button>
@@ -104,15 +104,15 @@ const AIControlStatic = ({
           >
             <div className="flex justify-between items-start">
               <div className="flex flex-col gap-1">
-                <span className="text-[28px] font-bold tracking-tight">
+                <span className="text-[26px] font-semibold  font-inter tracking-tight">
                   {stat.value}
                 </span>
                 <span
                   className={cn(
-                    "text-[15px] font-bold",
+                    "text-[16px] font-medium font-inter",
                     stat.cardStyle.includes("text-white")
                       ? "text-white"
-                      : "text-slate-900"
+                      : "text-black"
                   )}
                 >
                   {stat.title}
@@ -132,17 +132,17 @@ const AIControlStatic = ({
             <div className="flex items-center justify-between mt-auto">
               <span
                 className={cn(
-                  "text-[13px] font-medium",
+                  "text-[14px] font-regular font-inter",
                   stat.cardStyle.includes("text-white")
                     ? "text-white/60"
-                    : "text-slate-400"
+                    : "text-black/80"
                 )}
               >
                 {stat.subtitle}
               </span>
               <div
                 className={cn(
-                  "flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-black border",
+                  "flex items-center gap-1 rounded-full px-2.5 py-1 text-[14px] font-medium font-inter border",
                   stat.trend === "0%"
                     ? "bg-[#D1FAE5] text-[#059669] border-[#A7F3D0]"
                     : stat.trendUp

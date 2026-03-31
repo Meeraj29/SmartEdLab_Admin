@@ -40,7 +40,7 @@ const CreateCourseModal = ({
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div className="flex-1 text-center">
-            <h2 className="text-[32px] font-bold text-slate-900 tracking-tight">
+            <h2 className="text-[32px] font-semibold font-inter text-black tracking-tight">
               Create New Course
             </h2>
           </div>
@@ -58,7 +58,7 @@ const CreateCourseModal = ({
             onClick={onCreateNew}
             className="w-full flex items-center justify-between p-6 rounded-[20px] border border-slate-200 bg-white hover:border-[#2D4A43] hover:bg-[#2D4A43]/5 transition-all group group"
           >
-            <span className="text-[18px] font-bold text-slate-800">
+            <span className="text-[16px] font-medium font-inter text-[#31564E]">
               Create New Course
             </span>
             <ChevronRight className="h-6 w-6 text-slate-400 group-hover:text-[#2D4A43] transition-colors" />
@@ -68,7 +68,7 @@ const CreateCourseModal = ({
             onClick={onCloneMaster}
             className="w-full flex items-center justify-between p-6 rounded-[20px] border border-slate-200 bg-white hover:border-[#2D4A43] hover:bg-[#2D4A43]/5 transition-all group"
           >
-            <span className="text-[18px] font-bold text-slate-800">
+            <span className="text-[16px] font-medium font-inter text-black/60">
               Clone Master Course
             </span>
             <ChevronRight className="h-6 w-6 text-slate-400 group-hover:text-[#2D4A43] transition-colors" />
@@ -79,7 +79,7 @@ const CreateCourseModal = ({
         <div className="flex justify-end">
           <Button
             onClick={onCreateNew}
-            className="h-14 bg-black hover:bg-black/90 text-white px-10 rounded-2xl font-black text-[18px] shadow-xl shadow-black/10 transition-all active:scale-95"
+            className="h-14 bg-black hover:bg-black/90 text-white px-10 rounded-2xl font-medium font-inter text-[16px] shadow-xl shadow-black/10 transition-all active:scale-95"
           >
             Create Course
           </Button>

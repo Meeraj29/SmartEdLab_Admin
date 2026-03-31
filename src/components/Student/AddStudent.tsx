@@ -481,7 +481,9 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
                       />
                     </svg>
                   </div>
-                  <h4 className="font-semibold text-[20px] text-foreground">Student Info</h4>
+                  <h4 className="font-semibold text-[20px] text-foreground">
+                    Student Info
+                  </h4>
                 </div>
                 <button
                   onClick={() => setStep(1)}
@@ -498,7 +500,9 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
                   <span className="text-[14px] text-slate-500">
                     alex.j@example.com
                   </span>
-                  <span className="text-[14px] text-slate-500">+1 555-0123</span>
+                  <span className="text-[14px] text-slate-500">
+                    +1 555-0123
+                  </span>
                 </div>
               </div>
             </div>
@@ -522,7 +526,9 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
                       />
                     </svg>
                   </div>
-                  <h4 className="font-semibold text-[20px] text-foreground">Subscription</h4>
+                  <h4 className="font-semibold text-[20px] text-foreground">
+                    Subscription
+                  </h4>
                 </div>
                 <button
                   onClick={() => setStep(2)}
@@ -748,7 +754,9 @@ const PlanCard = ({
       <div className="p-6 flex flex-col gap-6">
         <div className="flex justify-between items-start">
           <div className="flex flex-col gap-2">
-            <h4 className="text-[20px] font-medium font-inter text-foreground">{title}</h4>
+            <h4 className="text-[20px] font-medium font-inter text-foreground">
+              {title}
+            </h4>
             <div className="flex items-baseline gap-1">
               <span className="text-[32px] font-semibold font-inter text-foreground">
                 {price}

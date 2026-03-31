@@ -89,7 +89,9 @@ const DashboardLiveActivity = () => {
     <div className="rounded-[14px] border border-border/50 bg-white p-5 shadow-sm mt-6">
       <div className="mb-6 flex items-center gap-2">
         <div className="h-2 w-2 rounded-full bg-red-500 animate-pulse" />
-        <h3 className="text-xl font-semibold text-foreground">Live Activity</h3>
+        <h3 className="text-[20px] font-semibold font-inter text-black">
+          Live Activity
+        </h3>
       </div>
 
       <div className="space-y-0">
@@ -110,10 +112,12 @@ const DashboardLiveActivity = () => {
               <activity.icon className={cn("h-5 w-5", activity.iconColor)} />
             </div>
             <div className="flex flex-col">
-              <p className="text-md font-medium text-slate-800 leading-tight">
+              <p className="text-[16px] font-medium font-inter text-black leading-tight">
                 {activity.title}
               </p>
-              <p className="mt-1 text-xs text-slate-500">{activity.subtitle}</p>
+              <p className="mt-1 text-[14px] font-regular font-inter text-black/80">
+                {activity.subtitle}
+              </p>
             </div>
           </div>
         ))}

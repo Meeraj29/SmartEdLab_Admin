@@ -120,8 +120,14 @@ const FilterDropdown = ({
             className="h-10 rounded-xl px-4 gap-2 border-border/50 bg-white text-sm font-normal text-muted-foreground"
           >
             {Icon && <Icon className="h-4 w-4 text-slate-400" />}
-            {label && <span className="text-slate-400">{label}:</span>}
-            <span className="text-foreground font-medium">{value}</span>
+            {label && (
+              <span className="text-[#64748B] text-[14px] font-medium font-inter">
+                {label}:
+              </span>
+            )}
+            <span className="text-black text-[16px] font-regular font-inter">
+              {value}
+            </span>
             <ChevronDown
               className={cn(
                 "h-4 w-4 transition-transform",
@@ -161,7 +167,7 @@ const StudentTable = ({ onViewProfile }: StudentTableProps) => {
           <input
             type="text"
             placeholder="Search by student, email id..."
-            className="h-11 w-full rounded-lg border border-border bg-[#F1F1F1]/50 pl-10 pr-4 text-sm outline-none transition-all focus:bg-white focus:ring-2 focus:ring-primary/10"
+            className="h-11 w-full rounded-lg border border-border bg-[#F1F1F1]/50 pl-10 pr-4 text-[16px] font-regular font-inter text-black/70 outline-none transition-all focus:bg-white focus:ring-2 focus:ring-primary/10"
           />
         </div>
 
@@ -197,10 +203,16 @@ const StudentTable = ({ onViewProfile }: StudentTableProps) => {
 
       <div className="rounded-[10px] bg-white shadow-sm border border-border/50 overflow-hidden">
         <div className="p-6 flex items-center justify-between border-b border-border/50">
-          <h3 className="text-xl font-semibold">Student List</h3>
-          <span className="text-sm text-muted-foreground">
-            Showing <span className="font-bold text-foreground">1-8</span> of{" "}
-            <span className="font-bold text-foreground">12,540</span>
+          <h3 className="text-[20px] font-inter font-semibold">Student List</h3>
+          <span className="text-[14px] font-regular font-inter text-[#64748B]">
+            Showing{" "}
+            <span className="font-semibold text-[14px] font-inter text-[#0F172A]">
+              1-8
+            </span>{" "}
+            of{" "}
+            <span className="font-semibold text-[14px] font-inter text-[#0F172A]">
+              12,540
+            </span>
           </span>
         </div>
 
@@ -214,25 +226,25 @@ const StudentTable = ({ onViewProfile }: StudentTableProps) => {
                     className="h-4 w-4 rounded border-slate-300 accent-[#31564E] cursor-pointer"
                   />
                 </th>
-                <th className="px-6 py-4 text-sm font-medium uppercase tracking-wider text-left">
+                <th className="px-6 py-4 text-[16px] font-medium  font-inter text-black/80 text-left">
                   Student
                 </th>
-                <th className="px-6 py-4 text-sm font-medium uppercase tracking-wider text-left">
+                <th className="px-6 py-4 text-[16px] font-medium  font-inter text-black/80 text-left">
                   Plan
                 </th>
-                <th className="px-6 py-4 text-sm font-medium uppercase tracking-wider text-left">
+                <th className="px-6 py-4 text-[16px] font-medium  font-inter text-black/80 text-left">
                   Progress
                 </th>
-                <th className="px-6 py-4 text-sm font-medium uppercase tracking-wider text-left">
+                <th className="px-6 py-4 text-[16px] font-medium  font-inter text-black/80 text-left">
                   AI Usage
                 </th>
-                <th className="px-6 py-4 text-sm font-medium uppercase tracking-wider text-left whitespace-nowrap">
+                <th className="px-6 py-4 text-[16px] font-medium  font-inter text-black/80 text-left whitespace-nowrap">
                   Expiry Date
                 </th>
-                <th className="px-6 py-4 text-sm font-medium uppercase tracking-wider text-left">
+                <th className="px-6 py-4 text-[16px] font-medium  font-inter text-black/80 text-left">
                   Status
                 </th>
-                <th className="px-6 py-4 text-sm font-medium uppercase tracking-wider text-right">
+                <th className="px-6 py-4 text-[16px] font-medium  font-inter text-black/80 text-right">
                   Actions
                 </th>
               </tr>
@@ -266,10 +278,10 @@ const StudentTable = ({ onViewProfile }: StudentTableProps) => {
                         />
                       </div>
                       <div className="flex flex-col">
-                        <span className="text-md font-semibold text-foreground leading-tight">
+                        <span className="text-[16px] font-inter font-semibold text-[#0F172A] leading-tight">
                           {student.name}
                         </span>
-                        <span className="text-xs text-muted-foreground">
+                        <span className="text-[14px] font-inter font-regular text-[#64748B]">
                           {student.email}
                         </span>
                       </div>
@@ -277,20 +289,20 @@ const StudentTable = ({ onViewProfile }: StudentTableProps) => {
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex flex-col">
-                      <span className="text-sm font-medium text-foreground whitespace-nowrap">
+                      <span className="text-[16px] font-inter font-medium text-black/80 whitespace-nowrap">
                         {student.plan}
                       </span>
-                      <span className="text-[10px] text-muted-foreground">
+                      <span className="text-[14px] font-inter font-regular text-black/70">
                         ({student.frequency})
                       </span>
                     </div>
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex flex-col gap-1.5 w-32">
-                      <div className="flex justify-between items-center text-[10px] font-bold text-black">
+                      <div className="flex justify-between items-center text-[12px] font-medium font-inter text-black/70">
                         <span>{student.progress}%</span>
                       </div>
-                      <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
+                      <div className="h-1.5 w-full bg-[#F1F5F9] rounded-full overflow-hidden">
                         <div
                           className="h-full bg-[#007FFF] rounded-full transition-all"
                           style={{ width: `${student.progress}%` }}
@@ -300,26 +312,26 @@ const StudentTable = ({ onViewProfile }: StudentTableProps) => {
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex items-baseline gap-1">
-                      <span className="text-sm font-bold">
+                      <span className="text-[16px] font-medium font-inter text-black/80">
                         {student.aiUsage}
                       </span>
-                      <span className="text-[10px] text-muted-foreground px-1 py-0.5 rounded">
+                      <span className="text-[14px] font-inter font-medium text-black/70">
                         (Tokens)
                       </span>
                     </div>
                   </td>
-                  <td className="px-6 py-4 text-sm text-foreground font-medium">
+                  <td className="px-6 py-4 text-[16px] font-inter font-medium text-black/80">
                     {student.expiryDate}
                   </td>
                   <td className="px-6 py-4">
-                    <span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] font-bold bg-[#248F5F]/40 text-[#248F5F]">
+                    <span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-[14px] font-medium font-inter bg-[#248F5F]/40 text-[#248F5F]">
                       {student.status}
                     </span>
                   </td>
                   <td className="px-6 py-4 text-right">
                     <button
                       onClick={(e) => e.stopPropagation()}
-                      className="p-1.5 text-muted-foreground hover:bg-white hover:shadow-sm rounded-lg transition-all"
+                      className="p-1.5 text-black hover:bg-white hover:shadow-sm rounded-lg transition-all"
                     >
                       <MoreVertical className="h-4 w-4" />
                     </button>
@@ -337,14 +349,14 @@ const StudentTable = ({ onViewProfile }: StudentTableProps) => {
           </button>
 
           <div className="flex items-center gap-2">
-            <button className="h-10 w-10 flex items-center justify-center rounded-full border border-[#31564E] bg-white text-[#31564E] font-bold shadow-sm">
+            <button className="h-10 w-10 flex items-center justify-center rounded-full border-3 border-[#31564E] bg-white text-[#31564E] font-inter font-regular text-[16px] shadow-sm">
               1
             </button>
-            <button className="h-10 w-10 flex items-center justify-center rounded-full border border-border bg-white text-muted-foreground font-medium hover:bg-slate-50">
+            <button className="h-10 w-10 flex items-center justify-center rounded-full border border-border bg-white text-muted-foreground font-inter font-regular text-[16px] hover:bg-slate-50">
               2
             </button>
             <span className="px-2 text-muted-foreground">...</span>
-            <button className="h-10 w-10 flex items-center justify-center rounded-full border border-border bg-white text-muted-foreground font-medium hover:bg-slate-50">
+            <button className="h-10 w-10 flex items-center justify-center rounded-full border border-border bg-white text-muted-foreground font-inter font-regular text-[16px] hover:bg-slate-50">
               10
             </button>
           </div>

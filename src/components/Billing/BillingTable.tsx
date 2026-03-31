@@ -146,7 +146,7 @@ const BillingTable = () => {
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
               className={cn(
-                "px-2 py-3 text-[17px] font-black transition-all relative",
+                "px-2 py-3 text-[20px] font-semibold font-inter transition-all relative",
                 activeTab === tab.id
                   ? "text-[#1E293B]"
                   : "text-slate-400 hover:text-slate-600"
@@ -165,7 +165,7 @@ const BillingTable = () => {
           <input
             type="text"
             placeholder="Search by Tutor, class, email id..."
-            className="h-12 w-full rounded-[14px] border border-slate-200 bg-slate-50/50 pl-11 pr-4 text-sm font-medium placeholder:text-slate-400 outline-none focus:ring-2 focus:ring-[#31564E]/10 transition-all"
+            className="h-12 w-full rounded-[14px] border border-slate-200 bg-slate-50/50 pl-11 pr-4 text-[16px] font-regular font-inter text-black/70 placeholder:text-slate-400 outline-none focus:ring-2 focus:ring-[#31564E]/10 transition-all"
           />
         </div>
       </div>
@@ -183,17 +183,17 @@ const BillingTable = () => {
             key={i}
             className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-slate-200 cursor-pointer hover:bg-slate-50 transition-colors shadow-sm"
           >
-            <span className="text-xs font-medium text-slate-500">
+            <span className="text-[16px] font-regular font-inter text-black/70">
               {filter.label}:
             </span>
-            <span className="text-xs font-bold text-slate-800">
+            <span className="text-[16px] font-regular font-inter text-black">
               {filter.value}
             </span>
             <ChevronDown className="h-4 w-4 text-slate-400" />
           </div>
         ))}
 
-        <button className="flex items-center gap-2 text-xs font-bold text-slate-400 hover:text-[#31564E] transition-colors ml-auto mr-2 group">
+        <button className="flex items-center gap-2 text-[16px] font-regular font-inter text-[#31564E] hover:text-[#31564E] transition-colors ml-auto mr-2 group">
           <SlidersHorizontal className="h-4 w-4 group-hover:scale-110 transition-transform" />
           Reset Filters
         </button>
@@ -204,7 +204,7 @@ const BillingTable = () => {
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="bg-slate-50/30 text-slate-500 font-bold text-[13px] border-b border-slate-100">
+              <tr className="bg-slate-50/30 font-medium font-inter text-black/80 text-[16px] border-b border-slate-100 whitespace-nowrap">
                 <th className="px-8 py-6">
                   {activeTab === "b2c" ? "Student" : "Institute Name"}
                 </th>
@@ -261,10 +261,10 @@ const BillingTable = () => {
                         </div>
                       )}
                       <div className="flex flex-col">
-                        <span className="text-[14px] font-black text-slate-800 tracking-tight leading-tight whitespace-nowrap">
+                        <span className="text-[16px] font-semibold font-inter text-[#0F172A] tracking-tight leading-tight whitespace-nowrap">
                           {item.name}
                         </span>
-                        <span className="text-[12px] font-medium text-slate-400">
+                        <span className="text-[14px] font-regular font-inter text-[#64748B]">
                           {activeTab === "b2c" ? item.email : item.domain}
                         </span>
                       </div>
@@ -276,7 +276,7 @@ const BillingTable = () => {
                       <td className="px-8 py-4">
                         <span
                           className={cn(
-                            "px-3 py-1.5 rounded-lg text-[11px] font-black border uppercase tracking-tight whitespace-nowrap inline-flex items-center justify-center min-w-[100px]",
+                            "px-3 py-1.5 rounded-lg text-[16px] font-medium font-inter text-black/80 border whitespace-nowrap inline-flex items-center justify-center min-w-[100px]",
                             getPlanStyle(item.planType)
                           )}
                         >
@@ -295,7 +295,7 @@ const BillingTable = () => {
                           />
                           <span
                             className={cn(
-                              "text-[14px] font-bold",
+                              "text-[16px] font-medium font-inter whitespace-nowrap",
                               item.status === "Active"
                                 ? "text-[#10B981]"
                                 : "text-[#F97316]"
@@ -306,17 +306,17 @@ const BillingTable = () => {
                         </div>
                       </td>
                       <td className="px-8 py-4">
-                        <span className="text-[14px] font-black text-slate-800">
+                        <span className="text-[16px] font-medium font-inter text-black">
                           {item.cycle}
                         </span>
                       </td>
                       <td className="px-8 py-4">
-                        <span className="text-[14px] font-bold text-slate-600">
+                        <span className="text-[16px] font-medium font-inter text-black/80">
                           {item.renewalDate}
                         </span>
                       </td>
                       <td className="px-8 py-4 text-right pr-12">
-                        <span className="text-[15px] font-black text-slate-900">
+                        <span className="text-[16px] font-regular font-inter text-black">
                           {item.amount}
                         </span>
                       </td>
@@ -324,14 +324,14 @@ const BillingTable = () => {
                   ) : (
                     <>
                       <td className="px-8 py-4">
-                        <span className="text-[13px] font-bold text-slate-600">
+                        <span className="text-[16px] font-medium font-inter text-black/80">
                           {item.adminEmail}
                         </span>
                       </td>
                       <td className="px-8 py-4">
                         <span
                           className={cn(
-                            "px-3 py-1.5 rounded-lg text-[11px] font-black border uppercase tracking-tight whitespace-nowrap inline-flex items-center justify-center min-w-[100px]",
+                            "px-3 py-1.5 rounded-lg text-[16px] font-medium font-inter border  whitespace-nowrap inline-flex items-center justify-center min-w-[100px]",
                             getPlanStyle(item.plan)
                           )}
                         >
@@ -339,22 +339,22 @@ const BillingTable = () => {
                         </span>
                       </td>
                       <td className="px-8 py-4">
-                        <span className="text-[14px] font-black text-slate-800">
+                        <span className="text-[16px] font-medium font-inter text-black">
                           {item.limit}
                         </span>
                       </td>
                       <td className="px-8 py-4">
-                        <span className="text-[14px] font-black text-slate-800">
+                        <span className="text-[16px] font-medium font-inter text-black/80">
                           {item.cycle}
                         </span>
                       </td>
                       <td className="px-8 py-4">
-                        <span className="text-[14px] font-bold text-slate-600">
+                        <span className="text-[16px] font-medium font-inter text-black/80">
                           {item.renewalDate}
                         </span>
                       </td>
                       <td className="px-8 py-4 text-right pr-12">
-                        <span className="text-[15px] font-black text-slate-900">
+                        <span className="text-[16px] font-medium font-inter text-black">
                           {item.amount}
                         </span>
                       </td>
@@ -364,7 +364,7 @@ const BillingTable = () => {
                   <td className="px-8 py-4 text-center">
                     <div className="flex items-center justify-center gap-2">
                       <div className="h-2 w-2 rounded-full bg-[#10B981]" />
-                      <span className="text-[14px] font-bold text-[#10B981]">
+                      <span className="text-[16px] font-medium font-inter text-[#10B981]">
                         Active
                       </span>
                     </div>
@@ -375,7 +375,7 @@ const BillingTable = () => {
                     onClick={(e) => e.stopPropagation()}
                   >
                     <div className="flex items-center justify-end gap-3">
-                      <button className="text-slate-300 hover:text-slate-600 transition-colors p-2 rounded-lg hover:bg-slate-50">
+                      <button className="text-black hover:text-slate-600 transition-colors p-2 rounded-lg hover:bg-slate-50">
                         <MoreVertical className="h-5 w-5" />
                       </button>
                     </div>
@@ -398,9 +398,9 @@ const BillingTable = () => {
               <button
                 key={i}
                 className={cn(
-                  "h-10 w-10 flex items-center justify-center rounded-full text-sm font-bold transition-all",
+                  "h-10 w-10 flex items-center justify-center rounded-full text-[16px] font-regular font-inter transition-all",
                   page === 1
-                    ? "border-2 border-[#31564E] text-[#31564E]"
+                    ? "border-3 border-[#31564E] text-[#31564E]"
                     : "text-slate-400 hover:text-slate-600"
                 )}
               >
@@ -412,9 +412,15 @@ const BillingTable = () => {
             <ArrowRight className="h-5 w-5" />
           </button>
         </div>
-        <span className="text-sm font-bold text-slate-400">
-          Showing <span className="text-slate-900">1-8</span> of{" "}
-          <span className="text-slate-900">1,540</span>
+        <span className="text-[14px] font-regular font-inter text-[#64748B]">
+          Showing{" "}
+          <span className="text-[#0F172A] text-[14px] font-semibold font-inter">
+            1-8
+          </span>{" "}
+          of{" "}
+          <span className="text-[#0F172A] text-[14px] font-semibold font-inter">
+            1,540
+          </span>
         </span>
       </div>
     </div>

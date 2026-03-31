@@ -152,8 +152,14 @@ const FilterDropdown = ({
             className="h-10 rounded-xl px-4 gap-2 border-border/50 bg-white text-sm font-normal text-muted-foreground"
           >
             {Icon && <Icon className="h-4 w-4 text-slate-400" />}
-            {label && <span className="text-slate-400">{label}:</span>}
-            <span className="text-foreground font-medium">{value}</span>
+            {label && (
+              <span className="text-[16px] text-black/70 font-inter font-regular">
+                {label}:
+              </span>
+            )}
+            <span className="text-black text-[16px] font-inter font-regular">
+              {value}
+            </span>
             <ChevronDown
               className={cn(
                 "h-4 w-4 transition-transform",
@@ -188,13 +194,15 @@ const CourseTable = ({ onViewDetails }: CourseTableProps) => {
     <div className="mt-8 bg-white rounded-[24px] border border-border/50 shadow-sm overflow-hidden p-6 md:p-8 space-y-4">
       {/* Top Section - Title and Search */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <h2 className="text-xl font-bold text-foreground">Master Course</h2>
+        <h2 className="text-[20px] font-semibold text-foreground font-inter">
+          Master Course
+        </h2>
         <div className="relative w-full max-w-md">
           <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
           <input
             type="text"
             placeholder="Search course name, module, or instructor..."
-            className="h-11 w-full rounded-[14px] border border-border bg-[#F1F1F1]/50 pl-10 pr-4 text-[13px] outline-none transition-all focus:bg-white focus:ring-2 focus:ring-primary/10"
+            className="h-11 w-full rounded-[14px] border border-border bg-[#F1F1F1]/50 pl-10 pr-4 text-[16px] font-inter font-regular outline-none transition-all focus:bg-white focus:ring-2 focus:ring-primary/10"
           />
         </div>
       </div>
@@ -223,7 +231,7 @@ const CourseTable = ({ onViewDetails }: CourseTableProps) => {
             options={["All", "Active", "Archived"]}
           />
         </div>
-        <button className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors mr-2">
+        <button className="flex items-center gap-2 text-[16px] font-inter font-regular text-[#31564E] hover:text-foreground transition-colors mr-2">
           <ListFilter className="h-4 w-4" />
           Reset Filters
         </button>
@@ -232,7 +240,7 @@ const CourseTable = ({ onViewDetails }: CourseTableProps) => {
       <div className="overflow-x-auto -mx-6 px-6">
         <table className="w-full text-left border-separate border-spacing-y-2">
           <thead>
-            <tr className="text-muted-foreground text-[13px] font-medium border-b border-border/50">
+            <tr className="text-muted-foreground text-[16px] font-inter font-medium text-black/80 border-b border-border/50">
               <th className="px-4 py-4">Course Name</th>
               <th className="px-4 py-4 text-center">Modules</th>
               <th className="px-4 py-4">Version</th>
@@ -263,23 +271,23 @@ const CourseTable = ({ onViewDetails }: CourseTableProps) => {
                       <course.icon className="h-5 w-5" />
                     </div>
                     <div className="flex flex-col">
-                      <span className="text-[14px] font-bold text-foreground leading-tight">
+                      <span className="text-[16px] font-semibold font-inter text-black leading-tight">
                         {course.name}
                       </span>
-                      <span className="text-[11px] text-muted-foreground mt-1">
+                      <span className="text-[14px] font-regular font-inter text-black/70 mt-1">
                         {course.catalogId}
                       </span>
                     </div>
                   </div>
                 </td>
-                <td className="px-4 py-5 text-center text-[13px] font-bold text-foreground">
+                <td className="px-4 py-5 text-center text-[16px] font-medium font-inter text-black">
                   {course.modules}
                 </td>
-                <td className="px-4 py-5 text-[13px] font-medium text-slate-500">
+                <td className="px-4 py-5 text-[16px] font-medium font-inter text-black/80">
                   {course.version}
                 </td>
                 <td className="px-4 py-5">
-                  <div className="flex items-center gap-2 text-[13px] font-bold text-foreground">
+                  <div className="flex items-center gap-2 text-[16px] font-medium font-inter text-black">
                     {course.visibility === "Public" ? (
                       <Globe className="h-3.5 w-3.5 text-slate-500" />
                     ) : course.visibility === "Private" ? (
@@ -290,16 +298,16 @@ const CourseTable = ({ onViewDetails }: CourseTableProps) => {
                     {course.visibility}
                   </div>
                 </td>
-                <td className="px-4 py-5 text-[13px] font-bold text-foreground">
+                <td className="px-4 py-5 text-[16px] font-medium font-inter text-black">
                   {course.lastUpdate}
                 </td>
                 <td className="px-4 py-5">
                   <span
                     className={cn(
-                      "px-4 py-1.5 rounded-full text-[12px] font-bold border",
+                      "px-4 py-1.5 rounded-full text-[16px] font-medium font-inter border",
                       course.status === "Published"
-                        ? "bg-[#E6F8F0] text-[#059669] border-[#D1FAE5]"
-                        : "bg-[#FFF8E6] text-[#D97706] border-[#FEF3C7]"
+                        ? "bg-[#D1FAE5] text-[#059669] border-[#D1FAE5]"
+                        : "bg-[#FEF3C7] text-[#D97706] border-[#FEF3C7]"
                     )}
                   >
                     {course.status}
@@ -310,7 +318,7 @@ const CourseTable = ({ onViewDetails }: CourseTableProps) => {
                     <DropdownMenuTrigger asChild>
                       <button
                         onClick={(e) => e.stopPropagation()}
-                        className="p-2 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-all"
+                        className="p-2 rounded-xl text-black hover:text-slate-700 hover:bg-slate-100 transition-all"
                       >
                         <MoreVertical className="h-4 w-4" />
                       </button>
@@ -350,14 +358,16 @@ const CourseTable = ({ onViewDetails }: CourseTableProps) => {
           </button>
 
           <div className="flex items-center gap-2">
-            <button className="h-10 w-10 flex items-center justify-center rounded-full border-2 border-[#31564E] bg-white text-[#31564E] font-bold shadow-sm">
+            <button className="h-10 w-10 flex items-center justify-center rounded-full border-3 border-[#31564E] bg-white text-[#31564E] font-regular font-inter text-[16px] shadow-sm">
               1
             </button>
-            <button className="h-10 w-10 flex items-center justify-center rounded-full border border-border bg-white text-muted-foreground font-medium hover:bg-slate-50 transition-all">
+            <button className="h-10 w-10 flex items-center justify-center rounded-full border border-border bg-white text-muted-foreground font-regular font-inter text-[16px] hover:bg-slate-50 transition-all">
               2
             </button>
-            <span className="px-2 text-muted-foreground font-medium">...</span>
-            <button className="h-10 w-10 flex items-center justify-center rounded-full border border-border bg-white text-muted-foreground font-medium hover:bg-slate-50 transition-all">
+            <span className="px-2 text-muted-foreground font-regular font-inter text-[16px]">
+              ...
+            </span>
+            <button className="h-10 w-10 flex items-center justify-center rounded-full border border-border bg-white text-muted-foreground font-regular font-inter text-[16px] hover:bg-slate-50 transition-all">
               10
             </button>
           </div>
@@ -366,9 +376,15 @@ const CourseTable = ({ onViewDetails }: CourseTableProps) => {
             <ChevronRight className="h-5 w-5" />
           </button>
         </div>
-        <span className="text-[13px] font-medium text-slate-400">
-          Showing <span className="font-bold text-foreground">1-8</span> of{" "}
-          <span className="font-bold text-foreground">1,540</span>
+        <span className="text-[14px] font-semibold font-inter text-[#64748B]">
+          Showing{" "}
+          <span className="font-[#0F172A] font-semibold font-inter text-[14px] text-foreground">
+            1-8
+          </span>{" "}
+          of{" "}
+          <span className="font-[#0F172A] font-semibold font-inter text-[14px] text-foreground">
+            1,540
+          </span>
         </span>
       </div>
     </div>

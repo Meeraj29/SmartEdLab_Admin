@@ -71,11 +71,17 @@ const AddInstitute = ({ onBack, onSuccess }: AddInstituteProps) => {
             </div>
             <div className="p-6 rounded-2xl bg-slate-50 border border-slate-100 space-y-4">
               <div className="flex justify-between items-center text-sm">
-                <span className="text-slate-500 font-medium text-[16px] font-inter">Platform ID</span>
-                <span className="text-slate-800 font-bold text-[16px] font-inter">INS-8829-XQ</span>
+                <span className="text-slate-500 font-medium text-[16px] font-inter">
+                  Platform ID
+                </span>
+                <span className="text-slate-800 font-bold text-[16px] font-inter">
+                  INS-8829-XQ
+                </span>
               </div>
               <div className="flex justify-between items-center text-sm">
-                <span className="text-slate-500 font-medium text-[16px] font-inter">License Type</span>
+                <span className="text-slate-500 font-medium text-[16px] font-inter">
+                  License Type
+                </span>
                 <span className="text-slate-800 font-bold text-[16px] font-inter">
                   Quarterly (Enterprise)
                 </span>
@@ -279,7 +285,10 @@ const AddInstitute = ({ onBack, onSuccess }: AddInstituteProps) => {
                 <div className="space-y-8">
                   <div>
                     <h3 className="text-[18px] font-semibold  font-inter text-[#000000CC] flex items-center gap-2">
-                      Step: 2 <span className="text-[20px] font-inter font-semibold text-[#31564E]">Branding</span>
+                      Step: 2{" "}
+                      <span className="text-[20px] font-inter font-semibold text-[#31564E]">
+                        Branding
+                      </span>
                     </h3>
                   </div>
 
@@ -460,7 +469,9 @@ const AddInstitute = ({ onBack, onSuccess }: AddInstituteProps) => {
                     </div>
                     <div className="space-y-3">
                       <div className="flex items-center justify-between text-[11px] font-bold">
-                        <span className="text-[14px] text-black font-semibold font-inter">Next Action</span>
+                        <span className="text-[14px] text-black font-semibold font-inter">
+                          Next Action
+                        </span>
                         <span className="bg-[#4648D41A] text-[#4648D4] px-2 py-0.5 rounded-full text-[12px] font-semibold font-inter">
                           Enrollment
                         </span>
@@ -499,7 +510,9 @@ const AddInstitute = ({ onBack, onSuccess }: AddInstituteProps) => {
             <div>
               <h3 className="text-[18px] font-semibold font-inter text-[#000000CC] flex items-center gap-2">
                 Step: 3{" "}
-                <span className="text-[#31564E] text-[20px] font-semibold font-inter">Select Subscription Plan</span>
+                <span className="text-[#31564E] text-[20px] font-semibold font-inter">
+                  Select Subscription Plan
+                </span>
               </h3>
             </div>
 
@@ -634,7 +647,9 @@ const AddInstitute = ({ onBack, onSuccess }: AddInstituteProps) => {
                 <div>
                   <h3 className="text-[18px] font-semibold font-inter text-slate-800 flex items-center gap-2">
                     Step: 4{" "}
-                    <span className="text-[#31564E] font-semibold font-inter text-[20px]">Security Settings</span>
+                    <span className="text-[#31564E] font-semibold font-inter text-[20px]">
+                      Security Settings
+                    </span>
                   </h3>
                 </div>
 
@@ -806,7 +821,7 @@ const AddInstitute = ({ onBack, onSuccess }: AddInstituteProps) => {
                         <input
                           type="text"
                           placeholder="1,000,000"
-                          className="h-14 w-full rounded-2xl bg-[#F8FAFB] border-none px-6 outline-none focus:ring-2 focus:ring-[#2563EB]/10 font-bold text-[16px] font-Manrope text-[#0B1C30]"
+                          className="h-14 w-full rounded-2xl bg-[#F8FAFB] border-none px-6 outline-none focus:ring-2 focus:ring-[#2563EB]/10 font-bold text-[16px] font-manrope text-[#0B1C30]"
                         />
                         <Shield className="absolute right-5 top-1/2 -translate-y-1/2 h-5 w-5 text-purple-400" />
                       </div>
@@ -819,7 +834,7 @@ const AddInstitute = ({ onBack, onSuccess }: AddInstituteProps) => {
                         >
                           Alert Threshold (80%)
                         </label>
-                        <span className="text-[16px] font-bold font-Manrope text-[#0058BE]">
+                        <span className="text-[16px] font-bold font-manrope text-[#0058BE]">
                           80%
                         </span>
                       </div>
@@ -917,7 +932,10 @@ const AddInstitute = ({ onBack, onSuccess }: AddInstituteProps) => {
               <div className="bg-white rounded-[20px] p-10 border border-slate-100 shadow-sm space-y-12">
                 <div className="space-y-12">
                   <h3 className="text-[18px] font-semibold text-slate-800 font-inter flex items-center gap-2">
-                    Step: 5 <span className="text-[#31564E] text-[20px] font-semibold font-inter">Billing</span>
+                    Step: 5{" "}
+                    <span className="text-[#31564E] text-[20px] font-semibold font-inter">
+                      Billing
+                    </span>
                   </h3>
 
                   {/* Billing Configuration */}
@@ -926,7 +944,7 @@ const AddInstitute = ({ onBack, onSuccess }: AddInstituteProps) => {
                       <div className="h-6 w-6 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600">
                         <Wallet className="h-4 w-4" />
                       </div>
-                      <h4 className="text-[20px] font-Manrope font-bold font-inter text-[#0B1C30] tracking-tight">
+                      <h4 className="text-[20px] font-manrope font-bold font-inter text-[#0B1C30] tracking-tight">
                         Billing Configuration
                       </h4>
                     </div>
@@ -1023,7 +1041,7 @@ const AddInstitute = ({ onBack, onSuccess }: AddInstituteProps) => {
                       <div className="h-6 w-6 rounded-lg bg-purple-100 flex items-center justify-center text-purple-600">
                         <FileText className="h-4 w-4" />
                       </div>
-                      <h4 className="text-[20px] font-Manrope font-inter font-bold text-[#0B1C30] tracking-tight">
+                      <h4 className="text-[20px] font-manrope font-inter font-bold text-[#0B1C30] tracking-tight">
                         Final Review Summary
                       </h4>
                     </div>
@@ -1034,7 +1052,7 @@ const AddInstitute = ({ onBack, onSuccess }: AddInstituteProps) => {
                           <span className="text-[14px] font-regular font-inter  text-[#424754]">
                             Institute Name
                           </span>
-                          <p className="text-[16px] font-bold font-Manrope font-inter text-[#0B1C30]">
+                          <p className="text-[16px] font-bold font-manrope font-inter text-[#0B1C30]">
                             Global Language Academy
                           </p>
                         </div>
@@ -1044,7 +1062,7 @@ const AddInstitute = ({ onBack, onSuccess }: AddInstituteProps) => {
                           <span className="text-[14px] font-regular font-inter text-[#424754]">
                             Assigned Plan
                           </span>
-                          <p className="text-[16px] font-Manrope font-bold font-inter text-[#0058BE]">
+                          <p className="text-[16px] font-manrope font-bold font-inter text-[#0058BE]">
                             Enterprise AI Plus
                           </p>
                         </div>
@@ -1098,7 +1116,9 @@ const AddInstitute = ({ onBack, onSuccess }: AddInstituteProps) => {
             <div className="lg:col-span-4 space-y-4">
               <div className="bg-[#31564E] rounded-[20px] p-10 text-white space-y-10 relative overflow-hidden">
                 <div className="flex items-center justify-between relative z-10">
-                  <h4 className="text-[18px] font-bold font-inter text-[#EAF1FF]">Invoice Summary</h4>
+                  <h4 className="text-[18px] font-bold font-inter text-[#EAF1FF]">
+                    Invoice Summary
+                  </h4>
                   <div className="h-10 w-10 rounded-xl bg-white/5 flex items-center justify-center">
                     <Receipt className="h-5 w-5 text-emerald-400" />
                   </div>
@@ -1132,16 +1152,14 @@ const AddInstitute = ({ onBack, onSuccess }: AddInstituteProps) => {
                     </div>
                   </div>
 
-                  <div className="pt-8 border-t border-white/5 space-y-1">
-                    <div className="flex justify-between items-end">
-                      <div className="space-y-1">
-                        <span className="text-[18px] text-[#EAF1FF] font-inter font-regular ">
-                          Total Due Now
-                        </span>
-                        <p className="text-[30px] font-regular font-inter text-[#D8E2FF] leading-none">
-                          $12,450.00
-                        </p>
-                      </div>
+                  <div className="pt-8 border-t border-white/5 ">
+                    <div className="flex justify-between items-center w-full">
+                      <span className="text-[18px] text-[#EAF1FF] font-inter font-regular ">
+                        Total Due Now
+                      </span>
+                      <p className="text-[24px] font-regular font-inter text-[#D8E2FF]">
+                        $12,450.00
+                      </p>
                     </div>
                   </div>
 
@@ -1173,7 +1191,7 @@ const AddInstitute = ({ onBack, onSuccess }: AddInstituteProps) => {
               {/* Help Card */}
               <div className="bg-[#EBF7FF] rounded-[20px] p-10 space-y-8 border border-blue-50 shadow-sm group cursor-pointer hover:shadow-xl hover:shadow-blue-500/5 transition-all">
                 <div className="space-y-3">
-                  <h4 className="text-[16px] font-bold font-Manrope font-inter text-[#0B1C30]">
+                  <h4 className="text-[16px] font-bold font-manrope font-inter text-[#0B1C30]">
                     Need help with billing?
                   </h4>
                   <p className="text-[14px] font-regular font-inter text-[#424754] leading-relaxed">

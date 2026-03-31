@@ -83,10 +83,10 @@ const ReportsStatic = () => {
       {/* Target Image Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div className="space-y-1">
-          <h1 className="text-3xl font-black text-[#1E293B] tracking-tight">
+          <h1 className="text-[24px] font-semibold font-inter text-black tracking-tight">
             Reports
           </h1>
-          <p className="text-[15px] font-bold text-slate-400 max-w-3xl leading-snug">
+          <p className="text-[16px] font-regular font-inter text-black/80 max-w-3xl leading-snug">
             Comprehensive monitoring of AI performance metrics, institutional
             throughput, <br className="hidden lg:block" />
             and global learning engagement.
@@ -95,12 +95,12 @@ const ReportsStatic = () => {
         <div className="flex items-center gap-4">
           <Button
             variant="outline"
-            className="h-12 rounded-[14px] px-6 border-[#31564E] text-[#31564E] font-bold hover:bg-emerald-50 transition-all gap-2"
+            className="h-12 rounded-[14px] px-6 border-[#31564E] text-[#31564E] font-medium font-inter text-[16px] hover:bg-emerald-50 transition-all gap-2"
           >
             <Download className="h-5 w-5" />
             Export as CSV
           </Button>
-          <Button className="h-12 rounded-[14px] px-6 bg-black text-white font-bold shadow-xl shadow-black/10 hover:bg-black/95 gap-2 transition-all">
+          <Button className="h-12 rounded-[14px] px-6 bg-black text-white font-medium font-inter text-[16px] shadow-xl shadow-black/10 hover:bg-black/95 gap-2 transition-all">
             <Download className="h-5 w-5" />
             Export Excel
           </Button>
@@ -126,7 +126,7 @@ const ReportsStatic = () => {
               </div>
               <div
                 className={cn(
-                  "flex items-center gap-0.5 px-2 py-1 rounded-full text-[11px] font-black",
+                  "flex items-center gap-0.5 px-2 py-1 rounded-full text-[12px] font-bold font-publicsans",
                   stat.isTrendUp
                     ? "text-[#10B981] bg-[#10B981]/10"
                     : "text-[#EF4444] bg-[#EF4444]/10"
@@ -142,14 +142,14 @@ const ReportsStatic = () => {
             </div>
 
             <div className="space-y-1.5">
-              <span className="text-[28px] font-black text-slate-900 tracking-tighter leading-none">
+              <span className="text-[26px] font-semibold font-inter text-black  leading-none mt-2">
                 {stat.value}
               </span>
               <div className="flex flex-col">
-                <span className="text-[14px] font-bold text-slate-800 leading-tight tracking-tight">
+                <span className="text-[16px] font-medium font-inter text-black leading-tight mt-4">
                   {stat.label}
                 </span>
-                <span className="text-[11px] font-bold text-slate-300 leading-tight">
+                <span className="text-[12px] font-bold font-inter text-black leading-tight">
                   {stat.subtext}
                 </span>
               </div>

@@ -68,10 +68,12 @@ const ReportsCharts = () => {
 
   const FilterItem = ({ label, value }: { label: string; value: string }) => (
     <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-100 bg-white shadow-sm hover:bg-slate-50 cursor-pointer transition-all group">
-      <span className="text-[12px] font-bold text-slate-400 group-hover:text-slate-500">
+      <span className="text-[14px] font-medium font-inter text-[#64748B] group-hover:text-slate-500">
         {label}:
       </span>
-      <span className="text-[12px] font-black text-slate-700">{value}</span>
+      <span className="text-[16px] font-regular font-inter text-black">
+        {value}
+      </span>
       <ChevronDown className="h-4 w-4 text-slate-300 group-hover:text-slate-500 transition-colors" />
     </div>
   );
@@ -85,7 +87,7 @@ const ReportsCharts = () => {
   }: any) => (
     <div className="bg-white rounded-[24px] border border-slate-100 p-6 md:p-8 shadow-sm flex flex-col space-y-6 animate-in fade-in zoom-in-95 duration-700 h-full">
       <div className="flex items-center justify-between">
-        <h3 className="text-[18px] font-black text-slate-800 tracking-tight">
+        <h3 className="text-[20px] font-bold font-inter text-[#0F172A] tracking-tight">
           {title}
         </h3>
         <div className="flex items-center gap-2">
@@ -93,12 +95,15 @@ const ReportsCharts = () => {
             <DropdownMenuTrigger asChild>
               <Button
                 variant="ghost"
-                className="h-9 px-3 rounded-xl bg-slate-50 border border-slate-100 text-[13px] font-bold text-slate-500 gap-2"
+                className="h-9 px-3 rounded-xl bg-slate-50 border border-slate-100 text-[16px] font-inter font-regular text-black gap-2"
               >
                 Last 6 Months <ChevronDown className="h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="rounded-xl font-bold">
+            <DropdownMenuContent
+              align="end"
+              className="rounded-xl font-regular font-inter text-[16px]"
+            >
               <DropdownMenuItem>Last 30 Days</DropdownMenuItem>
               <DropdownMenuItem>Last 3 Months</DropdownMenuItem>
               <DropdownMenuItem>Last 6 Months</DropdownMenuItem>
@@ -117,19 +122,19 @@ const ReportsCharts = () => {
             <div className="flex items-center justify-center gap-6">
               <div className="flex items-center gap-2">
                 <div className="h-2 w-2 rounded-full bg-[#312E81]" />
-                <span className="text-[10px] uppercase font-black text-slate-400 tracking-wider">
+                <span className="text-[10px] uppercase font-semibold font-publicsans text-[#64748B] tracking-wider">
                   AI Usage
                 </span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="h-2 w-2 rounded-full bg-[#6366F1]" />
-                <span className="text-[10px] uppercase font-black text-slate-400 tracking-wider">
+                <span className="text-[10px] uppercase font-semibold font-publicsans text-[#64748B] tracking-wider">
                   Live Classes
                 </span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="h-2 w-2 rounded-full bg-[#A5B4FC]" />
-                <span className="text-[10px] uppercase font-black text-slate-400 tracking-wider">
+                <span className="text-[10px] uppercase font-semibold font-publicsans text-[#64748B] tracking-wider">
                   Activity
                 </span>
               </div>
@@ -149,7 +154,7 @@ const ReportsCharts = () => {
         <FilterItem label="Status" value="Active" />
         <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-100 bg-white shadow-sm hover:bg-slate-50 cursor-pointer">
           <Calendar className="h-4 w-4 text-slate-400" />
-          <span className="text-[12px] font-black text-slate-700">
+          <span className="text-[16px] font-regular font-inter text-black">
             Last 30 days
           </span>
           <ChevronDown className="h-4 w-4 text-slate-300" />
@@ -158,7 +163,7 @@ const ReportsCharts = () => {
         <FilterItem label="Sort By" value="High to low" />
         <FilterItem label="Sort By" value="High to low" />
 
-        <button className="flex items-center gap-2 ml-auto text-[13px] font-bold text-[#31564E] hover:underline px-2 transition-all group">
+        <button className="flex items-center gap-2 ml-auto text-[16px] font-regular font-inter text-[#31564E] hover:underline px-2 transition-all group">
           <SlidersHorizontal className="h-4 w-4 group-hover:rotate-180 transition-transform duration-500" />
           Reset Filters
         </button>
@@ -204,7 +209,7 @@ const ReportsCharts = () => {
         <ChartCard title="Student Distribution">
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             <div className="text-center">
-              <p className="text-[32px] font-black text-slate-800 leading-none">
+              <p className="text-[30px] font-bold font-publicsans text-[#0F172A] leading-none">
                 64%
               </p>
               <p className="text-[11px] font-bold text-slate-400 uppercase tracking-widest mt-1">
@@ -247,7 +252,7 @@ const ReportsCharts = () => {
                   className="h-2.5 w-2.5 rounded-full"
                   style={{ backgroundColor: item.color }}
                 />
-                <span className="text-[12px] font-bold text-slate-700">
+                <span className="text-[12px] font-medium font-publicsans text-[#0F172A]">
                   {item.name} ({item.value}%)
                 </span>
               </div>
@@ -261,14 +266,16 @@ const ReportsCharts = () => {
             {institutionRankings.map((inst, i) => (
               <div key={i} className="space-y-2">
                 <div className="flex justify-between items-center text-[13px] font-bold">
-                  <span className="text-slate-800">{inst.name}</span>
-                  <span className="text-slate-500">
+                  <span className="text-[14px] font-regular font-inter text-[#0F172A]">
+                    {inst.name}
+                  </span>
+                  <span className="text-[12px] font-semibold font-publicsans text-[#0F172A]">
                     {inst.students} Students
                   </span>
                 </div>
-                <div className="h-2 w-full bg-slate-50 rounded-full overflow-hidden">
+                <div className="h-2 w-full bg-[#F1F5F9] rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-[#3B82F6] rounded-full transition-all duration-1000"
+                    className="h-full bg-[#1E40AF] rounded-full transition-all duration-1000"
                     style={{ width: `${inst.progress}%` }}
                   />
                 </div>
@@ -283,18 +290,18 @@ const ReportsCharts = () => {
           footer={
             <div className="flex items-center justify-between border-t border-slate-50 pt-4">
               <div>
-                <p className="text-[10px] font-black text-slate-300 uppercase tracking-widest">
+                <p className="text-[12px] font-regular font-publicsans text-[#64748B]">
                   Total Subscriptions
                 </p>
-                <p className="text-[20px] font-black text-slate-800 leading-none">
+                <p className="text-[18px] font-bold font-publicsans text-[#0F172A] leading-none">
                   $52,400
                 </p>
               </div>
               <div className="text-right">
-                <p className="text-[10px] font-black text-slate-300 uppercase tracking-widest">
+                <p className="text-[12px] font-regular font-publicsans text-[#64748B]">
                   Course Payments
                 </p>
-                <p className="text-[20px] font-black text-slate-800 leading-none">
+                <p className="text-[18px] font-bold font-publicsans text-[#0F172A] leading-none">
                   $31,800
                 </p>
               </div>

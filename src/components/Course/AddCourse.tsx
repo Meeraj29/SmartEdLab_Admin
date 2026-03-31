@@ -86,44 +86,34 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
                   <ArrowLeft className="h-5 w-5" />
                 </button>
                 <div className="flex flex-col">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-[12px] font-black text-[#2D4A43] uppercase tracking-widest bg-[#2D4A43]/5 px-2.5 py-1 rounded-md">
-                      Step: {step}{" "}
-                      {step === 1
-                        ? "Basic Details"
-                        : step === 2
-                          ? "Add Modules"
-                          : step === 3
-                            ? "Add Lessons"
-                            : step === 4
-                              ? "Visibility Settings"
-                              : "Review & Publish"}
-                    </span>
-                  </div>
-                  <h1 className="text-2xl font-bold text-slate-900 tracking-tight">
+                  <div className="flex items-center gap-2 mb-1"></div>
+                  <h1 className="text-[20px] font-semibold font-inter text-black tracking-tight">
                     Create New Course
                   </h1>
+                  <p className="text-[14px] font-inter font-regular text-black/70">
+                    Set up a new course and define its structure.
+                  </p>
                 </div>
               </div>
 
               <div className="flex items-center gap-4">
                 <Button
                   variant="outline"
-                  className="h-12 px-8 rounded-2xl border-slate-200 text-slate-700 font-bold hover:bg-slate-50 transition-all"
+                  className="h-12 px-8 rounded-2xl border-2 border-[#31564E] text-[#31564E] font-medium font-inter text-[16px] hover:bg-slate-50 transition-all"
                 >
                   Save Draft
                 </Button>
                 {step === 5 && (
                   <Button
                     variant="outline"
-                    className="h-12 px-8 rounded-2xl border-slate-200 text-slate-700 font-bold hover:bg-slate-50 transition-all"
+                    className="h-12 px-8 rounded-2xl border-slate-200 text-[#31564E] font-medium font-inter text-[16px] hover:bg-slate-50 transition-all"
                   >
                     Publish to selected
                   </Button>
                 )}
                 <Button
                   onClick={handleNext}
-                  className="h-12 px-8 rounded-2xl bg-black hover:bg-black/90 text-white font-black shadow-xl shadow-black/10 transition-all active:scale-95"
+                  className="h-12 px-8 rounded-2xl bg-black hover:bg-black/90 text-white font-medium font-inter text-[16px] shadow-xl shadow-black/10 transition-all active:scale-95"
                 >
                   {step === 1
                     ? "Next: Add Modules"
@@ -176,9 +166,9 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
 
       {step === 1 && (
         <div className="rounded-[32px] bg-white shadow-sm border border-slate-100 p-8 md:p-12 space-y-10">
-          <h3 className="text-[20px] font-bold text-[#2D4A43] tracking-tight">
+          <h3 className="text-[18px] font-semibold font-inter text-black/80 tracking-tight">
             Step: 1{" "}
-            <span className="text-slate-900 border-l border-slate-200 ml-3 pl-3">
+            <span className="text-[20px] font-semibold font-inter text-[#31564E] border-l border-slate-200 ml-3 pl-3">
               Basic Details
             </span>
           </h3>
@@ -187,7 +177,7 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
             <div className="flex flex-col gap-3 md:col-span-2">
               <label
                 htmlFor="courseTitle"
-                className="text-[14px] font-bold text-slate-800"
+                className="text-[16px] font-medium font-inter text-black"
               >
                 Course Name <span className="text-rose-500 font-bold">*</span>
               </label>
@@ -199,14 +189,14 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
                   setCourseData({ ...courseData, title: e.target.value })
                 }
                 placeholder="Enter course name"
-                className="h-14 w-full rounded-[14px] bg-[#F9F9F9] px-6 text-[15px] outline-none transition-all focus:bg-white focus:ring-2 focus:ring-[#2D4A43]/10 border border-transparent focus:border-slate-200"
+                className="h-14 w-full rounded-[14px] bg-[#F9F9F9] px-6 text-[14px] font-regular font-inter outline-none transition-all focus:bg-white focus:ring-2 focus:ring-[#2D4A43]/10 border border-transparent focus:border-slate-200"
               />
             </div>
 
             <div className="flex flex-col gap-3 md:col-span-2">
               <label
                 htmlFor="courseDescription"
-                className="text-[14px] font-bold text-slate-800"
+                className="text-[16px] font-medium font-inter text-black"
               >
                 Course Description{" "}
                 <span className="text-rose-500 font-bold">*</span>
@@ -218,12 +208,12 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
                   setCourseData({ ...courseData, description: e.target.value })
                 }
                 placeholder="Describe the goals and curriculum of this course..."
-                className="h-40 w-full rounded-[14px] bg-[#F9F9F9] p-6 text-[15px] outline-none transition-all focus:bg-white focus:ring-2 focus:ring-[#2D4A43]/10 border border-transparent focus:border-slate-200 resize-none font-medium leading-relaxed"
+                className="h-40 w-full rounded-[14px] bg-[#F9F9F9] p-6 text-[14px] font-regular font-inter outline-none transition-all focus:bg-white focus:ring-2 focus:ring-[#2D4A43]/10 border border-transparent focus:border-slate-200 resize-none font-medium leading-relaxed"
               />
             </div>
 
             <div className="flex flex-col gap-3">
-              <span className="text-[14px] font-bold text-slate-800">
+              <span className="text-[16px] font-medium font-inter text-black">
                 Course Level <span className="text-rose-500 font-bold">*</span>
               </span>
               <div className="flex h-14 items-center gap-6 bg-[#F9F9F9] px-6 rounded-[14px] border border-transparent">
@@ -243,7 +233,7 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
                       <div className="h-5 w-5 rounded-full border-2 border-slate-300 peer-checked:border-[#2D4A43] transition-all" />
                       <div className="absolute inset-1 rounded-full bg-[#2D4A43] scale-0 peer-checked:scale-100 transition-transform duration-200" />
                     </div>
-                    <span className="text-[14px] font-bold text-slate-700 group-hover:text-slate-900 transition-colors">
+                    <span className="text-[16px] font-medium font-inter text-black group-hover:text-slate-900 transition-colors">
                       {level}
                     </span>
                   </label>
@@ -254,7 +244,7 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
             <div className="flex flex-col gap-3">
               <label
                 htmlFor="courseCategory"
-                className="text-[14px] font-bold text-slate-800"
+                className="text-[16px] font-medium font-inter text-black"
               >
                 Course Category{" "}
                 <span className="text-rose-500 font-bold">*</span>
@@ -266,9 +256,9 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
                   onChange={(e) =>
                     setCourseData({ ...courseData, category: e.target.value })
                   }
-                  className="h-14 w-full appearance-none rounded-[14px] bg-[#F9F9F9] px-6 text-[15px] font-medium outline-none transition-all cursor-pointer focus:bg-white border border-transparent focus:border-slate-200 pr-12 focus:ring-2 focus:ring-[#2D4A43]/10"
+                  className="h-14 w-full appearance-none rounded-[14px] bg-[#F9F9F9] px-6 text-[14px] font-regular font-inter outline-none transition-all cursor-pointer focus:bg-white border border-transparent focus:border-slate-200 pr-12 focus:ring-2 focus:ring-[#2D4A43]/10"
                 >
-                  <option value="" disabled className="text-slate-400">
+                  <option value="" disabled className="text-black/70">
                     Select category
                   </option>
                   <option value="uiux">UI/UX Design</option>
@@ -283,7 +273,7 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
             <div className="flex flex-col gap-3">
               <label
                 htmlFor="courseDuration"
-                className="text-[14px] font-bold text-slate-800"
+                className="text-[16px] font-medium font-inter text-black"
               >
                 Estimated Course Duration{" "}
                 <span className="text-rose-500 font-bold">*</span>
@@ -298,7 +288,7 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
                     setCourseData({ ...courseData, duration: e.target.value })
                   }
                   placeholder="e.g. 12 Weeks"
-                  className="h-14 w-full rounded-[14px] bg-[#F9F9F9] pl-14 pr-6 text-[15px] font-medium outline-none transition-all focus:bg-white focus:ring-2 focus:ring-[#2D4A43]/10 border border-transparent focus:border-slate-200"
+                  className="h-14 w-full rounded-[14px] bg-[#F9F9F9] pl-14 pr-6 text-[14px] font-regular font-inter outline-none transition-all focus:bg-white focus:ring-2 focus:ring-[#2D4A43]/10 border border-transparent focus:border-slate-200"
                 />
               </div>
             </div>
@@ -308,9 +298,9 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
 
       {step === 2 && (
         <div className="rounded-[32px] bg-white shadow-sm border border-slate-100 p-8 md:p-12 space-y-10">
-          <h3 className="text-[20px] font-bold text-[#2D4A43] tracking-tight">
+          <h3 className="text-[18px] font-semibold font-inter text-black border-l border-slate-200 ml-3 pl-3">
             Step: 2{" "}
-            <span className="text-slate-900 border-l border-slate-200 ml-3 pl-3">
+            <span className=" text-[20px] font-semibold font-inter text-[#31564E] border-l border-slate-200 ml-3 pl-3">
               Add Modules
             </span>
           </h3>
@@ -329,10 +319,10 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
                   <div className="flex-1 space-y-4">
                     <div className="flex items-center justify-between">
                       <div className="space-y-1">
-                        <h4 className="text-[16px] font-bold text-slate-900">
+                        <h4 className="text-[18px] font-medium font-inter text-black">
                           Module {index + 1}: {module.title}
                         </h4>
-                        <div className="flex items-center gap-1.5 text-[13px] font-medium text-slate-400">
+                        <div className="flex items-center gap-1.5 text-[12px] font-medium font-inter text-black/70">
                           <span className="h-1 w-1 rounded-full bg-slate-300" />
                           {module.duration} mins
                         </div>
@@ -354,7 +344,7 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
                     </div>
 
                     <div className="border-t border-slate-50 pt-4">
-                      <p className="text-[14px] font-medium text-slate-500 leading-relaxed line-clamp-2">
+                      <p className="text-[16px] font-medium font-inter text-black/70 leading-relaxed line-clamp-2">
                         {module.description}
                       </p>
                     </div>
@@ -370,10 +360,10 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
               <div className="h-12 w-12 rounded-full border-2 border-slate-300 flex items-center justify-center mb-4 group-hover:border-[#2D4A43] group-hover:bg-[#2D4A43] transition-all">
                 <Plus className="h-5 w-5 text-slate-400 group-hover:text-white" />
               </div>
-              <h4 className="text-[16px] font-bold text-slate-800 mb-1">
+              <h4 className="text-[18px] font-semibold font-inter text-black/70 mb-1">
                 Add New Module
               </h4>
-              <p className="text-[13px] font-medium text-slate-400">
+              <p className="text-[14px] font-regular font-inter text-black/70">
                 Start organizing your next subject area
               </p>
             </div>
@@ -383,9 +373,9 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
 
       {step === 3 && (
         <div className="rounded-[32px] bg-white shadow-sm border border-slate-100 p-8 md:p-12 space-y-10">
-          <h3 className="text-[20px] font-bold text-[#2D4A43] tracking-tight">
+          <h3 className="text-[18px] font-semibold font-inter text-black/80 tracking-tight">
             Step: 3{" "}
-            <span className="text-slate-900 border-l border-slate-200 ml-3 pl-3">
+            <span className="text-[20px] font-semibold font-inter text-[#31564E] border-l border-slate-200 ml-3 pl-3">
               Add Lessons To Modules
             </span>
           </h3>
@@ -411,10 +401,10 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
                         <GripVertical className="h-5 w-5" />
                       </div>
                       <div className="space-y-1">
-                        <h4 className="text-[16px] font-bold text-slate-900 group-hover:text-[#2D4A43] transition-colors">
+                        <h4 className="text-[18px] font-medium font-inter text-black group-hover:text-[#2D4A43] transition-colors">
                           Module {index + 1}: {module.title}
                         </h4>
-                        <div className="flex items-center gap-1.5 text-[12px] font-medium text-slate-400">
+                        <div className="flex items-center gap-1.5 text-[12px] font-medium font-inter text-black/70">
                           <span className="h-1 w-1 rounded-full bg-slate-300" />
                           {module.duration} mins
                         </div>
@@ -500,7 +490,7 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
                         }}
                         className="p-4 border border-dashed border-[#2D4A43]/30 rounded-[16px] flex items-center justify-center bg-[#2D4A43]/5 hover:bg-[#2D4A43]/10 transition-all cursor-pointer group/lesson"
                       >
-                        <div className="flex items-center gap-2 text-[14px] font-bold text-[#2D4A43]">
+                        <div className="flex items-center gap-2 text-[16px] font-medium font-inter text-[#31564E]">
                           <Plus className="h-4 w-4" />
                           <span>Add Lesson</span>
                         </div>
@@ -517,7 +507,7 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
                 <Button
                   onClick={() => setStep(2)}
                   variant="link"
-                  className="text-[#2D4A43] font-bold mt-2"
+                  className="text-[#31564E] font-medium font-inter mt-2 text-[16px]"
                 >
                   Go Back to Step 2
                 </Button>
@@ -529,9 +519,9 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
 
       {step === 4 && (
         <div className="rounded-[32px] bg-white shadow-sm border border-slate-100 p-8 md:p-12 space-y-12 transition-all">
-          <h3 className="text-[20px] font-bold text-[#2D4A43] tracking-tight">
+          <h3 className="text-[18px] font-semibold font-inter text-black/80 tracking-tight">
             Step: 4{" "}
-            <span className="text-slate-900 border-l border-slate-200 ml-3 pl-3">
+            <span className="text-[#31564E] text-[20px] font-semibold font-inter border-l border-slate-200 ml-3 pl-3">
               Course Visibility Settings
             </span>
           </h3>
@@ -543,13 +533,13 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
                 <div className="h-10 w-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-500">
                   <Eye className="h-5 w-5" />
                 </div>
-                <h4 className="text-[16px] font-bold text-slate-900">
+                <h4 className="text-[18px] font-medium font-inter text-black">
                   Visibility Scope
                 </h4>
               </div>
 
               <div className="space-y-6">
-                <p className="text-[14px] font-bold text-slate-800 ml-1">
+                <p className="text-[16px] font-medium font-inter text-black ml-1">
                   Who can see this course?
                 </p>
 
@@ -561,10 +551,10 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
                         <div className="h-2.5 w-2.5 rounded-full bg-[#2D4A43]" />
                       </div>
                       <div className="flex flex-col gap-1">
-                        <span className="text-[15px] font-black text-[#2D4A43]">
+                        <span className="text-[16px] font-medium font-inter text-black">
                           Global
                         </span>
-                        <span className="text-[13px] font-bold text-slate-400">
+                        <span className="text-[14px] font-regular foont-inter text-black/70">
                           Available to all institutes and students across the
                           platform
                         </span>
@@ -580,10 +570,10 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
                           {/* Deselected Circle */}
                         </div>
                         <div className="flex flex-col gap-1">
-                          <span className="text-[15px] font-black text-slate-900 group-hover:text-[#2D4A43] transition-colors">
+                          <span className="text-[16px] font-medium font-inter text-black group-hover:text-[#2D4A43] transition-colors">
                             Selected Institutes
                           </span>
-                          <span className="text-[13px] font-bold text-slate-400">
+                          <span className="text-[14px] font-regular font-inter text-black/70">
                             Only specific institutes can access this content
                           </span>
                         </div>
@@ -591,10 +581,10 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
 
                       <div className="pl-9 space-y-5">
                         <div className="flex flex-col gap-2.5">
-                          <span className="text-[13px] font-black text-slate-800">
+                          <span className="text-[14px] font-medium font-inter text-black">
                             Select Partner Institutes
                           </span>
-                          <div className="h-13 w-full rounded-[16px] bg-white border border-slate-200 flex items-center px-6 text-[14px] text-slate-300 font-medium hover:border-[#2D4A43]/30 transition-all cursor-text shadow-sm">
+                          <div className="h-13 w-full rounded-[16px] bg-white border border-slate-200 flex items-center px-6 text-[14px] text-black/70 font-regular font-inter hover:border-[#2D4A43]/30 transition-all cursor-text shadow-sm">
                             Add institute
                           </div>
                         </div>
@@ -605,7 +595,7 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
                           ].map((inst) => (
                             <div
                               key={inst}
-                              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-[12px] font-bold text-slate-600 transition-all hover:bg-slate-50 shadow-sm"
+                              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-[12px] font-medium font-inter text-slate-600 transition-all hover:bg-slate-50 shadow-sm"
                             >
                               {inst}
                               <X className="h-4 w-4 cursor-pointer text-slate-400 hover:text-rose-500 transition-colors" />
@@ -625,13 +615,13 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
                 <div className="h-10 w-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-500">
                   <Upload className="h-5 w-5" />
                 </div>
-                <h4 className="text-[16px] font-bold text-slate-900">
+                <h4 className="text-[18px] font-medium font-inter text-black">
                   Publishing Status
                 </h4>
               </div>
 
               <div className="bg-slate-50/50 rounded-[24px] p-8 space-y-8 border border-slate-100/50">
-                <p className="text-[14px] font-bold text-slate-800">
+                <p className="text-[16px] font-medium font-inter text-black">
                   Set initial publishing status
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -641,10 +631,10 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
                         <div className="h-3 w-3 rounded-full bg-[#2D4A43]" />
                       </div>
                       <div className="flex flex-col gap-1.5">
-                        <span className="text-[16px] font-black text-[#2D4A43]">
+                        <span className="text-[16px] font-medium font-inter text-black">
                           Draft
                         </span>
-                        <span className="text-[13px] font-bold text-slate-400">
+                        <span className="text-[14px] font-regular font-inter text-black/70">
                           Only visible to administrators
                         </span>
                       </div>
@@ -657,10 +647,10 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
                         {/* Not selected */}
                       </div>
                       <div className="flex flex-col gap-1.5">
-                        <span className="text-[16px] font-black text-slate-900">
+                        <span className="text-[16px] font-medium fonnt-inter text-black">
                           Global
                         </span>
-                        <span className="text-[13px] font-bold text-slate-400">
+                        <span className="text-[14px] font-regular font-inter text-black/70">
                           Available to all institutes and students across the
                           platform
                         </span>
@@ -676,9 +666,9 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
 
       {step === 5 && (
         <div className="rounded-[32px] bg-white shadow-sm border border-slate-100 p-8 md:p-12 space-y-10 animate-in fade-in slide-in-from-bottom-6 duration-500">
-          <h3 className="text-[20px] font-bold text-[#2D4A43] tracking-tight">
+          <h3 className="text-[18px] font-semibold font-inter text-black/80 tracking-tight">
             Step: 5{" "}
-            <span className="text-slate-900 border-l border-slate-200 ml-3 pl-3">
+            <span className="text-[#31564E] text-[20px] font-semibold font-inter border-l border-slate-200 ml-3 pl-3">
               Review & Publish
             </span>
           </h3>
@@ -691,13 +681,13 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
                   <div className="h-10 w-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-500">
                     <Info className="h-5 w-5" />
                   </div>
-                  <h4 className="text-[16px] font-bold text-slate-900">
+                  <h4 className="text-[18px] font-medium fonnt-inter text-[#0F172A]">
                     Course Information
                   </h4>
                 </div>
                 <button
                   onClick={() => setStep(1)}
-                  className="text-[13px] font-bold text-slate-400 hover:text-[#2D4A43] transition-colors"
+                  className="text-[16px] font-medium font-inter text-[#31564E] hover:text-[#2D4A43] transition-colors"
                 >
                   Edit Info
                 </button>
@@ -705,34 +695,34 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-12">
                 <div className="space-y-1.5">
-                  <p className="text-[12px] font-bold text-slate-400 capitalize">
+                  <p className="text-[14px] font-regular font-inter text-black capitalize">
                     Title
                   </p>
-                  <p className="text-[15px] font-black text-slate-900 leading-tight">
+                  <p className="text-[18px] font-semibold font-inter text-[#0F172A] leading-tight">
                     {courseData.title || "Advanced Business English"}
                   </p>
                 </div>
                 <div className="space-y-1.5">
-                  <p className="text-[12px] font-bold text-slate-400 capitalize">
+                  <p className="text-[14px] font-regular font-inter text-black capitalize">
                     Level
                   </p>
-                  <p className="text-[15px] font-black text-slate-900">
+                  <p className="text-[18px] font-semibold font-inter text-[#0F172A] ">
                     Expert Level
                   </p>
                 </div>
                 <div className="space-y-1.5">
-                  <p className="text-[12px] font-bold text-slate-400 capitalize">
+                  <p className="text-[14px] font-regular font-inter text-black capitalize">
                     Category
                   </p>
-                  <p className="text-[15px] font-black text-slate-900">
+                  <p className="text-[18px] font-semibold font-inter text-[#0F172A]">
                     Professional Skills
                   </p>
                 </div>
                 <div className="space-y-1.5">
-                  <p className="text-[12px] font-bold text-slate-400 capitalize">
+                  <p className="text-[14px] font-regular font-inter text-black capitalize">
                     Duration
                   </p>
-                  <p className="text-[15px] font-black text-slate-900">
+                  <p className="text-[18px] font-semibold font-inter text-[#0F172A]">
                     {courseData.duration || "12 Hours Total"}
                   </p>
                 </div>
@@ -746,13 +736,13 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
                   <div className="h-10 w-10 rounded-xl bg-[#E0E7FF] flex items-center justify-center text-[#4F46E5]">
                     <BookOpen className="h-5 w-5" />
                   </div>
-                  <h4 className="text-[16px] font-bold text-slate-900">
+                  <h4 className="text-[18px] font-medium font-inter text-[#0F172A]">
                     Curriculum Summary
                   </h4>
                 </div>
                 <button
                   onClick={() => setStep(2)}
-                  className="text-[13px] font-bold text-slate-400 hover:text-[#2D4A43] transition-colors"
+                  className="text-[16px] font-medium font-inter text-[#31564E] hover:text-[#2D4A43] transition-colors"
                 >
                   View Full Curriculum
                 </button>
@@ -764,10 +754,10 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
                     <FileText className="h-6 w-6" />
                   </div>
                   <div>
-                    <p className="text-[18px] font-black text-slate-900">
+                    <p className="text-[20px] font-semibold font-inter text-[#0F172A]">
                       {modules.length.toString().padStart(2, "0")}
                     </p>
-                    <p className="text-[12px] font-bold text-slate-400">
+                    <p className="text-[14px] font-regular font-inter text-[#0F172A]">
                       Total Modules
                     </p>
                   </div>
@@ -777,8 +767,10 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
                     <FileText className="h-6 w-6" />
                   </div>
                   <div>
-                    <p className="text-[18px] font-black text-slate-900">42</p>
-                    <p className="text-[12px] font-bold text-slate-400">
+                    <p className="text-[20px] font-semibold font-inter text-[#0F172A]">
+                      42
+                    </p>
+                    <p className="text-[14px] font-regular font-inter text-black">
                       Total Lessons
                     </p>
                   </div>
@@ -794,10 +786,10 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
                     <div className="flex items-center gap-4">
                       <GripHorizontal className="h-4 w-4 text-slate-300" />
                       <div>
-                        <h5 className="text-[14px] font-black text-slate-900">
+                        <h5 className="text-[18px] font-medium font-inter text-black">
                           Module {num}: Professional Introductions & Networking
                         </h5>
-                        <p className="text-[11px] font-bold text-slate-400 mt-0.5">
+                        <p className="text-[12px] font-medium font-inter text-black/70 mt-0.5">
                           4 Lessons • 1h 45m
                         </p>
                       </div>
@@ -815,13 +807,13 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
                   <div className="h-10 w-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-500">
                     <Eye className="h-5 w-5" />
                   </div>
-                  <h4 className="text-[16px] font-bold text-slate-900">
+                  <h4 className="text-[18px] font-medium font-inter text-[#0F172A]">
                     Visibility Access
                   </h4>
                 </div>
                 <button
                   onClick={() => setStep(4)}
-                  className="text-[13px] font-bold text-slate-400 hover:text-[#2D4A43] transition-colors"
+                  className="text-[16px] font-medium font-inter text-[#31564E] hover:text-[#2D4A43] transition-colors"
                 >
                   View Full Curriculum
                 </button>
@@ -829,26 +821,26 @@ const AddCourse = ({ onBack, onSuccess }: AddCourseProps) => {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-y-8 gap-x-12">
                 <div className="space-y-1.5">
-                  <p className="text-[12px] font-bold text-slate-400 capitalize">
+                  <p className="text-[14px] font-regular font-inter text-black capitalize">
                     Scope
                   </p>
-                  <p className="text-[15px] font-black text-slate-900">
+                  <p className="text-[18px] font-semibold font-inter text-[#0F172A]">
                     Selected Institutes
                   </p>
                 </div>
                 <div className="space-y-1.5">
-                  <p className="text-[12px] font-bold text-slate-400 capitalize">
+                  <p className="text-[14px] font-regular font-inter text-black capitalize">
                     Institutes
                   </p>
-                  <p className="text-[15px] font-black text-slate-900">
+                  <p className="text-[18px] font-semibold font-inter text-[#0F172A]">
                     12 Selected
                   </p>
                 </div>
                 <div className="space-y-1.5">
-                  <p className="text-[12px] font-bold text-slate-400 capitalize">
+                  <p className="text-[14px] font-regular font-inter text-black capitalize">
                     Access Level
                   </p>
-                  <p className="text-[15px] font-black text-blue-500">
+                  <p className="text-[16px] font-semibold font-inter text-[#007FFF]">
                     Premium
                   </p>
                 </div>

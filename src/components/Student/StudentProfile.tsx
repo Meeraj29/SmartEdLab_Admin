@@ -127,38 +127,42 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
 
             <div className="flex flex-col gap-2 w-full">
               <div className="flex flex-col sm:flex-row items-center gap-3">
-                <h2 className="text-2xl font-semibold text-foreground">
+                <h2 className="text-[20px] font-inter font-semibold text-black">
                   Sarah Jenkins
                 </h2>
-                <span className="px-3 py-1 rounded-sm text-black text-xs font-medium border border-[#FF7F38] bg-[#FF7F38]/30">
+                <span className="px-3 py-1 rounded-sm text-black/80 text-[16px] font-inter font-medium border border-[#FF7F38] bg-[#FF7F38]/30">
                   Premium AI
                 </span>
               </div>
-              <p className="text-sm text-muted-foreground font-medium">
+              <p className="text-[16px] font-inter font-regular text-black/70">
                 sarah.j@example.com
               </p>
 
               <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-6 gap-y-3 mt-3 sm:mt-1">
                 <div className="flex items-center gap-2 text-sm">
                   <CheckCircle2 className="h-4 w-4 text-blue-500" />
-                  <span className="text-slate-500 font-medium whitespace-nowrap">
+                  <span className="text-black/80 text-[16px] font-regular font-inter whitespace-nowrap">
                     Status:
                   </span>
-                  <span className="text-blue-600 font-bold">Active</span>
+                  <span className="text-black/ text-[16px] font-medium font--inter">
+                    Active
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <Calendar className="h-4 w-4 text-slate-400" />
-                  <span className="text-slate-500 font-medium whitespace-nowrap">
+                  <span className="text-black/80 font-regular font-inter text-[16px] whitespace-nowrap">
                     Joined:
                   </span>
-                  <span className="text-foreground font-bold whitespace-nowrap">
+                  <span className="text-black font-medium font-inter text-[16px] whitespace-nowrap">
                     Dec 15, 2025
                   </span>
                 </div>
-                <div className="flex items-center gap-2 text-sm text-red-500">
+                <div className="flex items-center gap-2 text-sm text-black">
                   <Calendar className="h-4 w-4" />
-                  <span className="font-medium whitespace-nowrap">Expiry:</span>
-                  <span className="font-bold whitespace-nowrap">
+                  <span className="text-black/80 font-regular font-inter text-[16px] whitespace-nowrap">
+                    Expiry:
+                  </span>
+                  <span className="text-black font-medium font-inter text-[16px] whitespace-nowrap">
                     April 12, 2026
                   </span>
                 </div>
@@ -172,30 +176,30 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
           >
             <Button
               variant="outline"
-              className="h-11 w-full sm:w-auto rounded-xl px-6 border-[#31564E] text-[#31564E] hover:bg-[#31564E] hover:text-white font-medium text-md transition-all"
+              className="h-11 w-full sm:w-auto rounded-xl px-6 border-[#31564E] text-[#31564E] hover:bg-[#31564E] hover:text-white font-medium text-[16px] font-inter  transition-all"
             >
               Extend Subscription
             </Button>
 
             <div className="flex items-center gap-3 w-full sm:w-auto">
-              <Button className="h-11 flex-1 sm:w-auto sm:px-8 bg-black text-white font-medium text-md hover:bg-black/90 transition-all rounded-xl">
+              <Button className="h-11 flex-1 sm:w-auto sm:px-8 bg-black text-white font-medium text-[16px] font-inter hover:bg-black/90 transition-all rounded-xl">
                 Upgrade Plan
               </Button>
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="h-11 w-11 shrink-0 flex items-center justify-center rounded-xl border border-slate-200 hover:bg-slate-100 shadow-sm transition-colors"
               >
-                <MoreVertical className="h-5 w-5 text-slate-500" />
+                <MoreVertical className="h-5 w-5 text-black" />
               </button>
             </div>
 
             {/* Dropdown Menu - Simplified */}
             {isMenuOpen && (
               <div className="absolute right-0 top-full mt-2 w-44 rounded-xl bg-white shadow-xl border border-slate-100 py-1 z-50">
-                <button className="w-full px-4 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 transition-all text-left">
+                <button className="w-full px-4 py-2.5 text-[14px] font-regular font-inter  text-black hover:bg-slate-50 transition-all text-left">
                   Reset Password
                 </button>
-                <button className="w-full px-4 py-2.5 text-sm font-medium text-red-500 hover:bg-slate-50 transition-all text-left">
+                <button className="w-full px-4 py-2.5 text-[14px] font-regular font-inter  text-[#FF3939] hover:bg-slate-50 transition-all text-left">
                   Suspend Account
                 </button>
               </div>
@@ -212,7 +216,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
               key={tab}
               onClick={() => setActiveTab(tab)}
               className={cn(
-                "pb-4 text-[15px] font-bold transition-all whitespace-nowrap relative px-1",
+                "pb-4 text-[18px] font-semibold font-inter transition-all whitespace-nowrap relative px-1",
                 activeTab === tab
                   ? "text-black after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[3px] after:bg-[#31564E] after:rounded-full"
                   : "text-black/40 hover:text-black/60"
@@ -232,10 +236,10 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
             <div className="rounded-[14px] bg-white shadow-sm border border-border/50 p-6 md:p-7">
               <div className="flex items-start justify-between mb-4">
                 <div className="space-y-1">
-                  <span className="text-2xl font-inter font-semibold text-foreground">
+                  <span className="text-[26px] font-inter font-semibold text-black">
                     12/20
                   </span>
-                  <p className="text-sm font-inter font-medium text-black">
+                  <p className="text-[16px] font-inter font-medium text-black">
                     Modules Completed
                   </p>
                 </div>
@@ -243,7 +247,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                   <LayoutGrid className="h-5 w-5" />
                 </div>
               </div>
-              <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden mt-4">
+              <div className="h-2 w-full bg-[#DDDDDD] rounded-full overflow-hidden mt-4">
                 <div className="h-full w-[60%] bg-[#0D7FF2] rounded-full" />
               </div>
             </div>
@@ -252,10 +256,10 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
             <div className="rounded-[14px] bg-white shadow-sm border border-border/50 p-6 md:p-7">
               <div className="flex items-start justify-between mb-4">
                 <div className="space-y-1">
-                  <span className="text-2xl font-inter font-semibold text-foreground">
+                  <span className="text-[26px] font-inter font-semibold text-black">
                     45/60
                   </span>
-                  <p className="text-sm font-inter font-medium text-black">
+                  <p className="text-[16px] font-inter font-medium text-black">
                     Lessons Completed
                   </p>
                 </div>
@@ -263,7 +267,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                   <BookOpen className="h-5 w-5" />
                 </div>
               </div>
-              <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden mt-4">
+              <div className="h-2 w-full bg-[#DDDDDD] rounded-full overflow-hidden mt-4">
                 <div className="h-full w-[75%] bg-[#0D7FF2] rounded-full" />
               </div>
             </div>
@@ -272,10 +276,10 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
             <div className="rounded-[14px] bg-white shadow-sm border border-border/50 p-6 md:p-7">
               <div className="flex items-start justify-between mb-4">
                 <div className="space-y-1">
-                  <span className="text-2xl font-inter font-semibold text-foreground">
+                  <span className="text-[26px] font-inter font-semibold text-black">
                     45 hrs
                   </span>
-                  <p className="text-sm font-inter font-medium text-black">
+                  <p className="text-[16px] font-inter font-medium text-black">
                     Total Learning Time
                   </p>
                 </div>
@@ -287,7 +291,9 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                 <div className="flex items-center rotate-[-45deg]">
                   <ArrowLeft className="h-3 w-3" />
                 </div>
-                <span className="text-sm font-bold">+5.2 hrs this week</span>
+                <span className="text-[14px] font-inter font-medium text-[#248F5F]">
+                  +5.2 hrs this week
+                </span>
               </div>
             </div>
 
@@ -295,10 +301,10 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
             <div className="rounded-[14px] bg-white shadow-sm border border-border/50 p-6 md:p-7">
               <div className="flex items-start justify-between mb-4">
                 <div className="space-y-1">
-                  <span className="text-2xl font-inter font-semibold text-foreground">
+                  <span className="text-[26px] font-inter font-semibold text-black">
                     2 hrs ago
                   </span>
-                  <p className="text-sm font-inter font-medium text-black">
+                  <p className="text-[16px] font-inter font-medium text-black">
                     Last Activity
                   </p>
                 </div>
@@ -306,7 +312,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                   <History className="h-5 w-5" />
                 </div>
               </div>
-              <p className="text-xs font-bold text-slate-400 mt-4">
+              <p className="text-[14px] font-regular font-inter text-black/60 mt-4">
                 Interactive Quiz: Speaking
               </p>
             </div>
@@ -316,10 +322,10 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
             {/* LSRW Skill Progress Card */}
             <div className="rounded-[14px] bg-white shadow-sm border border-border/50 p-6 md:p-7">
               <div className="flex items-center justify-between mb-8">
-                <h3 className="text-xl font-semibold font-inter text-foreground">
+                <h3 className="text-[20px] font-semibold font-inter text-black">
                   LSRW Skill Progress
                 </h3>
-                <button className="text-md font-medium text-[#31564E] hover:underline">
+                <button className="text-[16px] font-medium font-inter text-[#31564E] hover:underline">
                   View Details
                 </button>
               </div>
@@ -354,14 +360,14 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                   <div key={i} className="space-y-2">
                     <div className="flex items-center justify-between">
                       <div className="flex flex-col">
-                        <span className="text-sm font-inter text-foreground leading-tight">
+                        <span className="text-[14px] font-regular font-inter text-black leading-tight">
                           {skill.label}
                         </span>
-                        <span className="text-[12px] font-inter text-[#000000]/60">
+                        <span className="text-[12px] font-regular font-inter text-[#000000]/60">
                           {skill.sub}
                         </span>
                       </div>
-                      <span className="text-lg font-inter font-medium text-foreground">
+                      <span className="text-[18px] font-medium font-inter text-black">
                         {skill.value}
                       </span>
                     </div>
@@ -382,17 +388,17 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
             <div className="lg:col-span-2 rounded-[24px] bg-white shadow-sm border border-border/50 p-6 md:p-8">
               <div className="flex flex-col sm:flex-row justify-between items-start gap-4 mb-6">
                 <div className="space-y-1">
-                  <h3 className="text-lg font-medium font-inter text-foreground">
+                  <h3 className="text-[18px] font-medium font-inter text-black">
                     Student Progress Over Time
                   </h3>
-                  <p className="text-[14px] font-inter text-black/70">
+                  <p className="text-[14px] font-regular font-inter text-black/70">
                     Learning Hours vs. Date (Last 30 Days)
                   </p>
                 </div>
                 <div className="relative" ref={chartDropdownRef}>
                   <button
                     onClick={() => setIsChartDropdownOpen(!isChartDropdownOpen)}
-                    className="flex items-center justify-between gap-3 px-4 py-2 border border-slate-200 rounded-xl text-xs font-bold text-foreground hover:bg-slate-50 transition-all min-w-[140px]"
+                    className="flex items-center justify-between gap-3 px-4 py-2 border border-slate-200 rounded-xl text-[14px] font-regular font-inter text-black hover:bg-slate-50 transition-all min-w-[140px]"
                   >
                     {selectedPeriod}
                     <ChevronDown
@@ -413,7 +419,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                               setSelectedPeriod(period);
                               setIsChartDropdownOpen(false);
                             }}
-                            className="w-full px-4 py-2 text-sm font-inter text-black hover:bg-slate-50 transition-all text-left"
+                            className="w-full px-4 py-2 text-[14px] font-regular font-inter text-black hover:bg-slate-50 transition-all text-left"
                           >
                             {period}
                           </button>
@@ -505,15 +511,17 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                 {/* Tooltip Overlay */}
                 <div className="absolute left-[70%] top-[45px] -translate-x-1/2">
                   <div className="bg-[#1C3A34] text-white px-3 py-1.5 rounded-lg shadow-xl text-[10px] font-bold relative after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-l-4 after:border-l-transparent after:border-r-4 after:border-r-transparent after:border-t-4 after:border-t-[#1C3A34]">
-                    <div className="text-[8px] text-slate-300 font-medium">
+                    <div className="text-[12px] text-white font-bold font-inter">
                       Oct 24
                     </div>
-                    <div>3.5 hrs</div>
+                    <div className="text-[12px] text-white font-regular font-inter">
+                      3.5 hrs
+                    </div>
                   </div>
                 </div>
 
                 {/* X-Axis Labels */}
-                <div className="absolute -bottom-8 left-0 right-0 flex items-center justify-between text-[10px] font-bold text-slate-400 px-2 leading-none">
+                <div className="absolute -bottom-8 left-0 right-0 flex items-center justify-between text-[10px] font-medium font-inter text-[#94A3B8] px-2 leading-none">
                   <span>Oct 1</span>
                   <span className="hidden sm:inline">Oct 7</span>
                   <span>Oct 14</span>
@@ -528,10 +536,10 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
           {/* Recent Learning Milestones Table */}
           <div className="rounded-[14px] bg-white shadow-sm border border-border/50 overflow-hidden">
             <div className="p-6 md:p-7 border-b border-border/50 flex items-center justify-between">
-              <h3 className="text-xl font-semibold font-inter text-foreground">
+              <h3 className="text-[20px] font-semibold font-inter text-black">
                 Recent Learning Milestones
               </h3>
-              <button className="flex items-center gap-2 px-4 py-2 border border-slate-200 rounded-xl text-xs font-bold text-slate-500 hover:bg-slate-50 transition-all">
+              <button className="flex items-center gap-2 px-4 py-2 border border-slate-200 rounded-xl text-[16px] font-regular font-inter text-[#31564E] hover:bg-slate-50 transition-all">
                 <SlidersHorizontal className="h-4 w-4" />
                 Filters
               </button>
@@ -541,19 +549,19 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
               <table className="w-full">
                 <thead className="bg-[#F8FAFB]">
                   <tr>
-                    <th className="px-6 md:px-8 py-5 text-left text-md font-medium font-inter text-black/80 ">
+                    <th className="px-6 md:px-8 py-5 text-left text-[16px] font-medium font-inter text-black/80 ">
                       Module/Lesson
                     </th>
-                    <th className="px-6 md:px-8 py-5 text-left text-md font-medium font-inter text-black/80">
+                    <th className="px-6 md:px-8 py-5 text-left text-[16px] font-medium font-inter text-black/80">
                       Skill Category
                     </th>
-                    <th className="px-6 md:px-8 py-5 text-left text-md font-medium font-inter text-black/80">
+                    <th className="px-6 md:px-8 py-5 text-left text-[16px] font-medium font-inter text-black/80">
                       Duration
                     </th>
-                    <th className="px-6 md:px-8 py-5 text-left text-md font-medium font-inter text-black/80">
+                    <th className="px-6 md:px-8 py-5 text-left text-[16px] font-medium font-inter text-black/80">
                       Result
                     </th>
-                    <th className="px-6 md:px-8 py-5 text-left text-md font-medium font-inter text-black/80">
+                    <th className="px-6 md:px-8 py-5 text-left text-[16px] font-medium font-inter text-black/80">
                       Completion Date
                     </th>
                   </tr>
@@ -563,10 +571,10 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                     {
                       module: "Intermediate Grammar II",
                       skill: "Reading",
-                      color: "bg-[#007FFF]/30 text-[#007FFF] border-[#007FFF]",
+                      color: "bg-[#007FFF]/30 text-[#007FFF] border-[#31564E]",
                       duration: "45 Mins",
                       result: "94% Score",
-                      resColor: "text-green-600",
+                      resColor: "text-[#248F5F]",
                       date: "Oct 28, 2025",
                     },
                     {
@@ -575,7 +583,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                       color: "bg-[#823DFA]/30 text-[#823DFA] border-[#823DFA]",
                       duration: "45 Mins",
                       result: "B2 Proficiency",
-                      resColor: "text-foreground",
+                      resColor: "text-black",
                       date: "Oct 28, 2025",
                     },
                     {
@@ -584,7 +592,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                       color: "bg-[#FF7F38]/30 text-[#FF7F38] border-[#FF7F38]",
                       duration: "45 Mins",
                       result: "94% Score",
-                      resColor: "text-green-600",
+                      resColor: "text-[#248F5F]",
                       date: "Oct 28, 2025",
                     },
                     {
@@ -593,7 +601,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                       color: "bg-[#007FFF]/30 text-[#007FFF] border-[#007FFF]",
                       duration: "45 Mins",
                       result: "94% Score",
-                      resColor: "text-green-600",
+                      resColor: "text-[#248F5F]",
                       date: "Oct 28, 2025",
                     },
                     {
@@ -602,7 +610,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                       color: "bg-[#823DFA]/30 text-[#823DFA] border-[#823DFA]",
                       duration: "45 Mins",
                       result: "B2 Proficiency",
-                      resColor: "text-foreground",
+                      resColor: "text-black",
                       date: "Oct 28, 2025",
                     },
                     {
@@ -611,7 +619,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                       color: "bg-[#FF7F38]/30 text-[#FF7F38] border-[#FF7F38]",
                       duration: "45 Mins",
                       result: "94% Score",
-                      resColor: "text-green-600",
+                      resColor: "text-[#248F5F]",
                       date: "Oct 28, 2025",
                     },
                   ].map((row, i) => (
@@ -620,14 +628,14 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                       className="hover:bg-slate-50/50 transition-colors"
                     >
                       <td className="px-6 md:px-8 py-5">
-                        <span className="text-md font-medium font-inter text-foreground">
+                        <span className="text-[16px] font-medium font-inter text-black">
                           {row.module}
                         </span>
                       </td>
                       <td className="px-6 md:px-8 py-5">
                         <span
                           className={cn(
-                            "px-3 py-1 rounded-sm text-md font-medium font-inter border",
+                            "px-3 py-1 rounded-sm text-[16px]  font-medium font-inter border",
                             row.color
                           )}
                         >
@@ -635,14 +643,14 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                         </span>
                       </td>
                       <td className="px-6 md:px-8 py-5">
-                        <span className="text-md font-medium font-inter text-foreground">
+                        <span className="text-[16px] font-medium font-inter text-black">
                           {row.duration}
                         </span>
                       </td>
                       <td className="px-6 md:px-8 py-5">
                         <span
                           className={cn(
-                            "text-md font-medium font-inter text-[#248F5F]",
+                            "text-[16px] font-medium font-inter text-[#248F5F]",
                             row.resColor
                           )}
                         >
@@ -650,7 +658,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                         </span>
                       </td>
                       <td className="px-6 md:px-8 py-5">
-                        <span className="text-md font-medium font-inter text-foreground">
+                        <span className="text-[16px] font-medium font-inter text-black">
                           {row.date}
                         </span>
                       </td>
@@ -661,7 +669,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
             </div>
 
             <div className="p-6 text-center">
-              <button className="text-md font-inter font-medium text-[#31564E] hover:underline decoration-2 underline-offset-4">
+              <button className="text-[18px] font-inter font-medium text-[#31564E] hover:underline decoration-2 underline-offset-4">
                 Load More....
               </button>
             </div>
@@ -677,10 +685,10 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
             <div className="rounded-[14px] bg-white shadow-sm border border-border/50 p-6 flex flex-col justify-between h-[160px]">
               <div className="flex items-start justify-between">
                 <div className="space-y-2">
-                  <span className="text-2xl font-inter font-semibold text-foreground">
+                  <span className="text-[26px] font-inter font-semibold text-black">
                     24
                   </span>
-                  <p className="text-md font-inter font-medium text-black mt-2">
+                  <p className="text-[16px] font-inter font-medium text-black mt-2">
                     Total Tests Taken
                   </p>
                 </div>
@@ -688,9 +696,11 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                   <ClipboardList className="h-6 w-6" />
                 </div>
               </div>
-              <div className="flex items-center gap-1.5 text-green-600">
+              <div className="flex items-center gap-1.5 text-[#248F5F]">
                 <TrendingUp className="h-4 w-4" />
-                <span className="text-sm font-bold">+0%</span>
+                <span className="text-[14px] font-inter font-medium text-[#248F5F]">
+                  +0%
+                </span>
               </div>
             </div>
 
@@ -698,10 +708,10 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
             <div className="rounded-[14px] bg-white shadow-sm border border-border/50 p-6 flex flex-col justify-between h-[160px]">
               <div className="flex items-start justify-between">
                 <div className="space-y-2">
-                  <span className="text-2xl font-inter font-semibold text-foreground">
+                  <span className="text-[26px] font-inter font-semibold text-black">
                     82%
                   </span>
-                  <p className="text-md font-inter font-medium text-black mt-2">
+                  <p className="text-[16px] font-inter font-medium text-black mt-2">
                     Average Score
                   </p>
                 </div>
@@ -709,9 +719,11 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                   <BarChart3 className="h-6 w-6" />
                 </div>
               </div>
-              <div className="flex items-center gap-1.5 text-green-600">
+              <div className="flex items-center gap-1.5 text-[#248F5F]">
                 <TrendingUp className="h-4 w-4" />
-                <span className="text-sm font-bold">+2%</span>
+                <span className="text-[14px] font-inter font-medium text-[#248F5F]">
+                  +2%
+                </span>
               </div>
             </div>
 
@@ -719,10 +731,10 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
             <div className="rounded-[14px] bg-white shadow-sm border border-border/50 p-6 flex flex-col justify-between h-[160px]">
               <div className="flex items-start justify-between">
                 <div className="space-y-2">
-                  <span className="text-2xl font-inter font-semibold text-foreground">
+                  <span className="text-[26px] font-inter font-semibold text-black">
                     95%
                   </span>
-                  <p className="text-md font-inter font-medium text-black mt-2">
+                  <p className="text-[16px] font-inter font-medium text-black mt-2">
                     Pass Rate
                   </p>
                 </div>
@@ -730,9 +742,11 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                   <Award className="h-6 w-6" />
                 </div>
               </div>
-              <div className="flex items-center gap-1.5 text-green-600">
+              <div className="flex items-center gap-1.5 text-[#248F5F]">
                 <TrendingUp className="h-4 w-4" />
-                <span className="text-sm font-bold">+5.2</span>
+                <span className="text-[14px] font-inter font-medium text-[#248F5F]">
+                  +5.2
+                </span>
               </div>
             </div>
 
@@ -740,10 +754,10 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
             <div className="rounded-[14px] bg-white shadow-sm border border-border/50 p-6 flex flex-col justify-between h-[160px]">
               <div className="flex items-start justify-between">
                 <div className="space-y-2">
-                  <span className="text-2xl font-inter font-semibold text-foreground">
+                  <span className="text-[26px] font-inter font-semibold text-black">
                     +12%
                   </span>
-                  <p className="text-md font-inter font-medium text-black mt-2">
+                  <p className="text-[16px] font-inter font-medium text-black mt-2">
                     Improvement Trend
                   </p>
                 </div>
@@ -751,9 +765,11 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                   <TrendingUp className="h-6 w-6" />
                 </div>
               </div>
-              <div className="flex items-center gap-1.5 text-green-600">
+              <div className="flex items-center gap-1.5 text-[#248F5F]">
                 <TrendingUp className="h-4 w-4" />
-                <span className="text-sm font-bold">Vs last month</span>
+                <span className="text-[14px] font-inter font-medium text-[#248F5F]">
+                  Vs last month
+                </span>
               </div>
             </div>
           </div>
@@ -762,10 +778,10 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
           <div className="rounded-[14px] bg-white shadow-sm border border-border/50 p-6 md:p-8">
             <div className="flex flex-col sm:flex-row justify-between items-start gap-4 mb-8">
               <div className="space-y-1">
-                <h3 className="text-xl font-medium font-inter text-foreground">
+                <h3 className="text-[18px] font-medium font-inter text-black">
                   Student Progress Over Time
                 </h3>
-                <p className="text-sm font-inter text-black/70">
+                <p className="text-[14px] font-inter font-regular text-black/70">
                   Learning Hours vs. Date (Last 30 Days)
                 </p>
               </div>
@@ -774,7 +790,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                   onClick={() =>
                     setIsAssessChartDropdownOpen(!isAssessChartDropdownOpen)
                   }
-                  className="flex items-center justify-between gap-3 px-4 py-2 border border-slate-200 rounded-xl text-xs font-bold text-foreground hover:bg-slate-50 transition-all min-w-[140px]"
+                  className="flex items-center justify-between gap-3 px-4 py-2 border border-slate-200 rounded-xl text-[14px] font-inter font-regular text-black hover:bg-slate-50 transition-all min-w-[140px]"
                 >
                   {selectedAssessPeriod}
                   <ChevronDown
@@ -794,7 +810,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                           setSelectedAssessPeriod(period);
                           setIsAssessChartDropdownOpen(false);
                         }}
-                        className="w-full px-4 py-2 text-sm font-inter text-black hover:bg-slate-50 transition-all text-left"
+                        className="w-full px-4 py-2 text-[14px] font-inter font-regular text-black hover:bg-slate-50 transition-all text-left"
                       >
                         {period}
                       </button>
@@ -809,7 +825,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
               <div className="absolute inset-0 flex flex-col justify-between">
                 {[100, 75, 50, 25, 0].map((val) => (
                   <div key={val} className="flex items-center gap-4 w-full">
-                    <span className="text-[10px] font-bold text-slate-400 w-8">
+                    <span className="text-[10px] font-bold font-inter text-[#94A3B8] w-8">
                       {val}%
                     </span>
                     <div className="h-[1px] flex-1 bg-slate-100" />
@@ -908,7 +924,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
               </div>
 
               {/* X-Axis Labels */}
-              <div className="absolute -bottom-8 left-8 md:left-12 right-2 flex items-center justify-between text-[10px] sm:text-[11px] font-bold text-slate-400 px-1">
+              <div className="absolute -bottom-8 left-8 md:left-12 right-2 flex items-center justify-between text-[11px] sm:text-[11px] font-bold font-inter text-[#94A3B8] px-1">
                 <span>MAY</span>
                 <span className="hidden sm:inline">JUN</span>
                 <span>JUL</span>
@@ -922,13 +938,13 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
           {/* Recent Assessments Table */}
           <div className="rounded-[14px] bg-white shadow-sm border border-border/50 overflow-hidden mt-8">
             <div className="p-6 md:p-7 border-b border-border/50 flex flex-col md:flex-row md:items-center justify-between gap-4">
-              <h3 className="text-xl font-semibold font-inter text-foreground">
+              <h3 className="text-[20px] font-semibold font-inter text-black">
                 Recent Assessments
               </h3>
 
               <Button
                 variant="outline"
-                className="h-10 rounded-xl px-6 gap-2 border-slate-200 text-md font-medium font-inter text-[#31564E] hover:bg-slate-50"
+                className="h-10 rounded-xl px-6 gap-2 border-slate-200 text-[16px] font-regular font-inter text-[#31564E] hover:bg-slate-50"
               >
                 <SlidersHorizontal className="h-4 w-4" />
                 All Status
@@ -939,29 +955,29 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
             <div className="overflow-x-auto">
               <table className="w-full text-left">
                 <thead>
-                  <tr className="bg-[#F8FAFB] text-black/80 border-b border-border/50 uppercase tracking-wider">
-                    <th className="px-6 md:px-8 py-5 text-md font-medium font-inter">
+                  <tr className="bg-[#F8FAFB] text-black/80 border-b border-border/50">
+                    <th className="px-6 md:px-8 py-5 text-[16px] font-medium font-inter text-black/80">
                       Test Name
                     </th>
-                    <th className="px-6 md:px-8 py-5 text-md font-medium font-inter">
+                    <th className="px-6 md:px-8 py-5 text-[16px] font-medium font-inter text-black/80">
                       <div className="flex items-center gap-2 cursor-pointer hover:text-foreground transition-colors group">
                         Attempts
                         <ChevronDown className="h-3.5 w-3.5 group-hover:translate-y-0.5 transition-transform" />
                       </div>
                     </th>
-                    <th className="px-6 md:px-8 py-5 text-md font-medium font-inter">
+                    <th className="px-6 md:px-8 py-5 text-[16px] font-medium font-inter text-black/80">
                       <div className="flex items-center gap-2 cursor-pointer hover:text-foreground transition-colors group">
                         Score
                         <ChevronDown className="h-3.5 w-3.5 group-hover:translate-y-0.5 transition-transform" />
                       </div>
                     </th>
-                    <th className="px-6 md:px-8 py-5 text-md font-medium font-inter">
+                    <th className="px-6 md:px-8 py-5 text-[16px] font-medium font-inter text-black/80">
                       Result
                     </th>
-                    <th className="px-6 md:px-8 py-5 text-md font-medium font-inter">
+                    <th className="px-6 md:px-8 py-5 text-[16px] font-medium font-inter text-black/80">
                       Date
                     </th>
-                    <th className="px-6 md:px-8 py-5 text-right font-medium font-inter">
+                    <th className="px-6 md:px-8 py-5 text-[16px] font-medium font-inter text-black/80">
                       Actions
                     </th>
                   </tr>
@@ -974,7 +990,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                       score: "88%",
                       result: "PASS",
                       resultColor:
-                        "bg-green-100 text-green-700 border-green-200",
+                        "bg-[#248F5F]/30 text-[#248F5F] border-[#248F5F]/30",
                       date: "Oct 28, 2023",
                     },
                     {
@@ -983,7 +999,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                       score: "75%",
                       result: "PASS",
                       resultColor:
-                        "bg-green-100 text-green-700 border-green-200",
+                        "bg-[#248F5F]/30 text-[#248F5F] border-[#248F5F]/30",
                       date: "Oct 15, 2023",
                     },
                     {
@@ -991,7 +1007,8 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                       attempts: "01",
                       score: "42%",
                       result: "Fail",
-                      resultColor: "bg-red-100 text-red-700 border-red-200",
+                      resultColor:
+                        "bg-[#FF3939]/30 text-[#FF3939] border-[#FF3939]/30",
                       date: "Sep 30, 2023",
                     },
                     {
@@ -1000,7 +1017,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                       score: "92%",
                       result: "PASS",
                       resultColor:
-                        "bg-green-100 text-green-700 border-green-200",
+                        "bg-[#248F5F]/30 text-[#248F5F] border-[#248F5F]/30",
                       date: "Sep 12, 2023",
                     },
                     {
@@ -1009,7 +1026,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                       score: "88%",
                       result: "PASS",
                       resultColor:
-                        "bg-green-100 text-green-700 border-green-200",
+                        "bg-[#248F5F]/30 text-[#248F5F] border-[#248F5F]/30",
                       date: "Oct 28, 2023",
                     },
                     {
@@ -1018,7 +1035,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                       score: "75%",
                       result: "PASS",
                       resultColor:
-                        "bg-green-100 text-green-700 border-green-200",
+                        "bg-[#248F5F]/30 text-[#248F5F] border-[#248F5F]/30",
                       date: "Oct 15, 2023",
                     },
                     {
@@ -1026,7 +1043,8 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                       attempts: "01",
                       score: "42%",
                       result: "Fail",
-                      resultColor: "bg-red-100 text-red-700 border-red-200",
+                      resultColor:
+                        "bg-[#FF3939]/30 text-[#FF3939] border-[#FF3939]/30",
                       date: "Sep 30, 2023",
                     },
                     {
@@ -1035,7 +1053,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                       score: "92%",
                       result: "PASS",
                       resultColor:
-                        "bg-green-100 text-green-700 border-green-200",
+                        "bg-[#248F5F]/30 text-[#248F5F] border-[#248F5F]/30",
                       date: "Sep 12, 2023",
                     },
                   ].map((item, idx) => (
@@ -1051,28 +1069,28 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                           <div className="h-10 w-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-500">
                             <FileText className="h-5 w-5" />
                           </div>
-                          <span className="text-md font-medium font-inter text-foreground">
+                          <span className="text-[16px] font-semibold font-inter text-black">
                             {item.name}
                           </span>
                         </div>
                       </td>
-                      <td className="px-6 md:px-8 py-5 font-medium font-inter text-black/80 text-md">
+                      <td className="px-6 md:px-8 py-5 font-medium font-inter text-black text-[16px]">
                         {item.attempts}
                       </td>
-                      <td className="px-6 md:px-8 py-5 font-medium font-inter text-black/80 text-md">
+                      <td className="px-6 md:px-8 py-5 font-medium font-inter text-black text-[16px]">
                         {item.score}
                       </td>
                       <td className="px-6 md:px-8 py-5">
                         <span
                           className={cn(
-                            "px-3 py-1 rounded-sm text-md font-medium font-inter border uppercase",
+                            "px-3 py-1 rounded-sm text-md font-medium font-inter border ",
                             item.resultColor
                           )}
                         >
                           {item.result}
                         </span>
                       </td>
-                      <td className="px-6 md:px-8 py-5 text-md font-medium font-inter text-black/80">
+                      <td className="px-6 md:px-8 py-5 text-[16px] font-medium font-inter text-black">
                         {item.date}
                       </td>
                       <td className="px-6 md:px-8 py-5 text-right">
@@ -1080,7 +1098,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                           <button className="p-2 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all">
                             {/* <Monitor className="h-4 w-4" /> */}
                           </button>
-                          <button className="p-2 text-slate-400 hover:text-foreground hover:bg-slate-100 rounded-lg transition-all">
+                          <button className="p-2 text-black hover:text-foreground hover:bg-slate-100 rounded-lg transition-all">
                             <MoreVertical className="h-4 w-4" />
                           </button>
                         </div>
@@ -1098,23 +1116,28 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
               </button>
 
               <div className="flex items-center gap-2">
-                <button className="h-10 w-10 flex items-center justify-center rounded-full border-2 border-[#31564E] bg-white text-[#31564E] font-bold shadow-sm">
+                <button className="h-10 w-10 flex items-center justify-center rounded-full border-3 border-[#31564E] bg-white text-[#31564E] font-regular font-inter text-[16px] shadow-sm">
                   1
                 </button>
-                <button className="h-10 w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-bold hover:bg-slate-50 transition-all">
+                <button className="h-10 w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-regular font-inter text-[16px] hover:bg-slate-50 transition-all">
                   2
                 </button>
                 <span className="px-2 text-slate-300 font-bold">...</span>
-                <button className="h-10 w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-bold hover:bg-slate-50 transition-all">
+                <button className="h-10 w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-regular font-inter text-[16px] hover:bg-slate-50 transition-all">
                   10
                 </button>
               </div>
 
               <div className="flex items-center gap-4">
-                <span className="text-sm font-medium text-slate-400">
+                <span className="text-[14px] font-inter font-regular text-[#64748B]">
                   Showing{" "}
-                  <span className="text-foreground font-black">1-8</span> of{" "}
-                  <span className="text-foreground font-black">1,540</span>
+                  <span className="text-[#0F172A] font-semibold text-[14px] font-inter">
+                    1-8
+                  </span>{" "}
+                  of{" "}
+                  <span className="text-[#0F172A] font-semibold text-[14px] font-inter">
+                    1,540
+                  </span>
                 </span>
                 <button className="h-12 w-12 flex items-center justify-center rounded-full bg-black text-white shadow-xl hover:bg-black/90 transition-all group">
                   <ArrowRight className="h-6 w-6 group-hover:translate-x-0.5 transition-transform" />
@@ -1133,10 +1156,10 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
             <div className="rounded-[14px] bg-white shadow-sm border border-border/50 p-6 flex flex-col justify-between h-[160px]">
               <div className="flex items-start justify-between">
                 <div className="space-y-2">
-                  <span className="text-2xl font-inter font-semibold text-foreground">
+                  <span className="text-[26px] font-inter font-semibold text-black">
                     128
                   </span>
-                  <p className="text-md font-inter font-medium text-black mt-2">
+                  <p className="text-[16px] font-inter font-medium text-black mt-2">
                     Total AI Sessions
                   </p>
                 </div>
@@ -1144,9 +1167,11 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                   <MessageSquare className="h-6 w-6" />
                 </div>
               </div>
-              <div className="flex items-center gap-1.5 text-green-600">
+              <div className="flex items-center gap-1.5 text-[#248F5F]">
                 <TrendingUp className="h-4 w-4" />
-                <span className="text-sm font-bold">+5.2</span>
+                <span className="text-[14px] font-medium font-inter text-[#248F5F]">
+                  +5.2
+                </span>
               </div>
             </div>
 
@@ -1154,10 +1179,10 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
             <div className="rounded-[14px] bg-white shadow-sm border border-border/50 p-6 flex flex-col justify-between h-[160px]">
               <div className="flex items-start justify-between">
                 <div className="space-y-2">
-                  <span className="text-2xl font-inter font-semibold text-foreground">
+                  <span className="text-[26px] font-inter font-semibold text-black">
                     45.2k
                   </span>
-                  <p className="text-md font-inter font-medium text-black mt-2">
+                  <p className="text-[16px] font-inter font-medium text-black mt-2">
                     Tokens Used
                   </p>
                 </div>
@@ -1165,9 +1190,11 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                   <Database className="h-6 w-6" />
                 </div>
               </div>
-              <div className="flex items-center gap-1.5 text-green-600">
+              <div className="flex items-center gap-1.5 text-[#248F5F]">
                 <TrendingUp className="h-4 w-4" />
-                <span className="text-sm font-bold">+5.2</span>
+                <span className="text-[14px] font-medium font-inter text-[#248F5F]">
+                  +5.2
+                </span>
               </div>
             </div>
 
@@ -1176,14 +1203,14 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
               <div className="flex items-start justify-between">
                 <div className="space-y-2">
                   <div className="flex items-baseline gap-1">
-                    <span className="text-2xl font-inter font-semibold text-foreground">
+                    <span className="text-[26px] font-inter font-semibold text-black">
                       8.4
                     </span>
-                    <span className="text-lg font-bold text-black/80">
+                    <span className="text-[20px] font-semibold  font-inter text-black/80">
                       / 10
                     </span>
                   </div>
-                  <p className="text-md font-inter font-medium text-black mt-2">
+                  <p className="text-[16px] font-inter font-medium text-black mt-2">
                     Avg Speaking Score
                   </p>
                 </div>
@@ -1191,9 +1218,11 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                   <Mic className="h-6 w-6" />
                 </div>
               </div>
-              <div className="flex items-center gap-1.5 text-green-600">
+              <div className="flex items-center gap-1.5 text-[#248F5F]">
                 <TrendingUp className="h-4 w-4" />
-                <span className="text-sm font-bold">+5.2</span>
+                <span className="text-[14px] font-medium font-inter text-[#248F5F]">
+                  +5.2
+                </span>
               </div>
             </div>
 
@@ -1202,14 +1231,14 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
               <div className="flex items-start justify-between">
                 <div className="space-y-2">
                   <div className="flex items-baseline gap-1">
-                    <span className="text-2xl font-inter font-semibold text-foreground">
+                    <span className="text-[26px] font-inter font-semibold text-black">
                       7.2
                     </span>
-                    <span className="text-lg font-bold text-black/80">
+                    <span className="text-[20px] font-semibold  font-inter text-black/80">
                       / 10
                     </span>
                   </div>
-                  <p className="text-md font-inter font-medium text-black mt-2">
+                  <p className="text-[16px] font-inter font-medium text-black mt-2">
                     Avg Writing Score
                   </p>
                 </div>
@@ -1217,9 +1246,11 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                   <PencilLine className="h-6 w-6" />
                 </div>
               </div>
-              <div className="flex items-center gap-1.5 text-green-600">
+              <div className="flex items-center gap-1.5 text-[#248F5F]">
                 <TrendingUp className="h-4 w-4" />
-                <span className="text-sm font-bold">+5.2</span>
+                <span className="text-[14px] font-medium font-inter text-[#248F5F]">
+                  +5.2
+                </span>
               </div>
             </div>
           </div>
@@ -1228,12 +1259,12 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
           <div className="rounded-[14px] bg-white shadow-sm border border-border/50 overflow-hidden mt-8">
             <div className="p-6 md:p-8 border-b border-border/50 flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div className="flex items-center gap-4">
-                <h3 className="text-xl font-semibold font-inter text-foreground">
+                <h3 className="text-[20px] font-semibold font-inter text-black">
                   AI Sessions History
                 </h3>
                 <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#DCDCDC] border border-slate-200">
                   <span className="h-2 w-2 bg-[#248F5F] animate-pulse" />
-                  <span className="text-md font-medium font-inter text-[#64748B]">
+                  <span className="text-[16px] font-medium font-inter text-[#64748B]">
                     Live Practice Active
                   </span>
                 </div>
@@ -1242,21 +1273,21 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
               <div className="flex flex-wrap items-center gap-3">
                 <Button
                   variant="outline"
-                  className="h-10 rounded-xl px-6 gap-2 border-slate-200 text-md font-inter text-[#31564E] hover:bg-slate-50"
+                  className="h-10 rounded-xl px-6 gap-2 border-slate-200 text-[16px] font-regular font-inter text-[#31564E] hover:bg-slate-50"
                 >
                   <SlidersHorizontal className="h-4 w-4" />
                   Adjust Token Limit
                 </Button>
                 <Button
                   variant="outline"
-                  className="h-10 rounded-xl px-6 gap-2 border-slate-200 text-md font-inter text-[#31564E] hover:bg-slate-50"
+                  className="h-10 rounded-xl px-6 gap-2 border-slate-200 text-[16px] font-regular font-inter text-[#31564E] hover:bg-slate-50"
                 >
                   <Search className="h-4 w-4" />
                   Investigate Usage
                 </Button>
                 <Button
                   variant="outline"
-                  className="h-10 rounded-xl px-6 gap-2 border-red-100 text-[#FF3939] hover:bg-red-50 hover:text-red-600 font-medium font-inter text-xs ring-offset-background"
+                  className="h-10 rounded-xl px-6 gap-2 border-red-100 text-[#FF3939] hover:bg-red-50 hover:text-red-600 font-regular font-inter text-[16px] ring-offset-background"
                 >
                   <Ban className="h-4 w-4" />
                   Block AI Usage
@@ -1268,31 +1299,31 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
               <table className="w-full text-left">
                 <thead>
                   <tr className="bg-slate-50/30 text-muted-foreground border-b border-border/50">
-                    <th className="px-6 md:px-8 py-5 text-md font-medium font-inter text-black/80">
+                    <th className="px-6 md:px-8 py-5 text-[16px] font-medium font-inter text-black/80">
                       <div className="flex items-center gap-2 cursor-pointer hover:text-foreground transition-colors group">
                         Date
                         <ChevronDown className="h-3.5 w-3.5 group-hover:translate-y-0.5 transition-transform" />
                       </div>
                     </th>
-                    <th className="px-6 md:px-8 py-5 text-md font-medium font-inter text-black/80">
+                    <th className="px-6 md:px-8 py-5 text-[16px] font-medium font-inter text-black/80">
                       <div className="flex items-center gap-2 cursor-pointer hover:text-foreground transition-colors group whitespace-nowrap">
                         Session Duration
                         <ChevronDown className="h-3.5 w-3.5 group-hover:translate-y-0.5 transition-transform" />
                       </div>
                     </th>
-                    <th className="px-6 md:px-8 py-5 text-md font-medium font-inter text-black/80">
+                    <th className="px-6 md:px-8 py-5 text-[16px] font-medium font-inter text-black/80">
                       <div className="flex items-center gap-2 cursor-pointer hover:text-foreground transition-colors group whitespace-nowrap">
                         Tokens Consumed
                         <ChevronDown className="h-3.5 w-3.5 group-hover:translate-y-0.5 transition-transform" />
                       </div>
                     </th>
-                    <th className="px-6 md:px-8 py-5 text-md font-medium font-inter text-black/80 whitespace-nowrap">
+                    <th className="px-6 md:px-8 py-5 text-[16px] font-medium font-inter text-black/80 whitespace-nowrap">
                       Speaking Score
                     </th>
-                    <th className="px-6 md:px-8 py-5 text-md font-medium font-inter text-black/80 whitespace-nowrap">
+                    <th className="px-6 md:px-8 py-5 text-[16px] font-medium font-inter text-black/80 whitespace-nowrap">
                       Writing Feedback Summary
                     </th>
-                    <th className="px-6 md:px-8 py-5 text-md font-medium font-inter text-black/80 whitespace-nowrap">
+                    <th className="px-6 md:px-8 py-5 text-[16px] font-medium font-inter text-black/80 whitespace-nowrap">
                       Actions
                     </th>
                   </tr>
@@ -1375,28 +1406,28 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                     >
                       <td className="px-6 md:px-8 py-5">
                         <div className="flex flex-col">
-                          <span className="text-md font-medium font-inter text-foreground whitespace-nowrap">
+                          <span className="text-[16px] font-medium font-inter text-black whitespace-nowrap">
                             {session.date}
                           </span>
-                          <span className="text-[12px]  font-inter text-black/80">
+                          <span className="text-[12px]  font-inter font-regular text-black/80">
                             {session.time}
                           </span>
                         </div>
                       </td>
                       <td className="px-6 md:px-8 py-5">
-                        <span className="text-md font-medium font-inter text-foreground">
+                        <span className="text-[16px] font-medium font-inter text-black">
                           {session.duration}
                         </span>
                       </td>
                       <td className="px-6 md:px-8 py-5">
-                        <span className="text-md font-medium font-inter text-foreground">
+                        <span className="text-[16px] font-medium font-inter text-black">
                           {session.tokens}
                         </span>
                       </td>
                       <td className="px-6 md:px-8 py-5">
                         <span
                           className={cn(
-                            "px-3 py-1 rounded-full text-[11px] font-bold border",
+                            "px-3 py-1 rounded-full text-[13px] font-medium font-inter ",
                             session.scoreColor
                           )}
                         >
@@ -1404,12 +1435,12 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                         </span>
                       </td>
                       <td className="px-6 md:px-8 py-5">
-                        <p className="text-md font-medium text-black/80 font-inter line-clamp-1 max-w-[300px]">
+                        <p className="text-[16px] font-medium text-black font-inter line-clamp-1 max-w-[300px]">
                           {session.feedback}
                         </p>
                       </td>
                       <td className="px-6 md:px-8 py-5 text-right">
-                        <button className="p-2 text-slate-400 hover:text-foreground hover:bg-white hover:shadow-sm rounded-lg transition-all">
+                        <button className="p-2 text-black hover:text-foreground hover:bg-white hover:shadow-sm rounded-lg transition-all">
                           <MoreVertical className="h-4 w-4" />
                         </button>
                       </td>
@@ -1427,25 +1458,31 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
 
               {/* Page Numbers */}
               <div className="flex items-center gap-2 overflow-x-auto no-scrollbar">
-                <button className="h-9 w-9 md:h-10 md:w-10 flex items-center justify-center rounded-full border-2 border-[#31564E] bg-white text-[#31564E] font-bold text-sm">
+                <button className="h-9 w-9 md:h-10 md:w-10 flex items-center justify-center rounded-full border-3 border-[#31564E] bg-white text-[#31564E] font-regular font-inter text-[16px]">
                   1
                 </button>
-                <button className="h-9 w-9 md:h-10 md:w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-bold text-sm">
+                <button className="h-9 w-9 md:h-10 md:w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-regular font-inter text-[16px]">
                   2
                 </button>
                 <span className="px-1 text-slate-300 font-bold text-sm">
                   ...
                 </span>
-                <button className="h-9 w-9 md:h-10 md:w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-bold text-sm">
+                <button className="h-9 w-9 md:h-10 md:w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-regular font-inter text-[16px]">
                   10
                 </button>
               </div>
 
               {/* Right Section */}
               <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-center md:text-left">
-                <span className="text-xs md:text-sm font-medium text-slate-400">
-                  Showing <span className="text-foreground font-bold">1-8</span>{" "}
-                  of <span className="text-foreground font-bold">1,540</span>
+                <span className="text-xs md:text-[14px] font-regular font-inter text-[#64748B]">
+                  Showing{" "}
+                  <span className="text-[#0F172A] font-inter font-semibold text-[14px]">
+                    1-8
+                  </span>{" "}
+                  of{" "}
+                  <span className="text-[#0F172A] font-inter font-semibold text-[14px]">
+                    1,540
+                  </span>
                 </span>
 
                 <button className="h-10 w-10 md:h-12 md:w-12 flex items-center justify-center rounded-full bg-black text-white shadow-lg hover:bg-black/90 transition-all group">
@@ -1465,10 +1502,10 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
             <div className="rounded-[14px] bg-white shadow-sm border border-border/50 p-6 flex flex-col justify-between h-[130px]">
               <div className="flex items-start justify-between">
                 <div className="space-y-1">
-                  <span className="text-2xl font-inter font-semibold text-foreground">
+                  <span className="text-[26px] font-inter font-semibold text-black">
                     ₹1,240
                   </span>
-                  <p className="text-md font-inter font-medium text-foreground mt-4">
+                  <p className="text-[16px] font-inter font-medium text-black mt-4">
                     Total Payments
                   </p>
                 </div>
@@ -1483,14 +1520,14 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
               <div className="flex items-start justify-between">
                 <div className="space-y-1">
                   <div className="flex items-baseline gap-1">
-                    <span className="text-2xl font-inter font-semibold text-foreground">
+                    <span className="text-[26px] font-inter font-semibold text-black">
                       ₹199
                     </span>
-                    <span className="text-md font-inter font-medium text-slate-400">
+                    <span className="text-[20px] font-inter font-semibold text-black/65">
                       /mo
                     </span>
                   </div>
-                  <p className="text-md font-inter font-medium text-foreground mt-4">
+                  <p className="text-[16px] font-inter font-medium text-black mt-4">
                     Active Plan Value
                   </p>
                 </div>
@@ -1504,10 +1541,10 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
             <div className="rounded-[14px] bg-white shadow-sm border border-border/50 p-6 flex flex-col justify-between h-[130px]">
               <div className="flex items-start justify-between">
                 <div className="space-y-1">
-                  <span className="text-2xl font-inter font-semibold text-foreground">
+                  <span className="text-[26px] font-inter font-semibold text-black">
                     ₹0.00
                   </span>
-                  <p className="text-md font-inter font-medium text-foreground mt-4">
+                  <p className="text-[16px] font-inter font-medium text-black mt-4">
                     Refunds Processed
                   </p>
                 </div>
@@ -1521,10 +1558,10 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
             <div className="rounded-[14px] bg-white shadow-sm border border-border/50 p-6 flex flex-col justify-between h-[130px]">
               <div className="flex items-start justify-between">
                 <div className="space-y-1">
-                  <span className="text-2xl font-inter font-semibold text-foreground">
+                  <span className="text-[26px] font-inter font-semibold text-black">
                     ₹0.00
                   </span>
-                  <p className="text-md font-inter font-medium text-foreground mt-4">
+                  <p className="text-[16px] font-inter font-medium text-black mt-4">
                     Pending Payments
                   </p>
                 </div>
@@ -1538,14 +1575,14 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
           {/* Billing History Table */}
           <div className="rounded-[14px] bg-white shadow-sm border border-border/50 overflow-hidden mt-8">
             <div className="p-6 md:p-8 border-b border-border/50 flex flex-col md:flex-row md:items-center justify-between gap-4">
-              <h3 className="text-xl font-semibold font-inter text-foreground">
+              <h3 className="text-[20px] font-semibold font-inter text-black">
                 Billing History
               </h3>
 
               <div className="flex items-center gap-3">
                 <Button
                   variant="outline"
-                  className="h-10 rounded-xl px-4 gap-2 border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-50"
+                  className="h-10 rounded-xl px-4 gap-2 border-slate-200 text-[16px] font-regular font-inter text-[#31564E] hover:bg-slate-50"
                 >
                   <SlidersHorizontal className="h-4 w-4" />
                   Filters
@@ -1553,7 +1590,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                 </Button>
                 <Button
                   variant="outline"
-                  className="h-10 rounded-xl px-4 gap-2 border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-50"
+                  className="h-10 rounded-xl px-4 gap-2 border-slate-200 text-[16px] font-regular font-inter text-[#31564E] hover:bg-slate-50"
                 >
                   <Download className="h-4 w-4" />
                   Export
@@ -1565,22 +1602,22 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
               <table className="w-full text-left">
                 <thead>
                   <tr className="bg-slate-50/30 text-muted-foreground border-b border-border/50">
-                    <th className="px-6 md:px-8 py-5 text-md font-medium font-inter">
+                    <th className="px-6 md:px-8 py-5 text-[16px] font-medium font-inter text-black/80">
                       Plan Purchased
                     </th>
-                    <th className="px-6 md:px-8 py-5 text-md font-medium font-inter">
+                    <th className="px-6 md:px-8 py-5 text-[16px] font-medium font-inter text-black/80">
                       Date
                     </th>
-                    <th className="px-6 md:px-8 py-5 text-md font-medium font-inter">
+                    <th className="px-6 md:px-8 py-5 text-[16px] font-medium font-inter text-black/80">
                       Amount
                     </th>
-                    <th className="px-6 md:px-8 py-5 text-md font-medium font-inter">
+                    <th className="px-6 md:px-8 py-5 text-[16px] font-medium font-inter text-black/80">
                       Status
                     </th>
-                    <th className="px-6 md:px-8 py-5 text-md font-medium font-inter">
+                    <th className="px-6 md:px-8 py-5 text-[16px] font-medium font-inter text-black/80">
                       Invoice
                     </th>
-                    <th className="px-6 md:px-8 py-5 text-md font-medium font-inter whitespace-nowrap">
+                    <th className="px-6 md:px-8 py-5 text-[16px] font-medium font-inter text-black/80 whitespace-nowrap">
                       Transaction ID
                     </th>
                   </tr>
@@ -1680,21 +1717,21 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                           <div className="h-10 w-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-500 shadow-sm border border-slate-200/50">
                             <ShieldCheck className="h-5 w-5" />
                           </div>
-                          <span className="text-md font-semibold font-inter text-foreground whitespace-nowrap">
+                          <span className="text-[16px] font-semibold font-inter text-black whitespace-nowrap">
                             {item.plan}
                           </span>
                         </div>
                       </td>
-                      <td className="px-6 md:px-8 py-5 font-medium font-inter text-slate-500 text-sm whitespace-nowrap">
+                      <td className="px-6 md:px-8 py-5 font-medium font-inter text-black text-[16px] whitespace-nowrap">
                         {item.date}
                       </td>
-                      <td className="px-6 md:px-8 py-5 font-medium font-inter text-foreground text-sm">
+                      <td className="px-6 md:px-8 py-5 font-medium font-inter text-black text-[16px]">
                         {item.amount}
                       </td>
                       <td className="px-6 md:px-8 py-5">
                         <span
                           className={cn(
-                            "px-3 py-1 rounded-full text-[10px] font-bold border",
+                            "px-3 py-1 rounded-full text-[16px] font-medium font-inter",
                             item.statusColor
                           )}
                         >
@@ -1705,12 +1742,12 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                         {item.invoice.startsWith("INV") ? (
                           <div className="flex items-center gap-2 text-black whitespace-nowrap cursor-pointer hover:underline underline-offset-4 decoration-2">
                             <FileText className="h-4 w-4 text-[#0D7FF2]" />
-                            <span className="text-md font-medium text-black">
+                            <span className="text-[16px] font-inter font-medium text-black">
                               {item.invoice}
                             </span>
                           </div>
                         ) : (
-                          <span className="text-sm text-slate-400 italic font-medium">
+                          <span className="text-[16px] font-inter font-medium text-black">
                             {item.invoice}
                           </span>
                         )}
@@ -1733,25 +1770,31 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
 
               {/* Page Numbers */}
               <div className="flex items-center gap-2 overflow-x-auto no-scrollbar">
-                <button className="h-9 w-9 md:h-10 md:w-10 flex items-center justify-center rounded-full border-2 border-[#31564E] bg-white text-[#31564E] font-bold text-sm shadow-sm">
+                <button className="h-9 w-9 md:h-10 md:w-10 flex items-center justify-center rounded-full border-3 border-[#31564E] bg-white text-[#31564E] font-regular font-inter text-[16px] shadow-sm">
                   1
                 </button>
-                <button className="h-9 w-9 md:h-10 md:w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-bold text-sm hover:bg-slate-50 transition-all">
+                <button className="h-9 w-9 md:h-10 md:w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-regular font-inter text-[16px] hover:bg-slate-50 transition-all">
                   2
                 </button>
                 <span className="px-1 text-slate-300 font-bold text-sm">
                   ...
                 </span>
-                <button className="h-9 w-9 md:h-10 md:w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-bold text-sm hover:bg-slate-50 transition-all">
+                <button className="h-9 w-9 md:h-10 md:w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-regular font-inter text-[16px] hover:bg-slate-50 transition-all">
                   10
                 </button>
               </div>
 
               {/* Right Section */}
               <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-center md:text-left">
-                <span className="text-xs md:text-sm font-medium text-slate-400">
-                  Showing <span className="text-foreground font-bold">1-8</span>{" "}
-                  of <span className="text-foreground font-bold">1,540</span>
+                <span className="text-xs md:text-[14px] font-regular font-inter text-[#64748B]">
+                  Showing{" "}
+                  <span className="text-[#0F172A] font-inter font-semibold text-[14px]">
+                    1-8
+                  </span>{" "}
+                  of{" "}
+                  <span className="text-[#0F172A] font-inter font-semibold text-[14px]">
+                    1,540
+                  </span>
                 </span>
 
                 <button className="h-10 w-10 md:h-12 md:w-12 flex items-center justify-center rounded-full bg-black text-white shadow-lg hover:bg-black/90 transition-all group">
@@ -1768,22 +1811,22 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
               <div>
                 <div className="flex items-center gap-3 mb-6">
                   <CreditCard className="h-5 w-5 text-[#0081FF]" />
-                  <h3 className="text-xl font-semibold font-inter text-foreground">
+                  <h3 className="text-[20px] font-semibold font-inter text-black">
                     Default Payment Method
                   </h3>
                 </div>
 
                 <div className="bg-[#F0F7FF] rounded-2xl p-6 flex items-center gap-4 border border-blue-100/50">
                   <div className="h-10 w-16 bg-[#E2E8F0] border border-slate-200 rounded-lg flex items-center justify-center shadow-sm whitespace-nowrap px-2">
-                    <span className="text-[10px] font-black italic text-[#001D45] tracking-tighter">
+                    <span className="text-[14px] font-bold font-inter text-[#0F172A] tracking-tighter">
                       VISA
                     </span>
                   </div>
                   <div>
-                    <p className="text-md font-semibold font-inter text-foreground">
+                    <p className="text-[16px] font-semibold font-inter text-black">
                       Visa ending in 4242
                     </p>
-                    <p className="text-xs font-inter text-black/60">
+                    <p className="text-[14px] font-regular  font-inter text-black/65">
                       Expires 12/26
                     </p>
                   </div>
@@ -1795,17 +1838,17 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
             <div className="rounded-[24px] bg-white shadow-sm border border-border/50 p-6 md:p-8">
               <div className="flex items-center gap-3 mb-4">
                 <CreditCard className="h-5 w-5 text-[#0081FF]" />
-                <h3 className="text-xl font-semibold font-inter text-foreground">
+                <h3 className="text-[20px] font-semibold font-inter text-black">
                   Billing Support
                 </h3>
               </div>
-              <p className="text-[16px] font-nter text-[#475569] mb-8 leading-relaxed max-w-[320px]">
+              <p className="text-[16px] font-regular font-inter text-[#475569] mb-8 leading-relaxed max-w-[320px]">
                 Need help with a specific transaction or need a custom invoice
                 for tax purposes?
               </p>
               <Button
                 variant="outline"
-                className="w-full h-12 rounded-xl border-[#31564E] text-[#31564E] hover:text-white hover:bg-[#31564E] font-medium font-inter text-xs cursor-pointer transition-all uppercase tracking-wider"
+                className="w-full h-12 rounded-xl border-2 border-[#31564E] text-[#31564E] hover:text-white hover:bg-[#31564E] font-medium font-inter text-[16px] cursor-pointer transition-all "
               >
                 Contact Finance Support
               </Button>
@@ -1819,7 +1862,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
         <div className="space-y-6">
           <div className="rounded-[24px] bg-white shadow-sm border border-border/50 overflow-hidden">
             <div className="p-6 md:p-8 border-b border-border/50 flex flex-col md:flex-row md:items-center justify-between gap-4">
-              <h3 className="text-xl font-semibold font-inter text-foreground">
+              <h3 className="text-[20px] font-semibold font-inter text-black">
                 Security Activity Logs
               </h3>
 
@@ -1827,7 +1870,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                 <div className="relative" ref={chartDropdownRef}>
                   <button
                     onClick={() => setIsChartDropdownOpen(!isChartDropdownOpen)}
-                    className="flex items-center justify-between gap-3 px-4 py-2 border border-slate-200 rounded-xl text-sm  font-inter text-foreground hover:bg-slate-50 transition-all min-w-[140px] h-10"
+                    className="flex items-center justify-between gap-3 px-4 py-2 border border-slate-200 rounded-xl text-[14px] font-regular  font-inter text-black hover:bg-slate-50 transition-all min-w-[140px] h-10"
                   >
                     {selectedPeriod}
                     <ChevronDown
@@ -1852,7 +1895,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                             setSelectedPeriod(period);
                             setIsChartDropdownOpen(false);
                           }}
-                          className="w-full px-4 py-2 text-xs font-medium text-slate-600 hover:bg-slate-50 transition-all text-left"
+                          className="w-full px-4 py-2 text-[14px] font-regular font-inter text-black hover:bg-slate-50 transition-all text-left"
                         >
                           {period}
                         </button>
@@ -1863,7 +1906,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
 
                 <Button
                   variant="outline"
-                  className="h-10 rounded-xl px-4 gap-2 border-slate-200 text-md  font-inter text-slate-600 hover:bg-slate-50"
+                  className="h-10 rounded-xl px-4 gap-2 border-slate-200 text-[16px] font-regular  font-inter text-black hover:bg-slate-50"
                 >
                   All Devices
                   <ChevronDown className="h-4 w-4 opacity-50" />
@@ -1874,13 +1917,13 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                   <input
                     type="text"
                     placeholder="IP Address search..."
-                    className="h-10 w-full md:w-48 rounded-xl border border-slate-200 bg-slate-50/50 pl-9 pr-4 text-xs font-medium placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#31564E]/10 focus:border-[#31564E]"
+                    className="h-10 w-full md:w-48 rounded-xl border border-slate-200 bg-slate-50/50 pl-9 pr-4 text-[16px] font-inter font-regular placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#31564E]/10 focus:border-[#31564E]"
                   />
                 </div>
 
                 <Button
                   variant="outline"
-                  className="h-10 rounded-xl px-4 gap-2 border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-50"
+                  className="h-10 rounded-xl px-4 gap-2 border-slate-200 text-[16px] font-regular font-inter text-[#31564E] hover:bg-slate-50"
                 >
                   <Download className="h-4 w-4" />
                   Export
@@ -1892,22 +1935,22 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
               <table className="w-full text-left">
                 <thead>
                   <tr className="bg-slate-50/30 text-muted-foreground border-b border-border/50">
-                    <th className="px-6 md:px-8 py-5 text-md font-medium font-inter whitespace-nowrap">
+                    <th className="px-6 md:px-8 py-5 text-[16px] font-medium font-inter text-black/80 whitespace-nowrap">
                       Login Date & Time
                     </th>
-                    <th className="px-6 md:px-8 py-5 text-md font-medium font-inter">
+                    <th className="px-6 md:px-8 py-5 text-[16px] font-medium font-inter text-black/80">
                       IP Address
                     </th>
-                    <th className="px-6 md:px-8 py-5 text-md font-medium font-inter">
+                    <th className="px-6 md:px-8 py-5 text-[16px] font-medium font-inter text-black/80">
                       Device Info
                     </th>
-                    <th className="px-6 md:px-8 py-5 text-md font-medium font-inter">
+                    <th className="px-6 md:px-8 py-5 text-[16px] font-medium font-inter text-black/80">
                       Location
                     </th>
-                    <th className="px-6 md:px-8 py-5 text-md font-medium font-inter">
+                    <th className="px-6 md:px-8 py-5 text-[16px] font-medium font-inter text-black/80">
                       Status
                     </th>
-                    <th className="px-6 md:px-8 py-5 text-md font-medium font-inter">
+                    <th className="px-6 md:px-8 py-5 text-[16px] font-medium font-inter text-black/80">
                       Actions
                     </th>
                   </tr>
@@ -2020,15 +2063,15 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                     >
                       <td className="px-6 md:px-8 py-5">
                         <div className="flex flex-col">
-                          <span className="text-md font-semibold font-inter text-foreground leading-tight">
+                          <span className="text-[16px] font-semibold font-inter text-black leading-tight">
                             {log.date}
                           </span>
-                          <span className="text-xs text-black/50 font-inter">
+                          <span className="text-[14px] font-regular text-black/65 font-inter">
                             {log.time}
                           </span>
                         </div>
                       </td>
-                      <td className="px-6 md:px-8 py-5 text-md font-medium font-inter text-foreground leading-tight">
+                      <td className="px-6 md:px-8 py-5 text-[16px] font-medium font-inter text-black leading-tight">
                         {log.ip}
                       </td>
                       <td className="px-6 md:px-8 py-5">
@@ -2037,29 +2080,29 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                             {log.icon}
                           </div>
                           <div className="flex flex-col">
-                            <span className="text-md font-semibold text-foreground leading-none mb-1">
+                            <span className="text-[16px] font-inter font-semibold text-black leading-none mb-1">
                               {log.device}
                             </span>
-                            <span className="text-[14px] text-black/60 font-inter">
+                            <span className="text-[14px] text-black/65 font-regular font-inter">
                               {log.os}
                             </span>
                           </div>
                         </div>
                       </td>
-                      <td className="px-6 md:px-8 py-5 text-md font-medium font-inter whitespace-nowrap">
+                      <td className="px-6 md:px-8 py-5 text-[16px] text-black font-medium font-inter whitespace-nowrap">
                         {log.location}
                       </td>
                       <td className="px-6 md:px-8 py-5">
                         <div className="flex flex-col gap-1">
                           <div
                             className={cn(
-                              "flex items-center gap-1.5 px-3 py-1 rounded-full w-fit border font-bold text-[10px] whitespace-nowrap",
+                              "flex items-center gap-1.5 px-3 py-1 rounded-full w-fit  font-bold text-[16px] font-inter font-medium whitespace-nowrap",
                               log.statusType === "success" &&
-                                "bg-[#248F5F]/30 text-[#248F5F] border-[#248F5F]/30",
+                                "bg-[#248F5F]/30 text-[#248F5F]",
                               log.statusType === "unusual" &&
-                                "bg-[#FF7F38]/30 text-[#FF7F38] border-[#FF7F38]/30",
+                                "bg-[#FF7F38]/30 text-[#FF7F38]",
                               log.statusType === "alert" &&
-                                "bg-[#FF3939]/30 text-[#FF3939] border-[#FF3939]/30"
+                                "bg-[#FF3939]/30 text-[#FF3939]"
                             )}
                           >
                             {log.statusType === "unusual" && (
@@ -2071,7 +2114,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                             {log.status}
                           </div>
                           {log.subtext && (
-                            <span className="text-[10px] text-red-400 font-bold ml-1 tracking-tight">
+                            <span className="text-[14px] text-[#FF3939] font-regular font-inter ml-1">
                               {log.subtext}
                             </span>
                           )}
@@ -2081,10 +2124,10 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                         {log.action ? (
                           <button
                             className={cn(
-                              "text-sm font-bold hover:underline underline-offset-4 decoration-2",
+                              "text-[16px] font-medium font-inter hover:underline underline-offset-4 decoration-2",
                               log.action === "Review"
                                 ? "text-[#31564E]"
-                                : "text-red-500"
+                                : "text-[#FF3939]"
                             )}
                           >
                             {log.action}
@@ -2108,23 +2151,28 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
               </button>
 
               <div className="flex items-center gap-2">
-                <button className="h-10 w-10 flex items-center justify-center rounded-full border-2 border-[#31564E] bg-white text-[#31564E] font-bold shadow-sm">
+                <button className="h-10 w-10 flex items-center justify-center rounded-full border-3 border-[#31564E] bg-white text-[#31564E] font-inter font-regular text-[16px] shadow-sm">
                   1
                 </button>
-                <button className="h-10 w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-bold hover:bg-slate-50 transition-all">
+                <button className="h-10 w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-inter font-regular text-[16px] hover:bg-slate-50 transition-all">
                   2
                 </button>
                 <span className="px-2 text-slate-300 font-bold">...</span>
-                <button className="h-10 w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-bold hover:bg-slate-50 transition-all">
+                <button className="h-10 w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-inter font-regular text-[16px] hover:bg-slate-50 transition-all">
                   10
                 </button>
               </div>
 
               <div className="flex items-center gap-4">
-                <span className="text-sm font-medium text-slate-400">
+                <span className="text-[14px] font-regular  font-inter text-[#64748B]">
                   Showing{" "}
-                  <span className="text-foreground font-black">1-8</span> of{" "}
-                  <span className="text-foreground font-black">1,540</span>
+                  <span className="text-[#0F172A] font-semibold font-inter text-[14px]">
+                    1-8
+                  </span>{" "}
+                  of{" "}
+                  <span className="text-[#0F172A] font-semibold font-inter text-[14px]">
+                    1,540
+                  </span>
                 </span>
                 <button className="h-12 w-12 flex items-center justify-center rounded-full bg-black text-white shadow-xl hover:bg-black/90 transition-all group">
                   <ArrowRight className="h-6 w-6 group-hover:translate-x-0.5 transition-transform" />
@@ -2138,10 +2186,10 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
             {/* Active Devices Card */}
             <div className="rounded-[24px] bg-white shadow-sm border border-border/50 p-6 px-8 flex items-center justify-between h-[130px]">
               <div className="space-y-1">
-                <span className="text-xl font-inter font-semibold text-foreground">
+                <span className="text-[26px] font-inter font-semibold text-black">
                   2
                 </span>
-                <p className="text-md font-inter font-medium text-slate-500">
+                <p className="text-[16px] font-inter font-medium text-black">
                   Active within last 30 days
                 </p>
               </div>
@@ -2153,10 +2201,10 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
             {/* Risk Level Card */}
             <div className="rounded-[24px] bg-white shadow-sm border border-border/50 p-6 px-8 flex items-center justify-between h-[130px]">
               <div className="space-y-1">
-                <span className="text-2xl font-inter font-semibold text-foreground leading-none">
+                <span className="text-[26px] font-inter font-semibold text-black">
                   Moderate
                 </span>
-                <p className="text-md font-inter font-medium text-black mt-2">
+                <p className="text-[16px] font-inter font-medium text-black">
                   2 flags in the last week
                 </p>
               </div>
@@ -2168,10 +2216,10 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
             {/* Total Logins Card */}
             <div className="rounded-[24px] bg-white shadow-sm border border-border/50 p-6 px-8 flex items-center justify-between h-[130px]">
               <div className="space-y-1">
-                <span className="text-2xl font-inter font-semibold text-foreground leading-none">
+                <span className="text-[26px] font-inter font-semibold text-black">
                   142
                 </span>
-                <p className="text-md font-inter font-medium text-black mt-2">
+                <p className="text-[16px] font-inter font-medium text-black">
                   Avg 4.2 logins per day
                 </p>
               </div>
@@ -2188,7 +2236,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
         <div className="space-y-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="rounded-[14px] bg-white shadow-sm border border-border/50 p-8 flex flex-col justify-center h-[140px]">
-              <span className="text-2xl font-inter font-semibold text-foreground leading-none">
+              <span className="text-[26px] font-inter font-semibold text-black leading-none">
                 128
               </span>
               <p className="text-[16px] font-medium text-black font-inter mt-4">
@@ -2196,7 +2244,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
               </p>
             </div>
             <div className="rounded-[14px] bg-white shadow-sm border border-border/50 p-8 flex flex-col justify-center h-[140px]">
-              <span className="text-2xl font-inter font-semibold text-foreground leading-none">
+              <span className="text-[26px] font-inter font-semibold text-black leading-none">
                 84
               </span>
               <p className="text-[16px] font-medium text-black font-inter mt-4">
@@ -2204,7 +2252,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
               </p>
             </div>
             <div className="rounded-[14px] bg-white shadow-sm border border-border/50 p-8 flex flex-col justify-center h-[140px]">
-              <span className="text-2xl font-inter font-semibold text-foreground leading-none">
+              <span className="text-[26px] font-inter font-semibold text-black leading-none">
                 44
               </span>
               <p className="text-[16px] font-medium text-black font-inter mt-4">
@@ -2212,7 +2260,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
               </p>
             </div>
             <div className="rounded-[14px] bg-white shadow-sm border border-border/50 p-8 flex flex-col justify-center h-[140px]">
-              <span className="text-2xl font-inter font-semibold text-foreground leading-none">
+              <span className="text-[26px] font-inter font-semibold text-[#FF3939] leading-none">
                 2
               </span>
               <p className="text-[16px] font-medium text-black font-inter mt-4">
@@ -2229,21 +2277,21 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                   <input
                     type="text"
                     placeholder="Search by student, email id..."
-                    className="h-11 w-full rounded-xl border border-slate-200 bg-white pl-10 pr-4 text-xs font-medium placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#31564E]/10 focus:border-[#31564E]"
+                    className="h-11 w-full rounded-xl border border-slate-200 bg-white pl-10 pr-4 text-[16px] font-regular font-inter text-black/70 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#31564E]/10 focus:border-[#31564E]"
                   />
                 </div>
 
                 <div className="flex flex-wrap items-center gap-3">
                   <Button
                     variant="outline"
-                    className="h-11 rounded-xl px-4 gap-2 border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-50 min-w-[120px]"
+                    className="h-11 rounded-xl px-4 gap-2 border-slate-200 text-[14px] font-regular font-inter text-black hover:bg-slate-50 min-w-[120px]"
                   >
                     All Time
                     <ChevronDown className="h-4 w-4 opacity-50" />
                   </Button>
                   <Button
                     variant="outline"
-                    className="h-11 rounded-xl px-4 gap-2 border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-50"
+                    className="h-11 rounded-xl px-4 gap-2 border-slate-200 text-[16px] font-regular font-inter text-[#31564E] hover:bg-slate-50"
                   >
                     <SlidersHorizontal className="h-4 w-4" />
                     Filters
@@ -2251,7 +2299,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                   </Button>
                   <Button
                     variant="outline"
-                    className="h-11 rounded-xl px-4 gap-2 border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-50"
+                    className="h-11 rounded-xl px-4 gap-2 border-slate-200 text-[16px] font-regular font-inter text-[#31564E] hover:bg-slate-50"
                   >
                     <Download className="h-4 w-4" />
                     Export
@@ -2263,7 +2311,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
             <div className="overflow-x-auto">
               <table className="w-full text-left">
                 <thead>
-                  <tr className="text-black/60 border-b border-border/50 font-medium text-[16px]">
+                  <tr className="text-black/80 border-b border-border/50 font-medium font-inter text-[16px]">
                     <th className="px-6 md:px-8 py-5">Login Date & Time</th>
                     <th className="px-6 md:px-8 py-5">Action</th>
                     <th className="px-6 md:px-8 py-5">Performed By</th>
@@ -2365,10 +2413,10 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                     >
                       <td className="px-6 md:px-8 py-5">
                         <div className="flex flex-col">
-                          <span className="text-[16px] font-semibold font-inter text-foreground leading-tight">
+                          <span className="text-[16px] font-semibold font-inter text-black leading-tight">
                             {log.date}
                           </span>
-                          <span className="text-xs text-black/60 font-inter">
+                          <span className="text-[14px] font-regular font-inter text-black/65">
                             {log.time}
                           </span>
                         </div>
@@ -2376,7 +2424,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                       <td className="px-6 md:px-8 py-5">
                         <span
                           className={cn(
-                            "px-3 py-1.5 rounded-full text-[10px] font-bold whitespace-nowrap",
+                            "px-3 py-1.5 rounded-full text-[16px] font-medium font-inter  whitespace-nowrap",
                             log.actionType === "blue" &&
                               "bg-[#007FFF]/30 text-[#007FFF]",
                             log.actionType === "red" &&
@@ -2399,16 +2447,16 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                               <Settings className="h-5 w-5" />
                             )}
                           </div>
-                          <span className="text-[16px] font-semibold text-foreground truncate max-w-[120px]">
+                          <span className="text-[16px] font-semibold text-black font-inter max-w-[120px]">
                             {log.performer}
                           </span>
                         </div>
                       </td>
-                      <td className="px-6 md:px-8 py-5 text-[16px] font-medium text-black max-w-[300px] truncate">
+                      <td className="px-6 md:px-8 py-5 text-[16px] font-medium text-black max-w-[300px] truncate font-inter">
                         {log.details}
                       </td>
                       <td className="px-6 md:px-8 py-5">
-                        <button className="h-8 w-8 flex items-center justify-center rounded-lg hover:bg-slate-100 text-slate-400">
+                        <button className="h-8 w-8 flex items-center justify-center rounded-lg hover:bg-slate-100 text-black">
                           <Info className="h-5 w-5" />
                         </button>
                       </td>
@@ -2425,23 +2473,28 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
               </button>
 
               <div className="flex items-center gap-2">
-                <button className="h-10 w-10 flex items-center justify-center rounded-full border-2 border-[#31564E] bg-white text-[#31564E] font-bold shadow-sm">
+                <button className="h-10 w-10 flex items-center justify-center rounded-full border-3 border-[#31564E] bg-white text-[#31564E] font-regular font-inter text-[16px] shadow-sm">
                   1
                 </button>
-                <button className="h-10 w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-bold hover:bg-slate-50 transition-all">
+                <button className="h-10 w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-regular font-inter text-[16px] hover:bg-slate-50 transition-all">
                   2
                 </button>
                 <span className="px-2 text-slate-300 font-bold">...</span>
-                <button className="h-10 w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-bold hover:bg-slate-50 transition-all">
+                <button className="h-10 w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-regular font-inter text-[16px] hover:bg-slate-50 transition-all">
                   10
                 </button>
               </div>
 
               <div className="flex items-center gap-4">
-                <span className="text-sm font-medium text-slate-400">
+                <span className="text-[14px] font-regular font-inter text-[#64748B]">
                   Showing{" "}
-                  <span className="text-foreground font-black">1-8</span> of{" "}
-                  <span className="text-foreground font-black">1,540</span>
+                  <span className="text-[#0F172A] font-semibold font-inter">
+                    1-8
+                  </span>{" "}
+                  of{" "}
+                  <span className="text-[#0F172A] font-semibold font-inter">
+                    1,540
+                  </span>
                 </span>
                 <button className="h-12 w-12 flex items-center justify-center rounded-full bg-black text-white shadow-xl hover:bg-black/90 transition-all group">
                   <ArrowRight className="h-6 w-6 group-hover:translate-x-0.5 transition-transform" />
@@ -2458,49 +2511,49 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
             {/* Personal Info */}
             <div className="rounded-[12px] bg-white shadow-sm border border-border/50 p-4 md:p-6">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-md text-foreground font-medium">
+                <h3 className="text-[18px] font-inter text-black font-medium">
                   Personal Info
                 </h3>
               </div>
               <hr className="border-border/100 mb-6" />
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-md font-inter text-black/70">
+                  <span className="text-[16px] font-regular font-inter text-black/70">
                     Full Name
                   </span>
-                  <span className="text-md font-inter text-foreground">
+                  <span className="text-[16px] font-regular font-inter text-black">
                     Sarah Jenkins
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-md font-inter text-black/70">
+                  <span className="text-[16px] font-regular font-inter text-black/70">
                     Email Address
                   </span>
-                  <span className="text-md font-inter text-foreground truncate">
+                  <span className="text-[16px] font-regular font-inter text-black truncate">
                     sarah.j@example.com
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-md font-inter text-black/70">
+                  <span className="text-[16px] font-regular font-inter text-black/70">
                     Phone Number
                   </span>
-                  <span className="text-md font-inter text-foreground">
+                  <span className="text-[16px] font-regular font-inter text-black">
                     +44 7700 900077
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-md font-inter text-black/70">
+                  <span className="text-[16px] font-regular font-inter text-black/70">
                     State
                   </span>
-                  <span className="text-md font-inter text-foreground">
+                  <span className="text-[16px] font-regular font-inter text-black">
                     Karnataka
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-md font-inter text-black/70">
+                  <span className="text-[16px] font-regular font-inter text-black/70">
                     Registration Date
                   </span>
-                  <span className="text-md font-inter text-foreground">
+                  <span className="text-[16px] font-regular font-inter text-black">
                     Dec 15, 2025
                   </span>
                 </div>
@@ -2510,49 +2563,51 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
             {/* Subscription Details */}
             <div className="rounded-[12px] bg-white shadow-sm border border-border/50 p-4 md:p-6">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-medium text-foreground">
+                <h3 className="text-[18px] font-inter text-black font-medium">
                   Subscription Details
                 </h3>
               </div>
               <hr className="border-border/100 mb-6" />
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-md font-inter text-black/70">
+                  <span className="text-[16px] font-regular font-inter text-black/70">
                     Current Plan
                   </span>
-                  <span className="px-3 py-1 rounded-sm font-inter text-black text-xs font-medium border border-[#FF7F38] bg-[#FF7F38]/30">
+                  <span className="px-3 py-1 rounded-sm font-inter text-black text-[16px] font-medium border border-[#FF7F38] bg-[#FF7F38]/30">
                     Premium AI
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-md font-inter text-black/70">
+                  <span className="text-[16px] font-regular font-inter text-black/70">
                     Billing Cycle
                   </span>
-                  <span className="text-md font-inter text-foreground">
+                  <span className="text-[16px] font-regular font-inter text-black">
                     Annual
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-md font-inter text-black/70">
+                  <span className="text-[16px] font-regular font-inter text-black/70">
                     Status
                   </span>
-                  <span className="px-4 py-1 rounded-full bg-[#248F5F]/40 text-[#248F5F] text-sm font-medium border border-green-100">
+                  <span className="px-4 py-1 rounded-full bg-[#248F5F]/40 text-[#248F5F] text-[14px] font-inter font-medium border border-green-100">
                     Active
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-md font-inter text-black/70">
+                  <span className="text-[16px] font-regular font-inter text-black/70">
                     Next Renewal
                   </span>
-                  <span className="text-md font-inter text-foreground">
+                  <span className="text-[16px] font-regular font-inter text-black">
                     April 12, 2026
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-md font-inter text-black/70">
+                  <span className="text-[16px] font-regular font-inter text-black/70">
                     Auto-Renew
                   </span>
-                  <span className="text-md font-inter text-[#248F5F]">ON</span>
+                  <span className="text-[16px] font-regular font-inter text-[#248F5F]">
+                    ON
+                  </span>
                 </div>
               </div>
             </div>
@@ -2562,21 +2617,21 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
               <div className="relative z-10 flex flex-col h-full">
                 <div className="flex items-center gap-2 mb-4">
                   <ShieldCheck className="h-5 w-5" />
-                  <h3 className="text-lg font-inter font-medium">
+                  <h3 className="text-[18px] text-white font-inter font-medium">
                     Account Health
                   </h3>
                 </div>
-                <p className="text-md font-inter text-[#fff]/80 leading-relaxed mb-6">
+                <p className="text-[16px] font-medium font-inter text-[#fff]/80 leading-relaxed mb-6">
                   Sarah is among the top 15% active students this month. No
                   reported issues or billing disputes.
                 </p>
 
                 <div className="space-y-3 mt-auto">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm font-inter text-white">
+                    <span className="text-[14px] font-regular font-inter text-white">
                       Engagement Score
                     </span>
-                    <span className="text-lg font-inter font-medium text-white">
+                    <span className="text-[18px] font-medium font-inter text-[#DDDDDD]">
                       95%
                     </span>
                   </div>
@@ -2594,12 +2649,12 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
             <div className="lg:col-span-2 rounded-[14px] bg-white shadow-sm border border-border/50 overflow-hidden flex flex-col">
               <div className="p-6 md:p-8 flex-1">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-inter font-medium text-foreground">
+                  <h3 className="text-[18px] font-inter font-medium text-black  ">
                     Overall Learning Performance
                   </h3>
-                  <span className="text-md font-inter text-black/70">
+                  <span className="text-[16px] font-regular font-inter text-black/70">
                     Total Learning Time:{" "}
-                    <span className="text-foreground font-inter text-md">
+                    <span className="text-[16px] font-medium font-inter text-black">
                       45 hrs
                     </span>
                   </span>
@@ -2608,15 +2663,15 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
 
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
                   {[
-                    { value: "85%", color: "border-blue-500 text-blue-500" },
+                    { value: "85%", color: "border-[#007FFF] text-[#007FFF]" },
                     {
                       value: "75%",
-                      color: "border-orange-500 text-orange-500",
+                      color: "border-[#FB923C] text-[#FB923C]",
                     },
-                    { value: "75%", color: "border-green-600 text-green-600" },
+                    { value: "75%", color: "border-[#248F5F] text-[#248F5F]" },
                     {
                       value: "65%",
-                      color: "border-purple-500 text-purple-500",
+                      color: "border-[#A855F7] text-[#A855F7]",
                     },
                   ].map((stat, i) => (
                     <div key={i} className="flex flex-col items-center">
@@ -2626,7 +2681,9 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                           stat.color
                         )}
                       >
-                        <span className="text-xl font-black">{stat.value}</span>
+                        <span className="text-[20px] font-semibold font-inter text-black">
+                          {stat.value}
+                        </span>
                       </div>
                     </div>
                   ))}
@@ -2638,18 +2695,18 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-2 text-white/90">
                     <BookOpen className="h-4 w-4" />
-                    <span className="text-sm font-inter">
+                    <span className="text-[14px] font-regular font-inter">
                       Curriculum Mastery
                     </span>
                   </div>
-                  <span className="text-lg font-medium font-inter text-white">
+                  <span className="text-[18px] font-medium font-inter text-white">
                     12 / 20 Modules
                   </span>
                 </div>
                 <div className="h-3 w-full bg-[#DDDDDD] rounded-full overflow-hidden mb-3">
                   <div className="h-full w-[60%] bg-[#43CA8D] rounded-full" />
                 </div>
-                <p className="text-sm text-white font-inter">
+                <p className="text-[14px] font-regular text-white font-inter">
                   Excellent progress in Advanced Reading. Needs more focus on
                   Business Writing.
                 </p>
@@ -2658,7 +2715,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
 
             {/* Recent Activity */}
             <div className="rounded-[14px] bg-white shadow-sm border border-border/50 p-6 md:p-8">
-              <h3 className="text-lg font-inter font-medium text-foreground mb-4">
+              <h3 className="text-[18px] font-inter font-medium text-black mb-4">
                 Recent Activity
               </h3>
               <hr className="border-border/100 mb-6" />
@@ -2699,10 +2756,10 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                       {item.icon}
                     </div>
                     <div className="flex flex-col gap-1">
-                      <span className="text-md font-inter font-medium text-foreground leading-tight">
+                      <span className="text-[16px] font-inter font-medium text-black leading-tight">
                         {item.title}
                       </span>
-                      <span className="text-sm text-black/80 font-inter">
+                      <span className="text-[14px] text-black/80 font-inter font-regular">
                         {item.time}
                       </span>
                     </div>
@@ -2711,7 +2768,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
               </div>
               <Button
                 variant="outline"
-                className="w-full mt-8 h-12 rounded-2xl border-2 border-[#31564E] text-[#31564E] font-bold text-[15px] hover:bg-[#31564E] hover:text-white transition-all"
+                className="w-full mt-8 h-12 rounded-2xl border-2 border-[#31564E] text-[#31564E] font-medium font-inter text-[16px] hover:bg-[#31564E] hover:text-white transition-all"
               >
                 View Full Logs
               </Button>

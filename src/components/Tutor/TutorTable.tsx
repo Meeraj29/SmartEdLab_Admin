@@ -137,7 +137,7 @@ const TutorTable = ({ onViewProfile }: TutorTableProps) => {
             <button
               onClick={() => setActiveTab("all")}
               className={cn(
-                "relative pb-4 text-xl font-semibold font-inter transition-all",
+                "relative pb-4 text-[20px] font-semibold font-inter transition-all",
                 activeTab === "all"
                   ? "text-foreground"
                   : "text-black/60 hover:text-foreground"
@@ -151,7 +151,7 @@ const TutorTable = ({ onViewProfile }: TutorTableProps) => {
             <button
               onClick={() => setActiveTab("requests")}
               className={cn(
-                "relative pb-4 text-xl font-semibold transition-all flex items-center gap-2",
+                "relative pb-4 text-[20px] font-semibold font-inter transition-all flex items-center gap-2",
                 activeTab === "requests"
                   ? "text-foreground"
                   : "text-slate-400 hover:text-foreground"
@@ -174,7 +174,7 @@ const TutorTable = ({ onViewProfile }: TutorTableProps) => {
             <input
               type="text"
               placeholder="Search by Tutor, email id..."
-              className="h-12 w-full rounded-2xl border border-slate-200 bg-slate-50/50 pl-11 pr-4 text-sm placeholder:text-slate-400 outline-none focus:ring-2 focus:ring-[#31564E]/10 focus:border-[#31564E]/30 transition-all font-medium"
+              className="h-12 w-full rounded-2xl border border-slate-200 bg-slate-50/50 pl-11 pr-4 text-[16px] placeholder:text-slate-400 outline-none focus:ring-2 focus:ring-[#31564E]/10 focus:border-[#31564E]/30 transition-all font-regular font-inter"
             />
           </div>
         </div>
@@ -193,14 +193,14 @@ const TutorTable = ({ onViewProfile }: TutorTableProps) => {
                 <Button
                   key={i}
                   variant="outline"
-                  className="h-11 rounded-xl px-4 gap-4 border-slate-200 bg-white text-xs font-inter text-black hover:bg-slate-50 shadow-sm"
+                  className="h-11 rounded-xl px-4 gap-4 border-slate-200 bg-white text-[16px] font-regular font-inter text-black hover:bg-slate-50 shadow-sm"
                 >
                   {filter}
                   <ChevronDown className="h-4 w-4 opacity-50" />
                 </Button>
               ))}
             </div>
-            <button className="flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-foreground transition-colors">
+            <button className="flex items-center gap-2 text-[16px] font-regular font-inter text-[#31564E] hover:text-foreground transition-colors">
               <ListFilterPlus className="h-4 w-4" />
               Reset Filters
             </button>
@@ -317,7 +317,7 @@ const TutorTable = ({ onViewProfile }: TutorTableProps) => {
                     </td>
                     <td className="px-6 py-5">
                       <div className="space-y-1.5 min-w-[140px]">
-                        <div className="flex items-center justify-between text-[12px] font-inter text-black/40">
+                        <div className="flex items-center justify-between text-[12px] font-inter text-black/70">
                           <span>
                             {item.performance}/100 - {item.perfText}
                           </span>
@@ -336,7 +336,7 @@ const TutorTable = ({ onViewProfile }: TutorTableProps) => {
                       </div>
                     </td>
                     <td className="px-6 py-5">
-                      <span className="px-3 py-1.5 rounded-full bg-[#248F5F]/40 text-[#248F5F] text-[12px] font-medium font-inter border border-emerald-100">
+                      <span className="px-3 py-1.5 rounded-full bg-[#248F5F]/40 text-[#248F5F] text-[14px] font-medium font-inter border border-emerald-100">
                         {item.status}
                       </span>
                     </td>
@@ -353,7 +353,7 @@ const TutorTable = ({ onViewProfile }: TutorTableProps) => {
                       {item.appliedDate}
                     </td>
                     <td className="px-6 py-5">
-                      <span className="px-3 py-1.5 rounded-full bg-[#FF7F38]/40 text-[#FF7F38] text-[16px] font-medium font-inter border border-orange-100">
+                      <span className="px-3 py-1.5 rounded-full bg-[#FF7F38]/40 text-[#FF7F38] text-[14px] font-medium font-inter border border-orange-100">
                         {item.status}
                       </span>
                     </td>
@@ -361,7 +361,7 @@ const TutorTable = ({ onViewProfile }: TutorTableProps) => {
                 )}
 
                 <td className="px-6 py-5" onClick={(e) => e.stopPropagation()}>
-                  <button className="h-8 w-8 flex items-center justify-center rounded-lg hover:bg-slate-100 text-slate-400">
+                  <button className="h-8 w-8 flex items-center justify-center rounded-lg hover:bg-slate-100 text-black">
                     <MoreVertical className="h-4 w-4" />
                   </button>
                 </td>
@@ -378,22 +378,28 @@ const TutorTable = ({ onViewProfile }: TutorTableProps) => {
         </button>
 
         <div className="flex items-center gap-2">
-          <button className="h-10 w-10 flex items-center justify-center rounded-full border-2 border-[#31564E] bg-white text-[#31564E] font-bold shadow-sm">
+          <button className="h-10 w-10 flex items-center justify-center rounded-full border-3 border-[#31564E] bg-white text-[#31564E] font-regular font-inter text-[16px] shadow-sm">
             1
           </button>
-          <button className="h-10 w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-bold hover:bg-slate-50 transition-all">
+          <button className="h-10 w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-regular font-inter text-[16px] hover:bg-slate-50 transition-all">
             2
           </button>
           <span className="px-2 text-slate-300 font-bold">...</span>
-          <button className="h-10 w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-bold hover:bg-slate-50 transition-all">
+          <button className="h-10 w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-regular font-inter text-[16px] hover:bg-slate-50 transition-all">
             10
           </button>
         </div>
 
         <div className="flex items-center gap-4">
-          <span className="text-sm font-medium text-slate-400">
-            Showing <span className="text-foreground font-black">1-8</span> of{" "}
-            <span className="text-foreground font-black">1,540</span>
+          <span className="text-[14px] font-regular font-inter text-[#64748B]">
+            Showing{" "}
+            <span className="text-[14px] font-semibold text-[#0F172A]">
+              1-8
+            </span>{" "}
+            of{" "}
+            <span className="text-[14px] font-semibold text-[#0F172A]">
+              1,540
+            </span>
           </span>
           <button className="h-12 w-12 flex items-center justify-center rounded-full bg-black text-white shadow-xl hover:bg-black/90 transition-all group">
             <ArrowRight className="h-6 w-6 group-hover:translate-x-0.5 transition-transform" />

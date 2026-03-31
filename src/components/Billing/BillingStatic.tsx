@@ -132,26 +132,22 @@ const BillingStatic = ({
       {/* Header Section */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-black text-foreground tracking-tight">
+          <h1 className="text-[24px] font-semibold font-inter text-black tracking-tight">
             Billing Management
           </h1>
-          <p className="text-sm font-medium text-slate-500 max-w-2xl mt-1">
-            Monitor and manage all platform subscriptions, recurring revenues,
-            and transaction health in real-time.
-          </p>
         </div>
         <div className="flex items-center gap-3">
           <Button
             onClick={onManagePlansClick}
             variant="outline"
-            className="h-12 rounded-[14px] px-6 border-[#31564E] bg-white text-[#31564E] font-bold hover:bg-slate-50 shadow-sm transition-all"
+            className="h-12 rounded-[14px] px-6 border-[#31564E] bg-white text-[#31564E] text-[16px] font-medium font-inter hover:bg-slate-50 shadow-sm transition-all"
           >
             Manage Subscriptions
           </Button>
 
           <Button
             onClick={onGenerateClick}
-            className="h-12 rounded-[14px] px-6 bg-black text-white font-bold shadow-lg shadow-black/10 hover:bg-black/95 gap-1.5 transition-all"
+            className="h-12 rounded-[14px] px-6 bg-black text-white font-medium font-inter text-[16px] shadow-lg shadow-black/10 hover:bg-black/95 gap-1.5 transition-all"
           >
             <Plus className="h-5 w-5" />
             Create Plan
@@ -173,7 +169,7 @@ const BillingStatic = ({
               <div className="space-y-1">
                 <span
                   className={cn(
-                    "text-3xl font-black tracking-tighter leading-none",
+                    "text-[26px] font-semibold font-inter ",
                     stat.isDark ? "text-white" : "text-[#1E293B]"
                   )}
                 >
@@ -181,7 +177,7 @@ const BillingStatic = ({
                 </span>
                 <p
                   className={cn(
-                    "text-[15px] font-bold mt-2",
+                    "text-[16px] font-medium font-inter mt-2",
                     stat.isDark ? "text-slate-200" : "text-[#1E293B]"
                   )}
                 >
@@ -200,10 +196,10 @@ const BillingStatic = ({
               </div>
             </div>
 
-            <div className="flex items-center justify-between pt-2 px-1">
+            <div className="flex items-center justify-between pt-2 px-1 ">
               <p
                 className={cn(
-                  "text-[13px] font-medium opacity-60",
+                  "text-[14px] font-regular font-inter opacity-60",
                   stat.isDark ? "text-slate-300" : "text-slate-500"
                 )}
               >
@@ -226,7 +222,7 @@ const BillingStatic = ({
                 ) : (
                   <TrendingDown className="h-3 w-3" />
                 )}
-                <span className="text-[11px] font-black tracking-tight">
+                <span className="text-[14px] font-medium font-inter">
                   {stat.isTrendUp ? "+" : "-"}
                   {stat.trend}
                 </span>
@@ -241,7 +237,7 @@ const BillingStatic = ({
         {/* Left: Revenue Growth Chart */}
         <div className="lg:col-span-2 bg-white rounded-[24px] border border-slate-100 p-6 md:p-8 shadow-sm">
           <div className="flex items-center justify-between mb-8">
-            <h3 className="text-[18px] font-black text-slate-800 tracking-tight">
+            <h3 className="text-[20px] font-semibold font-inter text-black tracking-tight">
               Revenue Growth (B2B& B2C)
             </h3>
             <div className="flex items-center gap-3">
@@ -249,7 +245,7 @@ const BillingStatic = ({
                 <DropdownMenuTrigger asChild>
                   <Button
                     variant="ghost"
-                    className="flex items-center gap-2 px-4 py-2 h-auto rounded-xl bg-slate-50 border border-slate-100 font-bold text-slate-500 hover:bg-slate-100"
+                    className="flex items-center gap-2 px-4 py-2 h-auto rounded-xl bg-slate-50 border border-slate-100 font-regular font-inter text-[14px] text-black hover:bg-slate-100"
                   >
                     {timeFrame}
                     <ChevronDown className="h-4 w-4 text-slate-400" />
@@ -257,7 +253,7 @@ const BillingStatic = ({
                 </DropdownMenuTrigger>
                 <DropdownMenuContent
                   align="end"
-                  className="w-[160px] rounded-xl font-bold"
+                  className="w-[160px] rounded-xl font-regular font-inter text-[14px]"
                 >
                   <DropdownMenuItem
                     onClick={() => setTimeFrame("Monthly")}
@@ -357,11 +353,15 @@ const BillingStatic = ({
           <div className="flex items-center justify-center gap-6 mt-6">
             <div className="flex items-center gap-2">
               <div className="h-3 w-3 rounded-full bg-[#10B981]" />
-              <span className="text-xs font-bold text-slate-500">B2C</span>
+              <span className="text-[14px] font-regular font-inter text-black">
+                B2C
+              </span>
             </div>
             <div className="flex items-center gap-2">
               <div className="h-3 w-3 rounded-full bg-[#2D4A43]" />
-              <span className="text-xs font-bold text-slate-500">B2B</span>
+              <span className="text-[14px] font-regular font-inter text-black">
+                B2B
+              </span>
             </div>
           </div>
         </div>
@@ -369,7 +369,7 @@ const BillingStatic = ({
         {/* Right: Breakdown & Forecast Analysis */}
         <div className="bg-white rounded-[24px] border border-slate-100 p-6 md:p-8 shadow-sm flex flex-col justify-between hover:shadow-md transition-all">
           <div className="space-y-8">
-            <h3 className="text-[18px] font-black text-slate-800 tracking-tight">
+            <h3 className="text-[20px] font-semibold font-inter text-black tracking-tight">
               B2C Vs B2B Revenue
             </h3>
 
@@ -378,15 +378,17 @@ const BillingStatic = ({
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <Wallet className="h-4 w-4 text-slate-400" />
-                    <span className="text-sm font-bold text-slate-600">
+                    <span className="text-[14px] font-regular font-inter text-black">
                       Institute SaaS (B2B)
                     </span>
                   </div>
-                  <span className="text-sm font-black text-slate-800">78%</span>
+                  <span className="text-[18px] font-medium font-inter text-black">
+                    78%
+                  </span>
                 </div>
-                <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+                <div className="h-2 w-full bg-[#DDDDDD] rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-[#2D4A43] rounded-full"
+                    className="h-full bg-[#31564E] rounded-full"
                     style={{ width: "78%" }}
                   />
                 </div>
@@ -396,15 +398,17 @@ const BillingStatic = ({
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <Users className="h-4 w-4 text-slate-400" />
-                    <span className="text-sm font-bold text-slate-600">
+                    <span className="text-[14px] font-regular font-inter text-black">
                       Direct Students (B2C)
                     </span>
                   </div>
-                  <span className="text-sm font-black text-slate-800">22%</span>
+                  <span className="text-[18px] font-medium font-inter text-black">
+                    22%
+                  </span>
                 </div>
-                <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+                <div className="h-2 w-full bg-[#DDDDDD] rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-[#FF8206] rounded-full"
+                    className="h-full bg-[#FF7F38] rounded-full"
                     style={{ width: "22%" }}
                   />
                 </div>
@@ -417,10 +421,10 @@ const BillingStatic = ({
               <TrendingUp className="h-6 w-6" />
             </div>
             <div className="space-y-0.5">
-              <p className="text-[11px] font-black text-slate-400 uppercase tracking-widest leading-none">
+              <p className="text-[12px] font-regular font-inter text-[#64748B]  leading-none">
                 Forecast next month
               </p>
-              <p className="text-[18px] font-black text-slate-800 tracking-tighter">
+              <p className="text-[16px] font-semibold font-inter text-[#0F172A] tracking-tighter">
                 +$12,400 expected
               </p>
             </div>

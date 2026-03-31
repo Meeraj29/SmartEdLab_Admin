@@ -147,7 +147,7 @@ const CourseProfile = ({ onBack }: CourseProfileProps) => {
         >
           <ArrowLeft className="h-4 w-4" />
         </button>
-        <span className="text-[14px] font-bold text-slate-500">
+        <span className="text-[18px] font-medium font-inter text-black">
           Course Details
         </span>
       </div>
@@ -158,15 +158,15 @@ const CourseProfile = ({ onBack }: CourseProfileProps) => {
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
           <div className="space-y-2">
             <div className="flex flex-wrap items-center gap-4">
-              <h1 className="text-2xl font-black text-slate-900 tracking-tight">
+              <h1 className="text-[24px] font-semibold font-inter text-black tracking-tight">
                 English Communication Mastery
               </h1>
-              <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-100 text-[12px] font-black text-emerald-600">
+              <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#D1FAE5]  text-[16px] font-medium font-inter text-[#047857]/80">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
                 Published
               </span>
             </div>
-            <p className="text-[13px] font-medium text-slate-400">
+            <p className="text-[16px] font-regular fonnt-inter text-black/80">
               • Visible to 14 Institutes &nbsp;•&nbsp; Last updated Oct 24, 2023
             </p>
           </div>
@@ -174,7 +174,7 @@ const CourseProfile = ({ onBack }: CourseProfileProps) => {
           <div className="flex items-center gap-3 shrink-0">
             <Button
               variant="outline"
-              className="h-11 rounded-2xl px-6 border-slate-200 text-slate-700 font-bold hover:bg-slate-50 transition-all gap-2"
+              className="h-11 rounded-2xl px-6 border-slate-200 text-[#31564E] font-medium font-inter text-[16px] hover:bg-slate-50 transition-all gap-2"
             >
               <History className="h-4 w-4 text-slate-400" />
               View Versions
@@ -191,7 +191,7 @@ const CourseProfile = ({ onBack }: CourseProfileProps) => {
                 className="relative"
               >
                 <DropdownMenuTrigger asChild>
-                  <Button className="h-11 rounded-2xl px-6 bg-black hover:bg-black/90 text-white font-black shadow-xl shadow-black/20 gap-2 transition-all active:scale-95">
+                  <Button className="h-11 rounded-2xl px-6 bg-black hover:bg-black/90 text-white font-medium font-inter text-[16px] shadow-xl shadow-black/20 gap-2 transition-all active:scale-95">
                     Edit Course
                     <ChevronDown
                       className={cn(
@@ -230,10 +230,10 @@ const CourseProfile = ({ onBack }: CourseProfileProps) => {
               className="flex items-center justify-between bg-white rounded-[20px] border border-slate-100 p-5 shadow-sm hover:shadow-md transition-all"
             >
               <div className="space-y-1">
-                <p className="text-[22px] font-black text-slate-900">
+                <p className="text-[26px] font-semibold font-inter text-black">
                   {stat.value}
                 </p>
-                <p className="text-[12px] font-bold text-slate-400">
+                <p className="text-[16px] font-medium font-inter text-black">
                   {stat.label}
                 </p>
               </div>
@@ -261,15 +261,15 @@ const CourseProfile = ({ onBack }: CourseProfileProps) => {
                 <div className="h-9 w-9 rounded-xl bg-blue-50 flex items-center justify-center text-blue-500">
                   <FileText className="h-4 w-4" />
                 </div>
-                <h4 className="text-[16px] font-black text-slate-900">
+                <h4 className="text-[18px] font-medium foont-inter text-black">
                   Course Overview
                 </h4>
               </div>
-              <button className="text-[13px] font-bold text-slate-400 hover:text-[#2D4A43] transition-colors">
+              <button className="text-[16px] font-medium font-inter text-[#31564E] hover:text-[#2D4A43] transition-colors">
                 Edit Info
               </button>
             </div>
-            <p className="text-[14px] font-medium text-slate-500 leading-relaxed">
+            <p className="text-[16px] font-medium font-inter text-black/80 leading-relaxed">
               Master the art of professional communication in English. This
               comprehensive course covers nuanced workplace interactions,
               cross-cultural sensitivity, and public speaking techniques powered
@@ -284,12 +284,12 @@ const CourseProfile = ({ onBack }: CourseProfileProps) => {
                 <div className="h-9 w-9 rounded-xl bg-blue-50 flex items-center justify-center text-blue-500">
                   <BookOpen className="h-4 w-4" />
                 </div>
-                <h4 className="text-[16px] font-black text-slate-900">
+                <h4 className="text-[18px] font-medium font-inter text-black">
                   Course Curriculum
                 </h4>
               </div>
-              <button className="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-slate-200 text-[13px] font-black text-slate-700 hover:bg-slate-50 transition-all">
-                <span className="text-[#2D4A43] text-base leading-none">+</span>
+              <button className="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-slate-200 text-[16px] font-medium font-inter text-[#31564E] hover:bg-slate-50 transition-all">
+                <span className="text-[#31564E] text-base leading-none">+</span>
                 &nbsp;Add Module
               </button>
             </div>
@@ -301,10 +301,10 @@ const CourseProfile = ({ onBack }: CourseProfileProps) => {
                   <div className="flex items-center gap-3">
                     <GripHorizontal className="h-4 w-4 text-slate-300 group-hover:text-slate-400" />
                     <div>
-                      <p className="text-[14px] font-black text-slate-900">
+                      <p className="text-[18px] font-medium font-inter text-black">
                         Module 1: Professional Introductions &amp; Networking
                       </p>
-                      <p className="text-[11px] font-bold text-slate-400 mt-0.5">
+                      <p className="text-[12px] font-medium font-inter text-black/70 mt-0.5">
                         4 Lessons • 1h 45m
                       </p>
                     </div>
@@ -316,7 +316,7 @@ const CourseProfile = ({ onBack }: CourseProfileProps) => {
                 <div className="px-5 pb-5 pt-2">
                   <table className="w-full text-left">
                     <thead>
-                      <tr className="text-[11px] font-black text-slate-400 border-b border-slate-100">
+                      <tr className="text-[16px] font-medium font-inter text-black/80 border-b border-slate-100">
                         <th className="py-3 pr-4">Lesson Title</th>
                         <th className="py-3 px-4">Type</th>
                         <th className="py-3 px-4">Duration</th>
@@ -332,7 +332,7 @@ const CourseProfile = ({ onBack }: CourseProfileProps) => {
                           <td className="py-3 pr-4">
                             <div className="flex items-center gap-2.5">
                               <GripHorizontal className="h-3.5 w-3.5 text-slate-200 group-hover/row:text-slate-400 shrink-0" />
-                              <span className="text-[13px] font-bold text-slate-800">
+                              <span className="text-[16px] font-medium font-inter text-black/80">
                                 {lesson.title}
                               </span>
                             </div>
@@ -359,7 +359,7 @@ const CourseProfile = ({ onBack }: CourseProfileProps) => {
                               )}
                             </div>
                           </td>
-                          <td className="py-3 px-4 text-[13px] font-bold text-slate-500">
+                          <td className="py-3 px-4 text-[16px] font-medium font-inter text-black/80">
                             {lesson.duration}
                           </td>
                           <td className="py-3 pl-4">
@@ -388,10 +388,10 @@ const CourseProfile = ({ onBack }: CourseProfileProps) => {
                   <div className="flex items-center gap-3">
                     <GripHorizontal className="h-4 w-4 text-slate-300 group-hover:text-slate-400" />
                     <div>
-                      <p className="text-[14px] font-black text-slate-900 group-hover:text-[#2D4A43] transition-colors">
+                      <p className="text-[18px] font-medium font-inter text-black group-hover:text-[#2D4A43] transition-colors">
                         {mod.title}
                       </p>
-                      <p className="text-[11px] font-bold text-slate-400 mt-0.5">
+                      <p className="text-[12px] font-medium font-inter text-black/70 mt-0.5">
                         {mod.lessons} Lessons • {mod.duration}
                       </p>
                     </div>
@@ -409,11 +409,11 @@ const CourseProfile = ({ onBack }: CourseProfileProps) => {
                 <div className="h-9 w-9 rounded-xl bg-slate-100 flex items-center justify-center text-slate-500">
                   <History className="h-4 w-4" />
                 </div>
-                <h4 className="text-[16px] font-black text-slate-900">
+                <h4 className="text-[18px] font-medium font-inter text-black">
                   Version Control
                 </h4>
               </div>
-              <button className="text-[13px] font-bold text-slate-400 hover:text-[#2D4A43] transition-colors">
+              <button className="text-[16px] font-medium font-inter text-[#31564E] hover:text-[#2D4A43] transition-colors">
                 View All
               </button>
             </div>
@@ -421,7 +421,7 @@ const CourseProfile = ({ onBack }: CourseProfileProps) => {
             <div className="overflow-x-auto">
               <table className="w-full text-left">
                 <thead>
-                  <tr className="text-[11px] font-black text-slate-400 border-b border-slate-100">
+                  <tr className="text-[16px] font-medium font-inter text-[18px] text-black/80 border-b border-slate-100 whitespace-nowrap">
                     <th className="py-3 pr-6">Version</th>
                     <th className="py-3 pr-6">Updated By</th>
                     <th className="py-3 pr-6">Date</th>
@@ -438,32 +438,32 @@ const CourseProfile = ({ onBack }: CourseProfileProps) => {
                     >
                       <td className="py-4 pr-6">
                         <div className="flex items-center gap-2">
-                          <span className="text-[13px] font-black text-slate-900">
+                          <span className="text-[16px] font-medium font-inter text-black/80">
                             {ver.version}
                           </span>
                           {ver.isCurrent && (
-                            <span className="px-2 py-0.5 rounded-md text-[10px] font-black bg-blue-50 text-blue-600 border border-blue-100">
+                            <span className="px-2 py-0.5 rounded-md text-[12px] font-medium font-inter bg-[#0D7FF2]/30 text-blue-600 border border-blue-100">
                               Current
                             </span>
                           )}
                         </div>
                       </td>
-                      <td className="py-4 pr-6 text-[13px] font-bold text-slate-600">
+                      <td className="py-4 pr-6 text-[16px] font-regular font-inter text-black whitespace-nowrap">
                         {ver.by}
                       </td>
-                      <td className="py-4 pr-6 text-[13px] font-bold text-slate-500">
+                      <td className="py-4 pr-6 text-[16px] font-medium font-inter text-black/80 whitespace-nowrap">
                         {ver.date}
                       </td>
-                      <td className="py-4 pr-6 text-[13px] font-medium text-slate-500">
+                      <td className="py-4 pr-6 text-[16px] font-medium font-inter text-black/80 whitespace-nowrap">
                         {ver.changes}
                       </td>
                       <td className="py-4 pr-6">
                         <span
                           className={cn(
-                            "px-3 py-1 rounded-lg text-[10px] font-black",
+                            "px-3 py-1 rounded-lg text-[12px] font-medium font-inter text-black/80",
                             ver.scope === "Global"
                               ? "bg-emerald-50 text-emerald-700 border border-emerald-100"
-                              : "bg-slate-100 text-slate-600 border border-slate-200"
+                              : "bg-[#717171]/30 text-slate-600 border border-slate-200"
                           )}
                         >
                           {ver.scope}
@@ -475,7 +475,7 @@ const CourseProfile = ({ onBack }: CourseProfileProps) => {
                             <History className="h-4 w-4" />
                           </button>
                         ) : (
-                          <button className="text-[12px] font-black text-rose-500 hover:text-rose-700 transition-colors">
+                          <button className="text-[16px] font-medium font-inter text-[#31564E] hover:text-rose-700 transition-colors">
                             Revert
                           </button>
                         )}
@@ -494,16 +494,18 @@ const CourseProfile = ({ onBack }: CourseProfileProps) => {
           <div className="bg-[#2D4A43] text-white rounded-[24px] p-6 shadow-xl shadow-[#2D4A43]/20 space-y-5">
             <div className="flex items-center gap-3">
               <Eye className="h-5 w-5 opacity-70" />
-              <h4 className="text-[15px] font-black">
+              <h4 className="text-[18px] font-medium font-inter text-white">
                 Publishing &amp; Visibility
               </h4>
             </div>
 
             {/* Global Access Toggle */}
-            <div className="bg-white/10 rounded-[18px] p-4 flex items-center justify-between">
+            <div className="bg-[#FFFFFF] rounded-[18px] p-4 flex items-center justify-between">
               <div>
-                <p className="text-[14px] font-black">Global Access</p>
-                <p className="text-[11px] opacity-60 font-medium mt-0.5">
+                <p className="text-[18px] font-semibold font-inter text-black">
+                  Global Access
+                </p>
+                <p className="text-[14px] opacity-60 font-regular font-inter text-black/80 mt-0.5">
                   Make available to all institutes &amp; Students
                 </p>
               </div>
@@ -515,24 +517,28 @@ const CourseProfile = ({ onBack }: CourseProfileProps) => {
             {/* Target Institutes */}
             <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-[12px] font-black opacity-70">
+                <span className="text-[16px] font-medium font-inter text-white opacity-70">
                   Target Institutes
                 </span>
-                <span className="text-[13px] font-black">10</span>
+                <span className="text-[16px] font-medium font-inter text-white">
+                  10
+                </span>
               </div>
 
               {institutes.map((inst) => (
                 <div
                   key={inst.name}
-                  className="bg-white/10 rounded-[16px] p-3.5 flex items-center justify-between"
+                  className="bg-white/20 rounded-[16px] p-3.5 flex items-center justify-between"
                 >
                   <div className="flex items-center gap-3">
                     <div className="h-8 w-8 rounded-full bg-white/20 flex items-center justify-center">
                       <Users className="h-4 w-4 opacity-80" />
                     </div>
                     <div>
-                      <p className="text-[13px] font-black">{inst.name}</p>
-                      <p className="text-[11px] opacity-60 font-medium">
+                      <p className="text-[16px] font-medium font-inter text-white">
+                        {inst.name}
+                      </p>
+                      <p className="text-[14px]  font-regular font-inter text-black">
                         {inst.status} • {inst.version}
                       </p>
                     </div>
@@ -543,7 +549,7 @@ const CourseProfile = ({ onBack }: CourseProfileProps) => {
                 </div>
               ))}
 
-              <button className="w-full h-11 rounded-[16px] border border-white/20 hover:bg-white/10 transition-all text-[13px] font-black flex items-center justify-center gap-2">
+              <button className="w-full h-11 rounded-[16px] border border-white/20 hover:bg-white/10 transition-all text-[16px] font-medium font-inter text-white flex items-center justify-center gap-2">
                 +&nbsp;Add Institute
               </button>
             </div>
@@ -555,7 +561,7 @@ const CourseProfile = ({ onBack }: CourseProfileProps) => {
               <div className="h-9 w-9 rounded-xl bg-violet-50 flex items-center justify-center">
                 <BarChart3 className="h-4 w-4 text-violet-500" />
               </div>
-              <h4 className="text-[15px] font-black text-slate-900">
+              <h4 className="text-[20px] font-semibold font-inter text-black">
                 AI Engine Stats
               </h4>
             </div>
@@ -563,51 +569,51 @@ const CourseProfile = ({ onBack }: CourseProfileProps) => {
             <div className="space-y-5">
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
-                  <span className="text-[13px] font-bold text-slate-600">
+                  <span className="text-[14px] font-regular font-inter text-black">
                     Average Speech Score
                   </span>
-                  <span className="text-[14px] font-black text-slate-900">
+                  <span className="text-[18px] font-medium font-inter text-black">
                     84%
                   </span>
                 </div>
-                <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
-                  <div className="h-full bg-blue-500 w-[84%] rounded-full transition-all" />
+                <div className="h-2 w-full bg-[#DDDDDD] rounded-full overflow-hidden">
+                  <div className="h-full bg-[#007FFF] w-[84%] rounded-full transition-all" />
                 </div>
               </div>
 
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-[13px] font-bold text-slate-600">
+                    <p className="text-[14px] font-regular font-inter text-black">
                       Completion Rate
                     </p>
-                    <p className="text-[11px] text-slate-400 font-medium">
+                    <p className="text-[12px] text-black/60 font-regular font-inter">
                       Pronunciation: 4.5/5.0
                     </p>
                   </div>
-                  <span className="text-[14px] font-black text-slate-900">
+                  <span className="text-[18px] font-medium font-inter text-black">
                     62%
                   </span>
                 </div>
-                <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
-                  <div className="h-full bg-emerald-500 w-[62%] rounded-full transition-all" />
+                <div className="h-2 w-full bg-[#DDDDDD] rounded-full overflow-hidden">
+                  <div className="h-full bg-[#31564E] w-[62%] rounded-full transition-all" />
                 </div>
               </div>
             </div>
 
-            <button className="w-full h-11 rounded-[16px] border border-slate-200 hover:bg-slate-50 text-[13px] font-black text-slate-700 transition-all">
+            <button className="w-full h-11 rounded-[16px] border-2 border-[#31564E] hover:bg-slate-50 text-[16px] font-medium font-inter text-[#31564E] transition-all">
               Detailed Report
             </button>
           </div>
 
           {/* Quick Tools */}
           <div className="bg-white rounded-[24px] border border-slate-100 shadow-sm p-6 space-y-3">
-            <h4 className="text-[15px] font-black text-slate-900">
+            <h4 className="text-[20px] font-semibold font-inter text-black">
               Quick Tools
             </h4>
 
             {/* Export Course Package */}
-            <button className="w-full h-16 rounded-[20px] bg-[#2D4A43] hover:bg-[#2D4A43]/90 text-white font-black text-[14px] flex items-center gap-4 px-4 transition-all shadow-lg shadow-[#2D4A43]/20 active:scale-[0.98]">
+            <button className="w-full h-16 rounded-[20px] bg-[#2D4A43] hover:bg-[#2D4A43]/90 text-white font-medium font-inter text-[16px] flex items-center gap-4 px-4 transition-all shadow-lg shadow-[#2D4A43]/20 active:scale-[0.98]">
               <div className="h-10 w-10 rounded-xl bg-white flex items-center justify-center shrink-0">
                 <svg
                   className="h-5 w-5 text-blue-500"
@@ -628,7 +634,7 @@ const CourseProfile = ({ onBack }: CourseProfileProps) => {
             </button>
 
             {/* Clone Course Structure */}
-            <button className="w-full h-16 rounded-[20px] bg-black hover:bg-black/90 text-white font-black text-[14px] flex items-center gap-4 px-4 transition-all shadow-lg shadow-black/20 active:scale-[0.98]">
+            <button className="w-full h-16 rounded-[20px] bg-black hover:bg-black/90 text-white font-medium font-inter text-[16px] flex items-center gap-4 px-4 transition-all shadow-lg shadow-black/20 active:scale-[0.98]">
               <div className="h-10 w-10 rounded-xl bg-white flex items-center justify-center shrink-0">
                 <svg
                   className="h-5 w-5 text-blue-500"
@@ -648,7 +654,7 @@ const CourseProfile = ({ onBack }: CourseProfileProps) => {
             </button>
 
             {/* Archive / Delete */}
-            <button className="w-full h-16 rounded-[20px] border-2 border-rose-200 bg-white hover:bg-rose-50 text-rose-500 font-black text-[14px] flex items-center gap-4 px-4 transition-all active:scale-[0.98]">
+            <button className="w-full h-16 rounded-[20px] border-2 border-rose-200 bg-white hover:bg-rose-50 text-[#FF3939] font-medium font-inter text-[16px] flex items-center gap-4 px-4 transition-all active:scale-[0.98]">
               <div className="h-10 w-10 rounded-xl bg-rose-50 flex items-center justify-center shrink-0">
                 <svg
                   className="h-5 w-5 text-rose-500"

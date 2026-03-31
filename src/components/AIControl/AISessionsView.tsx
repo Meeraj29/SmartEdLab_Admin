@@ -23,15 +23,17 @@ const AISessionsView = ({ onBack }: AISessionsViewProps) => {
         className="flex items-center gap-2 group text-slate-400 hover:text-slate-900 transition-colors"
       >
         <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
-        <span className="text-[14px] font-bold">AI Control Center</span>
+        <span className="text-[18px] font-medium font-inter text-black">
+          AI Control Center
+        </span>
       </button>
 
       {/* Header */}
       <div className="space-y-2">
-        <h2 className="text-[28px] font-black text-slate-900 tracking-tight">
+        <h2 className="text-[24px] font-semibold font-inter text-black tracking-tight">
           Session
         </h2>
-        <p className="text-[14px] font-medium text-slate-400 max-w-2xl leading-relaxed">
+        <p className="text-[16px] font-regular font-inter text-black/80 max-w-2xl leading-relaxed">
           Monitor Institutes AI interaction sessions, token consumption, and
           performance metrics.
         </p>
@@ -42,9 +44,9 @@ const AISessionsView = ({ onBack }: AISessionsViewProps) => {
         <button
           onClick={() => setActiveTab("institute")}
           className={cn(
-            "px-8 py-4 text-[15px] font-black transition-all relative",
+            "px-8 py-4 text-[18px] font-semibold font-inter transition-all relative",
             activeTab === "institute"
-              ? "text-slate-900"
+              ? "text-black"
               : "text-slate-400 hover:text-slate-600"
           )}
         >
@@ -56,9 +58,9 @@ const AISessionsView = ({ onBack }: AISessionsViewProps) => {
         <button
           onClick={() => setActiveTab("student")}
           className={cn(
-            "px-8 py-4 text-[15px] font-black transition-all relative",
+            "px-8 py-4 text-[18px] font-semibold font-inter transition-all relative",
             activeTab === "student"
-              ? "text-slate-900"
+              ? "text-black"
               : "text-slate-400 hover:text-slate-600"
           )}
         >
