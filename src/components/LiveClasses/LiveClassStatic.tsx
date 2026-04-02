@@ -93,7 +93,7 @@ const LiveClassStatic = ({ onAddClick }: LiveClassStaticProps) => {
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="outline"
-                  className="h-12 rounded-[14px] px-6 border-[#31564E] bg-white text-[#31564E] font-medium font-inter text-[16px] hover:bg-slate-50 gap-2 shadow-sm transition-all"
+                  className="h-12 rounded-[14px] px-6 border-[#31564E] bg-white text-[#31564E] font-medium font-inter md:text-[16px] text-[13px] hover:bg-slate-50 gap-2 shadow-sm transition-all"
                 >
                   Manage Live Classes
                   <ChevronDown
@@ -125,7 +125,7 @@ const LiveClassStatic = ({ onAddClick }: LiveClassStaticProps) => {
 
           <Button
             onClick={onAddClick}
-            className="h-12 rounded-[14px] px-6 bg-black text-white font-medium font-inter text-[16px] shadow-lg shadow-black/10 hover:bg-black/95 gap-1.5 transition-all"
+            className="h-12 rounded-[14px] px-6 bg-black text-white font-medium font-inter md:text-[16px] text-[13px] shadow-lg shadow-black/10 hover:bg-black/95 gap-1.5 transition-all"
           >
             <Plus className="h-5 w-5" />
             Schedule A Class

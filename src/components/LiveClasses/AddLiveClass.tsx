@@ -23,8 +23,11 @@ const AddLiveClass = ({ onBack, onSuccess }: AddLiveClassProps) => {
   const [step, setStep] = useState(1);
 
   return (
-    <div className="max-w-4xl mx-auto">
+     <div className="space-y-6 pb-12 ">
+       <div className="fixed top-[80px] left-0 right-0 z-20 bg-white/95 backdrop-blur-md border-b border-border/10">
+      <div className="px-4 md:px-8 lg:px-12 py-5">
       {/* Header */}
+       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
       <div className="flex items-center gap-4 mb-8">
         <button
           onClick={onBack}
@@ -32,8 +35,8 @@ const AddLiveClass = ({ onBack, onSuccess }: AddLiveClassProps) => {
         >
           <ArrowLeft className="h-5 w-5 text-slate-400 group-hover:text-slate-600" />
         </button>
-        <div>
-          <h2 className="text-2xl font-black text-foreground tracking-tight">
+         <div className="flex flex-col ">
+          <h2 className="text-2xl font-black text-foreground  tracking-tight">
             Schedule New Live Class
           </h2>
           <p className="text-slate-500 font-medium">
@@ -41,11 +44,13 @@ const AddLiveClass = ({ onBack, onSuccess }: AddLiveClassProps) => {
           </p>
         </div>
       </div>
+      </div>
+      </div>
 
       {/* Main Form Container */}
-      <div className="bg-white rounded-[32px] border border-slate-100 shadow-xl shadow-black/5 overflow-hidden p-8 md:p-12">
+      <div className=" bg-white rounded-[32px] border border-slate-100 shadow-xl shadow-black/5  p-8 md:p-12">
         {step === 1 && (
-          <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+          <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500 ">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-2">
                 <label
@@ -136,32 +141,15 @@ const AddLiveClass = ({ onBack, onSuccess }: AddLiveClassProps) => {
               <span className="text-sm font-black text-slate-700 uppercase tracking-wider block">
                 Select Platform
               </span>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-1 w-full gap-4">
                 {[
-                  {
-                    id: "zoom",
-                    name: "Zoom",
-                    icon: Video,
-                    color: "text-blue-500",
-                  },
                   {
                     id: "gmeet",
                     name: "G-Meet",
                     icon: Globe,
                     color: "text-emerald-500",
                   },
-                  {
-                    id: "teams",
-                    name: "Teams",
-                    icon: Users,
-                    color: "text-purple-500",
-                  },
-                  {
-                    id: "inapp",
-                    name: "In-App",
-                    icon: MonitorPlay,
-                    color: "text-orange-500",
-                  },
+                
                 ].map((p) => (
                   <button
                     key={p.id}
@@ -249,6 +237,7 @@ const AddLiveClass = ({ onBack, onSuccess }: AddLiveClassProps) => {
           </div>
         )}
       </div>
+    </div>
     </div>
   );
 };

@@ -66,7 +66,7 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
                     </Button>
                     <Button
                       onClick={handleNext}
-                      className="text-[16px] font-inter h-11 rounded-xl px-8 bg-black hover:bg-black/90 text-white font-medium shadow-md shadow-black/10 transition-all"
+                      className="text-[14px]  font-inter h-11 rounded-xl px-8 bg-black hover:bg-black/90 text-white font-medium shadow-md shadow-black/10 transition-all"
                     >
                       {step === 1
                         ? "Next: Select Plan"
@@ -80,7 +80,7 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
                 </div>
 
                 <div className="flex items-center">
-                  <h3 className="text-[18px] font-inter font-semibold text-[#31564E]">
+                  <h3 className="text-[18px] font-inter font-semibold text-[#31564E] w-full">
                     Step: {step}
                     <span className="font-semibold  ml-2 text-[20px] text-[#31564E]">
                       {step === 1 && "Basic Details - Student Details"}
@@ -99,12 +99,12 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
       )}
 
       {step === 1 && (
-        <div className="rounded-[20px] bg-white shadow-sm border border-border/50 p-6 md:p-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+        <div className="rounded-[20px] bg-white shadow-sm border border-border/50 p-6 md:p-8 pt-26">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 ">
             <div className="flex flex-col gap-2 md:col-span-2">
               <label
                 htmlFor="studentName"
-                className="text-[16px] font-inter font-medium text-foreground"
+                className="text-[16px] font-inter font-medium text-foreground "
               >
                 Student Full Name <span className="text-red-500">*</span>
               </label>
@@ -192,7 +192,7 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
 
       {step === 2 && (
         <div className="space-y-6">
-          <div className="rounded-[20px] bg-white shadow-sm border border-border/50 p-6 md:p-10">
+          <div className="rounded-[20px] bg-white shadow-sm border border-border/50 p-6 md:p-10 pt-20">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Monthly Plan */}
               <PlanCard
@@ -368,7 +368,7 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Left Column - Configuration */}
             <div className="lg:col-span-2 space-y-6">
-              <div className="rounded-[20px] bg-white shadow-sm border border-border/50 p-6 md:p-10">
+              <div className="rounded-[20px] bg-white shadow-sm border border-border/50 p-6 md:p-10 pt-18">
                 <div className="mb-8">
                   <h4 className="text-[20px] font-semibold font-inter text-foreground">
                     Configuration
@@ -418,7 +418,7 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
             <div className="space-y-6">
               <div className="rounded-[20px] bg-white shadow-sm border border-border/10 p-6">
                 <div className="flex items-center gap-2 mb-4">
-                  <div className="flex h-5 w-5 items-center justify-center rounded-full border border-slate-400 text-slate-500 font-bold text-[10px]">
+                  <div className="flex h-5 w-5 items-center justify-center rounded-full border border-slate-400 text-slate-500 font-bold text-[10px] mt-2">
                     i
                   </div>
                   <h4 className="text-[20px] font-semibold font-inter text-foreground">
@@ -461,9 +461,9 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
 
       {step === 4 && (
         <div className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-14 ">
             {/* Student Info Summary */}
-            <div className="rounded-[24px] bg-white shadow-sm border border-border/50 p-6 relative">
+            <div className="rounded-[24px] bg-white shadow-sm border border-border/50 p-8 relative ">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
                   <div className="h-10 w-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-500">
@@ -617,7 +617,7 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
               </div>
 
               <div className="flex items-center gap-4 bg-[#C2CDCA] p-3 rounded-2xl border border-border/30 px-6">
-                <span className="text-[18px] font-inter font-semibold text-foreground whitespace-nowrap">
+                <span className="text-[16px] font-inter font-semibold text-foreground whitespace-nowrap">
                   Automatic Generation
                 </span>
                 <div
@@ -637,15 +637,21 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
               </div>
             </div>
 
-            <div className="rounded-[20px] bg-[#31564E]/20 p-5 flex items-center gap-3 text-sm text-slate-800 font-medium">
-              <div className="text-[16px] opacity-60">@</div>
-              Credentials will be{" "}
-              <span className="font-semibold text-[16px] underline mx-1">
-                automatically emailed
-              </span>{" "}
-              to Alex Johnson (alex.j@example.com) immediately after account
-              activation.
-            </div>
+            <div className="rounded-[20px] bg-[#31564E]/20 p-4 md:p-5 flex flex-col sm:flex-row items-start sm:items-center gap-3 text-[14px] md:text-[16px] text-slate-800 font-medium leading-relaxed">
+  {/* Icon Container */}
+  <div className="flex-shrink-0 text-[16px] opacity-60 bg-white/20 w-8 h-8 flex items-center justify-center rounded-full">
+    @
+  </div>
+  
+  {/* Text Content */}
+  <div className="flex-1">
+    Credentials will be
+    <span className="font-semibold underline mx-1 inline-block sm:inline">
+      automatically emailed
+    </span>
+    to Alex Johnson (alex.j@example.com) immediately after account activation.
+  </div>
+</div>
           </div>
         </div>
       )}

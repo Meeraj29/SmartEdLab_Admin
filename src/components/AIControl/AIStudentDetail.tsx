@@ -21,7 +21,7 @@ const AIStudentDetail = ({ studentName, onBack }: AIStudentDetailProps) => {
           className="flex items-center gap-2 group text-slate-400 hover:text-slate-900 transition-colors"
         >
           <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
-          <span className="text-[14px] font-bold">AI Control Center</span>
+          <span className="text-[18px] font-bold">AI Control Center</span>
         </button>
 
         <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">

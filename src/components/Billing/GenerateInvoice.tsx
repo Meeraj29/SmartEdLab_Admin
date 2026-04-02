@@ -29,10 +29,12 @@ const GenerateInvoice = ({ onBack, onSuccess }: GenerateInvoiceProps) => {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto space-y-12 animate-in slide-in-from-right-10 duration-700">
+     
+       <div className="fixed top-[80px] left-0 right-0 z-20 bg-white/95 backdrop-blur-md border-b border-border/10 space-y-6 pb-12">
+      <div className="px-4 md:px-8 lg:px-12 py-5">
       {/* Top Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-slate-100">
-        <div className="flex items-center gap-4">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div className="flex items-center gap-4 mb-8">
           <button
             onClick={onBack}
             className="h-12 w-12 flex items-center justify-center rounded-full border border-slate-200 bg-white shadow-sm hover:bg-slate-50 transition-all group"
@@ -217,6 +219,7 @@ const GenerateInvoice = ({ onBack, onSuccess }: GenerateInvoiceProps) => {
           </div>
         )}
       </div>
+    </div>
     </div>
   );
 };

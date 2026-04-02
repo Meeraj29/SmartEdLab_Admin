@@ -210,7 +210,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
 
       {/* Tabs Section */}
       <div className="border-b border-border/50">
-        <div className="flex items-center gap-x-8 overflow-x-auto no-scrollbar">
+        <div className="flex items-center gap-x-8 overflow-x-auto scrollbar-none">
           {tabs.map((tab) => (
             <button
               key={tab}
@@ -1450,9 +1450,9 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
               </table>
             </div>
             {/* Pagination Section */}
-            <div className="p-4 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-border/50">
+            <div className="p-4 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-border/50 ">
               {/* Prev Button */}
-              <button className="h-10 w-10 md:h-12 md:w-12 flex items-center justify-center rounded-full border border-slate-200 bg-white text-slate-400 hover:bg-slate-50 transition-all shadow-sm">
+              <button className="h-10 w-10 md:h-12 md:w-12 flex items-center justify-center rounded-full border border-slate-200 bg-white text-slate-400 hover:bg-slate-50 transition-all shadow-sm ">
                 <ArrowLeft className="h-4 w-4 md:h-5 md:w-5" />
               </button>
 
@@ -2145,37 +2145,43 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
             </div>
 
             {/* Pagination Section */}
-            <div className="p-8 flex items-center justify-between border-t border-border/50">
-              <button className="h-12 w-12 flex items-center justify-center rounded-full border border-slate-200 bg-white text-slate-400 hover:bg-slate-50 transition-all shadow-sm">
-                <ArrowLeft className="h-5 w-5" />
+            <div className="p-4 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-border/50 ">
+              {/* Prev Button */}
+              <button className="h-10 w-10 md:h-12 md:w-12 flex items-center justify-center rounded-full border border-slate-200 bg-white text-slate-400 hover:bg-slate-50 transition-all shadow-sm ">
+                <ArrowLeft className="h-4 w-4 md:h-5 md:w-5" />
               </button>
 
-              <div className="flex items-center gap-2">
-                <button className="h-10 w-10 flex items-center justify-center rounded-full border-3 border-[#31564E] bg-white text-[#31564E] font-inter font-regular text-[16px] shadow-sm">
+              {/* Page Numbers */}
+              <div className="flex items-center gap-2 overflow-x-auto no-scrollbar">
+                <button className="h-9 w-9 md:h-10 md:w-10 flex items-center justify-center rounded-full border-3 border-[#31564E] bg-white text-[#31564E] font-regular font-inter text-[16px]">
                   1
                 </button>
-                <button className="h-10 w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-inter font-regular text-[16px] hover:bg-slate-50 transition-all">
+                <button className="h-9 w-9 md:h-10 md:w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-regular font-inter text-[16px]">
                   2
                 </button>
-                <span className="px-2 text-slate-300 font-bold">...</span>
-                <button className="h-10 w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-inter font-regular text-[16px] hover:bg-slate-50 transition-all">
+                <span className="px-1 text-slate-300 font-bold text-sm">
+                  ...
+                </span>
+                <button className="h-9 w-9 md:h-10 md:w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-regular font-inter text-[16px]">
                   10
                 </button>
               </div>
 
-              <div className="flex items-center gap-4">
-                <span className="text-[14px] font-regular  font-inter text-[#64748B]">
+              {/* Right Section */}
+              <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-center md:text-left">
+                <span className="text-xs md:text-[14px] font-regular font-inter text-[#64748B]">
                   Showing{" "}
-                  <span className="text-[#0F172A] font-semibold font-inter text-[14px]">
+                  <span className="text-[#0F172A] font-inter font-semibold text-[14px]">
                     1-8
                   </span>{" "}
                   of{" "}
-                  <span className="text-[#0F172A] font-semibold font-inter text-[14px]">
+                  <span className="text-[#0F172A] font-inter font-semibold text-[14px]">
                     1,540
                   </span>
                 </span>
-                <button className="h-12 w-12 flex items-center justify-center rounded-full bg-black text-white shadow-xl hover:bg-black/90 transition-all group">
-                  <ArrowRight className="h-6 w-6 group-hover:translate-x-0.5 transition-transform" />
+
+                <button className="h-10 w-10 md:h-12 md:w-12 flex items-center justify-center rounded-full bg-black text-white shadow-lg hover:bg-black/90 transition-all group">
+                  <ArrowRight className="h-5 w-5 md:h-6 md:w-6 group-hover:translate-x-0.5 transition-transform" />
                 </button>
               </div>
             </div>
@@ -2311,7 +2317,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
             <div className="overflow-x-auto">
               <table className="w-full text-left">
                 <thead>
-                  <tr className="text-black/80 border-b border-border/50 font-medium font-inter text-[16px]">
+                  <tr className="text-black/80 border-b border-border/50 font-medium font-inter text-[16px] whitespace-nowrap">
                     <th className="px-6 md:px-8 py-5">Login Date & Time</th>
                     <th className="px-6 md:px-8 py-5">Action</th>
                     <th className="px-6 md:px-8 py-5">Performed By</th>
@@ -2412,7 +2418,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
                       )}
                     >
                       <td className="px-6 md:px-8 py-5">
-                        <div className="flex flex-col">
+                        <div className="flex flex-col whitespace-nowrap">
                           <span className="text-[16px] font-semibold font-inter text-black leading-tight">
                             {log.date}
                           </span>
@@ -2467,37 +2473,43 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
             </div>
 
             {/* Pagination Section */}
-            <div className="p-8 flex items-center justify-between border-t border-border/50">
-              <button className="h-12 w-12 flex items-center justify-center rounded-full border border-slate-200 bg-white text-slate-400 hover:bg-slate-50 transition-all shadow-sm">
-                <ArrowLeft className="h-5 w-5" />
+             <div className="p-4 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-border/50 ">
+              {/* Prev Button */}
+              <button className="h-10 w-10 md:h-12 md:w-12 flex items-center justify-center rounded-full border border-slate-200 bg-white text-slate-400 hover:bg-slate-50 transition-all shadow-sm ">
+                <ArrowLeft className="h-4 w-4 md:h-5 md:w-5" />
               </button>
 
-              <div className="flex items-center gap-2">
-                <button className="h-10 w-10 flex items-center justify-center rounded-full border-3 border-[#31564E] bg-white text-[#31564E] font-regular font-inter text-[16px] shadow-sm">
+              {/* Page Numbers */}
+              <div className="flex items-center gap-2 overflow-x-auto no-scrollbar">
+                <button className="h-9 w-9 md:h-10 md:w-10 flex items-center justify-center rounded-full border-3 border-[#31564E] bg-white text-[#31564E] font-regular font-inter text-[16px]">
                   1
                 </button>
-                <button className="h-10 w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-regular font-inter text-[16px] hover:bg-slate-50 transition-all">
+                <button className="h-9 w-9 md:h-10 md:w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-regular font-inter text-[16px]">
                   2
                 </button>
-                <span className="px-2 text-slate-300 font-bold">...</span>
-                <button className="h-10 w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-regular font-inter text-[16px] hover:bg-slate-50 transition-all">
+                <span className="px-1 text-slate-300 font-bold text-sm">
+                  ...
+                </span>
+                <button className="h-9 w-9 md:h-10 md:w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-regular font-inter text-[16px]">
                   10
                 </button>
               </div>
 
-              <div className="flex items-center gap-4">
-                <span className="text-[14px] font-regular font-inter text-[#64748B]">
+              {/* Right Section */}
+              <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-center md:text-left">
+                <span className="text-xs md:text-[14px] font-regular font-inter text-[#64748B]">
                   Showing{" "}
-                  <span className="text-[#0F172A] font-semibold font-inter">
+                  <span className="text-[#0F172A] font-inter font-semibold text-[14px]">
                     1-8
                   </span>{" "}
                   of{" "}
-                  <span className="text-[#0F172A] font-semibold font-inter">
+                  <span className="text-[#0F172A] font-inter font-semibold text-[14px]">
                     1,540
                   </span>
                 </span>
-                <button className="h-12 w-12 flex items-center justify-center rounded-full bg-black text-white shadow-xl hover:bg-black/90 transition-all group">
-                  <ArrowRight className="h-6 w-6 group-hover:translate-x-0.5 transition-transform" />
+
+                <button className="h-10 w-10 md:h-12 md:w-12 flex items-center justify-center rounded-full bg-black text-white shadow-lg hover:bg-black/90 transition-all group">
+                  <ArrowRight className="h-5 w-5 md:h-6 md:w-6 group-hover:translate-x-0.5 transition-transform" />
                 </button>
               </div>
             </div>

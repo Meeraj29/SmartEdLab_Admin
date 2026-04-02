@@ -70,92 +70,98 @@ const ReportsTable = () => {
       </div>
 
       {/* Modern Tabs */}
-      <div className="bg-slate-50/80 p-1.5 rounded-[20px] w-fit flex items-center gap-1">
-        {tabs.map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            className={cn(
-              "px-6 py-2.5 rounded-[16px] text-[14px] font-regular font-inter transition-all text-[#0F172A]",
-              activeTab === tab
-                ? "bg-white text-slate-800 shadow-sm"
-                : "text-slate-400 hover:text-slate-600"
-            )}
+    <div className="w-full md:w-fit overflow-x-auto scrollbar-none bg-slate-50/80 p-1.5 rounded-[20px]">
+  <div className="flex items-center gap-1 min-w-max">
+    {tabs.map((tab) => (
+      <button
+        key={tab}
+        onClick={() => setActiveTab(tab)}
+        className={cn(
+          "px-6 py-2.5 rounded-[16px] text-[14px] font-regular font-inter transition-all text-[#0F172A] whitespace-nowrap",
+          activeTab === tab
+            ? "bg-white text-slate-800 shadow-sm"
+            : "text-slate-400 hover:text-slate-600"
+        )}
+      >
+        {tab}
+      </button>
+    ))}
+  </div>
+</div>
+
+{/* --- WRAPPER: Added overflow-x-auto to enable horizontal swiping on mobile --- */}
+<div className="rounded-[24px] border border-slate-50 overflow-hidden bg-white shadow-sm">
+  <div className="overflow-x-auto scrollbar-hide">
+    {/* --- TABLE: Added min-w to prevent columns from collapsing too much --- */}
+    <table className="w-full text-left border-collapse min-w-[900px]">
+      <thead>
+        <tr className="bg-[#F8FAFC]/50 text-black/80 font-medium font-inter text-[16px]">
+          <th className="px-8 py-6 whitespace-nowrap">Student Name</th>
+          <th className="px-8 py-6 whitespace-nowrap">Type</th>
+          <th className="px-8 py-6 whitespace-nowrap">Institute</th>
+          <th className="px-8 py-6 whitespace-nowrap">AI Session</th>
+          <th className="px-8 py-6 whitespace-nowrap">Classes</th>
+          <th className="px-8 py-6 whitespace-nowrap">Last Activity</th>
+        </tr>
+      </thead>
+      <tbody className="divide-y divide-slate-50">
+        {studentData.map((row) => (
+          <tr
+            key={row.id}
+            className="hover:bg-slate-50/50 transition-colors group"
           >
-            {tab}
-          </button>
+            <td className="px-8 py-5">
+              <div className="flex items-center gap-4">
+                <div
+                  className={cn(
+                    "h-10 w-10 rounded-full flex items-center justify-center text-[12px] font-bold font-publicsans shrink-0",
+                    row.avatarBg
+                  )}
+                >
+                  {row.initials}
+                </div>
+                {/* whitespace-nowrap ensures names don't break into two lines */}
+                <span className="text-[14px] font-medium font-inter text-[#0F172A] whitespace-nowrap">
+                  {row.name}
+                </span>
+              </div>
+            </td>
+
+            <td className="px-8 py-5">
+              <span className="px-3 py-1 rounded-full bg-[#EFF6FF] text-[#2563EB] text-[12px] font-bold font-inter border border-[#DBEAFE] whitespace-nowrap">
+                {row.type}
+              </span>
+            </td>
+
+            <td className="px-8 py-5">
+              <span className="text-[14px] font-medium font-inter text-[#0F172A] whitespace-nowrap">
+                {row.institute}
+              </span>
+            </td>
+
+            <td className="px-8 py-5">
+              <span className="text-[16px] font-medium font-inter text-black">
+                {row.aiSessions}
+              </span>
+            </td>
+
+            <td className="px-8 py-5">
+              <span className="text-[16px] font-medium font-inter text-black">
+                {row.classes}
+              </span>
+            </td>
+
+            <td className="px-8 py-5">
+              <span className="text-[14px] font-regular font-inter text-[#64748B] whitespace-nowrap">
+                {row.lastActivity}
+              </span>
+            </td>
+          </tr>
         ))}
-      </div>
-
-      {/* High Fidelity Table */}
-      <div className="rounded-[24px] border border-slate-50 overflow-hidden">
-        <table className="w-full text-left border-collapse">
-          <thead>
-            <tr className="bg-[#F8FAFC]/50 text-black/80 font-medium font-inter text-[16px]">
-              <th className="px-8 py-6">Student Name</th>
-              <th className="px-8 py-6">Type</th>
-              <th className="px-8 py-6">Institute</th>
-              <th className="px-8 py-6">AI Session</th>
-              <th className="px-8 py-6">Classes</th>
-              <th className="px-8 py-6">Last Activity</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-slate-50">
-            {studentData.map((row) => (
-              <tr
-                key={row.id}
-                className="hover:bg-slate-50/50 transition-colors group"
-              >
-                <td className="px-8 py-5">
-                  <div className="flex items-center gap-4">
-                    <div
-                      className={cn(
-                        "h-10 w-10 rounded-full flex items-center justify-center text-[12px] font-bold font-publicsans",
-                        row.avatarBg
-                      )}
-                    >
-                      {row.initials}
-                    </div>
-                    <span className="text-[14px] font-medium font-inter text-[#0F172A]">
-                      {row.name}
-                    </span>
-                  </div>
-                </td>
-
-                <td className="px-8 py-5">
-                  <span className="px-3 py-1 rounded-full bg-[#EFF6FF] text-[#2563EB] text-[12px] font-bold font-inter border border-[#DBEAFE]">
-                    {row.type}
-                  </span>
-                </td>
-
-                <td className="px-8 py-5">
-                  <span className="text-[14px] font-medium font-inter text-[#0F172A]">
-                    {row.institute}
-                  </span>
-                </td>
-
-                <td className="px-8 py-5">
-                  <span className="text-[16px] font-medium font-inter text-black">
-                    {row.aiSessions}
-                  </span>
-                </td>
-
-                <td className="px-8 py-5">
-                  <span className="text-[16px] font-medium font-inter text-black">
-                    {row.classes}
-                  </span>
-                </td>
-
-                <td className="px-8 py-5">
-                  <span className="text-[14px] font-regular font-inter text-[#64748B]">
-                    {row.lastActivity}
-                  </span>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      </tbody>
+    </table>
+  </div>
+</div>
     </div>
   );
 };

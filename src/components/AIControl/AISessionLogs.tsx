@@ -130,38 +130,42 @@ const AISessionLogs = () => {
         </div>
 
         {/* Pagination Section */}
-        <div className="p-8 flex flex-col items-center gap-6 bg-white">
-          <div className="flex items-center gap-4">
-            <button className="h-12 w-12 flex items-center justify-center rounded-full border border-slate-200 bg-white text-slate-400 hover:bg-slate-50 hover:text-slate-600 transition-all shadow-sm">
-              <ChevronLeft className="h-6 w-6" />
-            </button>
-            <div className="flex items-center gap-2">
-              <button className="h-12 w-12 flex items-center justify-center rounded-full bg-white text-slate-900 font-regular font-inter text-[16px] border-3 border-[#31564E] shadow-lg shadow-[#31564E]/10">
-                1
-              </button>
-              <button className="h-12 w-12 flex items-center justify-center rounded-full border border-slate-200 text-slate-500 font-regular font-inter text-[16px] hover:bg-slate-50 transition-all">
-                2
-              </button>
-              <span className="px-2 text-slate-300 font-black">...</span>
-              <button className="h-12 w-12 flex items-center justify-center rounded-full border border-slate-200 text-slate-500 font-regular font-inter text-[16px] hover:bg-slate-50 transition-all">
-                10
-              </button>
+            <div className="pt-6 flex flex-col items-center gap-6">
+              <div className="flex items-center justify-between w-full">
+                <button className="h-12 w-12 flex items-center justify-center rounded-full border border-border bg-white text-slate-400 hover:bg-slate-50 shadow-sm transition-all">
+                  <ChevronLeft className="h-5 w-5" />
+                </button>
+      
+                <div className="flex items-center gap-2">
+                  <button className="h-10 w-10 flex items-center justify-center rounded-full border-3 border-[#31564E] bg-white text-[#31564E] font-regular font-inter text-[16px] shadow-sm">
+                    1
+                  </button>
+                  <button className="h-10 w-10 flex items-center justify-center rounded-full border border-border bg-white text-muted-foreground font-regular font-inter text-[16px] hover:bg-slate-50 transition-all">
+                    2
+                  </button>
+                  <span className="px-2 text-muted-foreground font-regular font-inter text-[16px]">
+                    ...
+                  </span>
+                  <button className="h-10 w-10 flex items-center justify-center rounded-full border border-border bg-white text-muted-foreground font-regular font-inter text-[16px] hover:bg-slate-50 transition-all">
+                    10
+                  </button>
+                </div>
+      
+                <button className="h-12 w-12 flex items-center justify-center rounded-full bg-black text-white shadow-lg hover:bg-black/80 transition-all">
+                  <ChevronRight className="h-5 w-5" />
+                </button>
+              </div>
+              <span className="text-[14px] font-semibold font-inter text-[#64748B]">
+                Showing{" "}
+                <span className="font-[#0F172A] font-semibold font-inter text-[14px] text-foreground">
+                  1-8
+                </span>{" "}
+                of{" "}
+                <span className="font-[#0F172A] font-semibold font-inter text-[14px] text-foreground">
+                  1,540
+                </span>
+              </span>
             </div>
-            <button className="h-12 w-12 flex items-center justify-center rounded-full bg-black text-white hover:bg-black/90 transition-all shadow-xl shadow-black/20">
-              <ChevronRight className="h-6 w-6" />
-            </button>
-          </div>
-          <span className="text-[14px] font-regular font-inter text-[#64748B] mb-2">
-            Showing{" "}
-            <span className="text-[#0F172A] text-[14px] font-semibold font-inter">
-              1-8
-            </span>{" "}
-            of{" "}
-            <span className="text-[#0F172A] text-[14px] font-semibold font-inter">
-              1,540
-            </span>
-          </span>
-        </div>
       </div>
     </div>
   );

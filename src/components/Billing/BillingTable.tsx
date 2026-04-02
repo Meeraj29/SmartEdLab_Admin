@@ -389,7 +389,7 @@ const BillingTable = () => {
 
       {/* Pagination Container */}
       <div className="flex flex-col items-center gap-4 py-4">
-        <div className="flex items-center justify-center gap-6">
+        <div className="flex items-center gap-4 justify-between w-full">
           <button className="h-12 w-12 flex items-center justify-center rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 transition-all">
             <ArrowLeft className="h-5 w-5" />
           </button>

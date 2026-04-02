@@ -258,44 +258,56 @@ const InstituteTable = ({ onViewProfile }: InstituteTableProps) => {
         </div>
       </div>
 
-      {/* Pagination Refined */}
-      <div className="flex flex-col items-center gap-8 mt-6 pb-4">
-        <div className="flex items-center justify-between w-full px-2">
-          <button className="h-14 w-14 flex items-center justify-center rounded-full bg-white border border-slate-100 text-slate-400  transition-all">
-            <ArrowLeft className="h-6 w-6" />
-          </button>
-          <div className="flex items-center gap-4">
-            {[1, 2, "...", 10].map((page, i) => (
-              <button
-                key={i}
-                className={cn(
-                  "h-12 w-12 flex items-center justify-center rounded-full border transition-all shadow-sm",
-                  page === 1
-                    ? "border-[#31564E] border-3 text-black bg-white"
-                    : "border-slate-100 text-slate-400 bg-white hover:bg-slate-50"
-                )}
-              >
-                <span className="text-[16px] font-regular font-inter">
-                  {page}
-                </span>
-              </button>
-            ))}
-          </div>
-          <button className="h-14 w-14 flex items-center justify-center rounded-full bg-black text-white  hover:scale-105 transition-all">
-            <ArrowRight className="h-6 w-6" />
-          </button>
-        </div>
-        <span className="text-[14px] font-regular font-inter text-slate-400">
-          Showing{" "}
-          <span className="text-[14px] font-inter text-black font-semibold tracking-tight">
-            1-8
-          </span>{" "}
-          of{" "}
-          <span className="text-[14px] font-inter text-black font-semibold tracking-tight">
-            1,540
+{/* Pagination Refined */}
+<div className="flex flex-col items-center gap-6 md:gap-8 mt-6 pb-4 w-full">
+  {/* Container: Allows horizontal scroll on tiny phones, but justifies normally on desktop */}
+  <div className="flex items-center justify-between w-full px-2 gap-2 overflow-x-auto no-scrollbar md:overflow-visible">
+    
+    {/* Prev Button - Scaled down for mobile */}
+    <button className="h-10 w-10 min-w-[40px] md:h-14 md:w-14 flex shrink-0 items-center justify-center rounded-full bg-white border border-slate-100 text-slate-400 transition-all">
+      <ArrowLeft className="h-5 w-5 md:h-6 md:w-6" />
+    </button>
+
+    {/* Page Numbers - Adjusted gaps for mobile */}
+    <div className="flex items-center gap-1.5 md:gap-4">
+      {[1, 2, "...", 10].map((page, i) => (
+        <button
+          key={i}
+         
+          className={cn(
+            "h-9 w-9 md:h-12 md:w-12 flex shrink-0 items-center justify-center rounded-full border transition-all shadow-sm",
+            page === 1
+              ? "border-[#31564E] border-2 md:border-3 text-black bg-white"
+              : "border-slate-100 text-slate-400 bg-white hover:bg-slate-50",
+            // Hide the "..." or specific pages on extremely small screens if necessary 
+            // page === 2 ? "hidden sm:flex" : "flex" 
+          )}
+        >
+          <span className="text-[14px] md:text-[16px] font-regular font-inter">
+            {page}
           </span>
-        </span>
-      </div>
+        </button>
+      ))}
+    </div>
+
+    {/* Next Button - Scaled down for mobile */}
+    <button className="h-10 w-10 min-w-[40px] md:h-14 md:w-14 flex shrink-0 items-center justify-center rounded-full bg-black text-white hover:scale-105 transition-all">
+      <ArrowRight className="h-5 w-5 md:h-6 md:w-6" />
+    </button>
+  </div>
+
+  {/* Stats Text */}
+  <span className="text-[13px] md:text-[14px] font-regular font-inter text-slate-400 whitespace-nowrap">
+    Showing{" "}
+    <span className="text-black font-semibold tracking-tight">
+      1-8
+    </span>{" "}
+    of{" "}
+    <span className="text-black font-semibold tracking-tight">
+      1,540
+    </span>
+  </span>
+</div>
     </div>
   );
 };

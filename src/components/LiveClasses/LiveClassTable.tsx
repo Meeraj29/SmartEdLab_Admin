@@ -245,11 +245,11 @@ const LiveClassTable = ({
                 <div className="flex items-center gap-3">
                   <Button
                     variant="outline"
-                    className="flex-1 h-11 rounded-xl border-[#31564E]/30 text-[#31564E] font-medium font-inter hover:bg-[#31564E]/5 transition-all text-[16px]"
+                    className="flex-1 h-11 rounded-xl border-[#31564E]/30 text-[#31564E] font-medium font-inter hover:bg-[#31564E]/5 transition-all md:text-[16px] text-[14px]"
                   >
                     View Attendance
                   </Button>
-                  <Button className="flex-1 h-11 rounded-xl bg-black text-white font-medium font-inter hover:bg-black/90 transition-all text-[16px] shadow-lg shadow-black/10">
+                  <Button className="flex-1 h-11 rounded-xl bg-black text-white font-medium font-inter hover:bg-black/90 transition-all md:text-[16px] text-[14px] shadow-lg shadow-black/10">
                     {activeTab === "completed"
                       ? "View Recording"
                       : "Join as Observer"}
@@ -262,7 +262,7 @@ const LiveClassTable = ({
       </div>
 
       {/* Pagination */}
-      <div className="flex items-center justify-center gap-8 py-8">
+      <div className="flex items-center justify-between gap-8 py-8 w-full">
         <button className="h-12 w-12 flex items-center justify-center rounded-full bg-slate-200/50 text-slate-500 hover:bg-slate-200 transition-all">
           <ArrowLeft className="h-5 w-5" />
         </button>

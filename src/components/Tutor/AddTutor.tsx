@@ -184,7 +184,7 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
               <Button
                 onClick={handleNext}
                 className={cn(
-                  "h-11 rounded-xl px-8 font-medium shadow-md transition-all text-[16px]",
+                  "h-11 rounded-xl px-4 font-medium shadow-md transition-all text-[12px] font-inter md:text-[16px]",
                   step === 4
                     ? "bg-[#31564E] hover:bg-[#1E3A34] text-white"
                     : "bg-black hover:bg-black/90 text-white shadow-black/10"
@@ -514,9 +514,6 @@ const AddTutor = ({ onBack, onSuccess }: AddTutorProps) => {
                       <h3 className="text-[24px] font-inter font-semibold text-black">
                         {assignedCourses.length} Courses
                       </h3>
-                      <span className="text-[14px] font-inter font-medium text-white decoration-white underline underline-offset-4 cursor-pointer hover:text-white">
-                        Clear All
-                      </span>
                     </div>
                     <p className="text-[14px] font-inter font-medium text-white">
                       Selected for this tutor

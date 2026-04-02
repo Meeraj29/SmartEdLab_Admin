@@ -70,7 +70,7 @@ const AddInstitute = ({ onBack, onSuccess }: AddInstituteProps) => {
               </div>
             </div>
             <div className="p-6 rounded-2xl bg-slate-50 border border-slate-100 space-y-4">
-              <div className="flex justify-between items-center text-sm">
+              <div className="flex justify-between items-center text-sm gap-4 md:gap-0">
                 <span className="text-slate-500 font-medium text-[16px] font-inter">
                   Platform ID
                 </span>
@@ -78,7 +78,7 @@ const AddInstitute = ({ onBack, onSuccess }: AddInstituteProps) => {
                   INS-8829-XQ
                 </span>
               </div>
-              <div className="flex justify-between items-center text-sm">
+              <div className="flex justify-between items-center text-sm gap-10 md:gap-0">
                 <span className="text-slate-500 font-medium text-[16px] font-inter">
                   License Type
                 </span>
@@ -104,7 +104,7 @@ const AddInstitute = ({ onBack, onSuccess }: AddInstituteProps) => {
             <div className="flex items-center gap-4">
               <button
                 onClick={handlePrev}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-white hover:bg-slate-50 transition-all shadow-sm"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white hover:bg-slate-50 transition-all shadow-sm"
               >
                 <ArrowLeft className="h-5 w-5" />
               </button>
@@ -136,7 +136,7 @@ const AddInstitute = ({ onBack, onSuccess }: AddInstituteProps) => {
               )}
               <Button
                 onClick={handleNext}
-                className="h-11 rounded-xl px-10 font-medium font-inter text-[16px] bg-black hover:bg-black/90 text-white shadow-xl shadow-black/10 transition-all"
+                className="h-11 rounded-xl px-6 md:px-10 font-medium font-inter text-[14px] md:text-[16px] bg-black hover:bg-black/90 text-white shadow-xl shadow-black/10 transition-all"
               >
                 {step === 1
                   ? "Next: Branding"
@@ -383,7 +383,7 @@ const AddInstitute = ({ onBack, onSuccess }: AddInstituteProps) => {
                           Primary Brand Color
                         </label>
                         <div className="flex items-center gap-3 h-14 w-full rounded-xl bg-[#F8FAFB] px-4">
-                          <div className="h-10 w-10 rounded-full bg-[#0058BE] border-4 border-white shadow-sm" />
+                          <div className=" sm:h-10 sm:w-10 md:h-10 md:w-10 rounded-full bg-[#0058BE] border-4 border-white shadow-sm" />
                           <input
                             type="text"
                             placeholder="#0058BE"
@@ -400,7 +400,7 @@ const AddInstitute = ({ onBack, onSuccess }: AddInstituteProps) => {
                           Secondary Color
                         </label>
                         <div className="flex items-center gap-3 h-14 w-full rounded-xl bg-[#F8FAFB] px-4">
-                          <div className="h-10 w-10 rounded-full bg-[#4648D4] border-4 border-white shadow-sm" />
+                          <div className="  sm:h-10 sm:w-10 md:h-10 md:w-10 rounded-full bg-[#4648D4] border-4 border-white shadow-sm" />
                           <input
                             type="text"
                             placeholder="#4648D4"
@@ -422,8 +422,8 @@ const AddInstitute = ({ onBack, onSuccess }: AddInstituteProps) => {
                   <h4 className="text-[20px] font-bold font-inter text-[#424754]">
                     Live Theme Preview
                   </h4>
-                  <div className="flex items-center gap-1.5 bg-emerald-50 text-emerald-600 px-2 py-0.5 rounded-full border border-emerald-100 uppercase text-[14px] font-semibold ">
-                    <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  <div className=" whitespace-nowrap flex items-center gap-1.5 bg-emerald-50 text-emerald-600 px-2 py-0.5 rounded-full border border-emerald-100 uppercase text-[14px] font-semibold ">
+                    <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse " />
                     Real-time
                   </div>
                 </div>
@@ -510,7 +510,7 @@ const AddInstitute = ({ onBack, onSuccess }: AddInstituteProps) => {
             <div>
               <h3 className="text-[18px] font-semibold font-inter text-[#000000CC] flex items-center gap-2">
                 Step: 3{" "}
-                <span className="text-[#31564E] text-[20px] font-semibold font-inter">
+                <span className="text-[#31564E] text-[20px] font-semibold font-inter ">
                   Select Subscription Plan
                 </span>
               </h3>
@@ -894,17 +894,17 @@ const AddInstitute = ({ onBack, onSuccess }: AddInstituteProps) => {
               </div>
 
               {/* Did You Know? - Streamlined Implementation using Overlay+Shadow asset */}
-              <div className="relative rounded-[32px] overflow-hidden h-[346px]">
-                <div className="absolute inset-0 z-0">
-                  <Image
-                    src={cybersecrityImg}
-                    alt="Security Architecture"
-                    layout="fill"
-                    objectFit="cover"
-                    priority
-                  />
-                </div>
-              </div>
+             <div className="relative rounded-[24px] md:rounded-[32px] overflow-hidden h-[220px] sm:h-[280px] md:h-[346px]">
+  <div className="absolute inset-0 z-0">
+    <Image
+      src={cybersecrityImg}
+      alt="Security Architecture"
+      fill // Use the modern "fill" prop instead of layout="fill"
+      className="object-cover" // Use className for objectFit in Next.js 13+
+      priority
+    />
+  </div>
+</div>
 
               {/* Pro Tip */}
               <div className="p-6 rounded-[24px] bg-[#FFF5F5] border border-red-50 flex gap-4">

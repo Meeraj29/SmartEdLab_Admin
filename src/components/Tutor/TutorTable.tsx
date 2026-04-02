@@ -2,6 +2,8 @@ import {
   ArrowLeft,
   ArrowRight,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   ListFilterPlus,
   MoreVertical,
   Search,
@@ -372,39 +374,41 @@ const TutorTable = ({ onViewProfile }: TutorTableProps) => {
       </div>
 
       {/* Pagination Section */}
-      <div className="p-8 flex items-center justify-between border-t border-border/50">
-        <button className="h-12 w-12 flex items-center justify-center rounded-full border border-slate-200 bg-white text-slate-400 hover:bg-slate-50 transition-all shadow-sm">
-          <ArrowLeft className="h-5 w-5" />
-        </button>
+             <div className="pt-6 flex flex-col items-center gap-6">
+        <div className="flex items-center justify-between w-full">
+          <button className="h-12 w-12 flex items-center justify-center rounded-full border border-border bg-white text-slate-400 hover:bg-slate-50 shadow-sm transition-all">
+            <ChevronLeft className="h-5 w-5" />
+          </button>
 
-        <div className="flex items-center gap-2">
-          <button className="h-10 w-10 flex items-center justify-center rounded-full border-3 border-[#31564E] bg-white text-[#31564E] font-regular font-inter text-[16px] shadow-sm">
-            1
-          </button>
-          <button className="h-10 w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-regular font-inter text-[16px] hover:bg-slate-50 transition-all">
-            2
-          </button>
-          <span className="px-2 text-slate-300 font-bold">...</span>
-          <button className="h-10 w-10 flex items-center justify-center rounded-full border border-slate-200 bg-white text-muted-foreground font-regular font-inter text-[16px] hover:bg-slate-50 transition-all">
-            10
-          </button>
-        </div>
-
-        <div className="flex items-center gap-4">
-          <span className="text-[14px] font-regular font-inter text-[#64748B]">
-            Showing{" "}
-            <span className="text-[14px] font-semibold text-[#0F172A]">
-              1-8
-            </span>{" "}
-            of{" "}
-            <span className="text-[14px] font-semibold text-[#0F172A]">
-              1,540
+          <div className="flex items-center gap-2">
+            <button className="h-10 w-10 flex items-center justify-center rounded-full border-3 border-[#31564E] bg-white text-[#31564E] font-regular font-inter text-[16px] shadow-sm">
+              1
+            </button>
+            <button className="h-10 w-10 flex items-center justify-center rounded-full border border-border bg-white text-muted-foreground font-regular font-inter text-[16px] hover:bg-slate-50 transition-all">
+              2
+            </button>
+            <span className="px-2 text-muted-foreground font-regular font-inter text-[16px]">
+              ...
             </span>
-          </span>
-          <button className="h-12 w-12 flex items-center justify-center rounded-full bg-black text-white shadow-xl hover:bg-black/90 transition-all group">
-            <ArrowRight className="h-6 w-6 group-hover:translate-x-0.5 transition-transform" />
+            <button className="h-10 w-10 flex items-center justify-center rounded-full border border-border bg-white text-muted-foreground font-regular font-inter text-[16px] hover:bg-slate-50 transition-all">
+              10
+            </button>
+          </div>
+
+          <button className="h-12 w-12 flex items-center justify-center rounded-full bg-black text-white shadow-lg hover:bg-black/80 transition-all">
+            <ChevronRight className="h-5 w-5" />
           </button>
         </div>
+        <span className="text-[14px] font-semibold font-inter text-[#64748B]">
+          Showing{" "}
+          <span className="font-[#0F172A] font-semibold font-inter text-[14px] text-foreground">
+            1-8
+          </span>{" "}
+          of{" "}
+          <span className="font-[#0F172A] font-semibold font-inter text-[14px] text-foreground">
+            1,540
+          </span>
+        </span>
       </div>
     </div>
   );
