@@ -638,20 +638,21 @@ const AddStudent = ({ onBack, onSuccess }: AddStudentProps) => {
             </div>
 
             <div className="rounded-[20px] bg-[#31564E]/20 p-4 md:p-5 flex flex-col sm:flex-row items-start sm:items-center gap-3 text-[14px] md:text-[16px] text-slate-800 font-medium leading-relaxed">
-  {/* Icon Container */}
-  <div className="flex-shrink-0 text-[16px] opacity-60 bg-white/20 w-8 h-8 flex items-center justify-center rounded-full">
-    @
-  </div>
-  
-  {/* Text Content */}
-  <div className="flex-1">
-    Credentials will be
-    <span className="font-semibold underline mx-1 inline-block sm:inline">
-      automatically emailed
-    </span>
-    to Alex Johnson (alex.j@example.com) immediately after account activation.
-  </div>
-</div>
+              {/* Icon Container */}
+              <div className="flex-shrink-0 text-[16px] opacity-60 bg-white/20 w-8 h-8 flex items-center justify-center rounded-full">
+                @
+              </div>
+
+              {/* Text Content */}
+              <div className="flex-1">
+                Credentials will be
+                <span className="font-semibold underline mx-1 inline-block sm:inline">
+                  automatically emailed
+                </span>
+                to Alex Johnson (alex.j@example.com) immediately after account
+                activation.
+              </div>
+            </div>
           </div>
         </div>
       )}

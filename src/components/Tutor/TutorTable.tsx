@@ -1,6 +1,4 @@
 import {
-  ArrowLeft,
-  ArrowRight,
   ChevronDown,
   ChevronLeft,
   ChevronRight,
@@ -374,7 +372,7 @@ const TutorTable = ({ onViewProfile }: TutorTableProps) => {
       </div>
 
       {/* Pagination Section */}
-             <div className="pt-6 flex flex-col items-center gap-6">
+      <div className="pt-6 flex flex-col items-center gap-6">
         <div className="flex items-center justify-between w-full">
           <button className="h-12 w-12 flex items-center justify-center rounded-full border border-border bg-white text-slate-400 hover:bg-slate-50 shadow-sm transition-all">
             <ChevronLeft className="h-5 w-5" />

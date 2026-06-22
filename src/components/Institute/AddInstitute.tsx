@@ -894,17 +894,17 @@ const AddInstitute = ({ onBack, onSuccess }: AddInstituteProps) => {
               </div>
 
               {/* Did You Know? - Streamlined Implementation using Overlay+Shadow asset */}
-             <div className="relative rounded-[24px] md:rounded-[32px] overflow-hidden h-[220px] sm:h-[280px] md:h-[346px]">
-  <div className="absolute inset-0 z-0">
-    <Image
-      src={cybersecrityImg}
-      alt="Security Architecture"
-      fill // Use the modern "fill" prop instead of layout="fill"
-      className="object-cover" // Use className for objectFit in Next.js 13+
-      priority
-    />
-  </div>
-</div>
+              <div className="relative rounded-[24px] md:rounded-[32px] overflow-hidden h-[220px] sm:h-[280px] md:h-[346px]">
+                <div className="absolute inset-0 z-0">
+                  <Image
+                    src={cybersecrityImg}
+                    alt="Security Architecture"
+                    fill // Use the modern "fill" prop instead of layout="fill"
+                    className="object-cover" // Use className for objectFit in Next.js 13+
+                    priority
+                  />
+                </div>
+              </div>
 
               {/* Pro Tip */}
               <div className="p-6 rounded-[24px] bg-[#FFF5F5] border border-red-50 flex gap-4">

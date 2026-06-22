@@ -2473,7 +2473,7 @@ const StudentProfile = ({ onBack }: StudentProfileProps) => {
             </div>
 
             {/* Pagination Section */}
-             <div className="p-4 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-border/50 ">
+            <div className="p-4 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-border/50 ">
               {/* Prev Button */}
               <button className="h-10 w-10 md:h-12 md:w-12 flex items-center justify-center rounded-full border border-slate-200 bg-white text-slate-400 hover:bg-slate-50 transition-all shadow-sm ">
                 <ArrowLeft className="h-4 w-4 md:h-5 md:w-5" />

@@ -222,35 +222,34 @@ const CourseProfile = ({ onBack }: CourseProfileProps) => {
           </div>
         </div>
 
-      
-       <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 mt-8">
-  {statCards.map((stat) => (
-    <div
-      key={stat.label}
-     
-      className="flex items-center justify-between bg-white rounded-[20px] border border-slate-100 p-4 md:p-5 shadow-sm hover:shadow-md transition-all group"
-    >
-      <div className="space-y-0.5 md:space-y-1 min-w-0">
-        <p className="text-[20px] md:text-[26px] font-semibold font-inter text-black leading-tight">
-          {stat.value}
-        </p>
-        <p className="text-[14px] md:text-[16px] font-medium font-inter text-slate-600 truncate">
-          {stat.label}
-        </p>
-      </div>
-      
-      
-      <div
-        className={cn(
-          "h-10 w-10 md:h-12 md:w-12 shrink-0 rounded-2xl flex items-center justify-center shadow-sm transition-transform group-hover:scale-110",
-          stat.bg
-        )}
-      >
-        <stat.icon className={cn("h-5 w-5 md:h-6 md:w-6", stat.iconColor)} />
-      </div>
-    </div>
-  ))}
-</div>
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 mt-8">
+          {statCards.map((stat) => (
+            <div
+              key={stat.label}
+              className="flex items-center justify-between bg-white rounded-[20px] border border-slate-100 p-4 md:p-5 shadow-sm hover:shadow-md transition-all group"
+            >
+              <div className="space-y-0.5 md:space-y-1 min-w-0">
+                <p className="text-[20px] md:text-[26px] font-semibold font-inter text-black leading-tight">
+                  {stat.value}
+                </p>
+                <p className="text-[14px] md:text-[16px] font-medium font-inter text-slate-600 truncate">
+                  {stat.label}
+                </p>
+              </div>
+
+              <div
+                className={cn(
+                  "h-10 w-10 md:h-12 md:w-12 shrink-0 rounded-2xl flex items-center justify-center shadow-sm transition-transform group-hover:scale-110",
+                  stat.bg
+                )}
+              >
+                <stat.icon
+                  className={cn("h-5 w-5 md:h-6 md:w-6", stat.iconColor)}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* ── MAIN CONTENT GRID ── */}
@@ -314,71 +313,71 @@ const CourseProfile = ({ onBack }: CourseProfileProps) => {
                   </div>
                   <ChevronDown className="h-5 w-5 text-slate-400 rotate-180 transition-transform" />
                 </div>
-                        
-        <div className="px-5 pb-5 pt-2 overflow-x-auto scrollbar-hide">
-          <table className="w-full text-left min-w-[600px]">
-            <thead>
-              <tr className="text-[14px] md:text-[16px] font-medium font-inter text-black/80 border-b border-slate-100">
-                <th className="py-3 pr-4">Lesson Title</th>
-                <th className="py-3 px-4">Type</th>
-                <th className="py-3 px-4">Duration</th>
-                <th className="py-3 pl-4 text-right">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {lessons.map((lesson, i) => (
-                <tr
-                  key={i}
-                  className="border-b border-slate-50 last:border-0 hover:bg-slate-50/70 transition-colors group/row"
-                >
-                  <td className="py-3 pr-4">
-                    <div className="flex items-center gap-2.5">
-                      <GripHorizontal className="h-3.5 w-3.5 text-slate-200 group-hover/row:text-slate-400 shrink-0" />
-                      <span className="text-[14px] md:text-[16px] font-medium font-inter text-black/80 whitespace-nowrap">
-                        {lesson.title}
-                      </span>
-                    </div>
-                  </td>
-                  <td className="py-3 px-4">
-                    <div
-                      className={cn(
-                        "h-7 w-7 rounded-lg flex items-center justify-center shrink-0",
-                        lesson.type === "video"
-                          ? "bg-slate-100"
-                          : lesson.type === "ai"
-                            ? "bg-blue-50"
-                            : "bg-slate-50"
-                      )}
-                    >
-                      {lesson.type === "video" && (
-                        <PlayCircle className="h-3.5 w-3.5 text-slate-500" />
-                      )}
-                      {lesson.type === "ai" && (
-                        <Brain className="h-3.5 w-3.5 text-blue-500" />
-                      )}
-                      {lesson.type === "doc" && (
-                        <FileText className="h-3.5 w-3.5 text-slate-400" />
-                      )}
-                    </div>
-                  </td>
-                  <td className="py-3 px-4 text-[14px] md:text-[16px] font-medium font-inter text-black/80 whitespace-nowrap">
-                    {lesson.duration}
-                  </td>
-                  <td className="py-3 pl-4">
-                    <div className="flex items-center gap-1.5 justify-end">
-                      <button className="h-7 w-7 rounded-lg bg-slate-100 hover:bg-[#2D4A43]/10 flex items-center justify-center text-slate-500 hover:text-[#2D4A43] transition-colors">
-                        <Pencil className="h-3 w-3" />
-                      </button>
-                      <button className="h-7 w-7 rounded-lg bg-rose-50 hover:bg-rose-100 flex items-center justify-center text-rose-400 hover:text-rose-600 transition-colors">
-                        <Trash2 className="h-3 w-3" />
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+
+                <div className="px-5 pb-5 pt-2 overflow-x-auto scrollbar-hide">
+                  <table className="w-full text-left min-w-[600px]">
+                    <thead>
+                      <tr className="text-[14px] md:text-[16px] font-medium font-inter text-black/80 border-b border-slate-100">
+                        <th className="py-3 pr-4">Lesson Title</th>
+                        <th className="py-3 px-4">Type</th>
+                        <th className="py-3 px-4">Duration</th>
+                        <th className="py-3 pl-4 text-right">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {lessons.map((lesson, i) => (
+                        <tr
+                          key={i}
+                          className="border-b border-slate-50 last:border-0 hover:bg-slate-50/70 transition-colors group/row"
+                        >
+                          <td className="py-3 pr-4">
+                            <div className="flex items-center gap-2.5">
+                              <GripHorizontal className="h-3.5 w-3.5 text-slate-200 group-hover/row:text-slate-400 shrink-0" />
+                              <span className="text-[14px] md:text-[16px] font-medium font-inter text-black/80 whitespace-nowrap">
+                                {lesson.title}
+                              </span>
+                            </div>
+                          </td>
+                          <td className="py-3 px-4">
+                            <div
+                              className={cn(
+                                "h-7 w-7 rounded-lg flex items-center justify-center shrink-0",
+                                lesson.type === "video"
+                                  ? "bg-slate-100"
+                                  : lesson.type === "ai"
+                                    ? "bg-blue-50"
+                                    : "bg-slate-50"
+                              )}
+                            >
+                              {lesson.type === "video" && (
+                                <PlayCircle className="h-3.5 w-3.5 text-slate-500" />
+                              )}
+                              {lesson.type === "ai" && (
+                                <Brain className="h-3.5 w-3.5 text-blue-500" />
+                              )}
+                              {lesson.type === "doc" && (
+                                <FileText className="h-3.5 w-3.5 text-slate-400" />
+                              )}
+                            </div>
+                          </td>
+                          <td className="py-3 px-4 text-[14px] md:text-[16px] font-medium font-inter text-black/80 whitespace-nowrap">
+                            {lesson.duration}
+                          </td>
+                          <td className="py-3 pl-4">
+                            <div className="flex items-center gap-1.5 justify-end">
+                              <button className="h-7 w-7 rounded-lg bg-slate-100 hover:bg-[#2D4A43]/10 flex items-center justify-center text-slate-500 hover:text-[#2D4A43] transition-colors">
+                                <Pencil className="h-3 w-3" />
+                              </button>
+                              <button className="h-7 w-7 rounded-lg bg-rose-50 hover:bg-rose-100 flex items-center justify-center text-rose-400 hover:text-rose-600 transition-colors">
+                                <Trash2 className="h-3 w-3" />
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
 
               {/* Collapsed modules */}
